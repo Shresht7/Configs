@@ -1,0 +1,44 @@
+# =========
+# GITCONFIG
+# =========
+
+# Configuration for Git.
+# Link to ~/.gitconfig
+
+# User Configuration
+[user]
+	name 			= Shresht Srivastav
+	username 		= Shresht7
+	email 			= 59516096+Shresht7@users.noreply.github.com
+
+# Set VS Code as the default editor
+[core]
+	editor 			= code --wait	# VS Code
+
+# Set main as the default branch
+[init]
+	defaultBranch 	= main
+
+[color]
+	ui 				= auto	# Seems to be the default anyway
+
+[fetch]
+	prune 			= true	# Automatically prune outdate branches
+
+[alias]
+	slog 			= log --all --oneline --decorate --graph
+	amend 			= commit --amend
+	last 			= log -1 HEAD --stat
+	undo 			= reset HEAD~1
+
+# Set VS Code as the default merge tool
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+
+# Set VS Code as the default diff tool
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
