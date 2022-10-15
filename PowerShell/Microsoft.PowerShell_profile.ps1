@@ -38,8 +38,9 @@ Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 
-function Show-PSReadLineHistory { Get-Content (Get-PSReadLineOption).HistorySavePath }
-function Remove-PSReadLineHistory { Remove-Item (Get-PSReadLineOption).HistorySavePath }
+function Get-PSReadLineHistoryPath { (Get-PSReadLineOption).HistorySavePath }
+function Show-PSReadLineHistory { Get-Content (Get-PSReadLineHistoryPath) }
+function Remove-PSReadLineHistory { Remove-Item (Get-PSReadLineHistoryPath) }
 
 # Prevent annoying beeping noises
 # Set-PSReadLineOption -BellStyle None
@@ -91,12 +92,19 @@ function Find-Path($command) {
 }
 Set-Alias which Find-Path
 
-# TODO: Create a Backup cmdlet
-# function Backup($path) {
-# 	$backupPath = Join-Path ~\Backup $path
-# 	Copy-Item -Path $path -Destination (Join-Path ~\Backup $path)
-# 	Write-Output "$path ==> $backupPath"
+# TODO: Create Backup Helper
+# function Backup-Item($item, $backupPath) {
+# 	if (Test-Path $item) {
+# 		$dateTime = Get-Date -Format FileDateTime
+# 		$backupPath = Join-Path ~\Backup $item+$dateTime
+# 		# Copy-Item -Path $item -Destination $backupPath
+# 		Write-Output "$item ==> $backupPath"
+# 	}
+# 	else {
+# 		Write-Output "Failed to find $item"
+# 	}
 # }
+# Set-Alias backup Backup-Item
 
 # TODO?: Symlink cmdlet for easier linking
 
