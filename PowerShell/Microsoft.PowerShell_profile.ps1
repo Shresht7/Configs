@@ -61,12 +61,13 @@ Import-Module posh-git
 
 # Use `fd` instead of `find` in fzf (fuzzy-finder)
 $env:FZF_DEFAULT_COMMAND = 'fd --type file'
+$env:FZF_DEFAULT_OPTS = '--reverse'
 
 # Alias `fd` as `find`
 Set-Alias find fd
 
 function Show-Previews {
-	fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' --reverse
+	fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
 }
 Set-Alias preview Show-Previews
 
