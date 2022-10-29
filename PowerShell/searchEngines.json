@@ -10,8 +10,38 @@
         "url": "https://bing.com/search?q=%s"
     },
     {
+        "name": "DuckDuckGo",
+        "shortcut": "duckduckgo",
+        "url": "https://duckduckgo.com/?q=%s"
+    },
+    {
         "name": "GitHub",
         "shortcut": "github",
         "url": "https://github.com/search?q=%s&ref=opensearch"
+    },
+    {
+        "name": "GitHub Gist",
+        "shortcut": "gist",
+        "url": "https://gist.github.com/search?q=%s&ref=opensearch"
+    },
+    {
+        "name": "Wikipedia",
+        "shortcut": "wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?title=Special:Search&search=%s"
+    },
+    {
+        "name": "YouTube",
+        "shortcut": "youtube",
+        "url": "https://www.youtube.com/results?search_query=%s&page={startPage?}&utm_source=opensearch"
+    },
+    {
+        "name": "NPM",
+        "shortcut": "npm",
+        "url": "https://www.npmjs.com/search?q=%s"
+    },
+    {
+        "name": "Wolfram Alpha",
+        "shortcut": "wolfram",
+        "url": "http://www.wolframalpha.com/input/?i=%s"
     }
 ]
