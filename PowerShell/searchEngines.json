@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Google",
+        "shortcut": "google",
+        "url": "https://google.com/search?q=%s"
+    },
+    {
+        "name": "Bing",
+        "shortcut": "bing",
+        "url": "https://bing.com/search?q=%s"
+    },
+    {
+        "name": "GitHub",
+        "shortcut": "github",
+        "url": "https://github.com/search?q=%s&ref=opensearch"
+    }
+]
