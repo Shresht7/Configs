@@ -66,7 +66,7 @@ $env:FZF_DEFAULT_OPTS = '--reverse'
 # Alias `fd` as `find`
 Set-Alias find fd
 
-function Show-Previews {
+function Show-Previews() {
 	fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
 }
 Set-Alias preview Show-Previews
