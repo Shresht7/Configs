@@ -105,6 +105,19 @@ Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 # Utilities
 # ---------
 
+$notebook = "~\OneDrive\Notebooks"
+$quickNotes = Join-Path $notebook "Quick-Notes"
+function New-Note($content) {
+	$note = Join-Path $quickNotes ((Get-Date -Format FileDateTimeUniversal) + ".md")
+	"---"  >> $note
+	"createdAt: " + (Get-Date).ToString() >> $note
+	"---"  >> $note
+	"" >> $note
+	$content >> $note
+	"" >> $note
+}
+Set-Alias note New-Note
+
 <#
 .SYNOPSIS
 Find the executable path for the given program
