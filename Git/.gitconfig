@@ -13,7 +13,7 @@
 
 # Set VS Code as the default editor
 [core]
-	editor 			= code --wait	# VS Code
+	editor 			= code --wait
 
 # Set main as the default branch
 [init]
@@ -26,10 +26,12 @@
 	prune 			= true	# Automatically prune outdate branches
 
 [alias]
-	slog 			= log --all --oneline --decorate --graph
-	amend 			= commit --amend
-	last 			= log -1 HEAD --stat
-	undo 			= reset HEAD~1
+	slog 			= log --all --oneline --decorate --graph	# Shows a decorated log
+	unstage 		= reset HEAD --								# Removes files from the staging area
+	amend 			= commit --amend							# Amends the previous commit message
+	last 			= log -1 HEAD --stat						# Shows details of the last commit
+	undo 			= reset HEAD~1								# Resets the last commit
+	burn			= reset --hard								# Hard reset
 
 # Set VS Code as the default merge tool
 [merge]
