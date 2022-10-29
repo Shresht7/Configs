@@ -87,7 +87,16 @@ Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 # Utilities
 # ---------
 
-# Locate the given command's executable
+<#
+.SYNOPSIS
+Find the executable path for the given program
+.DESCRIPTION
+Locates the executable path for the given program like the Unix which command.
+.PARAMETER command
+Name of the command
+.EXAMPLE
+Find-Path git		# Returns C:\Program Files\Git\cmd\git.exe
+#>
 function Find-Path($command) {
 	Get-Command -Name $command -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
