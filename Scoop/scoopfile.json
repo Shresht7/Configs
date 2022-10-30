@@ -1,0 +1,82 @@
+{
+    "apps": [
+        {
+            "Version": "22.01",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-14T23:01:50.8344578+05:30",
+            "Name": "7zip"
+        },
+        {
+            "Version": "0.22.1",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-08T10:15:34.9276445+05:30",
+            "Name": "bat"
+        },
+        {
+            "Version": "0.6.8",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-08T11:57:04.4150969+05:30",
+            "Name": "bottom"
+        },
+        {
+            "Version": "8.4.0",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-08T11:24:06.982764+05:30",
+            "Name": "fd"
+        },
+        {
+            "Version": "5.1.2",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-30T20:53:25.7721242+05:30",
+            "Name": "ffmpeg"
+        },
+        {
+            "Version": "0.34.0",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-08T10:39:29.1210256+05:30",
+            "Name": "fzf"
+        },
+        {
+            "Version": "608",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-08T10:17:56.8514916+05:30",
+            "Name": "less"
+        },
+        {
+            "Version": "2.0.11",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-14T23:00:48.1542922+05:30",
+            "Name": "micro"
+        },
+        {
+            "Version": "13.0.0",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-08T11:33:49.2298464+05:30",
+            "Name": "ripgrep"
+        },
+        {
+            "Version": "1.6.0",
+            "Source": "main",
+            "Info": "",
+            "Updated": "2022-10-19T09:43:39.5987352+05:30",
+            "Name": "tealdeer"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": "2022-10-30T19:40:44+05:30",
+            "Manifests": 1105
+        }
+    ]
+}
