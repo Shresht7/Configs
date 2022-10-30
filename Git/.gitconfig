@@ -28,6 +28,7 @@
 [alias]
 	# Shows a decorated log
 	slog 			= log --all --oneline --decorate --graph
+	flog 			= log --all --oneline --decorate --graph --date=relative --boundary --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s - %Cblue[%cn] %Cgreen%ad %Creset'
 	# Removes files from the staging area
 	unstage 		= reset HEAD --
 	# Amends the previous commit message
@@ -43,12 +44,12 @@
 
 # Set VS Code as the default merge tool
 [merge]
-	tool = vscode
+	tool 			= vscode
 [mergetool "vscode"]
-	cmd = code --wait $MERGED
+	cmd 			= code --wait $MERGED
 
 # Set VS Code as the default diff tool
 [diff]
-	tool = vscode
+	tool 			= vscode
 [difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+	cmd 			= code --wait --diff $LOCAL $REMOTE
