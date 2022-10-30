@@ -105,6 +105,22 @@ Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 # Utilities
 # ---------
 
+<#
+.SYNOPSIS
+Create a new directory and enter it
+.DESCRIPTION
+Creates a new directory with the given dirname and set-location to it
+.PARAMETER DirName
+Name of the directory
+.EXAMPLE
+New-Directory project-3		# Creates a directory called project-3 and cd's into it
+#>
+function New-Directory($DirName) {
+	New-Item -ItemType Directory -Path $DirName
+	Set-Location $DirName
+}
+Set-Alias mkcdir New-Directory
+
 $notebook = "~\OneDrive\Notebooks"
 $quickNotes = Join-Path $notebook "Quick-Notes"
 function New-Note($content) {
