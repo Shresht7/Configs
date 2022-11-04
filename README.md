@@ -8,7 +8,8 @@ Configuration of my system.
 
 ### Symlinks
 
-[`symlink.ps1`](Scripts/symlink.ps1) - Symlinks dotfiles to the correct places
+- [`symlink.ps1`](Scripts/symlink.ps1) - Symlinks dotfiles to the correct places
+- [`snapshot.ps1`](Scripts/snapshot.ps1) - Takes a snapshot of the installed packages
 
 ---
 

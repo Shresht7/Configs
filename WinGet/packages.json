@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2022-10-30T21:31:42.805-00:00",
+	"CreationDate" : "2022-11-04T16:02:55.724-00:00",
 	"Sources" : 
 	[
 		{
@@ -46,6 +46,9 @@
 					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.WebDeploy"
 				},
 				{
@@ -56,6 +59,12 @@
 				},
 				{
 					"PackageIdentifier" : "GitHub.cli"
+				},
+				{
+					"PackageIdentifier" : "ElectronicArts.EADesktop"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK"
@@ -71,6 +80,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.GeForceExperience"
@@ -91,6 +103,12 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK"
 				},
 				{
@@ -109,10 +127,10 @@
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "XP9KHM4BK9FZ7Q"
+					"PackageIdentifier" : "XP89DCGQ3K6VLD"
 				},
 				{
-					"PackageIdentifier" : "XP89DCGQ3K6VLD"
+					"PackageIdentifier" : "XP9KHM4BK9FZ7Q"
 				}
 			],
 			"SourceDetails" : 
