@@ -110,6 +110,8 @@ Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 # Utilities
 # ---------
 
+Import-Module utilities
+
 <#
 .SYNOPSIS
 Create a new directory and enter it

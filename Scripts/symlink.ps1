@@ -29,7 +29,14 @@ Set-Symlink -Path "$HOME\.gitconfig" -Target "$HOME\Configs\Git\.gitconfig"
 # PowerShell
 # ----------
 
+# Profile
 Set-Symlink -Path "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Target "$HOME\Configs\PowerShell\Microsoft.PowerShell_profile.ps1"
+
+# Modules
+Get-ChildItem "$HOME\Configs\PowerShell\Modules" | ForEach-Object {
+    $ModuleName = $_.Name
+    Set-Symlink -Path $HOME\Documents\PowerShell\Modules\$ModuleName -Target $HOME\Configs\PowerShell\Modules\$ModuleName
+}
 
 # ------
 # VSCode
