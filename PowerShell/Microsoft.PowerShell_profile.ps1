@@ -71,6 +71,11 @@ function Show-Previews() {
 }
 Set-Alias preview Show-Previews
 
+function Show-TLDR() {
+	tldr --list | fzf --preview 'tldr --color=always {}' | ForEach-Object { tldr $_ }
+}
+Set-Alias tldrf Show-TLDR
+
 # -------
 # RipGrep
 # -------
