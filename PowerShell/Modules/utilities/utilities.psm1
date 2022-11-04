@@ -23,3 +23,24 @@ function Enter-NewDirectory($DirName) {
     Set-Location $DirName
 }
 Set-Alias mkcdir Enter-NewDirectory
+
+# -----------
+# New-Symlink
+# -----------
+
+<#
+.SYNOPSIS
+Create a symlink
+.DESCRIPTION
+Creates a symbolic-link at the given path to the given target
+.PARAMETER Path
+Original path
+.PARAMETER Target
+Path to the targetted location
+.EXAMPLE
+New-Symlink "$HOME\.gitconfig" "$HOME\Configs\Git\.gitconfig"   # Links $HOME\.gitconfig to $HOME\Configs\Git\.gitconfig
+#>
+function New-Symlink($Path, $Target) {
+    New-Item -ItemType SymbolicLink -Path $Path -Target $Target
+}
+Set-Alias symlink New-Symlink
