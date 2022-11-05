@@ -76,6 +76,21 @@ function Show-TLDR() {
 }
 Set-Alias tldrf Show-TLDR
 
+function Set-FuzzyLocation() {
+	fd --type directory | fzf | Set-Location
+}
+Set-Alias cdf Set-FuzzyLocation
+
+# -----
+# PSFzf
+# -----
+
+# https://github.com/kelleyma49/PSFzf
+
+Import-Module PSFzf
+
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory 'Ctrl+r'
+
 # -------
 # RipGrep
 # -------
@@ -91,8 +106,10 @@ The text or regular expression to search for
 Search-FullText TODO:		# Searches for all file containing TODO:
 #>
 function Search-FullText($text) {
-	rg $text --line-number | fzf --delimiter=":" --preview 'bat --style=numbers --color=always --highlight-line {2} --line-range {2}: {1}'
+	# rg $text --line-number | fzf --delimiter=":" --preview 'bat --style=numbers --color=always --highlight-line {2} --line-range {2}: {1}'
+	Invoke-PsFzfRipgrep $text
 }
+Set-Alias fts Search-FullText
 
 # ------------------
 # Z Directory Jumper
@@ -124,22 +141,3 @@ function New-Note($content) {
 	"" >> $note
 }
 Set-Alias note New-Note
-
-# TODO: Create Backup Helper
-# function Backup-Item($item, $backupPath) {
-# 	if (Test-Path $item) {
-# 		$dateTime = Get-Date -Format FileDateTime
-# 		$backupPath = Join-Path ~\Backup $item+$dateTime
-# 		# Copy-Item -Path $item -Destination $backupPath
-# 		Write-Output "$item ==> $backupPath"
-# 	}
-# 	else {
-# 		Write-Output "Failed to find $item"
-# 	}
-# }
-# Set-Alias backup Backup-Item
-
-# TODO?: Symlink cmdlet for easier linking
-
-# TODO: Add URLs to GitHub Repositories and other relavent documentation
-# TODO: Improve comments
