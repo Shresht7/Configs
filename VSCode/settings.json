@@ -366,6 +366,12 @@
   "editor.fontWeight": "normal",
   "editor.fontSize": 12,
   "window.zoomLevel": -1,
+  "cSpell.enableFiletypes": [
+    "lua",
+    "mdx",
+    "powershell"
+  ],
+  "cSpell.language": "en,en-GB,en-US",
   // #endregion
   // ==================
 }
