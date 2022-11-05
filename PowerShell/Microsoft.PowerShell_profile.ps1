@@ -1,4 +1,10 @@
 # ----------
+# Navigation
+# ----------
+
+function ~ { Set-Location ~ }; Set-Alias ~ home
+
+# ----------
 # Oh-My-Posh
 # ----------
 
