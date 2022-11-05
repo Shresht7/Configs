@@ -7,7 +7,7 @@
 # -------------
 
 function Show-Previews() {
-    fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'
+    fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' --preview-window=right:60%
 }
 Set-Alias preview Show-Previews
 
@@ -19,7 +19,7 @@ Export-ModuleMember -Alias preview
 # ---------
 
 function Show-TLDR() {
-    tldr --list | fzf --preview 'tldr --color=always {}' | ForEach-Object { tldr $_ }
+    tldr --list | fzf --preview 'tldr --color=always {}' --preview-window=right:70% | ForEach-Object { tldr $_ }
 }
 Set-Alias tldrf Show-TLDR
 
