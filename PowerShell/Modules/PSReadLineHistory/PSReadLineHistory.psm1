@@ -4,7 +4,6 @@
 
 function Get-PSReadLineHistoryPath { (Get-PSReadLineOption).HistorySavePath }
 function Get-PSReadLineHistory { Get-Content (Get-PSReadLineHistoryPath) }
-
 function Remove-PSReadLineHistoryItems($MarkedForRemoval = (Get-PSReadLineHistory | Invoke-Fzf -Multi)) {
     # Get the PSReadLineHistory
     $ReadlineHistory = Get-PSReadLineHistory

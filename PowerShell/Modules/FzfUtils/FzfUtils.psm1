@@ -11,6 +11,7 @@ function Show-Previews() {
 }
 Set-Alias preview Show-Previews
 
+Export-ModuleMember -Function Show-Previews
 Export-ModuleMember -Alias preview
 
 # ---------
@@ -22,6 +23,7 @@ function Show-TLDR() {
 }
 Set-Alias tldrf Show-TLDR
 
+Export-ModuleMember -Function Show-TLDR
 Export-ModuleMember -Alias tldrf
 
 # -----------------
@@ -33,6 +35,7 @@ function Set-FuzzyLocation() {
 }
 Set-Alias cdf Set-FuzzyLocation
 
+Export-ModuleMember -Function Set-FuzzyLocation
 Export-ModuleMember -Alias cdf
 
 # ---------------
@@ -57,4 +60,5 @@ function Search-FullText($text) {
 }
 Set-Alias fts Search-FullText
 
+Export-ModuleMember -Function Search-FullText
 Export-ModuleMember -Alias fts
