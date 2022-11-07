@@ -10,8 +10,7 @@ function ~ { Set-Location ~ }; Set-Alias ~ home
 
 # https://ohmyposh.dev/
 
-$OhMyPoshTheme = "~/Configs/PowerShell/Themes/s7.omp.yaml"
-oh-my-posh init pwsh --config $OhMyPoshTheme | Invoke-Expression
+oh-my-posh init pwsh --config "~/Configs/PowerShell/Themes/s7.omp.yaml" | Invoke-Expression
 
 # --------------
 # Terminal-Icons
@@ -74,7 +73,7 @@ $env:FZF_DEFAULT_OPTS = '--reverse'
 
 # https://github.com/kelleyma49/PSFzf
 
-Import-Module PSFzf
+# Import-Module PSFzf
 
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory 'Ctrl+r'
 
@@ -82,18 +81,10 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory
 # Z Directory Jumper
 # ------------------
 
-Import-Module z
+# Import-Module z
 
 # ----------
 # GitHub CLI
 # ----------
 
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
-
-# =======
-# Modules
-# =======
-
-Import-Module PSReadLineHistory
-Import-Module FzfUtils
-Import-Module Utilities
