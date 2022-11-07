@@ -40,6 +40,11 @@
         "url": "https://www.npmjs.com/search?q=%s"
     },
     {
+        "name": "Mozilla Developer Network",
+        "shortcut": "mdn",
+        "url": "https://developer.mozilla.org/en-US/search?q=%s"
+    },
+    {
         "name": "Wolfram Alpha",
         "shortcut": "wolfram",
         "url": "http://www.wolframalpha.com/input/?i=%s"
