@@ -50,6 +50,7 @@ ms-vscode.anycode-typescript
 ms-vscode.cpptools
 ms-vscode.live-server
 ms-vscode.powershell
+ms-vscode.remote-explorer
 ms-vscode.remote-repositories
 msjsdiag.vscode-react-native
 msoffice.microsoft-office-add-in-debugger

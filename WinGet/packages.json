@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2022-11-04T16:02:55.724-00:00",
+	"CreationDate" : "2022-11-12T21:30:27.912-00:00",
 	"Sources" : 
 	[
 		{
@@ -49,16 +49,22 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.WebDeploy"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.OpenJDK.11"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.5"
-				},
-				{
-					"PackageIdentifier" : "GitHub.cli"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
@@ -67,19 +73,16 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.WindowsSDK"
+					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+					"PackageIdentifier" : "Microsoft.WindowsSDK"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
 				},
 				{
 					"PackageIdentifier" : "GOG.Galaxy"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
@@ -91,28 +94,25 @@
 					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
+					"PackageIdentifier" : "Microsoft.OpenJDK.11"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.OpenJDK.11"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.7"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK"
 				}
 			],
 			"SourceDetails" : 
@@ -127,10 +127,10 @@
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "XP89DCGQ3K6VLD"
+					"PackageIdentifier" : "XP9KHM4BK9FZ7Q"
 				},
 				{
-					"PackageIdentifier" : "XP9KHM4BK9FZ7Q"
+					"PackageIdentifier" : "XP89DCGQ3K6VLD"
 				}
 			],
 			"SourceDetails" : 
