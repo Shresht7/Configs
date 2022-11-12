@@ -39,7 +39,8 @@ https://ohmyposh.dev/
 
 [`s7.omp.yaml`](PowerShell/Themes/s7.omp.yaml)
 
-<!-- TODO: Add Screenshot of Oh My Posh Prompt -->
+
+![oh-my-posh-prompt-theme](s7-prompt.png)
 
 ## Scoop
 
