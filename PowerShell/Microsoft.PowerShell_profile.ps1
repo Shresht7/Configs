@@ -26,6 +26,9 @@ Import-Module Terminal-Icons
 
 # https://github.com/PowerShell/PSReadLine
 
+# Usage: https://github.com/PowerShell/PSReadLine#usage
+# Sample Profile: https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/SamplePSReadLineProfile.ps1
+
 Set-PSReadLineOption -PredictionSource History
 
 # Requires PSReadLine v2.2-prerelease
@@ -33,6 +36,13 @@ Set-PSReadLineOption -PredictionSource History
 # Set-PSReadLineOption -EditMode Windows
 
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+
+# Searching for commands with up/down arrow is really handy.  The
+# option "moves to end" is useful if you want the cursor at the end
+# of the line while cycling through history like it does w/o searching,
+# without that option, the cursor will remain at the position it was
+# when you used up arrow, which can be useful if you forget the exact
+# string you started the search on.
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
@@ -54,7 +64,6 @@ Set-PSReadLineKeyHandler -Key Alt+w `
     [Microsoft.PowerShell.PSConsoleReadLine]::AddToHistory($line)
     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
 }
-
 
 # Prevent annoying beeping noises
 # Set-PSReadLineOption -BellStyle None
@@ -92,7 +101,7 @@ $env:FZF_DEFAULT_OPTS = '--reverse'
 
 # https://github.com/kelleyma49/PSFzf
 
-# Import-Module PSFzf
+Import-Module PSFzf
 
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory 'Ctrl+r'
 
@@ -100,7 +109,7 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory
 # Z Directory Jumper
 # ------------------
 
-# Import-Module z
+Import-Module z
 
 # ----------
 # GitHub CLI
