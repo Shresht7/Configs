@@ -54,3 +54,10 @@ if (Find-Path code | Test-Path) {
 else {
     Write-Error "💥 code not found ❌"
 }
+
+# -----------------
+# Oh My Posh Prompt
+# -----------------
+
+# Take a snapshot of the current oh-my-posh prompt
+oh-my-posh config export image --cursor-padding 50 --author 'Shresht7' --output s7-prompt.png
