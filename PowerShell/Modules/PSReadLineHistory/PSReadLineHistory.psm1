@@ -18,3 +18,23 @@ function Remove-PSReadLineHistoryItems($MarkedForRemoval = (Get-PSReadLineHistor
     # Set Content of the PSReadLineHistory
     $ReadlineHistory | Set-Content (Get-PSReadLineHistoryPath)
 }
+
+<#
+.SYNOPSIS
+Gets the frequency of the commands in the history
+.DESCRIPTION
+Returns a hash-table containing commands from the PSReadLine history and the number of times they've been used
+#>
+function Get-CommandFrequency() {
+    $frequency = @{}
+    foreach ($line in Get-PSReadLineHistory) {
+        if (!$frequency[$line]) {
+            $frequency.Add($line, 1)
+        }
+        else {
+            $frequency[$line]++
+        }
+    }
+    $sorted = $frequency.GetEnumerator() | Sort-Object -Property Value
+    Write-Output $sorted
+}
