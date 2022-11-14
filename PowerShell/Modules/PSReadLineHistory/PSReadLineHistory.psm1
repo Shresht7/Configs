@@ -3,7 +3,11 @@
 # ===========================
 
 function Get-PSReadLineHistoryPath { (Get-PSReadLineOption).HistorySavePath }
+
 function Get-PSReadLineHistory { Get-Content (Get-PSReadLineHistoryPath) }
+
+function Set-PSReadLineHistory($Content) { Set-Content -Path (Get-PSReadLineHistoryPath) -Value $Content }
+
 function Remove-PSReadLineHistoryItems($MarkedForRemoval = (Get-PSReadLineHistory | Invoke-Fzf -Multi -Cycle)) {
     # Get the PSReadLineHistory
     $ReadlineHistory = Get-PSReadLineHistory
@@ -17,6 +21,25 @@ function Remove-PSReadLineHistoryItems($MarkedForRemoval = (Get-PSReadLineHistor
 
     # Set Content of the PSReadLineHistory
     $ReadlineHistory | Set-Content (Get-PSReadLineHistoryPath)
+}
+
+<#
+.SYNOPSIS
+Remove duplicate items from the history
+.DESCRIPTION
+Removes duplicate entries from the PSReadLine history and copies the result to the clipboard
+#>
+function Remove-Duplicates() {
+    $answer = Read-Host "Are you sure you want to remove all duplicate history items? [y/N]" || "N"
+    if ($answer -NotLike "Y") { return }
+
+    $commands = New-Object System.Collections.ArrayList
+    foreach ($line in Get-PSReadLineHistory) {
+        if (!$commands.Contains($line)) {
+            $commands.Add($line)
+        }
+    }
+    $commands | Set-Clipboard
 }
 
 <#
