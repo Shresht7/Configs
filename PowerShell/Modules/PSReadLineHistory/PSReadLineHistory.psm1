@@ -33,12 +33,20 @@ function Remove-Duplicates() {
     $answer = Read-Host "Are you sure you want to remove all duplicate history items? [y/N]" || "N"
     if ($answer -NotLike "Y") { return }
 
+    $PSReadLineHistory = Get-PSReadLineHistory
+    $originalCount = $PSReadLineHistory | Measure-Object -Line
+
     $commands = New-Object System.Collections.ArrayList
-    foreach ($line in Get-PSReadLineHistory) {
+    foreach ($line in $PSReadLineHistory) {
         if (!$commands.Contains($line)) {
             $commands.Add($line)
         }
     }
+
+    $finalCount = $commands | Measure-Object -Line
+    $diffCount = $originalCount.Lines - $finalCount.Lines
+    Write-Host "$diffCount duplicate commands removed!"
+
     $commands | Set-Clipboard
 }
 
