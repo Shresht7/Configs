@@ -36,10 +36,11 @@ function Remove-Duplicates() {
     $PSReadLineHistory = Get-PSReadLineHistory
     $originalCount = $PSReadLineHistory | Measure-Object -Line
 
+    # Iterate backwards to preserve the most recent command
     $commands = New-Object System.Collections.ArrayList
-    foreach ($line in $PSReadLineHistory) {
+    for ($i = $originalCount; $i -gt 0; $i--) {
         if (!$commands.Contains($line)) {
-            $commands.Add($line)
+            $null = $commands.Add($line)
         }
     }
 
