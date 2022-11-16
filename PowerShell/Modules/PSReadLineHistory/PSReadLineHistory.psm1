@@ -20,7 +20,7 @@ function Remove-PSReadLineHistoryItems($MarkedForRemoval = (Get-PSReadLineHistor
     }
 
     # Set Content of the PSReadLineHistory
-    $ReadlineHistory | Set-Content (Get-PSReadLineHistoryPath)
+    Set-PSReadLineHistory ($ReadlineHistory)
 }
 
 <#
@@ -34,21 +34,22 @@ function Remove-Duplicates() {
     if ($answer -NotLike "Y") { return }
 
     $PSReadLineHistory = Get-PSReadLineHistory
-    $originalCount = $PSReadLineHistory | Measure-Object -Line
+    $originalCount = ($PSReadLineHistory | Measure-Object -Line).Lines
 
     # Iterate backwards to preserve the most recent command
     $commands = New-Object System.Collections.ArrayList
     for ($i = $originalCount; $i -gt 0; $i--) {
+        $line = $PSReadLineHistory[$i]
         if (!$commands.Contains($line)) {
             $null = $commands.Add($line)
         }
     }
 
-    $finalCount = $commands | Measure-Object -Line
-    $diffCount = $originalCount.Lines - $finalCount.Lines
+    $finalCount = ($commands | Measure-Object -Line).Lines
+    $diffCount = $originalCount - $finalCount
     Write-Host "$diffCount duplicate commands removed!"
 
-    $commands | Set-Clipboard
+    Set-PSReadLineHistory ($commands)
 }
 
 <#
