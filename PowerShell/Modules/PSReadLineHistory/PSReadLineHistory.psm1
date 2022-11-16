@@ -73,9 +73,9 @@ Remove duplicate items from the history
 .DESCRIPTION
 Removes duplicate entries and updates the PSReadLine history
 .EXAMPLE
-Remove-Duplicates
+Remove-PSReadLineHistoryDuplicates
 #>
-function Remove-Duplicates() {
+function Remove-PSReadLineHistoryDuplicates() {
     $answer = Read-Host "Are you sure you want to remove all duplicate history items? [y/N]" || "N"
     if ($answer -NotLike "Y") { return }
 
@@ -104,9 +104,9 @@ Gets the frequency of the commands in the history
 .DESCRIPTION
 Returns a hash-table containing commands from the PSReadLine history and the number of times they've been used
 .EXAMPLE
-Get-CommandFrequency
+Get-PSReadLineHistoryFrequency
 #>
-function Get-CommandFrequency() {
+function Get-PSReadLineHistoryFrequency() {
     $frequency = @{}
     foreach ($line in Get-PSReadLineHistory) {
         if (!$frequency[$line]) {
