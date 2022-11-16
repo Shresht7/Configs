@@ -65,6 +65,13 @@ Set-PSReadLineKeyHandler -Key Alt+w `
     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
 }
 
+# Don't add sensitive stuff to history
+Set-PSReadLineOption -AddToHistoryHandler {
+    param([string]$line)
+    $sensitive = "password|asplaintext|token|key|secret|hook|webhook"
+    return ($line -NotMatch $sensitive)
+}
+
 # Prevent annoying beeping noises
 # Set-PSReadLineOption -BellStyle None
 
