@@ -19,7 +19,11 @@ Backup-Item important-file.txt
 function Backup-Item(
     [Parameter(Mandatory = $true)]
     [string]$Item,
-    [string]$BackupPath = $DefaultBackupPath
+
+    [string]$BackupPath = $DefaultBackupPath,
+    
+    [ValidateSet("Compress", "Copy")]
+    [string]$Type = "Compress"
 ) {
     if (-Not (Test-Path $BackupPath -PathType Container)) {
         $CreateBackup = Read-Host "The backup path [$BackupPath] does not exist! Do you wish to create it [Y/n]" || "Y"
@@ -33,9 +37,14 @@ function Backup-Item(
 
     $Date = Get-Date -Format FileDateTimeUniversal
     $Name = (Get-Item $Item).Name
-    $Destination = Join-Path $BackupPath "$Date`_$Name.zip"
-    # Copy-Item -Path $Item -Destination $Destination -Recurse
-    Compress-Archive -Path $Item -CompressionLevel Optimal -DestinationPath $Destination
+    $Destination = Join-Path $BackupPath "$Date`_$Name"
+
+    if ($Type -eq "Compress") {
+        Compress-Archive -Path $Item -CompressionLevel Optimal -DestinationPath "$Destination.zip"
+    }
+    if ($Type -eq "Copy") {
+        Copy-Item -Path $Item -Destination $Destination -Recurse
+    }
 }
 
 # ------------
