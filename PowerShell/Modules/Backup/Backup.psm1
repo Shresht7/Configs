@@ -16,21 +16,26 @@ Creates a backup-copy of the given item in the specified folder
 .EXAMPLE
 Backup-Item important-file.txt
 #>
-function Backup-Item([string]$Item, [string]$BackupPath = $DefaultBackupPath) {
+function Backup-Item(
+    [Parameter(Mandatory = $true)]
+    [string]$Item,
+    [string]$BackupPath = $DefaultBackupPath
+) {
     if (-Not (Test-Path $BackupPath -PathType Container)) {
         $CreateBackup = Read-Host "The backup path [$BackupPath] does not exist! Do you wish to create it [Y/n]" || "Y"
         if ($CreateBackup -like "y") {
             New-Item -ItemType Directory $BackupPath
-        } else {
+        }
+        else {
             Write-Error "Cannot continue without valid backup path [$BackupPath]"
         }
     }
 
     $Date = Get-Date -Format FileDateTimeUniversal
     $Name = (Get-Item $Item).Name
-    $Destination = Join-Path $BackupPath ($Date + "_" + $Name)
-    # Copy-Item -Path $Item -Destination $Destination -Recurse 
-    Compress-Archive -Path $Item -CompressionLevel Optimal -DestinationPath "$Destination.zip"
+    $Destination = Join-Path $BackupPath "$Date`_$Name.zip"
+    # Copy-Item -Path $Item -Destination $Destination -Recurse
+    Compress-Archive -Path $Item -CompressionLevel Optimal -DestinationPath $Destination
 }
 
 # ------------
