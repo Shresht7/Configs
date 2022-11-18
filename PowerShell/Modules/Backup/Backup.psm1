@@ -57,10 +57,27 @@ Restores an item from the backup
 .DESCRIPTION
 Restores the most recent copy of the given item from the defined backup folder
 #>
-function Restore-Item($Item, $Path = $PWD.Path, $BackupPath = $DefaultBackupPath) {
-    $Name = (Get-Item $Item).Name
-    $MostRecentItem = Get-ChildItem "$BackupPath\" | Where-Object { $_ -Match $Name } | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1
-    # Copy-Item -Path "$MostRecentItem\$Name" -Destination "$Path\$Name"
+function Restore-Item(
+    [Parameter(Mandatory = $True)]
+    [string]$Item,
+
+    [string]$Path = $PWD.Path,
+
+    [string]$BackupPath = $DefaultBackupPath,
+
+    [ValidateSet("Compress", "Copy")]
+    [string]$Type = "Compress"
+) {
+    $MostRecentItem = Get-Backups -Filter *$Item* | Select-Object -First 1
+
+    if ($Type -eq "Compress") {
+        Expand-Archive -Path $MostRecentItem -DestinationPath $Path -Confirm
+    }
+    if ($Type -eq "Copy") {
+        Copy-Item -Path "$MostRecentItem\$Name" -Destination "$Path\$Name"
+    }
+}
+
 # ------------
 # Get-Backups
 # ------------
