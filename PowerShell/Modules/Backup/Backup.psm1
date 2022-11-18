@@ -99,14 +99,30 @@ function Get-Backups([string]$Filter, [string]$BackupPath = $DefaultBackupPath) 
 # Remove-OldBackups
 # -----------------
 
-$retentionDays = 7
-
 <#
 .SYNOPSIS
 Remove old Backups
 .DESCRIPTION
-Remove old backup entries older than the retention period (default: 7 days)
+Remove old backup entries older than the retention period (default: 31 days)
+.PARAMETER $Name
+Wildcard name to filter the backups
+.PARAMETER $Age
+Only remove backups older than the given age. (default: 31 days)
+.PARAMETER $BackupPath
+Path to the backup folder
 #>
-function Remove-OldBackups($BackupPath = $DefaultBackupPath, $days = $retentionDays) {
-    Get-ChildItem -Path $BackupPath | Where-Object { (Get-Date) -lt $_.CreationTime.AddDays(-$days) } | Remove-Item -Confirm
+function Remove-OldBackups(
+    [Parameter()]
+    [String]$Name,
+        
+    # TODO: Change this to UInt32 to prevent adding negative days. (Ok while testing)
+    [Int32]$Age = 31,
+    
+    [String]$BackupPath = $DefaultBackupPath
+) {
+    # Get the list of backups that match the given criteria
+    $Backups = if ($null -eq $Name) { Get-ChildItem -Path $BackupPath } else { Get-ChildItem -Path $Backups -Filter $Name }
+
+    # Remove backups older than the set age (in days)
+    $Backups | Where-Object { (Get-Date) -lt $_.CreationTime.AddDays(-$days) } | Remove-Item -Confirm
 }
