@@ -22,8 +22,8 @@ function Backup-Item(
 
     [string]$BackupPath = $DefaultBackupPath,
     
-    [ValidateSet("Compress", "Copy")]
-    [string]$Type = "Compress"
+    [ValidateSet("Archive", "Copy")]
+    [string]$Type = "Archive"
 ) {
     if (-Not (Test-Path $BackupPath -PathType Container)) {
         $CreateBackup = Read-Host "The backup path [$BackupPath] does not exist! Do you wish to create it [Y/n]" || "Y"
@@ -39,7 +39,7 @@ function Backup-Item(
     $Name = (Get-Item $Item).Name
     $Destination = Join-Path $BackupPath "$Date`_$Name"
 
-    if ($Type -eq "Compress") {
+    if ($Type -eq "Archive") {
         Compress-Archive -Path $Item -CompressionLevel Optimal -DestinationPath "$Destination.zip"
     }
     if ($Type -eq "Copy") {
@@ -65,12 +65,12 @@ function Restore-Item(
 
     [string]$BackupPath = $DefaultBackupPath,
 
-    [ValidateSet("Compress", "Copy")]
-    [string]$Type = "Compress"
+    [ValidateSet("Archive", "Copy")]
+    [string]$Type = "Archive"
 ) {
     $MostRecentItem = Get-Backups -Filter *$Item* | Select-Object -First 1
 
-    if ($Type -eq "Compress") {
+    if ($Type -eq "Archive") {
         Expand-Archive -Path $MostRecentItem -DestinationPath $Path -Confirm
     }
     if ($Type -eq "Copy") {
