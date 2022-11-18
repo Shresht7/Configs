@@ -29,11 +29,8 @@ Import-Module Terminal-Icons
 # Usage: https://github.com/PowerShell/PSReadLine#usage
 # Sample Profile: https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/SamplePSReadLineProfile.ps1
 
-Set-PSReadLineOption -PredictionSource History
-
-# Requires PSReadLine v2.2-prerelease
-# Set-PSReadLineOption -PredictionViewStyle ListView
-# Set-PSReadLineOption -EditMode Windows
+Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+Set-PSReadLineOption -PredictionViewStyle ListView
 
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
@@ -123,3 +120,40 @@ Import-Module z
 # ----------
 
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
+
+# =============
+# Auto-Complete
+# =============
+
+# https://github.com/microsoft/winget-cli/blob/master/doc/Completion.md
+Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+    [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
+    $Local:word = $wordToComplete.Replace('"', '""')
+    $Local:ast = $commandAst.ToString().Replace('"', '""')
+    winget complete --word="$Local:word" --commandline "$Local:ast" --position $cursorPosition | ForEach-Object {
+        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    }
+}
+
+<#
+.SYNOPSIS
+Starts an application
+.DESCRIPTION
+Start an application from the shell:AppsFolder
+.PARAMETER AppName
+Name of the Application. (Use `Get-StartApps` to get a list of apps)
+.EXAMPLE
+Start-App Clock
+Start the Windows Clock application
+.EXAMPLE
+Get-StartApps | Invoke-Fzf | Start-App
+Interactively select the app using fzf and start it
+#>
+function Start-App(
+    [Parameter(Mandatory = $True, ValueFromPipeline = $True)]
+    [string]$AppName
+) {
+    $App = Get-StartApps | Where-Object { $_.Name -eq $AppName }
+    Start-Process "explorer.exe" -ArgumentList "shell:AppsFolder\$(($App).AppId)"
+}
