@@ -61,7 +61,20 @@ function Restore-Item($Item, $Path = $PWD.Path, $BackupPath = $DefaultBackupPath
     $Name = (Get-Item $Item).Name
     $MostRecentItem = Get-ChildItem "$BackupPath\" | Where-Object { $_ -Match $Name } | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 1
     # Copy-Item -Path "$MostRecentItem\$Name" -Destination "$Path\$Name"
-    Expand-Archive -Path $MostRecentItem -DestinationPath $Path
+# ------------
+# Get-Backups
+# ------------
+
+<#
+.SYNOPSIS
+Get the list of backups
+.DESCRIPTION
+Returns the directory listing of the backup directory
+.EXAMPLE
+Get-Backups
+#>
+function Get-Backups([string]$Filter, [string]$BackupPath = $DefaultBackupPath) {
+    Get-ChildItem -Path $BackupPath -Filter $Filter | Sort-Object LastWriteTime -Descending
 }
 
 # -----------------
