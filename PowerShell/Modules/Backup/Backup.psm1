@@ -12,11 +12,20 @@ $DefaultBackupPath = "$HOME\Archives\Backups"
 .SYNOPSIS
 Creates a backup of the given item
 .DESCRIPTION
-Creates a copy of the given item in the defined backup folder along with the timestamp
+Creates a backup-copy of the given item in the specified folder
 .EXAMPLE
 Backup-Item important-file.txt
 #>
-function Backup-Item($Item, $BackupPath = $DefaultBackupPath) {
+function Backup-Item([string]$Item, [string]$BackupPath = $DefaultBackupPath) {
+    if (-Not (Test-Path $BackupPath -PathType Container)) {
+        $CreateBackup = Read-Host "The backup path [$BackupPath] does not exist! Do you wish to create it [Y/n]" || "Y"
+        if ($CreateBackup -like "y") {
+            New-Item -ItemType Directory $BackupPath
+        } else {
+            Write-Error "Cannot continue without valid backup path [$BackupPath]"
+        }
+    }
+
     $Date = Get-Date -Format FileDateTimeUniversal
     $Name = (Get-Item $Item).Name
     $Destination = Join-Path $BackupPath ($Date + "_" + $Name)
