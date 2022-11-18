@@ -68,7 +68,7 @@ function Restore-Item($Item, $Path = $PWD.Path, $BackupPath = $DefaultBackupPath
 # Remove-OldBackups
 # -----------------
 
-$retentionDays = -7
+$retentionDays = 7
 
 <#
 .SYNOPSIS
@@ -77,5 +77,5 @@ Remove old Backups
 Remove old backup entries older than the retention period (default: 7 days)
 #>
 function Remove-OldBackups($BackupPath = $DefaultBackupPath, $days = $retentionDays) {
-    Get-ChildItem -Path $BackupPath | Where-Object { (Get-Date) -lt $_.CreationTime.AddDays($days) } | Remove-Item
+    Get-ChildItem -Path $BackupPath | Where-Object { (Get-Date) -lt $_.CreationTime.AddDays(-$days) } | Remove-Item -Confirm
 }
