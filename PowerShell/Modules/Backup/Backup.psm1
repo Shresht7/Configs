@@ -70,6 +70,7 @@ function Restore-Item(
 ) {
     $MostRecentItem = Get-Backups -Filter *$Item* | Select-Object -First 1
 
+    # TODO: Select "Archive" or "Copy" based on the file extension
     if ($Type -eq "Archive") {
         Expand-Archive -Path $MostRecentItem -DestinationPath $Path -Confirm
     }
