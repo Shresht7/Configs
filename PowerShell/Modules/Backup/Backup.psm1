@@ -4,6 +4,8 @@
 
 $DefaultBackupPath = "$HOME\Archives\Backups"
 
+# #TODO: MaxBackupCount to keep
+
 # -----------
 # Backup-Item
 # -----------
@@ -48,6 +50,7 @@ function Backup-Item {
         # Create the Backup Directory if it doesn't exist
         if (-Not (Test-Path $BackupPath -PathType Container)) {
             Write-Verbose "Creating $BackupPath"
+            $null = New-Item -ItemType Directory $BackupPath
         }
     }
     
@@ -61,6 +64,7 @@ function Backup-Item {
         # Create the destination if it doesn't already exist
         if (-Not (Test-Path $Destination)) {
             Write-Verbose "Creating $Destination"
+            $null = New-Item $Destination -Force
         }
 
         # Perform Backup Operation
@@ -68,12 +72,12 @@ function Backup-Item {
             switch ($Type) {
                 "Archive" {
                     Write-Verbose "Archiving $Name`t-->`r$Destination"
-                    Compress-Archive -Path $Name -CompressionLevel Optimal -DestinationPath "$Destination.zip"
+                    $null = Compress-Archive -Path $Name -CompressionLevel Optimal -DestinationPath "$Destination.zip"
                     break
                 }
                 "Copy" {
                     Write-Verbose "Copying $Name`t-->`t$Destination"
-                    Copy-Item -Path $Name -Destination $Destination -Recurse
+                    $null = Copy-Item -Path $Name -Destination $Destination -Recurse
                     break
                 }
             }
