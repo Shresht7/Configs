@@ -12,39 +12,51 @@ $DefaultBackupPath = "$HOME\Archives\Backups"
 .SYNOPSIS
 Creates a backup of the given item
 .DESCRIPTION
-Creates a backup-copy of the given item in the specified folder
+Creates a backup-copy of the given item in the specified backup folder
 .EXAMPLE
 Backup-Item important-file.txt
+Creates an archive (.zip) backup of the important-file.txt in the default backup folder
+.EXAMPLE
+Backup-Item -Type Copy -Item important-file.txt
+Create a copy of the important-file.txt in the default backup folder
+.EXAMPLE
+Backup-Item -Type Archive -Item important-folder -BackupPath "$HOME/NewBackup"
+Creates an archive (.zip) backup of the important-folder in the user defined "$HOME/NewBackup" folder
 #>
 function Backup-Item(
-    [Parameter(Mandatory = $true)]
+    # Path of the item to backup
+    [Parameter(
+        Mandatory,
+        ValueFromPipeline,
+        ValueFromPipelineByPropertyName
+    )]
+    [ValidateScript({ Test-Path $Item })]
     [string]$Item,
 
-    [string]$BackupPath = $DefaultBackupPath,
-    
     [ValidateSet("Archive", "Copy")]
-    [string]$Type = "Archive"
+    [string]$Type = "Archive",
+
+    [Parameter()]
+    [string]$BackupPath = $DefaultBackupPath
 ) {
-    if (-Not (Test-Path $BackupPath -PathType Container)) {
-        $CreateBackup = Read-Host "The backup path [$BackupPath] does not exist! Do you wish to create it [Y/n]" || "Y"
-        if ($CreateBackup -like "y") {
+    Begin {
+        if (-Not (Test-Path $BackupPath -PathType Container)) {
             New-Item -ItemType Directory $BackupPath
         }
-        else {
-            Write-Error "Cannot continue without valid backup path [$BackupPath]"
+    }
+    Process {
+        $Date = Get-Date -Format FileDateTimeUniversal
+        $Name = (Get-Item $Item).Name
+        $Destination = Join-Path $BackupPath "$Date`_$Name"
+    
+        if ($Type -eq "Archive") {
+            Compress-Archive -Path $Item -CompressionLevel Optimal -DestinationPath "$Destination.zip"
+        }
+        if ($Type -eq "Copy") {
+            Copy-Item -Path $Item -Destination $Destination -Recurse
         }
     }
-
-    $Date = Get-Date -Format FileDateTimeUniversal
-    $Name = (Get-Item $Item).Name
-    $Destination = Join-Path $BackupPath "$Date`_$Name"
-
-    if ($Type -eq "Archive") {
-        Compress-Archive -Path $Item -CompressionLevel Optimal -DestinationPath "$Destination.zip"
-    }
-    if ($Type -eq "Copy") {
-        Copy-Item -Path $Item -Destination $Destination -Recurse
-    }
+    End { }
 }
 
 # ------------
