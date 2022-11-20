@@ -261,7 +261,6 @@ tooltips:
     template: " {{ .Name }} "
     tips:
       - shell
-      - shell
 
   # Present Working Directory
   - type: path
@@ -275,16 +274,11 @@ tooltips:
 
   # Project
   - type: project
-    style: diamond
-    leading_diamond: 
-    trailing_diamond: 
-    foreground: "p:black"
-    background: "p:white"
+    style: plain
     template: " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}\uf487 {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }}"
     tips:
       - project
       - version
-      - npm version
 
   # Git
   - type: git
@@ -300,16 +294,6 @@ tooltips:
     tips:
       - git
       - gh
-
-  # NPM
-  - type: npm
-    style: diamond
-    leading_diamond: 
-    trailing_diamond: 
-    foreground: "#193549"
-    background: "#ffeb3b"
-    tips:
-      - npm
 
   # Spotify
   - type: spotify
@@ -375,8 +359,8 @@ tooltips:
     style: diamond
     leading_diamond: 
     trailing_diamond: 
-    foreground: "#ffffff"
-    background: "#c386f1"
+    foreground: "p:white"
+    background: "p:blue"
     tips:
       - session
       - computer
