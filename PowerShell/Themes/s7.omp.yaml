@@ -217,23 +217,6 @@ blocks:
         template: "  {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
         type: aws
 
-      # Battery
-      - background: "#f36943"
-        background_templates:
-          - '{{if eq "Charging" .State.String}}#40c4ff{{end}}'
-          - '{{if eq "Discharging" .State.String}}#ff5722{{end}}'
-          - '{{if eq "Full" .State.String}}#4caf50{{end}}'
-        foreground: "#ffffff"
-        invert_powerline: true
-        powerline_symbol: 
-        properties:
-          charged_icon: " "
-          charging_icon: " "
-          discharging_icon: " "
-        style: powerline
-        template: " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }} "
-        type: battery
-
       # Time
       - background: p:white
         foreground: p:black
@@ -311,6 +294,26 @@ tooltips:
       - memory
       - sysinfo
     type: sysinfo
+
+  # Battery
+  - background: "#f36943"
+    background_templates:
+      - '{{if eq "Charging" .State.String}}#40c4ff{{end}}'
+      - '{{if eq "Discharging" .State.String}}#ff5722{{end}}'
+      - '{{if eq "Full" .State.String}}#4caf50{{end}}'
+    foreground: "#ffffff"
+    leading_diamond: 
+    trailing_diamond: 
+    properties:
+      charged_icon: " "
+      charging_icon: " "
+      discharging_icon: " "
+    style: diamond
+    template: " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }} "
+    type: battery
+    tips:
+      - battery
+      - power
 
   # WiFi
   - background: p:black
