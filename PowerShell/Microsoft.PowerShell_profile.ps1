@@ -12,6 +12,8 @@ function ~ { Set-Location ~ }; Set-Alias ~ home
 
 oh-my-posh init pwsh --config "~/Configs/PowerShell/Themes/s7.omp.yaml" | Invoke-Expression
 
+Set-Alias omp oh-my-posh.exe
+
 # --------------
 # Terminal-Icons
 # --------------
