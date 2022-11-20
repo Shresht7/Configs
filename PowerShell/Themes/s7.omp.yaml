@@ -284,6 +284,7 @@ tooltips:
     tips:
       - project
       - version
+      - npm version
 
   # Git
   - type: git
@@ -299,6 +300,16 @@ tooltips:
     tips:
       - git
       - gh
+
+  # NPM
+  - type: npm
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: "#193549"
+    background: "#ffeb3b"
+    tips:
+      - npm
 
   # Spotify
   - type: spotify
