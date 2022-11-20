@@ -305,9 +305,9 @@ tooltips:
     leading_diamond: 
     trailing_diamond: 
     properties:
-      charged_icon: " "
-      charging_icon: " "
-      discharging_icon: " "
+      charged_icon: " "
+      charging_icon: " "
+      discharging_icon: " "
     style: diamond
     template: " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }} "
     type: battery
