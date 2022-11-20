@@ -273,6 +273,18 @@ tooltips:
       - ls
       - explorer
 
+  # Project
+  - type: project
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: "p:black"
+    background: "p:white"
+    template: " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}\uf487 {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }}"
+    tips:
+      - project
+      - version
+
   # Git
   - type: git
     style: diamond
