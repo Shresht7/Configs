@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-
 # ================
 # GENERAL SETTINGS
 # ================
@@ -135,6 +133,16 @@ blocks:
         template: "  {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} "
         type: node
 
+      # Deno
+      - foreground: "#3C82F6"
+        invert_powerline: true
+        powerline_symbol: 
+        properties:
+          fetch_version: true
+        style: powerline
+        template: " 🦕 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        type: deno
+
       # Go
       - background: "#8ED1F7"
         foreground: "#111111"
@@ -157,17 +165,6 @@ blocks:
         template: " \uE7a8 {{ .Full }} "
         type: rust
 
-      # Julia
-      - background: "#4063D8"
-        foreground: "#111111"
-        invert_powerline: true
-        powerline_symbol: 
-        properties:
-          fetch_version: true
-        style: powerline
-        template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-        type: julia
-
       # Python
       - background: "#FFDE57"
         foreground: "#111111"
@@ -180,17 +177,25 @@ blocks:
         template: "  {{ .Full }} "
         type: python
 
-      # Ruby
-      - background: "#AE1401"
-        foreground: "#ffffff"
+      # Dotnet
+      - background: "#00ffff"
+        foreground: "#000000"
         invert_powerline: true
         powerline_symbol: 
         properties:
-          display_mode: files
           fetch_version: true
         style: powerline
-        template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-        type: ruby
+        type: dotnet
+
+      # Lua
+      - background: "blue"
+        foreground: "white"
+        invert_powerline: true
+        powerline_symbol: 
+        properties:
+          fetch_version: true
+        style: powerline
+        type: lua
 
       # Azure Functions
       - background: "#FEAC19"
