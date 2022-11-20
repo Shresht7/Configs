@@ -239,6 +239,17 @@ blocks:
 # ========
 
 tooltips:
+  # Time
+  - type: time
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: "#ffffff"
+    background: "#007ACC"
+    properties:
+      time_format: "Monday, 02-Jan-06 15:04:05 MST"
+    tips:
+      - time
   # Shell
   - background: "#0077c2"
     foreground: "#ffffff"
