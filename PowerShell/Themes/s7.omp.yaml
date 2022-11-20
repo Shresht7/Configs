@@ -305,6 +305,10 @@ tooltips:
     style: powerline
     template: "CPU: {{ (index .CPU 0).ModelName }} | Memory: {{ .PhysicalPercentUsed }}%"
     tips:
+      - sys
+      - cpu
+      - mem
+      - memory
       - sysinfo
     type: sysinfo
 
@@ -318,5 +322,6 @@ tooltips:
     template: "{{ if eq .Type \"wifi\"}}\uf1eb{{ else if eq .Type \"ethernet\"}}\uf6ff{{ end }} {{ .SSID }}"
     tips:
       - wifi
+      - network
     trailing_diamond: 
     type: connection
