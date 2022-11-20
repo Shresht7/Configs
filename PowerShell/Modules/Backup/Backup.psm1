@@ -30,8 +30,8 @@ function Backup-Item(
         ValueFromPipeline,
         ValueFromPipelineByPropertyName
     )]
-    [ValidateScript({ Test-Path $Item })]
-    [string]$Item,
+    [ValidateScript({ Test-Path $Name })]
+    [string]$Name,
 
     [ValidateSet("Archive", "Copy")]
     [string]$Type = "Archive",
@@ -46,15 +46,17 @@ function Backup-Item(
     }
     Process {
         $Date = Get-Date -Format FileDateTimeUniversal
-        $Name = (Get-Item $Item).Name
-        $Destination = Join-Path $BackupPath "$Date`_$Name"
+        $Name = (Get-Item $Name).Name
+        $Destination = Join-Path $BackupPath $Name "$Date`_$Name"
     
         if ($Type -eq "Archive") {
-            Compress-Archive -Path $Item -CompressionLevel Optimal -DestinationPath "$Destination.zip"
+            Compress-Archive -Path $Name -CompressionLevel Optimal -DestinationPath "$Destination.zip"
         }
         if ($Type -eq "Copy") {
-            Copy-Item -Path $Item -Destination $Destination -Recurse
+            Copy-Item -Path $Name -Destination $Destination -Recurse
         }
+
+        # TODO: Add logging capability. Write-Output of backup operation so the user can keep a record. Also pipe to file.
     }
     End { }
 }
