@@ -78,7 +78,7 @@ function Backup-Item {
         # Perform Backup Operation
         switch ($Type) {
             "Archive" {
-                Write-Verbose "Archiving $Name`t-->`r$Destination"
+                Write-Verbose "Archiving $Name`t-->`t$Destination"
                 $null = Compress-Archive -Path $Name -CompressionLevel Optimal -DestinationPath "$Destination.zip"
                 break
             }
