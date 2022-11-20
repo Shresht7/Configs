@@ -250,97 +250,99 @@ tooltips:
       time_format: "Monday, 02-Jan-06 15:04:05 MST"
     tips:
       - time
+
   # Shell
-  - background: "#0077c2"
-    foreground: "#ffffff"
-    leading_diamond: 
+  - type: shell
     style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    background: "#0077c2"
+    foreground: "#ffffff"
     template: " {{ .Name }} "
     tips:
       - shell
-    trailing_diamond: 
-    type: shell
+      - shell
 
   # Present Working Directory
-  - style: powerline
+  - type: path
+    style: powerline
     template: "{{ path .Path .Location }}"
     tips:
       - pwd
       - dir
       - ls
       - explorer
-    type: path
 
   # Git
-  - style: diamond
-    tips:
-      - git
-      - gh
-    foreground: p:white
-    background: p:git
+  - type: git
+    style: diamond
     leading_diamond: 
     trailing_diamond: 
+    foreground: p:white
+    background: p:git
     template: "{{ .HEAD }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}"
     properties:
       fetch_status: true
       fetch_upstream_icon: false
-    type: git
+    tips:
+      - git
+      - gh
 
   # Spotify
-  - properties:
+  - type: spotify
+    style: powerline
+    template: ' {{ .Icon }}{{ if ne .Status "stopped" }}{{ .Artist }} - {{ .Track }}{{ end }} '
+    properties:
       paused_icon: 
       playing_icon: 
       stopped_icon: 
       track_separator: "-"
-    style: powerline
-    template: ' {{ .Icon }}{{ if ne .Status "stopped" }}{{ .Artist }} - {{ .Track }}{{ end }} '
     tips:
       - spotify
-    type: spotify
 
   # System Information
-  - properties:
-      precision: 2
+  - type: sysinfo
     style: powerline
     template: "CPU: {{ (index .CPU 0).ModelName }} | Memory: {{ .PhysicalPercentUsed }}%"
+    properties:
+      precision: 2
     tips:
       - sys
       - cpu
       - mem
       - memory
       - sysinfo
-    type: sysinfo
 
   # Battery
-  - background: "#f36943"
+  - type: battery
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: "#ffffff"
+    background: "#f36943"
     background_templates:
       - '{{if eq "Charging" .State.String}}#40c4ff{{end}}'
       - '{{if eq "Discharging" .State.String}}#ff5722{{end}}'
       - '{{if eq "Full" .State.String}}#4caf50{{end}}'
-    foreground: "#ffffff"
-    leading_diamond: 
-    trailing_diamond: 
     properties:
       charged_icon: " "
       charging_icon: " "
       discharging_icon: " "
-    style: diamond
     template: " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }} "
-    type: battery
     tips:
       - battery
       - power
 
   # WiFi
-  - background: p:black
+  - type: connection
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    background: p:black
     background_templates:
       - "{{ if (lt .Signal 60) }}p:red{{ else if (lt .Signal 80) }}p:yellow{{ else }}p:green{{ end }}"
     foreground: p:white
-    leading_diamond: 
-    style: diamond
     template: "{{ if eq .Type \"wifi\"}}\uf1eb{{ else if eq .Type \"ethernet\"}}\uf6ff{{ end }} {{ .SSID }}"
     tips:
       - wifi
       - network
-    trailing_diamond: 
-    type: connection
