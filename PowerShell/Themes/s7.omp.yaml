@@ -89,12 +89,12 @@ blocks:
         type: git
 
       # Admin/Root
-      - background: p:orange
+      - background: p:red
         foreground: p:white
         powerline_symbol: 
         properties:
           root_icon: 
-        style: powerline
+        style: accordion
         template: "  "
         type: root
 
