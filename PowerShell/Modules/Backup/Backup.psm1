@@ -41,6 +41,10 @@ function Backup-Item {
         # The type of backup to create. "Archive" to create a `.zip` file or "Copy" to copy the contents as is
         [ValidateSet("Archive", "Copy")]
         [string]$Type = "Archive",
+
+        # The algorithm to use to get file hashes
+        [ValidateSet("MD5", "SHA1", "SHA256", "SHA384", "SHA512")]
+        [string]$HashAlgorithm = "SHA256",
     
         # Path to the backup directory
         [string]$BackupPath = $DefaultBackupPath
@@ -60,7 +64,7 @@ function Backup-Item {
         $Item = Get-Item $OriginalPath
         $Date = Get-Date -Format FileDateTimeUniversal
         $Destination = Join-Path $BackupPath $Item.BaseName "$Date`_$($Item.Name)"
-        $Hash = Get-FileHash $Item -Algorithm SHA256
+        $Hash = Get-FileHash $Item -Algorithm $HashAlgorithm
     
         # Create the destination if it doesn't already exist
         if (-Not (Test-Path $Destination)) {
