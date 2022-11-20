@@ -47,29 +47,32 @@ function Backup-Item {
     Begin {
         # Create the Backup Directory if it doesn't exist
         if (-Not (Test-Path $BackupPath -PathType Container)) {
-            New-Item -ItemType Directory $BackupPath
+            Write-Verbose "Creating $BackupPath"
         }
     }
     
     Process {
         # Gather Information
+        $OriginalPath = Resolve-Path $Name
+        $Item = Get-Item $OriginalPath
         $Date = Get-Date -Format FileDateTimeUniversal
-        $Item = Get-Item $Name
-        $Destination = Join-Path $BackupPath $Item.BaseName "$Date`_$($item.Name)"
+        $Destination = Join-Path $BackupPath $Item.BaseName "$Date`_$($Item.Name)"
     
         # Create the destination if it doesn't already exist
         if (-Not (Test-Path $Destination)) {
-            New-Item $Destination -Force
+            Write-Verbose "Creating $Destination"
         }
 
         # Perform Backup Operation
         if ($PSCmdlet.ShouldProcess($Destination, "Backing up $Name to $Destination")) {
             switch ($Type) {
                 "Archive" {
+                    Write-Verbose "Archiving $Name`t-->`r$Destination"
                     Compress-Archive -Path $Name -CompressionLevel Optimal -DestinationPath "$Destination.zip"
                     break
                 }
                 "Copy" {
+                    Write-Verbose "Copying $Name`t-->`t$Destination"
                     Copy-Item -Path $Name -Destination $Destination -Recurse
                     break
                 }
