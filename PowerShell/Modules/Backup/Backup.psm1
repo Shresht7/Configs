@@ -63,13 +63,15 @@ function Backup-Item {
         $OriginalPath = Resolve-Path $Name
         $Item = Get-Item $OriginalPath
         $Date = Get-Date -Format FileDateTimeUniversal
-        $Destination = Join-Path $BackupPath $Item.BaseName "$Date`_$($Item.Name)"
-        $Hash = Get-FileHash $Item -Algorithm $HashAlgorithm
-    
+
+        # Determine Destination
+        $DestFolder = Join-Path $BackupPath $Item.BaseName
+        $Destination = Join-Path $DestFolder "$Date`_$($Item.Name)$(if ($Type -eq "Archive") { ".zip" })"
+        
         # Create the destination if it doesn't already exist
-        if (-Not (Test-Path $Destination)) {
-            Write-Verbose "Creating $Destination"
-            $null = New-Item $Destination -Force
+        if (-Not (Test-Path $DestFolder)) {
+            Write-Verbose "Creating $DestFolder"
+            $null = New-Item -ItemType Directory $DestFolder -Force
         }
 
         # Check Should Process and exit if false
@@ -79,7 +81,7 @@ function Backup-Item {
         switch ($Type) {
             "Archive" {
                 Write-Verbose "Archiving $Name`t-->`t$Destination"
-                $null = Compress-Archive -Path $Name -CompressionLevel Optimal -DestinationPath "$Destination.zip"
+                $null = Compress-Archive -Path $Name -CompressionLevel Optimal -DestinationPath $Destination
                 break
             }
             "Copy" {
@@ -89,6 +91,8 @@ function Backup-Item {
             }
         }
 
+        # Get file hash of the produced backup
+        $Hash = Get-FileHash $Destination
         
         $Output = [PSCustomObject]@{
             Name        = $Name
@@ -99,6 +103,7 @@ function Backup-Item {
             Hash        = $Hash.Hash   
         }
 
+        # Write information down to a csv file
         $Output | Export-Csv -Path "$BackupPath\backups.csv"
 
         return $Output
