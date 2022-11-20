@@ -60,6 +60,7 @@ function Backup-Item {
         $Item = Get-Item $OriginalPath
         $Date = Get-Date -Format FileDateTimeUniversal
         $Destination = Join-Path $BackupPath $Item.BaseName "$Date`_$($Item.Name)"
+        $Hash = Get-FileHash $Item -Algorithm SHA256
     
         # Create the destination if it doesn't already exist
         if (-Not (Test-Path $Destination)) {
@@ -67,22 +68,36 @@ function Backup-Item {
             $null = New-Item $Destination -Force
         }
 
+        # Check Should Process and exit if false
+        if (!$PSCmdlet.ShouldProcess($Destination, "Backing up $Name to $Destination")) { return }
+        
         # Perform Backup Operation
-        if ($PSCmdlet.ShouldProcess($Destination, "Backing up $Name to $Destination")) {
-            switch ($Type) {
-                "Archive" {
-                    Write-Verbose "Archiving $Name`t-->`r$Destination"
-                    $null = Compress-Archive -Path $Name -CompressionLevel Optimal -DestinationPath "$Destination.zip"
-                    break
-                }
-                "Copy" {
-                    Write-Verbose "Copying $Name`t-->`t$Destination"
-                    $null = Copy-Item -Path $Name -Destination $Destination -Recurse
-                    break
-                }
+        switch ($Type) {
+            "Archive" {
+                Write-Verbose "Archiving $Name`t-->`r$Destination"
+                $null = Compress-Archive -Path $Name -CompressionLevel Optimal -DestinationPath "$Destination.zip"
+                break
+            }
+            "Copy" {
+                Write-Verbose "Copying $Name`t-->`t$Destination"
+                $null = Copy-Item -Path $Name -Destination $Destination -Recurse
+                break
             }
         }
-        # TODO: Add logging capability. Write-Output of backup operation so the user can keep a record. Also pipe to file.
+
+        
+        $Output = [PSCustomObject]@{
+            Name        = $Name
+            Source      = $OriginalPath
+            Destination = $Destination
+            Date        = Get-Date
+            Algorithm   = $Hash.Algorithm
+            Hash        = $Hash.Hash   
+        }
+
+        $Output | Export-Csv -Path "$BackupPath\backups.csv"
+
+        return $Output
     }
 
     End { }
