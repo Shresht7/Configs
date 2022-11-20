@@ -346,3 +346,15 @@ tooltips:
     tips:
       - wifi
       - network
+
+  # Session
+  - type: session
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: "#ffffff"
+    background: "#c386f1"
+    tips:
+      - session
+      - computer
+      - hostname
