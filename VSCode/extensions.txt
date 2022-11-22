@@ -3,7 +3,6 @@ amazonwebservices.aws-toolkit-vscode
 arcticicestudio.nord-visual-studio-code
 astro-build.astro-vscode
 aws-amplify.aws-amplify-vscode
-bierner.markdown-mermaid
 bungcip.better-toml
 byCedric.vscode-expo
 christian-kohler.npm-intellisense
@@ -13,8 +12,8 @@ dracula-theme.theme-dracula
 eamodio.gitlens
 ecmel.vscode-html-css
 Equinusocio.vsc-community-material-theme
-esbenp.prettier-vscode
 firefox-devtools.vscode-firefox-debug
+gera2ld.markmap-vscode
 GitHub.codespaces
 GitHub.copilot
 GitHub.github-vscode-theme
