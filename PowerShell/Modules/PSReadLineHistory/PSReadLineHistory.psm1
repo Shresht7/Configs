@@ -9,10 +9,13 @@ Get the path to the PSReadLine history file
 Returns the path to the PSReadLine history file
 .EXAMPLE
 Get-PSReadLineHistoryPath
+Returns the path to the PSReadLine history file
 .EXAMPLE
 code (Get-PSReadLineHistoryPath)
+Opens the PSReadLine history file with VS Code
 .EXAMPLE
 Set-Location (Split-Path (Get-PSReadLineHistoryPath))
+Set-Location to parent folder of the PSReadLine history file
 #>
 function Get-PSReadLineHistoryPath { (Get-PSReadLineOption).HistorySavePath }
 
@@ -23,6 +26,7 @@ Get the PSReadLine history contents
 Returns the contents of the PSReadLine history file
 .EXAMPLE
 Get-PSReadLineHistory
+Returns the content of the PSReadLine history file
 #>
 function Get-PSReadLineHistory { Get-Content (Get-PSReadLineHistoryPath) }
 
@@ -33,26 +37,32 @@ Set the PSReadLine history contents
 Sets (overwrites) the contents of the PSReadLine history file. Useful after performing
 some manipulation on the existing history (using Get-PSReadLineHistory).
 .EXAMPLE
-$content = ...
-Set-PSReadLineHistory $content
+Set-PSReadLineHistory ($Content)
 #>
-function Set-PSReadLineHistory($Content) { Set-Content -Path (Get-PSReadLineHistoryPath) -Value $Content }
+function Set-PSReadLineHistory(
+    [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+    [string]$Content
+) {
+    Set-Content -Path (Get-PSReadLineHistoryPath) -Value $Content
+}
 
 <#
 .SYNOPSIS
 Remove commands from the PSReadLine history
 .DESCRIPTION
 Removes the selected commands and updates the PSReadLine history. If no arguments are passed, opens a 
-multi-select Fzf input that you can use to choose the commands. Any and all commands that match any of
+multi-select fzf input that you can use to choose the commands. Any and all commands that match any of
 the selection will be removed from the PSReadLine history.
 .INPUTS $MarkedForRemoval
 Items that you want to remove from the history. If no arguments are passed, opens a multi-select fzf input
 .EXAMPLE
 Remove-PSReadLineHistoryItems
+Open an interactive multi-select fzf input to selectively remove commands
 .EXAMPLE
 Remove-PSReadLineHistoryItems "git add ."
+Removes the "git add ." command from the history
 #>
-function Remove-PSReadLineHistoryItems($MarkedForRemoval = (Get-PSReadLineHistory | Invoke-Fzf -Multi -Cycle)) {
+function Remove-PSReadLineHistoryItems([string]$MarkedForRemoval = (Get-PSReadLineHistory | Invoke-Fzf -Multi -Cycle)) {
     # Get the PSReadLineHistory
     $ReadlineHistory = Get-PSReadLineHistory
 	
@@ -74,6 +84,7 @@ Remove duplicate items from the history
 Removes duplicate entries and updates the PSReadLine history
 .EXAMPLE
 Remove-PSReadLineHistoryDuplicates
+Removes duplicate entries from the PSReadLine history only keeping the latest command
 #>
 function Remove-PSReadLineHistoryDuplicates() {
     $answer = Read-Host "Are you sure you want to remove all duplicate history items? [y/N]" || "N"
@@ -105,6 +116,7 @@ Gets the frequency of the commands in the history
 Returns a hash-table containing commands from the PSReadLine history and the number of times they've been used
 .EXAMPLE
 Get-PSReadLineHistoryFrequency
+Returns a hash-table containing commands from the PSReadLine history and their usage frequency
 #>
 function Get-PSReadLineHistoryFrequency() {
     $frequency = @{}
