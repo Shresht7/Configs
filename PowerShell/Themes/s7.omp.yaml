@@ -93,7 +93,7 @@ blocks:
         properties:
           root_icon: 
         style: accordion
-        template: "  "
+        template: " 🌟 "
         type: root
 
   # === RIGHT ===
@@ -119,7 +119,7 @@ blocks:
         properties:
           always_enabled: true
         style: powerline
-        template: "\U0001F556{{ .FormattedMs }} "
+        template: " \U0001F556{{ .FormattedMs }} "
         type: executiontime
 
       # Node
