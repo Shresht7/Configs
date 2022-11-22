@@ -5,7 +5,9 @@
 version: 2
 console_title_template: "{{.Folder}}"
 final_space: true
-# terminal_background: "#333333"
+terminal_background: "#282c34"
+
+# Symbols: ❯            
 
 # =============
 # COLOR PALETTE
@@ -21,7 +23,7 @@ palette:
   white: "#EEEEEE"
   yellow: "#DD6611"
   git: "#f04f33"
-  git-background: "#fffb38"
+  git-background: "#d1ff38"
   git-foreground: "#193549"
   git-modified: "#FF9248"
   git-diverged: "#ff4500"
@@ -57,7 +59,7 @@ blocks:
       # Path
       - background: p:black
         foreground: p:white
-        powerline_symbol: 
+        powerline_symbol: 
         properties:
           folder_separator_icon: "  "
           home_icon: "~"
@@ -66,35 +68,27 @@ blocks:
         template: "  {{ .Path }} "
         type: path
 
-      # Git
-      - background: "p:git-background"
-        background_templates:
-          - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:git-modified{{ end }}"
-          - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:git-diverged{{ end }}"
-          - "{{ if gt .Ahead 0 }}p:git-ahead{{ end }}"
-          - "{{ if gt .Behind 0 }}p:git-behind{{ end }}"
-        foreground: "p:git-foreground"
-        leading_diamond: 
+      - type: text
+        style: accordion
         powerline_symbol: 
-        properties:
-          branch_max_length: 25
-          fetch_stash_count: true
-          fetch_status: true
-          fetch_upstream_icon: true
-        style: powerline
-        template: " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
-        trailing_diamond: 
-        type: git
+        template: ""
+        foreground: transparent
+        background: transparent
 
       # Admin/Root
-      - background: p:red
+      - background: p:orange
         foreground: p:white
+        style: powerline
         powerline_symbol: 
         properties:
           root_icon: 
-        style: accordion
-        template: " 🌟 "
+        template: " 🌟"
         type: root
+
+      - type: text
+        style: accordion
+        powerline_symbol: 
+        background: p:orange
 
   # === RIGHT ===
   - type: rprompt
@@ -104,23 +98,51 @@ blocks:
         background_templates:
           - "{{ if gt .Code 0 }}p:red{{ end }}"
         foreground: p:white
-        leading_diamond: 
+        style: powerline
+        powerline_symbol: 
+        invert_powerline: true
         properties:
           always_enabled: true
-        style: diamond
         template: "  "
         type: exit
 
       # Execution Time
       - background: p:black
         foreground: p:white
-        invert_powerline: true
-        powerline_symbol: 
         properties:
           always_enabled: true
         style: powerline
+        powerline_symbol: 
+        invert_powerline: true
         template: " \U0001F556{{ .FormattedMs }} "
         type: executiontime
+
+      - type: text
+        style: accordion
+        powerline_symbol: 
+        invert_powerline: true
+        template: ""
+        foreground: transparent
+        background: transparent
+
+      # Git
+      - background: "p:git-background"
+        background_templates:
+          - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:git-modified{{ end }}"
+          - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:git-diverged{{ end }}"
+          - "{{ if gt .Ahead 0 }}p:git-ahead{{ end }}"
+          - "{{ if gt .Behind 0 }}p:git-behind{{ end }}"
+        foreground: "p:git-foreground"
+        powerline_symbol: 
+        invert_powerline: true
+        properties:
+          branch_max_length: 25
+          fetch_stash_count: true
+          fetch_status: true
+          fetch_upstream_icon: true
+        style: powerline
+        template: " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
+        type: git
 
       # Node
       - background: "#6CA35E"
@@ -130,7 +152,8 @@ blocks:
         properties:
           fetch_version: true
         style: powerline
-        template: "  {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} "
+        template: "  "
+        # template: "  {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} "
         type: node
 
       # Deno
@@ -140,7 +163,8 @@ blocks:
         properties:
           fetch_version: true
         style: powerline
-        template: " 🦕 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        template: " 🦕 "
+        # template: " 🦕 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: deno
 
       # Go
@@ -151,7 +175,8 @@ blocks:
         properties:
           fetch_version: true
         style: powerline
-        template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        template: "  "
+        # template: "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: go
 
       # Rust
@@ -162,7 +187,8 @@ blocks:
         powerline_symbol: 
         properties:
           fetch_version: true
-        template: " \uE7a8 {{ .Full }} "
+        template: " \uE7a8 "
+        # template: " \uE7a8 {{ .Full }} "
         type: rust
 
       # Python
@@ -174,7 +200,8 @@ blocks:
           display_mode: files
           fetch_virtual_env: false
         style: powerline
-        template: "  {{ .Full }} "
+        template: "  "
+        # template: "  {{ .Full }} "
         type: python
 
       # Dotnet
@@ -206,7 +233,8 @@ blocks:
           display_mode: files
           fetch_version: false
         style: powerline
-        template: " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        template: "  "
+        # template: " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: azfunc
 
       # Amazon Web Services
@@ -253,6 +281,7 @@ tooltips:
 
   # Shell
   - type: shell
+    newline: true
     style: diamond
     leading_diamond: 
     trailing_diamond: 
