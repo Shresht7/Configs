@@ -41,9 +41,12 @@ Set-PSReadLineHistory ($Content)
 #>
 function Set-PSReadLineHistory(
     [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
-    [string]$Content
+    [string[]]$Content
 ) {
-    Set-Content -Path (Get-PSReadLineHistoryPath) -Value $Content
+    $Path = Get-PSReadLineHistoryPath
+    $Temp = "$Path.temp"
+    $Content | Out-File $Temp
+    Move-Item -Path $Temp -Destination $Path -Force
 }
 
 <#
@@ -74,7 +77,7 @@ function Remove-PSReadLineHistoryItems([string]$MarkedForRemoval = (Get-PSReadLi
     }
 
     # Set Content of the PSReadLineHistory
-    Set-PSReadLineHistory ($ReadlineHistory)
+    Set-PSReadLineHistory $ReadlineHistory
 }
 
 <#
@@ -93,20 +96,13 @@ function Remove-PSReadLineHistoryDuplicates() {
     $PSReadLineHistory = Get-PSReadLineHistory
     $originalCount = ($PSReadLineHistory | Measure-Object -Line).Lines
 
-    # Iterate backwards to preserve the most recent command
-    $commands = New-Object System.Collections.ArrayList
-    for ($i = $originalCount; $i -gt 0; $i--) {
-        $line = $PSReadLineHistory[$i]
-        if (!$commands.Contains($line)) {
-            $null = $commands.Add($line)
-        }
-    }
+    $PSReadLineHistory = $PSReadLineHistory | Sort-Object -Unique
 
-    $finalCount = ($commands | Measure-Object -Line).Lines
+    $finalCount = ($PSReadLineHistory | Measure-Object -Line).Lines
     $diffCount = $originalCount - $finalCount
     Write-Host "$diffCount duplicate commands removed!"
 
-    Set-PSReadLineHistory ($commands)
+    Set-PSReadLineHistory $PSReadLineHistory
 }
 
 <#
