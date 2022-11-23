@@ -105,6 +105,27 @@ function Remove-PSReadLineHistoryItems([string]$MarkedForRemoval = (Get-PSReadLi
 
 <#
 .SYNOPSIS
+Remove the last command recorded in the PSReadLine history
+.DESCRIPTION
+Removes the last x commands from the PSReadLine history
+.PARAMETER Count
+The number of commands to remove (defaults to 1)
+.EXAMPLE
+Remove-PSRemoveLast
+Remove the last command
+.EXAMPLE
+Remove-PSRemoveLast 5
+Remove the last 5 commands
+#>
+function Remove-PSReadLineLast([Uint32]$Count = 1) {
+    $PSReadLineHistory = Get-PSReadLineHistory
+    $Length = $PSReadLineHistory.Length
+    # Get everything but the last $Count items (accounting for off-by-one and the current command itself)
+    Set-PSReadLineHistory $PSReadLineHistory[0..($Length - 2 - $Count)]
+}
+
+<#
+.SYNOPSIS
 Remove duplicate items from the history
 .DESCRIPTION
 Removes duplicate entries and updates the PSReadLine history
