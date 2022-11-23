@@ -35,7 +35,9 @@ function Get-PSReadLineHistory { Get-Content (Get-PSReadLineHistoryPath) }
 Set the PSReadLine history contents
 .DESCRIPTION
 Sets (overwrites) the contents of the PSReadLine history file. Useful after performing
-some manipulation on the existing history (using Get-PSReadLineHistory).
+some manipulation on the existing history (using Get-PSReadLineHistory)
+.PARAMETER Content
+The new contents of the PSReadLine history file
 .EXAMPLE
 Set-PSReadLineHistory ($Content)
 #>
@@ -51,12 +53,35 @@ function Set-PSReadLineHistory(
 
 <#
 .SYNOPSIS
+Gets the frequency of the commands in the history
+.DESCRIPTION
+Returns a hash-table containing commands from the PSReadLine history and the number of times they've been used
+.EXAMPLE
+Get-PSReadLineHistoryFrequency
+Returns a hash-table containing commands from the PSReadLine history and their usage frequency
+#>
+function Get-PSReadLineHistoryFrequency {
+    $frequency = @{}
+    foreach ($line in Get-PSReadLineHistory) {
+        if (!$frequency[$line]) {
+            $frequency.Add($line, 1)
+        }
+        else {
+            $frequency[$line]++
+        }
+    }
+    $sorted = $frequency.GetEnumerator() | Sort-Object -Property Value
+    Write-Output $sorted
+}
+
+<#
+.SYNOPSIS
 Remove commands from the PSReadLine history
 .DESCRIPTION
 Removes the selected commands and updates the PSReadLine history. If no arguments are passed, opens a 
 multi-select fzf input that you can use to choose the commands. Any and all commands that match any of
 the selection will be removed from the PSReadLine history.
-.INPUTS $MarkedForRemoval
+.PARAMETER $MarkedForRemoval
 Items that you want to remove from the history. If no arguments are passed, opens a multi-select fzf input
 .EXAMPLE
 Remove-PSReadLineHistoryItems
@@ -68,8 +93,6 @@ Removes the "git add ." command from the history
 function Remove-PSReadLineHistoryItems([string]$MarkedForRemoval = (Get-PSReadLineHistory | Invoke-Fzf -Multi -Cycle)) {
     # Get the PSReadLineHistory
     $ReadlineHistory = Get-PSReadLineHistory
-	
-    # TODO: Add Flag to only remove duplicates (leave 1 entry behind)
 	
     # Iterate over all items that are marked-for-removal and filter the ReadLineHistory
     foreach ($filter in $MarkedForRemoval) {
@@ -89,7 +112,7 @@ Removes duplicate entries and updates the PSReadLine history
 Remove-PSReadLineHistoryDuplicates
 Removes duplicate entries from the PSReadLine history only keeping the latest command
 #>
-function Remove-PSReadLineHistoryDuplicates() {
+function Remove-PSReadLineHistoryDuplicates {
     $answer = Read-Host "Are you sure you want to remove all duplicate history items? [y/N]" || "N"
     if ($answer -NotLike "Y") { return }
 
@@ -103,27 +126,4 @@ function Remove-PSReadLineHistoryDuplicates() {
     Write-Host "$diffCount duplicate commands removed!"
 
     Set-PSReadLineHistory $PSReadLineHistory
-}
-
-<#
-.SYNOPSIS
-Gets the frequency of the commands in the history
-.DESCRIPTION
-Returns a hash-table containing commands from the PSReadLine history and the number of times they've been used
-.EXAMPLE
-Get-PSReadLineHistoryFrequency
-Returns a hash-table containing commands from the PSReadLine history and their usage frequency
-#>
-function Get-PSReadLineHistoryFrequency() {
-    $frequency = @{}
-    foreach ($line in Get-PSReadLineHistory) {
-        if (!$frequency[$line]) {
-            $frequency.Add($line, 1)
-        }
-        else {
-            $frequency[$line]++
-        }
-    }
-    $sorted = $frequency.GetEnumerator() | Sort-Object -Property Value
-    Write-Output $sorted
 }
