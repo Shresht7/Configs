@@ -120,8 +120,14 @@ Remove the last 5 commands
 function Remove-PSReadLineLast([Uint32]$Count = 1) {
     $PSReadLineHistory = Get-PSReadLineHistory
     $Length = $PSReadLineHistory.Length
+    $Mark = $Length - $Count
+    
+    $PSReadLineHistory[$Mark..$Length] | ForEach-Object { Write-Host "[Remove]:" $_ }
+    $Check = Read-Host "`nWill Remove the above lines [y/N]" || "N"
+    if ($Check -ne "Y") { return }
+
     # Get everything but the last $Count items (accounting for off-by-one and the current command itself)
-    Set-PSReadLineHistory $PSReadLineHistory[0..($Length - 2 - $Count)]
+    Set-PSReadLineHistory $PSReadLineHistory[0..($Mark - 1)]
 }
 
 <#
