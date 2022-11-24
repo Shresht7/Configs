@@ -166,3 +166,32 @@ function Start-App(
     $App = Get-StartApps | Where-Object { $_.Name -eq $AppName }
     Start-Process "explorer.exe" -ArgumentList "shell:AppsFolder\$(($App).AppId)"
 }
+
+<#
+.SYNOPSIS
+Reimports all modules
+.DESCRIPTION
+Resets by force re-importing the modules
+.PARAMETER $Path
+The directory that contains the modules. Defaults to the Documents\PowerShell\Modules directory
+.EXAMPLE
+Reset-Modules
+Force resets all modules in the PowerShell module directory
+.EXAMPLE
+Reset-Modules "$HOME\Configs\PowerShell\Modules"
+Force resets all modules in Configs\PowerShell\Modules directory
+#>
+function Reset-Modules(
+    [ValidateScript({ Test-Path $_ })]
+    [string]$Path = "$HOME\Documents\PowerShell\Modules",
+
+    [Parameter(ValueFromPipeline, ValueFromPipelineByPropertyName)]
+    [string[]]$ModuleNames
+) {
+    if ($Path) {
+        Get-ChildItem -Directory $Path | Import-Module -Force
+    }
+    else {
+        $ModuleNames | Import-Module -Force
+    }
+}
