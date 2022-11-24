@@ -64,12 +64,15 @@ Set-PSReadLineKeyHandler -Key Alt+w `
     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
 }
 
+$Env:PSReadLineEnable = $True
+
 # History handler
 Set-PSReadLineOption -AddToHistoryHandler {
     param([string]$line)
     $minimumLength = 3
     $sensitive = "password|asplaintext|token|key|secret|hook|webhook"
-    return ($line.Length -gt $minimumLength) -and
+    return ($Env:PSReadLineEnable -eq $True) -and
+        ($line.Length -gt $minimumLength) -and
         ($line[0] -ne ' ') -and
         ($line[0] -ne ';') -and
         ($line -NotMatch $sensitive)
