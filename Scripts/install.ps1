@@ -5,6 +5,11 @@
 # Exit script if not running as administrator
 if (-Not (Test-IsElevated)) { Write-Error -Message "Requires Administrator Privileges!"; return }
 
+# Symlink Everything into Place
+# -----------------------------
+
+. $PSScriptRoot\Symlink.ps1
+
 # Install PowerShell Modules
 # --------------------------
 
