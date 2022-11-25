@@ -91,33 +91,41 @@ Get the size of the current directory by recursing into sub-directories
 function Get-Size(
     [Parameter(ValueFromPipeline, ValueFromPipelineByPropertyName)]
     [ValidateScript({ Test-Path $_ })]
-    [string]$Path = ".",
+    [string[]]$Path = ".",
 
     [switch]$Recurse
 ) {
-    $Item = Get-Item $Path
-
-    # If the Item is a directory
-    if ($Item.PSIsContainer) {
-        $Output = $Item | Get-ChildItem -Recurse:$Recurse | Measure-Object -Sum Length | Select-Object `
-        @{Name = "Path"; Expression = { $Item.FullName } },
-        @{Name = "Files"; Expression = { $_.Count } },
-        @{Name = "Size"; Expression = { $_.Sum } },
-        @{Name = "Bytes"; Expression = { $_.Sum } },
-        @{Name = "Kilobytes"; Expression = { $_.Sum / 1Kb } },
-        @{Name = "Megabytes"; Expression = { $_.Sum / 1Mb } },
-        @{Name = "Gigabytes"; Expression = { $_.Sum / 1Gb } }
+    Begin {
+        $Output = [System.Collections.ArrayList]::new()
     }
-    # Else if the item is a file
-    else {
-        $Output = $Item | Select-Object `
-        @{Name = "Path"; Expression = { $Item.FullName } },
-        @{Name = "Size"; Expression = { $_.Length } },
-        @{Name = "Bytes"; Expression = { $_.Length } },
-        @{Name = "Kilobytes"; Expression = { $_.Length / 1Kb } },
-        @{Name = "Megabytes"; Expression = { $_.Length / 1Mb } },
-        @{Name = "Gigabytes"; Expression = { $_.Length / 1Gb } }
+    Process {
+        $Item = Get-Item $Path
+        
+        # If the Item is a directory
+        if ($Item.PSIsContainer) {
+            $null = $Output.Add(($Item | Get-ChildItem -Recurse:$Recurse | Measure-Object -Sum Length | Select-Object `
+                    @{Name = "Path"; Expression = { $Item.FullName } },
+                    @{Name = "Files"; Expression = { $_.Count } },
+                    @{Name = "Size"; Expression = { $_.Sum } },
+                    @{Name = "Bytes"; Expression = { $_.Sum } },
+                    @{Name = "Kilobytes"; Expression = { $_.Sum / 1Kb } },
+                    @{Name = "Megabytes"; Expression = { $_.Sum / 1Mb } },
+                    @{Name = "Gigabytes"; Expression = { $_.Sum / 1Gb } }
+                ))
+        }
+        # Else if the item is a file
+        else {
+            $null = $Output.Add(($Item | Select-Object `
+                    @{Name = "Path"; Expression = { $Item.FullName } },
+                    @{Name = "Size"; Expression = { $_.Length } },
+                    @{Name = "Bytes"; Expression = { $_.Length } },
+                    @{Name = "Kilobytes"; Expression = { $_.Length / 1Kb } },
+                    @{Name = "Megabytes"; Expression = { $_.Length / 1Mb } },
+                    @{Name = "Gigabytes"; Expression = { $_.Length / 1Gb } }
+                ))
+        }
     }
-
-    return $Output
+    End {
+        return $Output
+    }
 }
