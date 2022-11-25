@@ -1,6 +1,6 @@
 # Configs
 
-Configuration of my system. 
+System Configuration
 
 ---
 
@@ -8,9 +8,9 @@ Configuration of my system.
 
 ### Symlinks
 
-- [`install.ps1`](Scripts/install.ps1) - Responsible for setting up the entire system by installing various packages and applications
-- [`symlink.ps1`](Scripts/symlink.ps1) - Symlinks dotfiles to the correct places
-- [`snapshot.ps1`](Scripts/snapshot.ps1) - Takes a snapshot of the installed packages
+- [`Install.ps1`](Scripts/Install.ps1) - Responsible for setting up the entire system by installing various packages and applications
+- [`Symlink.ps1`](Scripts/Symlink.ps1) - Symlinks dotfiles, settings and modules to the right places
+- [`Snapshot.ps1`](Scripts/Snapshot.ps1) - Takes a snapshot of the installed packages
 
 ---
 
@@ -21,6 +21,12 @@ https://git-scm.com/
 ### gitconfig
 
 [`.gitconfig`](Git/.gitconfig)
+
+## GitHub
+
+### gh
+
+[GitHub CLI extensions](GitHub\gh\extensions.txt)
 
 ## PowerShell
 
