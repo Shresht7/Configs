@@ -104,6 +104,7 @@ function Get-Size(
         # If the Item is a directory
         if ($Item.PSIsContainer) {
             $null = $Output.Add(($Item | Get-ChildItem -Recurse:$Recurse | Measure-Object -Sum Length | Select-Object `
+                    @{Name = "Name"; Expression = { $Item.Name } },
                     @{Name = "Path"; Expression = { $Item.FullName } },
                     @{Name = "Files"; Expression = { $_.Count } },
                     @{Name = "Size"; Expression = { $_.Sum } },
@@ -116,6 +117,7 @@ function Get-Size(
         # Else if the item is a file
         else {
             $null = $Output.Add(($Item | Select-Object `
+                    @{Name = "Name"; Expression = { $Item.Name } },
                     @{Name = "Path"; Expression = { $Item.FullName } },
                     @{Name = "Size"; Expression = { $_.Length } },
                     @{Name = "Bytes"; Expression = { $_.Length } },
