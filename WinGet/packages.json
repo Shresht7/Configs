@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2022-11-22T16:33:22.586-00:00",
+	"CreationDate" : "2022-11-25T20:18:49.496-00:00",
 	"Sources" : 
 	[
 		{
@@ -116,6 +116,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK"
 				}
 			],
 			"SourceDetails" : 

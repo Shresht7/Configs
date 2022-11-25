@@ -1,73 +1,73 @@
 {
     "apps": [
         {
-            "Updated": "2022-10-14T23:01:50.8344578+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "22.01",
+            "Source": "main",
+            "Updated": "2022-10-14T23:01:50.8344578+05:30",
             "Name": "7zip"
         },
         {
-            "Updated": "2022-10-08T10:15:34.9276445+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "0.22.1",
+            "Source": "main",
+            "Updated": "2022-10-08T10:15:34.9276445+05:30",
             "Name": "bat"
         },
         {
-            "Updated": "2022-10-08T11:57:04.4150969+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "0.6.8",
+            "Source": "main",
+            "Updated": "2022-10-08T11:57:04.4150969+05:30",
             "Name": "bottom"
         },
         {
-            "Updated": "2022-11-05T00:43:43.5574834+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "8.5.2",
+            "Source": "main",
+            "Updated": "2022-11-05T00:43:43.5574834+05:30",
             "Name": "fd"
         },
         {
-            "Updated": "2022-10-30T20:53:25.7721242+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "5.1.2",
+            "Source": "main",
+            "Updated": "2022-10-30T20:53:25.7721242+05:30",
             "Name": "ffmpeg"
         },
         {
-            "Updated": "2022-10-08T10:39:29.1210256+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "0.34.0",
+            "Source": "main",
+            "Updated": "2022-10-08T10:39:29.1210256+05:30",
             "Name": "fzf"
         },
         {
-            "Updated": "2022-10-08T10:17:56.8514916+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "608",
+            "Source": "main",
+            "Updated": "2022-10-08T10:17:56.8514916+05:30",
             "Name": "less"
         },
         {
-            "Updated": "2022-10-14T23:00:48.1542922+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "2.0.11",
+            "Source": "main",
+            "Updated": "2022-10-14T23:00:48.1542922+05:30",
             "Name": "micro"
         },
         {
-            "Updated": "2022-10-08T11:33:49.2298464+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "13.0.0",
+            "Source": "main",
+            "Updated": "2022-10-08T11:33:49.2298464+05:30",
             "Name": "ripgrep"
         },
         {
-            "Updated": "2022-11-05T00:43:55.9998825+05:30",
-            "Source": "main",
             "Info": "",
             "Version": "1.6.1",
+            "Source": "main",
+            "Updated": "2022-11-05T00:43:55.9998825+05:30",
             "Name": "tealdeer"
         }
     ],
