@@ -20,8 +20,20 @@ Install-Module z
 Write-Host "Updating Help ..."
 Update-Help -Force
 
+# WinGet
+# ------
 
-# TODO: Add Scoop and WinGet packages
+if (Find-Path winget | Test-Path) {
+    winget import .\WinGet\packages.json
+}
+
+# Scoop
+# -----
+
+if (Find-Path scoop | Test-Path) {
+    scoop import .\Scoop\scoopfile.json
+}
+
 
 # GitHub CLI
 # ----------
