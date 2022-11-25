@@ -68,7 +68,7 @@ function Get-BrokenSymlinks(
     [switch]$Recurse
 ) {
     # Recursively get all children and filter out links. Then filter the links again to those who do not have a valid link target
-    Get-ChildItem $Path -Recurse $Recurse | Where-Object { $null -ne $_.LinkTarget -And -Not (Test-Path -Path $_.LinkTarget) }
+    Get-ChildItem $Path -Recurse:$Recurse | Where-Object { $null -ne $_.LinkTarget -And -Not (Test-Path -Path $_.LinkTarget) }
 }
 
 # ---------
