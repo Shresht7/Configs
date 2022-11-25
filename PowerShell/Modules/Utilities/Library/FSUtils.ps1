@@ -10,7 +10,8 @@ Creates a new directory with the given `$Name` and Set-Location to it
 .PARAMETER Name
 Name of the directory to create and enter into
 .EXAMPLE
-Enter-NewDirectory project-3		# Creates a directory called project-3 and cd into it
+Enter-NewDirectory project-3
+Creates a directory called project-3 and cd into it
 #>
 function Enter-NewDirectory(
     [Parameter(Mandatory)]
