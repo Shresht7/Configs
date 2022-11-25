@@ -1,50 +1,76 @@
-// ===============
-// VSCode Settings
-// ===============
 {
-  // ==============
-  // #region EDITOR
-  // ==============
-  //  ------
-  //  EDITOR
-  //  ------
-  // "editor.guides.bracketPairs": "active",
-  // "editor.guides.highlightActiveIndentation": "always",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "aws.profile": "profile:default",
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "addWords": true,
+      "name": "custom-dictionary-user",
+      "path": "~/.cspell/custom-dictionary-user.txt",
+      "scope": "user"
+    }
+  },
+  "cSpell.enableFiletypes": [
+    "lua",
+    "mdx",
+    "powershell"
+  ],
+  "cSpell.language": "en,en-GB,en-US",
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.cursorBlinking": "smooth",
-  "editor.linkedEditing": true,
+  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 12,
+  "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
-  "editor.minimap.enabled": true,
-  "editor.semanticHighlighting.enabled": true,
+  "editor.guides.highlightActiveIndentation": "always",
   "editor.inlayHints.enabled": "on",
   "editor.inlineSuggest.enabled": true,
-  "editor.suggestSelection": "first",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": true,
   "editor.quickSuggestions": {
-    "other": "on",
     "comments": "on",
+    "other": "on",
     "strings": "on"
   },
   "editor.quickSuggestionsDelay": 10,
-  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier New', monospace",
-  "editor.fontLigatures": true,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.suggestSelection": "first",
   "editor.tokenColorCustomizations": {
     "keywords": "#F15152",
-    "types": "#829191",
     "strings": "#91C499",
     "textMateRules": [
       {
         "name": "storage.type",
         "scope": "storage.type",
         "settings": {
-          "foreground": "#ffc711",
-          "fontStyle": "italic"
+          "fontStyle": "italic",
+          "foreground": "#ffc711"
         }
       },
       {
         "name": "storage.modifier",
         "scope": "storage.modifier",
         "settings": {
-          "foreground": "#ad45d0",
-          "fontStyle": "italic"
+          "fontStyle": "italic",
+          "foreground": "#ad45d0"
         }
       },
       {
@@ -65,110 +91,31 @@
         "name": "entity.name.class",
         "scope": "entity.name.class",
         "settings": {
-          "foreground": "#ffffff",
+          "foreground": "#ffffff"
         }
       },
       {
         "name": "keyword.operator.new",
         "scope": "keyword.operator.new",
         "settings": {
-          "foreground": "#7a7d7c",
-          "fontStyle": "bold"
+          "fontStyle": "bold",
+          "foreground": "#7a7d7c"
         }
       }
     ],
+    "types": "#829191"
   },
-  //  --------
-  //  TERMINAL
-  //  --------
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell"
-    },
-    "Command Prompt": {
-      "path": [
-        "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
-      ],
-      "args": [],
-      "icon": "terminal-cmd"
-    },
-    "Git Bash": {
-      "source": "Git Bash"
-    }
+  "eslint.alwaysShowStatus": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
   },
-  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier Now', monospace",
-  // #endregion
-  // ==============
-  // =================
-  // #region WORKBENCH
-  // =================
-  "materialTheme.accent": "Orange",
-  "workbench.colorTheme": "One Dark Pro Flat",
-  "workbench.activityBar.visible": true,
-  "workbench.sideBar.location": "right",
-  "workbench.editor.pinnedTabSizing": "compact",
-  "workbench.colorCustomizations": {
-    "[Material Theme Darker]": {
-      "activityBarBadge.background": "#FF7042",
-      "activityBar.activeBorder": "#FF7042",
-      "list.activeSelectionForeground": "#FF7042",
-      "list.inactiveSelectionForeground": "#FF7042",
-      "list.highlightForeground": "#FF7042",
-      "scrollbarSlider.activeBackground": "#FF704250",
-      "editorSuggestWidget.highlightForeground": "#FF7042",
-      "textLink.foreground": "#FF7042",
-      "progressBar.background": "#FF7042",
-      "pickerGroup.foreground": "#FF7042",
-      "tab.activeBorder": "#FF7042",
-      "notificationLink.foreground": "#FF7042",
-      "editorWidget.resizeBorder": "#FF7042",
-      "editorWidget.border": "#FF7042",
-      "settings.modifiedItemIndicator": "#FF7042",
-      "settings.headerForeground": "#FF7042",
-      "panelTitle.activeBorder": "#FF7042",
-      "breadcrumb.activeSelectionForeground": "#FF7042",
-      "menu.selectionForeground": "#FF7042",
-      "menubar.selectionForeground": "#FF7042",
-      "editor.findMatchBorder": "#FF7042",
-      "selection.background": "#FF704240",
-      "statusBarItem.remoteBackground": "#FF7042"
-    }
-  },
-  "workbench.editorAssociations": {
-    "*.lua": "default",
-    "git-rebase-todo": "gitlens.rebase"
-  },
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "material-icon-theme.activeIconPack": "react",
-  "material-icon-theme.saturation": 1,
-  "material-icon-theme.hidesExplorerArrows": false,
-  "material-icon-theme.folders.color": "#ff7045",
-  "material-icon-theme.folders.associations": {
-    "__notes__": "Syntax",
-    "__sample__": "Test",
-  },
-  "material-icon-theme.files.associations": {
-    "reference.md": "Lib",
-    "references.md": "Lib",
-    "todo.md": "Todo",
-    "todos.md": "Todo",
-  },
-  // #endregion
-  // =================
-  // =============
-  // #region FILES
-  // =============
-  // ------------
-  // File Nesting
-  // ------------
-  "explorer.sortOrder": "type",
+  "excalidraw.theme": "auto",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
+    ".clang-tidy": ".clang-format",
+    ".env": "*.env, .env.*, env.d.ts",
+    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
     "*.asax": "$(capture).*.cs, $(capture).*.vb",
     "*.ascx": "$(capture).*.cs, $(capture).*.vb",
     "*.ashx": "$(capture).*.cs, $(capture).*.vb",
@@ -190,14 +137,11 @@
     "*.tsx": "$(capture).ts",
     "*.vbproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.vue": "$(capture).*.ts, $(capture).*.js",
-    ".clang-tidy": ".clang-format",
-    ".env": "*.env, .env.*, env.d.ts",
-    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
-    "BUILD.bazel": "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
-    "CMakeLists.txt": "*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json",
     "artisan": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .htmlnanorc*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, cssnano.config.*, cypress.json, env.d.ts, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, server.php, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, webpack.mix.js, windi.config.*",
     "astro.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .htmlnanorc*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, cssnano.config.*, cypress.json, env.d.ts, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
+    "BUILD.bazel": "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
     "cargo.toml": ".clippy.toml, .rustfmt.toml, cargo.lock, clippy.toml, cross.toml, rust-toolchain.toml, rustfmt.toml",
+    "CMakeLists.txt": "*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json",
     "composer.json": ".php*.cache, composer.lock, phpunit.xml*, psalm*.xml",
     "default.nix": "shell.nix",
     "dockerfile": ".dockerignore, docker-compose.yml, dockerfile*",
@@ -219,18 +163,12 @@
     "vite.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .htmlnanorc*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, cssnano.config.*, cypress.json, env.d.ts, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
     "vue.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .htmlnanorc*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, cssnano.config.*, cypress.json, env.d.ts, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*"
   },
-  "files.refactoring.autoSave": true,
+  "explorer.sortOrder": "type",
   "files.insertFinalNewline": true,
-  // #endregion
-  // =============
-  // ====================
-  // #region GIT & GITHUB
-  // ====================
-  // GIT & GITHUB
-  // ------------
-  "diffEditor.ignoreTrimWhitespace": false,
+  "files.refactoring.autoSave": true,
   "git.autofetch": true,
   "git.confirmSync": false,
+  "githubIssues.issueBranchTitle": "issue${issueNumber}",
   "githubIssues.queries": [
     {
       "label": "My Issues",
@@ -242,9 +180,6 @@
     }
   ],
   "githubPullRequests.fileListLayout": "tree",
-  "githubIssues.issueBranchTitle": "issue${issueNumber}",
-  "gitlens.views.contributors.showStatistics": true,
-  "gitlens.views.commits.files.layout": "tree",
   "gitlens.advanced.messages": {
     "suppressLineUncommittedWarning": true
   },
@@ -252,126 +187,109 @@
     "fetch:command",
     "switch:command"
   ],
-  // #endregion
-  // ====================
-  // =================
-  // #region LANGUAGES
-  // =================
-  //  HTML
-  //  ----
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  //  JavaScript
-  //  ----------
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  // TypeScript
-  // ----------
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  // JSON
-  // ----
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
+  "gitlens.views.commits.files.layout": "tree",
+  "gitlens.views.contributors.showStatistics": true,
+  "go.toolsManagement.autoUpdate": true,
   "json.schemas": [
     {
-      "name": "vscode-expo-manifest",
-      "url": "file:///c%3A/Users/shres/AppData/Roaming/Code/User/globalStorage/bycedric.vscode-expo/manifest-44.0.0.json",
       "fileMatch": [
         "app.json",
         "app.config.json"
-      ]
+      ],
+      "name": "vscode-expo-manifest",
+      "url": "file:///c%3A/Users/shres/AppData/Roaming/Code/User/globalStorage/bycedric.vscode-expo/manifest-44.0.0.json"
     }
   ],
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  //  YAML
-  // -----
-  "redhat.telemetry.enabled": false,
-  // Markdown
-  // --------
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  },
-  // Svelte
-  // ------
-  "svelte.enable-ts-plugin": true,
-  //  Go
-  //  --
-  "go.toolsManagement.autoUpdate": true,
-  //  Lua
-  //  ---
+  "Lua.completion.callSnippet": "Both",
+  "Lua.completion.keywordSnippet": "Both",
   "Lua.hint.enable": true,
   "Lua.hint.paramName": "All",
   "Lua.hint.setType": true,
+  "Lua.telemetry.enable": false,
   "Lua.workspace.library": [
     "C:/Users/shres/Documents/Divinity Original Sin 2 Modding/Modding-Tools/IDE-Helpers/"
   ],
   "Lua.workspace.preloadFileSize": 10000000,
-  "Lua.completion.callSnippet": "Both",
-  "Lua.completion.keywordSnippet": "Both",
-  "Lua.telemetry.enable": false,
-  // #endregion
-  // =================
-  // ==================
-  // #region EXTENSIONS
-  // ==================
-  //  AWS
-  //  ---
-  "aws.profile": "profile:default",
-  //  VSCode
-  //  ------
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "vsintellicode.java.completionsEnabled": false,
-  //  ESLint
-  //  ------
-  "eslint.alwaysShowStatus": true,
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
+  "material-icon-theme.activeIconPack": "react",
+  "material-icon-theme.files.associations": {
+    "reference.md": "Lib",
+    "references.md": "Lib",
+    "todo.md": "Todo",
+    "todos.md": "Todo"
   },
-  //  Edge Tools
-  //  ----------
-  "vscode-edge-devtools.mirrorEdits": true,
-  //  NPM
-  //  ---
+  "material-icon-theme.folders.associations": {
+    "__notes__": "Syntax",
+    "__sample__": "Test"
+  },
+  "material-icon-theme.folders.color": "#ff7045",
+  "material-icon-theme.hidesExplorerArrows": false,
+  "material-icon-theme.saturation": 1,
+  "materialTheme.accent": "Orange",
   "npm-intellisense.showBuildInLibs": true,
-  //  Spell-Checker
-  //  -------------
-  "cSpell.customDictionaries": {
-    "custom-dictionary-user": {
-      "name": "custom-dictionary-user",
-      "path": "~/.cspell/custom-dictionary-user.txt",
-      "addWords": true,
-      "scope": "user"
+  "redhat.telemetry.enabled": false,
+  "svelte.enable-ts-plugin": true,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier Now', monospace",
+  "terminal.integrated.profiles.windows": {
+    "Command Prompt": {
+      "args": [],
+      "icon": "terminal-cmd",
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ]
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "PowerShell": {
+      "icon": "terminal-powershell",
+      "source": "PowerShell"
     }
   },
-  //  CWTOOLS
-  //  -------
-  "cwtools.cache.stellaris": "e:\\Games\\Stellaris",
-  //  EXCALIDRAW
-  //  ----------
-  "excalidraw.theme": "auto",
-  //  MARKDOWN NOTES
-  //  --------------
-  "vscodeMarkdownNotes.workspaceFilenameConvention": "relativePaths",
-  "window.menuBarVisibility": "compact",
-  "editor.stickyScroll.enabled": true,
+  "vscode-edge-devtools.mirrorEdits": true,
   "vscodeMarkdownNotes.allowPipedWikiLinks": true,
   "vscodeMarkdownNotes.createNoteOnGoToDefinitionWhenMissing": false,
-  "editor.fontWeight": "normal",
-  "editor.fontSize": 12,
+  "vscodeMarkdownNotes.workspaceFilenameConvention": "relativePaths",
+  "vsintellicode.java.completionsEnabled": false,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.menuBarVisibility": "compact",
   "window.zoomLevel": -1,
-  "cSpell.enableFiletypes": [
-    "lua",
-    "mdx",
-    "powershell"
-  ],
-  "cSpell.language": "en,en-GB,en-US",
-  // #endregion
-  // ==================
+  "workbench.activityBar.visible": true,
+  "workbench.colorCustomizations": {
+    "[Material Theme Darker]": {
+      "activityBar.activeBorder": "#FF7042",
+      "activityBarBadge.background": "#FF7042",
+      "breadcrumb.activeSelectionForeground": "#FF7042",
+      "editor.findMatchBorder": "#FF7042",
+      "editorSuggestWidget.highlightForeground": "#FF7042",
+      "editorWidget.border": "#FF7042",
+      "editorWidget.resizeBorder": "#FF7042",
+      "list.activeSelectionForeground": "#FF7042",
+      "list.highlightForeground": "#FF7042",
+      "list.inactiveSelectionForeground": "#FF7042",
+      "menu.selectionForeground": "#FF7042",
+      "menubar.selectionForeground": "#FF7042",
+      "notificationLink.foreground": "#FF7042",
+      "panelTitle.activeBorder": "#FF7042",
+      "pickerGroup.foreground": "#FF7042",
+      "progressBar.background": "#FF7042",
+      "scrollbarSlider.activeBackground": "#FF704250",
+      "selection.background": "#FF704240",
+      "settings.headerForeground": "#FF7042",
+      "settings.modifiedItemIndicator": "#FF7042",
+      "statusBarItem.remoteBackground": "#FF7042",
+      "tab.activeBorder": "#FF7042",
+      "textLink.foreground": "#FF7042"
+    }
+  },
+  "workbench.colorTheme": "One Dark Pro Flat",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editorAssociations": {
+    "*.lua": "default",
+    "git-rebase-todo": "gitlens.rebase"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right"
 }
