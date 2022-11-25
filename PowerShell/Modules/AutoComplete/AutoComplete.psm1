@@ -2,16 +2,13 @@
 # AutoComplete
 # ============
 
-# ----
-# Deno
-# ----
+# GitHub CLI
+Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 
+# Deno
 Invoke-Expression (deno completions powershell | Out-String)
 
-# ---
 # NPM
-# ---
-
 Register-ArgumentCompleter -CommandName npm -ScriptBlock {
     Param($WordToComplete, $CommandAST, $CursorPosition)
 

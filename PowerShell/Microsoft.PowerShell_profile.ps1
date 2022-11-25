@@ -124,12 +124,6 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory
 
 Import-Module z
 
-# ----------
-# GitHub CLI
-# ----------
-
-Invoke-Expression -Command $(gh completion -s powershell | Out-String)
-
 # =============
 # Auto-Complete
 # =============
