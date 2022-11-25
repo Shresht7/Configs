@@ -2,6 +2,12 @@
 # AutoComplete
 # ============
 
+# ----
+# Deno
+# ----
+
+Invoke-Expression (deno completions powershell | Out-String)
+
 # ---
 # NPM
 # ---
