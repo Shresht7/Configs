@@ -4,48 +4,74 @@
 
 <#
 .SYNOPSIS
-Shorthand to create a symlink
+Symlinks everything in the right place
 .DESCRIPTION
-Creates a symlink at the given path to the given target
-.PARAMETER Path
-Original path to create the symlink
-.PARAMETER Target
-Path to the targetted location
-.EXAMPLE
-Set-Symlink "$HOME\.gitconfig" "$HOME\Configs\Git\.gitconfig"   # Links $HOME\.gitconfig to $HOME\Configs\Git\.gitconfig
+Symlinks dotfiles, powershell modules, and settings to their correct homes
 #>
-function Set-Symlink($Path, $Target) {
-    if (Test-Path $Path) { Remove-Item $Path }
-    New-Item -ItemType SymbolicLink -Path $Path -Target $Target
+
+[CmdletBinding()]
+param (
+    # Shows the potential consequences of your actions. Does not actually perform them
+    [Parameter()]
+    [switch]$WhatIf = $WhatIfPreference,
+
+    # If True, will ask you to confirm before performing any modification
+    [Parameter()]
+    [switch]$Confirm
+)
+
+# Exit script if not in administrator mode
+if (-Not (Test-IsElevated)) { Write-Error -Message "Requires administrator privileges"; return }
+
+# Symlink Paths
+# -------------
+
+$Links = @(
+    @{
+        Path   = "$HOME\.gitconfig"
+        Target = "$HOME\Configs\Git\.gitconfig"
+    }
+    @{
+        Path   = "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+        Target = "$HOME\Configs\PowerShell\Microsoft.PowerShell_profile.ps1"
+    }
+    @{
+        Path   = "$HOME\AppData\Roaming\Code\User\settings.json"
+        Target = "$HOME\Configs\VSCode\settings.json"
+    }
+    @{
+        Path   = "$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+        Target = "$HOME\Configs\Windows-Terminal\settings.json"
+    }
+)
+
+# Create symbolic links for dotfiles and settings
+foreach ($Link in $Links) {
+    New-Item -ItemType SymbolicLink -Path $Link.Path -Target $Link.Target -Force -WhatIf:$WhatIf -Confirm:$Confirm | Format-List
 }
 
-# ---
-# Git
-# ---
+# Symlink PowerShell Modules
+# --------------------------
 
-Set-Symlink -Path "$HOME\.gitconfig" -Target "$HOME\Configs\Git\.gitconfig"
-
-# ---------- 
-# PowerShell
-# ----------
-
-# Profile
-Set-Symlink -Path "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Target "$HOME\Configs\PowerShell\Microsoft.PowerShell_profile.ps1"
-
-# Modules
+# Create symbolic links for powershell modules
 Get-ChildItem "$HOME\Configs\PowerShell\Modules" | ForEach-Object {
-    $ModuleName = $_.Name
-    Set-Symlink -Path $HOME\Documents\PowerShell\Modules\$ModuleName -Target $HOME\Configs\PowerShell\Modules\$ModuleName
+    New-Item -ItemType SymbolicLink -Path "$HOME\Documents\PowerShell\Modules\$($_.Name)" -Target "$HOME\Configs\PowerShell\Modules\$($_.Name)" -Force -WhatIf:$WhatIf -Confirm:$Confirm | Format-List
 }
 
-# ------
-# VSCode
-# ------
+# -------
+# Helpers
+# -------
 
-Set-Symlink -Path "$HOME\AppData\Roaming\Code\User\settings.json" -Target "$HOME\Configs\VSCode\settings.json"
-
-# ----------------
-# Windows Terminal
-# ----------------
-
-Set-Symlink -Path "$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Target "$HOME\Configs\Windows-Terminal\settings.json"
+<#
+.SYNOPSIS
+Checks if the current script has administrator privileges
+.DESCRIPTION
+Checks if the current script is running in administrator mode. Return true if it does, false if it doesn't
+#>
+function Test-IsElevated {
+    # Get the ID and security principal of the current user account
+    $MyIdentity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
+    $MyPrincipal = New-Object System.Security.Principal.WindowsPrincipal($MyIdentity)
+    # Check to see if we are currently running in "Administrator" mode
+    return $MyPrincipal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
+}
