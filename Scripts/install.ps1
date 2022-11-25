@@ -14,13 +14,21 @@ Install-Module posh-git
 Install-Module PSFzf
 Install-Module z
 
-# TODO: Add Scoop and WinGet packages
-
 # Update Help for Modules
 # -----------------------
 
 Write-Host "Updating Help ..."
 Update-Help -Force
+
+
+# TODO: Add Scoop and WinGet packages
+
+# GitHub CLI
+# ----------
+
+if (Find-Path gh | Test-Path) {
+    Get-Content .\GitHub\gh\extensions.txt | ForEach-Object { gh extension install $_ }
+}
 
 # ----------------
 # Helper Functions
@@ -38,4 +46,19 @@ function Test-IsElevated {
     $MyPrincipal = New-Object System.Security.Principal.WindowsPrincipal($MyIdentity)
     # Check to see if we are currently running in "Administrator" mode
     return $MyPrincipal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
+}
+
+<#
+.SYNOPSIS
+Find the path of the given program's executable
+.DESCRIPTION
+Locates the path for the given program's executable like the Unix `which` command.
+.PARAMETER $Command
+Name of the command
+.EXAMPLE
+Find-Path git
+Returns C:\Program Files\Git\cmd\git.exe
+#>
+function Find-Path([string]$Command) {
+    Get-Command -Name $Command -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }

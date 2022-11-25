@@ -1,3 +1,15 @@
+# ----------
+# GitHub CLI
+# ----------
+
+if (Find-Path gh | Test-Path) {
+    gh extension list > .\GitHub\gh\extensions.txt
+    Write-Host "Exported gh extensions! ✅"
+}
+else {
+    Write-Error "💥 gh not found ❌"
+}
+
 # ------
 # WinGet
 # ------
