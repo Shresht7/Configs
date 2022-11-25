@@ -6,7 +6,7 @@
 # File-System Utilities
 # ---------------------
 
-. .\Library\FSUtils.ps1
+. $PSScriptRoot\Library\FSUtils.ps1
 
 # ---------
 # Find-Path

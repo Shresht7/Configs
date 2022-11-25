@@ -6,17 +6,22 @@
 .SYNOPSIS
 Create a new directory and enter it
 .DESCRIPTION
-Creates a new directory with the given `DirName` and Set-Location to it
-.PARAMETER DirName
-Name of the directory
+Creates a new directory with the given `$Name` and Set-Location to it
+.PARAMETER Name
+Name of the directory to create and enter into
 .EXAMPLE
-New-Directory project-3		# Creates a directory called project-3 and cd into it
+Enter-NewDirectory project-3		# Creates a directory called project-3 and cd into it
 #>
-function Enter-NewDirectory($DirName) {
-    if (!Test-Path $DirName) {
-        New-Item -ItemType Directory -Path $DirName
+function Enter-NewDirectory(
+    [Parameter(Mandatory)]
+    [string]$Name
+) {
+    # Create the directory if it does not already exist
+    if (-Not (Test-Path $Name)) {
+        New-Item -ItemType Directory -Path $Name
     }
-    Set-Location $DirName
+    # Set-Location to the directory
+    Set-Location $Name
 }
 Set-Alias mkcdir Enter-NewDirectory
 
