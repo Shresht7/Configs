@@ -2,11 +2,10 @@
 # Utilities
 # =========
 
-# ---------------------
-# File-System Utilities
-# ---------------------
-
-. $PSScriptRoot\Library\FSUtils.ps1
+# Import all .ps1 files
+Get-Item -Path $PSScriptRoot\Library\*.ps1 | ForEach-Object {
+    . $_.FullName
+}
 
 # ---------
 # Find-Path
