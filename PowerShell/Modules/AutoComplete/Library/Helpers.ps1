@@ -22,7 +22,10 @@ function Get-NpmScript(
     [string]$Path = $PWD.Path
 ) {
     $Package = Get-PackageJson $Path
-    $scripts = $Package.scripts | Get-Member -MemberType NoteProperty | ForEach-Object { $_.Name }
+
+    $scripts = $Package.scripts |
+    Get-Member -MemberType NoteProperty |
+    Select-Object -Property Name, @{Name = "Script"; Expression = { $Package.scripts.($_.Name) } }
 
     return $scripts
 }
