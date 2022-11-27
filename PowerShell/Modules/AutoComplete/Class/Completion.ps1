@@ -5,6 +5,8 @@ using namespace System.Management.Automation
 # COMPLETION CLASS
 # ----------------
 
+# TODO: Support Aliases
+
 class Completion {
     [string] $Name
     [string] $Tooltip
