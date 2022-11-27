@@ -104,7 +104,7 @@ function Backup-Item {
         }
 
         # Write information down to a csv file
-        $Output | Export-Csv -Path "$BackupPath\backups.csv"
+        $Output | Export-Csv -Path "$BackupPath\backups.csv" -Append
 
         return $Output
     }
