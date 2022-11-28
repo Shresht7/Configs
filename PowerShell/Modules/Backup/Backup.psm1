@@ -183,10 +183,13 @@ function Remove-OldBackups(
     # TODO: Change this to UInt32 to prevent adding negative days. (Ok while testing)
     [Int32]$Age = 31,
     
+    # Path to the backup folder
     [String]$BackupPath = $DefaultBackupPath,
 
+    # Only show the potential action without performing it
     [switch] $WhatIf,
 
+    # Confirm before performing the action
     [switch] $Confirm
 ) {
     # Get the list of backups that match the given criteria
