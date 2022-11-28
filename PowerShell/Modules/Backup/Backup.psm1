@@ -140,7 +140,7 @@ function Restore-Item(
         Expand-Archive -Path $MostRecentItem -DestinationPath $Path -Confirm
     }
     if ($Type -eq "Copy") {
-        Copy-Item -Path "$MostRecentItem\$Name" -Destination "$Path\$Name"
+        Copy-Item -Path $MostRecentItem -Destination "$Path\$MostRecentItem"
     }
 }
 
@@ -154,10 +154,14 @@ Get the list of backups
 .DESCRIPTION
 Returns the directory listing of the backup directory
 .EXAMPLE
-Get-Backups
+Get-Backup
+Returns a list of all backups
+.EXAMPLE
+Get-Backup -Filter '*Console*'
+Returns a list of backups that match the given criteria
 #>
-function Get-Backups([string]$Filter, [string]$BackupPath = $DefaultBackupPath) {
-    Get-ChildItem -Path $BackupPath -Filter $Filter | Sort-Object LastWriteTime -Descending
+function Get-Backup([string]$Filter, [string]$BackupPath = $DefaultBackupPath) {
+    Get-ChildItem -Path $BackupPath -Filter $Filter -Exclude '__BACKUPS__.csv' | Sort-Object LastWriteTime -Descending
 }
 
 # -----------------
@@ -175,8 +179,23 @@ Wildcard name to filter the backups
 Only remove backups older than the given age. (default: 31 days)
 .PARAMETER $BackupPath
 Path to the backup folder
+.EXAMPLE
+Remove-OldBackup
+Removes any backups that are older than the default age
+.EXAMPLE
+Remove-OldBackup -Age 5
+Remove any backups that are older than 5 days
+.EXAMPLE
+Remove-OldBackup -Name '*Console*' -Age 14
+Removes any backups that match the wildcard `*Console*` and are older than 14 days
+.EXAMPLE
+Remove-OldBackup -Name '*.ps1' -WhatIf
+Shows what will happen if you perform the action `Remove-OldBackup -Name '*.ps1'`
+.EXAMPLE
+Remove-OldBackup -Age 7 -Confirm
+Will ask to confirm before deleting any backups older than 7 days
 #>
-function Remove-OldBackups(
+function Remove-OldBackup(
     [Parameter()]
     [String]$Name,
         
