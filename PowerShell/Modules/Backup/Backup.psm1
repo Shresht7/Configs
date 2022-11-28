@@ -196,5 +196,5 @@ function Remove-OldBackups(
     $Backups = if ($null -eq $Name) { Get-ChildItem -Path $BackupPath } else { Get-ChildItem -Path $Backups -Filter $Name }
 
     # Remove backups older than the set age (in days)
-    $Backups | Where-Object { (Get-Date) -lt $_.CreationTime.AddDays(-$days) } | Remove-Item -Confirm:$Confirm -WhatIf:$WhatIf
+    $Backups | Where-Object { (Get-Date) -lt $_.LastAccessTime.AddDays(-$days) } | Remove-Item -Confirm:$Confirm -WhatIf:$WhatIf
 }
