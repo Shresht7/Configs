@@ -9,11 +9,7 @@ function Get-PackageJson(
 ) {
     $PackageJson = Join-Path $Path "package.json"
 
-    if (-Not (Test-Path $PackageJson -PathType Leaf)) {
-        throw "Could not find a package json"
-    }
-
-    return Get-Content $PackageJson | ConvertFrom-Json
+    return Get-Content $PackageJson -ErrorAction SilentlyContinue | ConvertFrom-Json
 }
 
 # Retrieves the list of npm scripts from the package json
@@ -22,6 +18,8 @@ function Get-NpmScript(
     [string]$Path = $PWD.Path
 ) {
     $Package = Get-PackageJson $Path
+
+    if (-Not $Package) { return }
 
     $scripts = $Package.scripts |
     Get-Member -MemberType NoteProperty |
