@@ -6,40 +6,47 @@
 .SYNOPSIS
 Creates a backup of the given item
 .DESCRIPTION
-Creates a backup-copy of the given item in the specified backup folder
+Creates a backup-copy of the given item in the specified backup folder (default: $HOME/Archive/Backups).
+By default, a .zip archive is created with the backup contents but you can also ask it to copy the item as is.
 .EXAMPLE
 Backup-Item important-file.txt
 Creates an archive (.zip) backup of the important-file.txt in the default backup folder
 .EXAMPLE
-Backup-Item -Type Copy -Item important-file.txt
+Backup-Item -Type Copy -Name important-file.txt
 Create a copy of the important-file.txt in the default backup folder
 .EXAMPLE
-Backup-Item -Type Archive -Item important-folder -BackupPath "$HOME/NewBackup"
+Backup-Item -Type Archive -Name important-folder -BackupPath "$HOME/NewBackup"
 Creates an archive (.zip) backup of the important-folder in the user defined "$HOME/NewBackup" folder
+.EXAMPLE
+Backup-Item important-file.txt -HashAlgorithm MD5
+Use MD5 algorithm to compute the hash of the backup file
 #>
 function Backup-Item {
 
     [CmdletBinding(SupportsShouldProcess = $True, ConfirmImpact = "MEDIUM")]
     Param (
-        # Path of the item to backup
-        [Parameter(
-            Mandatory,
-            ValueFromPipeline,
-            ValueFromPipelineByPropertyName
-        )]
-        [ValidateScript({ Test-Path (Resolve-Path $_) })]
-        [string]$Name,
+        # The item to backup
+        [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+        [ValidateScript({ Test-Path $_ })]
+        [Alias("Item", "Path", "Input")]
+        [string] $Name,
 
-        # The type of backup to create. "Archive" to create a `.zip` file or "Copy" to copy the contents as is
+        # The type of backup to create. "Archive" to create a .zip file or "Copy" to copy the contents as is
         [ValidateSet("Archive", "Copy")]
-        [string]$Type = "Archive",
+        [string] $Type = "Archive",
 
-        # The algorithm to use to get file hashes
+        # The algorithm to use to compute the file hash
         [ValidateSet("MD5", "SHA1", "SHA256", "SHA384", "SHA512")]
-        [string]$HashAlgorithm = "SHA256",
+        [Alias("Algorithm", "Hash", "Checksum")]
+        [string] $HashAlgorithm = "SHA256",
     
         # Path to the backup directory
-        [string]$BackupPath = $Script:BACKUP_PATH
+        [ValidateScript({ Test-Path $_ })]
+        [Alias("Output", "DestinationPath")]
+        [string] $BackupPath = $Script:BACKUP_PATH,
+
+        # Metadata file - keeps a log of the backup operations
+        [string] $MetadataFilePath = (Join-Path $Script:BACKUP_PATH "__BACKUPS__.csv")
     )
     
     Begin {
@@ -67,7 +74,7 @@ function Backup-Item {
         }
 
         # Check Should Process and exit if false
-        if (!$PSCmdlet.ShouldProcess($Destination, "Backing up $Name to $Destination")) { return }
+        if (-Not $PSCmdlet.ShouldProcess($Destination, "Backing up $Name to $Destination")) { return }
         
         # Perform Backup Operation
         switch ($Type) {
@@ -86,6 +93,7 @@ function Backup-Item {
         # Get file hash of the produced backup
         $Hash = Get-FileHash $Destination
         
+        # Create the output object
         $Output = [PSCustomObject]@{
             Name        = $Name
             Source      = $OriginalPath
@@ -95,8 +103,8 @@ function Backup-Item {
             Hash        = $Hash.Hash   
         }
 
-        # Write information down to a csv file
-        $Output | Export-Csv -Path "$BackupPath\__BACKUPS__.csv" -Append
+        # Write information to a csv file
+        $Output | Export-Csv -Path $MetadataFilePath -Append
 
         return $Output
     }
