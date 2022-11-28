@@ -123,24 +123,36 @@ Restores an item from the backup
 Restores the most recent copy of the given item from the defined backup folder
 #>
 function Restore-Item(
-    [Parameter(Mandatory = $True)]
-    [string]$Item,
+    [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+    [string]$Name,
 
-    [string]$Path = $PWD.Path,
+    [ValidateScript({ Test-Path $_ })]
+    [string]$Path = ($PWD.Path),
 
     [string]$BackupPath = $DefaultBackupPath,
 
     [ValidateSet("Archive", "Copy")]
-    [string]$Type = "Archive"
+    [string]$Type = "Archive",
+
+    [switch] $WhatIf,
+
+    [switch] $Confirm,
+
+    # Force the operation
+    [switch] $Force
 ) {
-    $MostRecentItem = Get-Backups -Filter *$Item* | Select-Object -First 1
+    $MostRecentItem = Get-Backup -Filter *$Name* | Select-Object -First 1
+
+    if (-Not $MostRecentItem) { throw "Failed to find any backups with matching criteria" }
+
+    $Path = Resolve-Path $Path
 
     # TODO: Select "Archive" or "Copy" based on the file extension
     if ($Type -eq "Archive") {
-        Expand-Archive -Path $MostRecentItem -DestinationPath $Path -Confirm
+        Expand-Archive -Path $MostRecentItem -DestinationPath $Path -Confirm:$Confirm -WhatIf:$WhatIf -Force:$Force
     }
     if ($Type -eq "Copy") {
-        Copy-Item -Path $MostRecentItem -Destination "$Path\$MostRecentItem"
+        Copy-Item -Path $MostRecentItem -Destination "$Path\$MostRecentItem" -Confirm:$Confirm -WhatIf:$WhatIf -Force:$Force
     }
 }
 
@@ -161,7 +173,11 @@ Get-Backup -Filter '*Console*'
 Returns a list of backups that match the given criteria
 #>
 function Get-Backup([string]$Filter, [string]$BackupPath = $DefaultBackupPath) {
-    Get-ChildItem -Path $BackupPath -Filter $Filter -Exclude '__BACKUPS__.csv' | Sort-Object LastWriteTime -Descending
+    $Res = Get-ChildItem -Path $BackupPath -Exclude '__BACKUPS__.csv'
+    if ($Filter) {
+        $Res = $Res | Where-Object { $_.Name -Like $Filter }
+    }
+    return $Res | Sort-Object LastWriteTime -Descending
 }
 
 # -----------------
