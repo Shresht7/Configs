@@ -14,9 +14,9 @@ $NPMCommands = @(
             [Completion]::new('--global', 'Global')
             [Completion]::new('--save-dev', 'Save as dev-dependency')
         ))
-    [Completion]::new('run', 'Run arbitrary script package', @(
+    [Completion]::new('run', 'Run arbitrary script package', @(), {
             (Get-NpmScript | ForEach-Object { [Completion]::new($_.Name, $_.Script) })
-        ))
+        })
     [Completion]::new('search', 'Search for packages')
     [Completion]::new('start', 'Start a package')
     [Completion]::new('stop', 'Stop a package')

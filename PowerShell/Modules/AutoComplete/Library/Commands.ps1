@@ -31,6 +31,9 @@ function Register-CommandCompleter(
         $Selection = $Script:COMMANDS
         foreach ($SubCommand in $Command) {
             $Selection = $Selection.Next | Where-Object { $_.Name -Like $SubCommand }
+            if ($null -ne $Selection.Script) {
+                $Selection.Next += $Selection.Script.Invoke()
+            }
         }
 
         $Completions = $Selection.Next | Where-Object { $_.Name -Like "${WordToComplete}*" } | ForEach-Object {
