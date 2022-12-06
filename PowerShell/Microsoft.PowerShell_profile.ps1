@@ -124,46 +124,8 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory
 
 Import-Module z
 
-# =============
-# Auto-Complete
-# =============
+# =======
+# MODULES
+# =======
 
-# https://github.com/microsoft/winget-cli/blob/master/doc/Completion.md
-Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
-    param($wordToComplete, $commandAst, $cursorPosition)
-    [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
-    $Local:word = $wordToComplete.Replace('"', '""')
-    $Local:ast = $commandAst.ToString().Replace('"', '""')
-    winget complete --word="$Local:word" --commandline "$Local:ast" --position $cursorPosition | ForEach-Object {
-        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
-    }
-}
-
-<#
-.SYNOPSIS
-Reimports all modules
-.DESCRIPTION
-Resets by force re-importing the modules
-.PARAMETER $Path
-The directory that contains the modules. Defaults to the Documents\PowerShell\Modules directory
-.EXAMPLE
-Reset-Modules
-Force resets all modules in the PowerShell module directory
-.EXAMPLE
-Reset-Modules "$HOME\Configs\PowerShell\Modules"
-Force resets all modules in Configs\PowerShell\Modules directory
-#>
-function Reset-Modules(
-    [ValidateScript({ Test-Path $_ })]
-    [string]$Path = "$HOME\Documents\PowerShell\Modules",
-
-    [Parameter(ValueFromPipeline, ValueFromPipelineByPropertyName)]
-    [string[]]$ModuleNames
-) {
-    if ($Path) {
-        Get-ChildItem -Directory $Path | Import-Module -Force
-    }
-    else {
-        $ModuleNames | Import-Module -Force
-    }
-}
+Import-Module -Name Utilities
