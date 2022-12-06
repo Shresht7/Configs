@@ -1,0 +1,5 @@
+Path, Target
+"$HOME\.gitconfig", "$HOME\Configs\Git\.gitconfig"
+"$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1", "$HOME\Configs\PowerShell\Microsoft.PowerShell_profile.ps1"
+"$HOME\AppData\Roaming\Code\User\settings.json", "$HOME\Configs\VSCode\settings.json"
+"$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json", "$HOME\Configs\Windows-Terminal\settings.json"
