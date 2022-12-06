@@ -13,7 +13,6 @@ eamodio.gitlens
 ecmel.vscode-html-css
 Equinusocio.vsc-community-material-theme
 firefox-devtools.vscode-firefox-debug
-gera2ld.markmap-vscode
 GitHub.codespaces
 GitHub.copilot
 GitHub.github-vscode-theme
@@ -73,7 +72,6 @@ vadimcn.vscode-lldb
 VisualStudioExptTeam.intellicode-api-usage-examples
 VisualStudioExptTeam.vscodeintellicode
 vsls-contrib.codetour
-vsls-contrib.gistfs
 yzhang.markdown-all-in-one
 zhuangtongfa.material-theme
 ZixuanChen.vitest-explorer
