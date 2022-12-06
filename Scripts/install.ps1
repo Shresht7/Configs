@@ -3,7 +3,10 @@
 # ------------
 
 # Exit script if not running as administrator
-if (-Not (Test-IsElevated)) { Write-Error -Message "Requires Administrator Privileges!"; return }
+if (-Not (Test-IsElevated)) {
+    Write-Error -Message "Requires Administrator Privileges!"
+    return
+}
 
 # Symlink Everything into Place
 # -----------------------------

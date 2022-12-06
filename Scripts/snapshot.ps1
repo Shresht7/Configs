@@ -6,9 +6,6 @@ if (Find-Path gh | Test-Path) {
     gh extension list > .\GitHub\gh\extensions.txt
     Write-Host "Exported gh extensions! ✅"
 }
-else {
-    Write-Error "💥 gh not found ❌"
-}
 
 # ------
 # WinGet
@@ -17,9 +14,6 @@ else {
 if (Find-Path winget | Test-Path) {
     winget export .\WinGet\packages.json
     Write-Host "Exported winget packages! ✅"
-}
-else {
-    Write-Error "💥 winget not found ❌"
 }
 
 # -----
@@ -30,9 +24,6 @@ if (Find-Path scoop | Test-Path) {
     scoop export > .\Scoop\scoopfile.json
     Write-Host "Exported scoop apps! ✅"
 }
-else {
-    Write-Error "💥 scoop not found ❌"
-}
 
 # ------------------
 # VS Code Extensions
@@ -41,9 +32,6 @@ else {
 if (Find-Path code | Test-Path) {
     code --list-extensions > .\VSCode\extensions.txt
     Write-Host "Exported VS Code extensions! ✅"
-}
-else {
-    Write-Error "💥 code not found ❌"
 }
 
 # -----------------
