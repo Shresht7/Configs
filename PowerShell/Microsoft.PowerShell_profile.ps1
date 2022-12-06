@@ -4,6 +4,16 @@
 
 function ~ { Set-Location ~ }; Set-Alias ~ home
 
+# =======
+# MODULES
+# =======
+
+Import-Module -Name Utilities
+
+# ========
+# EXTERNAL
+# ========
+
 # ----------
 # Oh-My-Posh
 # ----------
@@ -14,13 +24,34 @@ oh-my-posh init pwsh --config "~/Configs/PowerShell/Themes/s7.omp.yaml" | Invoke
 
 Set-Alias omp oh-my-posh.exe
 
-# --------------
-# Terminal-Icons
-# --------------
+# ----
+# Find
+# ----
 
-# https://www.powershellgallery.com/packages/Terminal-Icons/0.5.0
+# https://github.com/sharkdp/fd
 
-Import-Module Terminal-Icons
+# Alias `fd` as `find`
+Set-Alias find fd
+
+# ----------
+# Fuzzy Find
+# ----------
+
+# https://github.com/junegunn/fzf
+
+# Use `fd` instead of `find` in fzf (fuzzy-finder)
+$env:FZF_DEFAULT_COMMAND = 'fd --type file'
+$env:FZF_DEFAULT_OPTS = '--reverse'
+
+# -----
+# PSFzf
+# -----
+
+# https://github.com/kelleyma49/PSFzf
+
+Import-Module PSFzf
+
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 # ----------
 # PSReadLine
@@ -89,43 +120,17 @@ Set-PSReadLineOption -AddToHistoryHandler {
 
 Import-Module posh-git
 
-# ----
-# Find
-# ----
 
-# https://github.com/sharkdp/fd
+# --------------
+# Terminal-Icons
+# --------------
 
-# Alias `fd` as `find`
-Set-Alias find fd
+# https://www.powershellgallery.com/packages/Terminal-Icons/0.5.0
 
-# ----------
-# Fuzzy Find
-# ----------
-
-# https://github.com/junegunn/fzf
-
-# Use `fd` instead of `find` in fzf (fuzzy-finder)
-$env:FZF_DEFAULT_COMMAND = 'fd --type file'
-$env:FZF_DEFAULT_OPTS = '--reverse'
-
-# -----
-# PSFzf
-# -----
-
-# https://github.com/kelleyma49/PSFzf
-
-Import-Module PSFzf
-
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory 'Ctrl+r'
+Import-Module Terminal-Icons
 
 # ------------------
 # Z Directory Jumper
 # ------------------
 
 Import-Module z
-
-# =======
-# MODULES
-# =======
-
-Import-Module -Name Utilities
