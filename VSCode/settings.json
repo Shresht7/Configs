@@ -291,5 +291,7 @@
     "git-rebase-todo": "gitlens.rebase"
   },
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "editor.accessibilitySupport": "off"
 }
