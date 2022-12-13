@@ -8,6 +8,7 @@ function ~ { Set-Location ~ }; Set-Alias ~ home
 # MODULES
 # =======
 
+Import-Module -Name AutoComplete
 Import-Module -Name Utilities
 
 # ========
@@ -134,3 +135,9 @@ Import-Module Terminal-Icons
 # ------------------
 
 Import-Module z
+
+# -------
+# PSStyle
+# -------
+
+# $PSStyle.Formatting.TableHeader = $PSStyle.Foreground.BrightMagenta
