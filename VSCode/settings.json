@@ -20,9 +20,10 @@
   "aws.profile": "profile:default",
   "cSpell.customDictionaries": {
     "custom-dictionary-user": {
-      "addWords": true,
       "name": "custom-dictionary-user",
-      "path": "~/.cspell/custom-dictionary-user.txt",
+      "path": "~/.config/.cspell/custom-dictionary-user.txt",
+      "description": "Custom Dictionary",
+      "addWords": true,
       "scope": "user"
     }
   },
