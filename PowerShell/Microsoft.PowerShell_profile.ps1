@@ -96,6 +96,37 @@ Set-PSReadLineKeyHandler -Key Alt+w `
     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
 }
 
+# Sometimes you want to get a property of invoke a member on what you've entered so far
+# but you need parenthesis to do that.  This binding will help by putting parenthesis around the current selection,
+# or if nothing is selected, the whole line.
+Set-PSReadLineKeyHandler -Key 'Alt+(' `
+    -BriefDescription ParenthesizeSelection `
+    -LongDescription "Put parenthesis around the selection or entire line and move the cursor to after the closing parenthesis" `
+    -ScriptBlock {
+    param($key, $arg)
+
+    # Get the current selection
+    $selectionStart = $null
+    $selectionLength = $null
+    [Microsoft.PowerShell.PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
+
+    # Get the current line
+    $line = $null
+    $cursor = $null
+    [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+
+    # Parenthesize the selection
+    if ($selectionStart -ne -1) {
+        [Microsoft.PowerShell.PSConsoleReadLine]::Replace($selectionStart, $selectionLength, '(' + $line.SubString($selectionStart, $selectionLength) + ')')
+        [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($selectionStart + $selectionLength + 2)
+    }
+    # Parenthesize the whole line
+    else {
+        [Microsoft.PowerShell.PSConsoleReadLine]::Replace(0, $line.Length, '(' + $line + ')')
+        [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine()
+    }
+}
+
 $Env:PSReadLineEnable = $True
 
 # History handler
