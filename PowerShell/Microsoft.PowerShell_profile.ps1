@@ -127,6 +127,37 @@ Set-PSReadLineKeyHandler -Key 'Alt+(' `
     }
 }
 
+# Invoke the currently selected expression, or if nothing is selected, the whole line.
+Set-PSReadLineKeyHandler -Key "Ctrl+Shift+e" `
+    -BriefDescription InvokeSelection `
+    -LongDescription "Invoke the currently selected expression, or if nothing is selected, the whole line" `
+    -ScriptBlock {
+    param($key, $arg)
+
+    # Get the current selection
+    $selectionStart = $null
+    $selectionLength = $null
+    [Microsoft.PowerShell.PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
+
+    # Get the current line
+    $line = $null
+    $cursor = $null
+    [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+
+    # Invoke the selection and replace it with the result
+    if ($selectionStart -ne -1) {
+        $expression = $line.SubString($selectionStart, $selectionLength)
+        $Result = (Invoke-Expression $expression | Out-String).Trim()
+        [Microsoft.PowerShell.PSConsoleReadLine]::Replace($selectionStart, $selectionLength, $Result)
+    }
+    # Invoke the whole line and replace it with the result
+    else {
+        $expression = $line.SubString($selectionStart, $selectionLength)
+        $Result = (Invoke-Expression $expression | Out-String).Trim()
+        [Microsoft.PowerShell.PSConsoleReadLine]::Replace(0, $line.Length, $Result)
+    }
+}
+
 $Env:PSReadLineEnable = $True
 
 # History handler
@@ -167,6 +198,11 @@ Import-Module Terminal-Icons
 
 Import-Module z
 
+# -------
+# PSStyle
+# -------
+
+# $PSStyle.Formatting.TableHeader = $PSStyle.Foreground.BrightMagenta
 # -------
 # PSStyle
 # -------
