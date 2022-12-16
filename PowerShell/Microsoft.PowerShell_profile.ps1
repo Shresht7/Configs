@@ -99,7 +99,7 @@ Set-PSReadLineKeyHandler -Key Alt+w `
 # Sometimes you want to get a property of invoke a member on what you've entered so far
 # but you need parenthesis to do that.  This binding will help by putting parenthesis around the current selection,
 # or if nothing is selected, the whole line.
-Set-PSReadLineKeyHandler -Key 'Alt+(' `
+Set-PSReadLineKeyHandler -Key 'Ctrl+Shift+(' `
     -BriefDescription ParenthesizeSelection `
     -LongDescription "Put parenthesis around the selection or entire line and move the cursor to after the closing parenthesis" `
     -ScriptBlock {
