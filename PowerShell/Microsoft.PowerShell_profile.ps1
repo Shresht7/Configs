@@ -10,6 +10,7 @@ function ~ { Set-Location ~ }; Set-Alias ~ home
 
 Import-Module -Name AutoComplete
 Import-Module -Name Utilities
+Import-Module -Name PSFavorite
 
 # ========
 # EXTERNAL
