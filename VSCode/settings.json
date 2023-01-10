@@ -33,7 +33,6 @@
     "powershell"
   ],
   "cSpell.language": "en,en-GB,en-US",
-  "diffEditor.ignoreTrimWhitespace": false,
   "editor.cursorBlinking": "smooth",
   "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
@@ -294,5 +293,13 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
   "svelte.plugin.svelte.note-new-transformation": false,
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": false,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  }
 }

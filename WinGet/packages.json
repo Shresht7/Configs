@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2022-12-07T01:03:43.864-00:00",
+	"CreationDate" : "2023-01-05T16:49:53.039-00:00",
 	"Sources" : 
 	[
 		{
@@ -49,16 +49,16 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.WebDeploy"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
+					"PackageIdentifier" : "Microsoft.OpenJDK.11"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
@@ -70,6 +70,15 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.7"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
 				},
 				{
@@ -77,6 +86,9 @@
 				},
 				{
 					"PackageIdentifier" : "GOG.Galaxy"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
@@ -100,13 +112,7 @@
 					"PackageIdentifier" : "GoLang.Go.1.19"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.7"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
@@ -130,10 +136,10 @@
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "XP9KHM4BK9FZ7Q"
+					"PackageIdentifier" : "XP89DCGQ3K6VLD"
 				},
 				{
-					"PackageIdentifier" : "XP89DCGQ3K6VLD"
+					"PackageIdentifier" : "XP9KHM4BK9FZ7Q"
 				}
 			],
 			"SourceDetails" : 

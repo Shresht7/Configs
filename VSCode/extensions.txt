@@ -8,6 +8,7 @@ byCedric.vscode-expo
 christian-kohler.npm-intellisense
 dbaeumer.vscode-eslint
 denoland.vscode-deno
+DotJoshJohnson.xml
 dracula-theme.theme-dracula
 eamodio.gitlens
 ecmel.vscode-html-css
@@ -25,6 +26,7 @@ GraphQL.vscode-graphql-syntax
 jsayol.firebase-explorer
 kortina.vscode-markdown-notes
 MarkThomasMiller.sorcerer
+mattpocock.ts-error-translator
 mechatroner.rainbow-csv
 mikestead.dotenv
 monokai.theme-monokai-pro-vscode
@@ -45,6 +47,7 @@ ms-vscode-remote.remote-wsl
 ms-vscode-remote.vscode-remote-extensionpack
 ms-vscode.anycode-rust
 ms-vscode.anycode-typescript
+ms-vscode.azure-repos
 ms-vscode.cpptools
 ms-vscode.live-server
 ms-vscode.powershell
@@ -61,6 +64,7 @@ ritwickdey.LiveServer
 rust-lang.rust-analyzer
 satoren.lualint
 sebastian-lenz.divinity-vscode
+SimonSiefke.svg-preview
 streetsidesoftware.code-spell-checker
 sumneko.lua
 svelte.svelte-vscode
