@@ -157,15 +157,15 @@ blocks:
         type: node
 
       # Deno
-      - foreground: "#3C82F6"
-        invert_powerline: true
-        powerline_symbol: 
-        properties:
-          fetch_version: true
-        style: powerline
-        template: " 🦕 "
-        # template: " 🦕 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
-        type: deno
+      # - foreground: "#3C82F6"
+      #   invert_powerline: true
+      #   powerline_symbol: 
+      #   properties:
+      #     fetch_version: true
+      #   style: powerline
+      #   template: " 🦕 "
+      #   # template: " 🦕 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+      #   type: deno
 
       # Go
       - background: "#8ED1F7"
