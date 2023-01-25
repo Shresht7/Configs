@@ -1,16 +1,14 @@
 # Configs
 
-System Configuration
+My System Configuration
 
 ---
 
-## Scripts
-
-### Symlinks
+## 📜 [Scripts](./Scripts/)
 
 - [`Install.ps1`](Scripts/Install.ps1) - Responsible for setting up the entire system by installing various packages and applications
 - [`Symlink.ps1`](Scripts/Symlink.ps1) - Symlinks dotfiles, settings and modules to the right places
-- [`Snapshot.ps1`](Scripts/Snapshot.ps1) - Takes a snapshot of the installed packages
+- [`Snapshot.ps1`](Scripts/Snapshot.ps1) - Takes a snapshot of system configuration
 
 ---
 
@@ -118,3 +116,16 @@ winget export WinGet\packages.json
 ```shell
 winget import WinGet\packages.json
 ```
+
+---
+
+## 📕 References
+
+- [dotfiles.github.io][github-dotfiles]
+
+
+<!-- ===== -->
+<!-- LINKS -->
+<!-- ===== -->
+
+[github-dotfiles]: https://dotfiles.github.io/
