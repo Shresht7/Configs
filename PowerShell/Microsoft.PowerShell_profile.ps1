@@ -8,8 +8,11 @@ function ~ { Set-Location ~ }; Set-Alias ~ home
 # MODULES
 # =======
 
+# AutoComplete provides tab completion for PowerShell commands, cmdlets, and parameters.
 Import-Module -Name AutoComplete
+# Utilities is a collection of useful PowerShell functions.
 Import-Module -Name Utilities
+# PSFavorite provides a simple way to manage and use your favorite PowerShell commands.
 Import-Module -Name PSFavorite
 
 # ========
@@ -20,6 +23,7 @@ Import-Module -Name PSFavorite
 # Oh-My-Posh
 # ----------
 
+# oh-my-posh is a prompt theme engine for PowerShell
 # https://ohmyposh.dev/
 
 oh-my-posh init pwsh --config "~/Configs/PowerShell/Themes/s7.omp.yaml" | Invoke-Expression
@@ -30,6 +34,8 @@ Set-Alias omp oh-my-posh.exe
 # Find
 # ----
 
+# fd is a simple, fast and user-friendly alternative to find.
+# fd allows you to quickly find files and directories on your system.
 # https://github.com/sharkdp/fd
 
 # Alias `fd` as `find`
@@ -39,6 +45,7 @@ Set-Alias find fd
 # Fuzzy Find
 # ----------
 
+# fzf is a general-purpose command-line fuzzy finder.
 # https://github.com/junegunn/fzf
 
 # Use `fd` instead of `find` in fzf (fuzzy-finder)
@@ -49,6 +56,7 @@ $env:FZF_DEFAULT_OPTS = '--reverse'
 # PSFzf
 # -----
 
+# PSFzf is a PowerShell module that provides a wrapper around fzf.
 # https://github.com/kelleyma49/PSFzf
 
 Import-Module PSFzf
@@ -180,6 +188,7 @@ Set-PSReadLineOption -AddToHistoryHandler {
 # Posh-Git
 # --------
 
+# posh-git is a PowerShell module that provides Git/PowerShell integration.
 # https://github.com/dahlbyk/posh-git
 
 Import-Module posh-git
@@ -189,23 +198,22 @@ Import-Module posh-git
 # Terminal-Icons
 # --------------
 
+# Terminal-Icons is a PowerShell module that displays icons in the console.
 # https://www.powershellgallery.com/packages/Terminal-Icons/0.5.0
-
 Import-Module Terminal-Icons
 
 # ------------------
 # Z Directory Jumper
 # ------------------
 
+# z is a directory jumper for PowerShell.
+# It tracks your most used directories and allows you to jump to them quickly.
+# https://www.powershellgallery.com/packages/z/1.1.9
+
 Import-Module z
 
-# -------
+# =======
 # PSStyle
-# -------
+# =======
 
-# $PSStyle.Formatting.TableHeader = $PSStyle.Foreground.BrightMagenta
-# -------
-# PSStyle
-# -------
-
-# $PSStyle.Formatting.TableHeader = $PSStyle.Foreground.BrightMagenta
+$PSStyle.Formatting.TableHeader = $PSStyle.Foreground.BrightMagenta
