@@ -16,11 +16,17 @@ if (-Not (Test-IsElevated)) {
 # Install PowerShell Modules
 # --------------------------
 
+$Modules = @(
+    "Terminal-Icons",
+    "posh-git",
+    "PSFzf",
+    "z"
+)
+
 Write-Host "Installing PowerShell Modules ..."
-Install-Module Terminal-Icons
-Install-Module posh-git
-Install-Module PSFzf
-Install-Module z
+foreach ($Module in $Modules) {
+    Install-Module -Name $Module -Force
+}
 
 # Update Help for Modules
 # -----------------------
