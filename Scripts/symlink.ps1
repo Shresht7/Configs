@@ -10,9 +10,16 @@ Symlinks dotfiles, powershell modules, and settings to their correct homes
 #>
 
 [CmdletBinding(SupportsShouldProcess)]
-param ()
+param (
+    # Path to the CSV file containing the symlinks
+    [string] $LinksCSVPath = "$PSScriptRoot\symlinks.csv"
+)
 
 begin {
+
+    # Test Elevation
+    # --------------
+
     <#
     .SYNOPSIS
     Checks if the current script has administrator privileges
@@ -37,7 +44,7 @@ begin {
     # Symlink Paths
     # -------------
     
-    $Links = Import-Csv -Path "$PSScriptRoot\symlinks.csv"
+    $Links = Import-Csv -Path $LinksCSVPath
 }
 
 process {
