@@ -1,9 +1,3 @@
-# ----------
-# Navigation
-# ----------
-
-function ~ { Set-Location ~ }; Set-Alias ~ home
-
 # =======
 # MODULES
 # =======
@@ -216,4 +210,7 @@ Import-Module z
 # PSStyle
 # =======
 
-$PSStyle.Formatting.TableHeader = $PSStyle.Foreground.BrightMagenta
+$PSAccentColor = $PSStyle.Foreground.BrightCyan
+
+$PSStyle.Formatting.TableHeader = $PSAccentColor
+$PSStyle.Formatting.FormatAccent = $PSAccentColor
