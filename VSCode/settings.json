@@ -18,15 +18,53 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "aws.profile": "profile:default",
-  "cSpell.customDictionaries": {
-    "custom-dictionary-user": {
-      "name": "custom-dictionary-user",
-      "path": "~/.config/.cspell/custom-dictionary-user.txt",
-      "description": "Custom Dictionary",
-      "addWords": true,
-      "scope": "user"
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": true
+    },
+    {
+      "tag": "~~",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#3E3E3E",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#E3E3E3",
+      "bold": true,
+      "italic": false
     }
-  },
+  ],
   "cSpell.enableFiletypes": [
     "lua",
     "mdx",
