@@ -2,14 +2,20 @@
 # MODULES
 # =======
 
+# MY MODULES
+# ==========
+
+# https://www.github.com/Shresht7/PowerShell
+
 # AutoComplete provides tab completion for PowerShell commands, cmdlets, and parameters.
 Import-Module -Name AutoComplete
 # Utilities is a collection of useful PowerShell functions.
 Import-Module -Name Utilities
+# PSReadlineUtilities is a collection of useful PSReadline functions.
+Import-Module -Name PSReadlineUtilities
 # PSFavorite provides a simple way to manage and use your favorite PowerShell commands.
 Import-Module -Name PSFavorite
 
-# ========
 # EXTERNAL
 # ========
 
