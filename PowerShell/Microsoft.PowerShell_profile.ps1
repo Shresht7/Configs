@@ -52,6 +52,15 @@ Set-Alias find fd
 $env:FZF_DEFAULT_COMMAND = 'fd --type file'
 $env:FZF_DEFAULT_OPTS = '--reverse'
 
+# --------
+# Posh-Git
+# --------
+
+# posh-git is a PowerShell module that provides Git/PowerShell integration.
+# https://github.com/dahlbyk/posh-git
+
+Import-Module posh-git
+
 # -----
 # PSFzf
 # -----
@@ -183,16 +192,6 @@ Set-PSReadLineOption -AddToHistoryHandler {
 
 # Prevent annoying beeping noises
 # Set-PSReadLineOption -BellStyle None
-
-# --------
-# Posh-Git
-# --------
-
-# posh-git is a PowerShell module that provides Git/PowerShell integration.
-# https://github.com/dahlbyk/posh-git
-
-Import-Module posh-git
-
 
 # --------------
 # Terminal-Icons
