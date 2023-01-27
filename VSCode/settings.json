@@ -65,6 +65,15 @@
       "italic": false
     }
   ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "name": "custom-dictionary-user",
+      "path": "~/.config/.cspell/custom-dictionary-user.txt",
+      "description": "Custom Dictionary",
+      "addWords": true,
+      "scope": "user"
+    }
+  },
   "cSpell.enableFiletypes": [
     "lua",
     "mdx",
@@ -339,5 +348,5 @@
     "yaml": false,
     "plaintext": false,
     "markdown": true
-  }
+  },
 }
