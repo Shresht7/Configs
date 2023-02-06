@@ -224,9 +224,9 @@ if (Find-Path -Command gh) {
 }
 
 # Deno
-if (Find-Path -Command deno) {
-    Invoke-Expression -Command $(deno completions powershell | Out-String)
-}
+# if (Find-Path -Command deno) {
+#     Invoke-Expression -Command $(deno completions powershell | Out-String)
+# }
 
 # WinGet
 # https://github.com/microsoft/winget-cli/blob/master/doc/Completion.md
