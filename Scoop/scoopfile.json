@@ -3,87 +3,87 @@
         {
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main",
-            "Updated": "2023-01-03T09:34:41+05:30",
-            "Manifests": 1136
+            "Updated": "2023-02-08T10:05:03+05:30",
+            "Manifests": 1156
         }
     ],
     "apps": [
         {
+            "Info": "",
             "Name": "7zip",
             "Updated": "2022-10-14T23:01:50.8344578+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "22.01"
+            "Version": "22.01",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "bat",
             "Updated": "2022-10-08T10:15:34.9276445+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "0.22.1"
+            "Version": "0.22.1",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "bottom",
-            "Updated": "2022-10-08T11:57:04.4150969+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "0.6.8"
+            "Updated": "2023-02-08T10:49:58.0764068+05:30",
+            "Version": "0.8.0",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "fd",
-            "Updated": "2022-11-05T00:43:43.5574834+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "8.5.2"
+            "Updated": "2023-02-08T10:50:01.0186591+05:30",
+            "Version": "8.6.0",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "ffmpeg",
             "Updated": "2022-10-30T20:53:25.7721242+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "5.1.2"
+            "Version": "5.1.2",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "fzf",
-            "Updated": "2022-10-08T10:39:29.1210256+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "0.34.0"
+            "Updated": "2023-02-08T10:50:03.8823861+05:30",
+            "Version": "0.37.0",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "less",
             "Updated": "2022-11-25T23:25:29.7337256+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "608"
+            "Version": "608",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "micro",
             "Updated": "2022-10-14T23:00:48.1542922+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "2.0.11"
+            "Version": "2.0.11",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "ripgrep",
             "Updated": "2022-10-08T11:33:49.2298464+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "13.0.0"
+            "Version": "13.0.0",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "sqlite",
-            "Updated": "2022-12-18T21:06:49.0154508+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "3.40.0"
+            "Updated": "2023-02-08T10:50:09.2876783+05:30",
+            "Version": "3.40.1",
+            "Source": "main"
         },
         {
+            "Info": "",
             "Name": "tealdeer",
             "Updated": "2022-11-05T00:43:55.9998825+05:30",
-            "Info": "",
-            "Source": "main",
-            "Version": "1.6.1"
+            "Version": "1.6.1",
+            "Source": "main"
         }
     ]
 }

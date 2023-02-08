@@ -1,8 +1,6 @@
 aaron-bond.better-comments
-amazonwebservices.aws-toolkit-vscode
 arcticicestudio.nord-visual-studio-code
 astro-build.astro-vscode
-aws-amplify.aws-amplify-vscode
 bungcip.better-toml
 byCedric.vscode-expo
 christian-kohler.npm-intellisense
@@ -20,11 +18,8 @@ GitHub.github-vscode-theme
 GitHub.remotehub
 GitHub.vscode-pull-request-github
 golang.go
-GraphQL.vscode-graphql
 GraphQL.vscode-graphql-execution
-GraphQL.vscode-graphql-syntax
 humao.rest-client
-jsayol.firebase-explorer
 kortina.vscode-markdown-notes
 MarkThomasMiller.sorcerer
 mattpocock.ts-error-translator
@@ -55,7 +50,6 @@ ms-vscode.powershell
 ms-vscode.remote-explorer
 ms-vscode.remote-repositories
 msjsdiag.vscode-react-native
-msoffice.microsoft-office-add-in-debugger
 naumovs.color-highlight
 pflannery.vscode-versionlens
 PKief.material-icon-theme
@@ -70,14 +64,11 @@ SimonSiefke.svg-preview
 streetsidesoftware.code-spell-checker
 sumneko.lua
 svelte.svelte-vscode
-tboby.cwtools-vscode
-toba.vsfire
 unifiedjs.vscode-mdx
 usernamehw.errorlens
 vadimcn.vscode-lldb
 VisualStudioExptTeam.intellicode-api-usage-examples
 VisualStudioExptTeam.vscodeintellicode
-vsls-contrib.codetour
 yzhang.markdown-all-in-one
 zhuangtongfa.material-theme
 ZixuanChen.vitest-explorer
