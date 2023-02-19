@@ -349,4 +349,7 @@
     "plaintext": false,
     "markdown": true
   },
+  "git.branchProtection": [
+    "main"
+  ],
 }
