@@ -12,12 +12,20 @@
             "keys": "ctrl+v"
         },
         {
+            "command": "toggleAlwaysOnTop",
+            "keys": "ctrl+shift+f11"
+        },
+        {
             "command": 
             {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
+        },
+        {
+            "command": "toggleFocusMode",
+            "keys": "shift+f11"
         },
         {
             "command": 
@@ -36,14 +44,6 @@
         {
             "command": "closePane",
             "keys": "ctrl+w"
-        },
-        {
-            "command": "toggleFocusMode",
-            "keys": "shift+f11"
-        },
-        {
-            "command": "toggleAlwaysOnTop",
-            "keys": "ctrl+shift+f11"
         },
         {
             "command": 
@@ -67,7 +67,7 @@
             "font": 
             {
                 "face": "CaskaydiaCove Nerd Font Mono",
-                "size": 10
+                "size": 10.0
             },
             "opacity": 50,
             "useAcrylic": true
@@ -106,12 +106,6 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
-                "hidden": false,
-                "name": "Git Bash",
-                "source": "Git"
             },
             {
                 "guid": "{1ab1cd49-e58f-528a-9d85-4fa3221e44f0}",
@@ -407,5 +401,7 @@
         }
     ],
     "startOnUserLogin": false,
+    "theme": "system",
+    "themes": [],
     "useAcrylicInTabRow": true
 }
