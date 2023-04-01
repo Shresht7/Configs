@@ -17,7 +17,7 @@ Import-Module -Name PSReadlineUtils
 Import-Module -Name PSFavorite
 
 # Write a random quote to the console on startup
-Write-Quote -Path (Join-Path $HOME "Notebooks" "Capture" "Inspiration" "quotes.csv")
+Write-Quote -Path (Join-Path $HOME "Data" "quotes.csv")
 
 # EXTERNAL
 # ========
