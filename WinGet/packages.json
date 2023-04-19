@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2023-02-08T10:52:35.511-00:00",
+	"CreationDate" : "2023-04-19T11:31:28.641-00:00",
 	"Sources" : 
 	[
 		{
@@ -34,6 +34,9 @@
 					"PackageIdentifier" : "Microsoft.OneDrive"
 				},
 				{
+					"PackageIdentifier" : "PostgreSQL.PostgreSQL"
+				},
+				{
 					"PackageIdentifier" : "Rustlang.Rustup"
 				},
 				{
@@ -46,7 +49,10 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.WebDeploy"
+					"PackageIdentifier" : "GoLang.Go.1.20"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
@@ -55,10 +61,7 @@
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier" : "GoLang.Go.Unstable"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
@@ -73,13 +76,13 @@
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
-				},
-				{
 					"PackageIdentifier" : "GOG.Galaxy"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.7"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
@@ -94,22 +97,19 @@
 					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.WebDeploy"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.OpenJDK.11"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				}
 			],
 			"SourceDetails" : 
@@ -124,10 +124,10 @@
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "XP89DCGQ3K6VLD"
+					"PackageIdentifier" : "XP9KHM4BK9FZ7Q"
 				},
 				{
-					"PackageIdentifier" : "XP9KHM4BK9FZ7Q"
+					"PackageIdentifier" : "XP89DCGQ3K6VLD"
 				}
 			],
 			"SourceDetails" : 
