@@ -11,6 +11,8 @@
 Import-Module -Name AutoComplete
 # Utilities is a collection of useful PowerShell functions.
 Import-Module -Name Utilities
+# FSUtils is a collection of useful filesystem utility functions.
+Import-Module -Name FSUtils
 # PSReadlineUtilities is a collection of useful PSReadline functions.
 Import-Module -Name PSReadlineUtils
 # PSFavorite provides a simple way to manage and use your favorite PowerShell commands.
@@ -18,6 +20,11 @@ Import-Module -Name PSFavorite
 
 # Write a random quote to the console on startup
 Write-Quote -Path (Join-Path $HOME "Data" "quotes.csv")
+
+# ALIASES
+# =======
+
+Set-Alias cdf Set-LocationFuzzy
 
 # EXTERNAL
 # ========
