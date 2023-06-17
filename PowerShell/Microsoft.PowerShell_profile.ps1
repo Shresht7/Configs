@@ -24,6 +24,7 @@ Write-Quote -Path (Join-Path $HOME "Data" "quotes.csv")
 # ALIASES
 # =======
 
+Set-Alias ~ Set-LocationToHome
 Set-Alias cdf Set-LocationFuzzy
 
 # EXTERNAL
