@@ -53,6 +53,14 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": "prevTab",
+            "keys": "ctrl+pageup"
+        },
+        {
+            "command": "newTab",
+            "keys": "ctrl+pagedown"
         }
     ],
     "alwaysShowNotificationIcon": false,
