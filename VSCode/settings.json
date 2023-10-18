@@ -14,63 +14,66 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
+  "[python]": {
+    "editor.formatOnType": true
+  },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "aws.profile": "profile:default",
   "better-comments.tags": [
     {
-      "tag": "!",
+      "backgroundColor": "transparent",
+      "bold": false,
       "color": "#FF2D00",
+      "italic": false,
       "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
+      "tag": "!",
+      "underline": false
     },
     {
-      "tag": "?",
+      "backgroundColor": "transparent",
+      "bold": false,
       "color": "#3498DB",
+      "italic": true,
       "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": true
+      "tag": "?",
+      "underline": false
     },
     {
-      "tag": "~~",
+      "backgroundColor": "transparent",
+      "bold": false,
       "color": "#474747",
+      "italic": false,
       "strikethrough": true,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
+      "tag": "~~",
+      "underline": false
     },
     {
-      "tag": "todo",
+      "backgroundColor": "transparent",
+      "bold": false,
       "color": "#FF8C00",
+      "italic": false,
       "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
+      "tag": "todo",
+      "underline": false
     },
     {
-      "tag": "*",
-      "color": "#3E3E3E",
-      "strikethrough": false,
-      "underline": false,
       "backgroundColor": "#E3E3E3",
       "bold": true,
-      "italic": false
+      "color": "#3E3E3E",
+      "italic": false,
+      "strikethrough": false,
+      "tag": "*",
+      "underline": false
     }
   ],
   "cSpell.customDictionaries": {
     "custom-dictionary-user": {
+      "addWords": true,
+      "description": "Custom Dictionary",
       "name": "custom-dictionary-user",
       "path": "~/.config/.cspell/custom-dictionary-user.txt",
-      "description": "Custom Dictionary",
-      "addWords": true,
       "scope": "user"
     }
   },
@@ -80,6 +83,7 @@
     "powershell"
   ],
   "cSpell.language": "en,en-GB,en-US",
+  "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "smooth",
   "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
@@ -160,9 +164,6 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    ".clang-tidy": ".clang-format",
-    ".env": "*.env, .env.*, env.d.ts",
-    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
     "*.asax": "$(capture).*.cs, $(capture).*.vb",
     "*.ascx": "$(capture).*.cs, $(capture).*.vb",
     "*.ashx": "$(capture).*.cs, $(capture).*.vb",
@@ -184,6 +185,9 @@
     "*.tsx": "$(capture).ts",
     "*.vbproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.vue": "$(capture).*.ts, $(capture).*.js",
+    ".clang-tidy": ".clang-format",
+    ".env": "*.env, .env.*, env.d.ts",
+    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
     "artisan": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .htmlnanorc*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, cssnano.config.*, cypress.json, env.d.ts, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, server.php, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, webpack.mix.js, windi.config.*",
     "astro.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .htmlnanorc*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, cssnano.config.*, cypress.json, env.d.ts, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
     "BUILD.bazel": "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
@@ -214,7 +218,16 @@
   "files.insertFinalNewline": true,
   "files.refactoring.autoSave": true,
   "git.autofetch": true,
+  "git.branchProtection": [
+    "main"
+  ],
   "git.confirmSync": false,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": false,
+    "yaml": false
+  },
   "githubIssues.issueBranchTitle": "issue${issueNumber}",
   "githubIssues.queries": [
     {
@@ -227,6 +240,7 @@
     }
   ],
   "githubPullRequests.fileListLayout": "tree",
+  "githubPullRequests.pullBranch": "never",
   "gitlens.advanced.messages": {
     "suppressLineUncommittedWarning": true
   },
@@ -273,8 +287,10 @@
   "material-icon-theme.saturation": 1,
   "materialTheme.accent": "Orange",
   "npm-intellisense.showBuildInLibs": true,
+  "polacode.transparentBackground": true,
   "redhat.telemetry.enabled": false,
   "svelte.enable-ts-plugin": true,
+  "svelte.plugin.svelte.note-new-transformation": false,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier Now', monospace",
   "terminal.integrated.profiles.windows": {
@@ -294,12 +310,15 @@
       "source": "PowerShell"
     }
   },
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": false,
   "vscode-edge-devtools.mirrorEdits": true,
   "vscodeMarkdownNotes.allowPipedWikiLinks": true,
   "vscodeMarkdownNotes.createNoteOnGoToDefinitionWhenMissing": false,
   "vscodeMarkdownNotes.workspaceFilenameConvention": "relativePaths",
   "vsintellicode.java.completionsEnabled": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.autoDetectColorScheme": true,
   "window.menuBarVisibility": "compact",
   "window.zoomLevel": -1,
   "workbench.activityBar.visible": true,
@@ -330,7 +349,7 @@
       "textLink.foreground": "#FF7042"
     }
   },
-  "workbench.colorTheme": "One Dark Pro Flat",
+  "workbench.colorTheme": "Community Material Theme Lighter",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "compact",
   "workbench.editorAssociations": {
@@ -338,20 +357,11 @@
     "git-rebase-todo": "gitlens.rebase"
   },
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "One Dark Pro Flat",
+  "workbench.preferredHighContrastColorTheme": "One Dark Pro Darker",
+  "workbench.preferredHighContrastLightColorTheme": "Community Material Theme Lighter High Contrast",
+  "workbench.preferredLightColorTheme": "Community Material Theme Lighter",
   "workbench.sideBar.location": "right",
-  "svelte.plugin.svelte.note-new-transformation": false,
-  "editor.accessibilitySupport": "off",
-  "totalTypeScript.hideAllTips": false,
-  "totalTypeScript.hideBasicTips": false,
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": false,
-    "markdown": true
-  },
-  "git.branchProtection": [
-    "main"
-  ],
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -380,8 +390,5 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ],
-  "[python]": {
-    "editor.formatOnType": true
-  },
+  ]
 }
