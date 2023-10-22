@@ -102,11 +102,18 @@
                 "source": "Windows.Terminal.Wsl"
             },
             {
+                "guid": "{ccaf41b6-91a9-4864-854a-b47fa4e1a2ee}",
+                "hidden": false,
+                "name": "Fedora",
+                "commandline": "ssh shresht@fedora",
+                "icon": "ms-appdata:///roaming/fedora.png"
+            },
+            {
                 "guid": "{ccaf41b6-91a9-4864-854a-b47fa4e1a2dd}",
                 "hidden": false,
                 "name": "Android Smartphone",
                 "commandline": "scrcpy",
-                "icon": "📱"
+                "icon": "ms-appdata:///roaming/android.png"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
