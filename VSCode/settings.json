@@ -349,7 +349,7 @@
       "textLink.foreground": "#FF7042"
     }
   },
-  "workbench.colorTheme": "Community Material Theme Lighter",
+  "workbench.colorTheme": "One Dark Pro Flat",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "compact",
   "workbench.editorAssociations": {
