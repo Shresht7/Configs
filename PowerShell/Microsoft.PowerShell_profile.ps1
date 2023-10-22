@@ -27,6 +27,8 @@ Write-Quote -Path (Join-Path $HOME "Data" "quotes.csv")
 Set-Alias ~ Set-LocationToHome
 Set-Alias cdf Set-LocationFuzzy
 
+Set-Alias android scrcpy
+
 # EXTERNAL
 # ========
 
