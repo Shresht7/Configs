@@ -1,7 +1,17 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
         {
             "command": "find",
             "keys": "ctrl+shift+f"
@@ -11,51 +21,52 @@
             "keys": "ctrl+v"
         },
         {
-            "command": {
+            "command": "toggleAlwaysOnTop",
+            "keys": "ctrl+shift+f11"
+        },
+        {
+            "command": 
+            {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
         },
         {
-            "command": "toggleFocusMode",
-            "keys": "shift+f11"
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+t"
         },
         {
-            "command": "toggleAlwaysOnTop",
-            "keys": "ctrl+shift+f11"
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+pgdn"
+        },
+        {
+            "command": "toggleFocusMode",
+            "keys": "shift+f11"
         },
         {
             "command": "togglePaneZoom",
             "keys": "alt+shift+f11"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "prevTab"
+            },
+            "keys": "ctrl+pgup"
+        },
+        {
+            "command": 
+            {
                 "action": "quakeMode"
             },
             "keys": "win+shift+f11"
-        },
-        {
-            "command": {
-                "action": "newTab"
-            },
-            "keys": "ctrl+t"
-        },
-        {
-            "command": "prevTab",
-            "keys": "ctrl+pageup"
-        },
-        {
-            "command": "newTab",
-            "keys": "ctrl+pagedown"
-        },
-        {
-            "command": {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
         },
         {
             "command": "closePane",
@@ -66,20 +77,31 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-    "profiles": {
-        "defaults": {
-            "colorScheme": {
-                "light": "Frost",
-                "dark": "S7"
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": 
+            {
+                "dark": "S7",
+                "light": "Frost"
             },
-            "font": {
+            "font": 
+            {
                 "face": "CaskaydiaCove Nerd Font Mono",
                 "size": 10.0
             },
             "opacity": 50,
             "useAcrylic": true
         },
-        "list": [
+        "list": 
+        [
             {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
@@ -102,18 +124,18 @@
                 "source": "Windows.Terminal.Wsl"
             },
             {
+                "commandline": "ssh shresht@fedora",
                 "guid": "{ccaf41b6-91a9-4864-854a-b47fa4e1a2ee}",
                 "hidden": false,
-                "name": "Fedora",
-                "commandline": "ssh shresht@fedora",
-                "icon": "ms-appdata:///roaming/fedora.png"
+                "icon": "ms-appdata:///roaming/fedora.png",
+                "name": "Fedora"
             },
             {
+                "commandline": "scrcpy",
                 "guid": "{ccaf41b6-91a9-4864-854a-b47fa4e1a2dd}",
                 "hidden": false,
-                "name": "Android Smartphone",
-                "commandline": "scrcpy",
-                "icon": "ms-appdata:///roaming/android.png"
+                "icon": "ms-appdata:///roaming/android.png",
+                "name": "Android Smartphone"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
@@ -129,19 +151,20 @@
             },
             {
                 "guid": "{1ab1cd49-e58f-528a-9d85-4fa3221e44f0}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{b6c5a7ed-dc2b-5014-bcb7-d807fda34f5f}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -420,7 +443,8 @@
         }
     ],
     "startOnUserLogin": false,
-    "theme": {
+    "theme": 
+    {
         "dark": "dark",
         "light": "light"
     },
