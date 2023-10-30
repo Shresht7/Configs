@@ -1,3 +1,9 @@
+# ===========
+# ENVIRONMENT
+# ===========
+
+$Env:SHELL = "pwsh"
+
 # =======
 # MODULES
 # =======
@@ -83,7 +89,7 @@ Import-Module posh-git
 
 Import-Module PSFzf
 
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+g' -PSReadlineChordReverseHistory 'Ctrl+r'
+Set-PsFzfOption -GitKeyBindings 'Ctrl+g' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 # ----------
 # PSReadLine
