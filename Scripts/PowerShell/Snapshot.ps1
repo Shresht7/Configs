@@ -1,3 +1,12 @@
+# -----------------------
+# Source Helper Functions
+# -----------------------
+
+# Import helper functions
+Get-ChildItem -Path "$PSScriptRoot\Helpers" -Filter "*.ps1" | ForEach-Object {
+    . $_.FullName -Force -Verbose
+}
+
 # ----------
 # GitHub CLI
 # ----------
@@ -44,22 +53,3 @@ oh-my-posh config export image --cursor-padding 50 --author 'Shresht7' --output 
 Write-Host "Exported Oh My Posh Prompt Screenshot! ✅"
 
 Write-Progress -Activity Snapshot -Completed
-
-# ----------------
-# Helper Functions
-# ----------------
-
-<#
-.SYNOPSIS
-Find the path of the given program's executable
-.DESCRIPTION
-Locates the path for the given program's executable like the Unix `which` command.
-.PARAMETER $Command
-Name of the command
-.EXAMPLE
-Find-Path git
-Returns C:\Program Files\Git\cmd\git.exe
-#>
-function Find-Path([string]$Command) {
-    Get-Command -Name $Command -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
-}
