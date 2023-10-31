@@ -35,6 +35,13 @@ Set-Alias cdf Set-LocationFuzzy
 
 Set-Alias android scrcpy
 
+Set-Alias gitstatus Invoke-FuzzyGitStatus
+Set-Alias gitbranch Invoke-PsFzfGitBranches
+Set-Alias gitfiles Invoke-PSFzfGitFiles
+Set-Alias githashes Invoke-PSFzfGitHashes
+Set-Alias gitstashes Invoke-PsFzfGitStashes
+Set-Alias gittags Invoke-PsFzfGitTags
+
 # EXTERNAL
 # ========
 
