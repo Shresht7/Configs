@@ -6,53 +6,25 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": "toggleAlwaysOnTop",
-            "keys": "ctrl+shift+f11"
-        },
-        {
-            "command": 
-            {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
         },
         {
-            "command": 
-            {
-                "action": "newTab"
-            },
-            "keys": "ctrl+t"
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": 
             {
-                "action": "newTab"
+                "action": "nextTab"
             },
             "keys": "ctrl+pgdn"
-        },
-        {
-            "command": "toggleFocusMode",
-            "keys": "shift+f11"
-        },
-        {
-            "command": "togglePaneZoom",
-            "keys": "alt+shift+f11"
         },
         {
             "command": 
@@ -64,13 +36,41 @@
         {
             "command": 
             {
-                "action": "quakeMode"
+                "action": "newTab"
             },
-            "keys": "win+shift+f11"
+            "keys": "ctrl+t"
         },
         {
             "command": "closePane",
             "keys": "ctrl+w"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": "toggleFocusMode",
+            "keys": "shift+f11"
+        },
+        {
+            "command": "togglePaneZoom",
+            "keys": "alt+shift+f11"
+        },
+        {
+            "command": "toggleAlwaysOnTop",
+            "keys": "ctrl+shift+f11"
+        },
+        {
+            "command": 
+            {
+                "action": "quakeMode"
+            },
+            "keys": "win+shift+f11"
         }
     ],
     "alwaysShowNotificationIcon": false,
