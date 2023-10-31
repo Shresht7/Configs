@@ -1,8 +1,6 @@
 aaron-bond.better-comments
 arcticicestudio.nord-visual-studio-code
 astro-build.astro-vscode
-bungcip.better-toml
-byCedric.vscode-expo
 christian-kohler.npm-intellisense
 dbaeumer.vscode-eslint
 denoland.vscode-deno
@@ -11,9 +9,11 @@ dracula-theme.theme-dracula
 eamodio.gitlens
 ecmel.vscode-html-css
 Equinusocio.vsc-community-material-theme
+expo.vscode-expo-tools
 firefox-devtools.vscode-firefox-debug
 GitHub.codespaces
 GitHub.copilot
+GitHub.copilot-chat
 GitHub.github-vscode-theme
 GitHub.remotehub
 github.vscode-github-actions
@@ -26,6 +26,7 @@ mikestead.dotenv
 monokai.theme-monokai-pro-vscode
 ms-azuretools.vscode-docker
 ms-dotnettools.csharp
+ms-dotnettools.vscode-dotnet-runtime
 ms-edgedevtools.vscode-edge-devtools
 ms-python.python
 ms-python.vscode-pylance
@@ -50,6 +51,7 @@ msjsdiag.vscode-react-native
 naumovs.color-highlight
 pflannery.vscode-versionlens
 PKief.material-icon-theme
+pnp.polacode
 pomdtr.excalidraw-editor
 Prisma.prisma
 redhat.vscode-yaml
@@ -61,6 +63,7 @@ SimonSiefke.svg-preview
 streetsidesoftware.code-spell-checker
 sumneko.lua
 svelte.svelte-vscode
+tamasfe.even-better-toml
 unifiedjs.vscode-mdx
 usernamehw.errorlens
 vadimcn.vscode-lldb
