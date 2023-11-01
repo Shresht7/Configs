@@ -10,11 +10,15 @@
 .EXAMPLE
     Test-IsElevated
     Returns $True if the current user is in "Administrator" mode
+.NOTES
+    This is a windows specific cmdlet.
 #>
 function Test-IsElevated {
-    # Get the ID and security principal of the current user account
-    $MyIdentity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
-    $MyPrincipal = New-Object System.Security.Principal.WindowsPrincipal($MyIdentity)
-    # Check to see if we are currently running in "Administrator" mode
-    return $MyPrincipal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
+    if ($PSVersionTable.OS -like "Windows") {
+        # Get the ID and security principal of the current user account
+        $MyIdentity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
+        $MyPrincipal = New-Object System.Security.Principal.WindowsPrincipal($MyIdentity)
+        # Check to see if we are currently running in "Administrator" mode
+        return $MyPrincipal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
+    }
 }
