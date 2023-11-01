@@ -320,7 +320,6 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.autoDetectColorScheme": true,
   "window.menuBarVisibility": "compact",
-  "window.zoomLevel": -1,
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "[Material Theme Darker]": {
@@ -390,5 +389,6 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "window.zoomLevel": -1
 }
