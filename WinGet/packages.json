@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2023-10-31T13:14:53.446-00:00",
+	"CreationDate" : "2023-11-29T23:04:09.986-00:00",
 	"Sources" : 
 	[
 		{
@@ -28,6 +28,9 @@
 					"PackageIdentifier" : "Git.Git"
 				},
 				{
+					"PackageIdentifier" : "Google.Chrome"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.Edge"
 				},
 				{
@@ -49,9 +52,6 @@
 					"PackageIdentifier" : "Microsoft.OneDrive"
 				},
 				{
-					"PackageIdentifier" : "PostgreSQL.PostgreSQL"
-				},
-				{
 					"PackageIdentifier" : "Rustlang.Rustup"
 				},
 				{
@@ -70,28 +70,34 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
+					"PackageIdentifier" : "Google.ChromeRemoteDesktop"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.OpenJDK.11"
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+				},
+				{
+					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
-				},
-				{
-					"PackageIdentifier" : "GoLang.Go"
 				},
 				{
 					"PackageIdentifier" : "DebaucheeOpenSourceGroup.Barrier"
@@ -103,28 +109,31 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+					"PackageIdentifier" : "Microsoft.VCRedist.2005.x86"
 				},
 				{
 					"PackageIdentifier" : "GOG.Galaxy"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22621"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
+					"PackageIdentifier" : "GoLang.Go"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.OpenJDK.11"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
-				},
-				{
-					"PackageIdentifier" : "GitHub.cli"
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "Nvidia.GeForceExperience"
@@ -133,22 +142,25 @@
 					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
-					"PackageIdentifier" : "Google.ChromeRemoteDesktop"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.WebDeploy"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.7"
 				},
 				{
+					"PackageIdentifier" : "SyncTrayzor.SyncTrayzor"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				}
 			],
 			"SourceDetails" : 
@@ -175,5 +187,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.6.2771"
+	"WinGetVersion" : "1.6.3133"
 }

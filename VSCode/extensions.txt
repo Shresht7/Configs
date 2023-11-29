@@ -9,6 +9,8 @@ dracula-theme.theme-dracula
 eamodio.gitlens
 ecmel.vscode-html-css
 Equinusocio.vsc-community-material-theme
+Equinusocio.vsc-material-theme
+equinusocio.vsc-material-theme-icons
 expo.vscode-expo-tools
 firefox-devtools.vscode-firefox-debug
 GitHub.codespaces
@@ -19,10 +21,8 @@ GitHub.remotehub
 github.vscode-github-actions
 GitHub.vscode-pull-request-github
 golang.go
-kortina.vscode-markdown-notes
 MarkThomasMiller.sorcerer
 mechatroner.rainbow-csv
-mikestead.dotenv
 monokai.theme-monokai-pro-vscode
 ms-azuretools.vscode-docker
 ms-dotnettools.csharp
@@ -64,6 +64,7 @@ streetsidesoftware.code-spell-checker
 sumneko.lua
 svelte.svelte-vscode
 tamasfe.even-better-toml
+tomoki1207.pdf
 unifiedjs.vscode-mdx
 usernamehw.errorlens
 vadimcn.vscode-lldb

@@ -320,7 +320,6 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.autoDetectColorScheme": true,
   "window.menuBarVisibility": "compact",
-  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "[Material Theme Darker]": {
       "activityBar.activeBorder": "#FF7042",
