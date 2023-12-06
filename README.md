@@ -57,13 +57,13 @@ https://scoop.sh/
 #### Export scoopfile
 
 ```shell
-scoop export > Scoop\scoopfile.json
+scoop export > "Scoop/scoopfile.json"
 ```
 
 #### Import scoopfile
 
 ```shell
-scoop import Scoop\scoopfile.json
+scoop import "Scoop/scoopfile.json"
 ```
 
 ## Visual Studio Code
@@ -81,7 +81,7 @@ https://code.visualstudio.com/
 #### Export VS Code Extensions
 
 ```shell
-code --list-extensions > VSCode\extensions.txt
+code --list-extensions > "VSCode/extensions.txt"
 ```
 
 ## Windows Terminal
@@ -110,11 +110,11 @@ https://learn.microsoft.com/en-us/windows/package-manager/winget/
 
 ### Export winget packages
 ```shell
-winget export WinGet\packages.json
+winget export "WinGet/packages.json"
 ```
 ### Import winget packages
 ```shell
-winget import WinGet\packages.json
+winget import "WinGet/packages.json"
 ```
 
 ---
