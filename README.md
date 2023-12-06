@@ -6,9 +6,9 @@ My System Configuration
 
 ## 📜 [Scripts](Scripts/)
 
-- [`Install.ps1`](Scripts/Install.ps1) - Responsible for setting up the entire system by installing various packages and applications
-- [`Symlink.ps1`](Scripts/Symlink.ps1) - Symlinks dotfiles, settings and modules to the right places
-- [`Snapshot.ps1`](Scripts/Snapshot.ps1) - Takes a snapshot of system configuration
+- [`Install.ps1`](Scripts/PowerShell/Install.ps1) - Responsible for setting up the entire system by installing various packages and applications
+- [`Symlink.ps1`](Scripts/PowerShell/Symlink.ps1) - Symlinks dotfiles, settings and modules to the right places
+- [`Snapshot.ps1`](Scripts/PowerShell/Snapshot.ps1) - Takes a snapshot of system configuration
 
 ---
 
