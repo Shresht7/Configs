@@ -21,12 +21,16 @@ GitHub.remotehub
 github.vscode-github-actions
 GitHub.vscode-pull-request-github
 golang.go
+kortina.vscode-markdown-notes
 MarkThomasMiller.sorcerer
 mechatroner.rainbow-csv
+mikestead.dotenv
 monokai.theme-monokai-pro-vscode
 ms-azuretools.vscode-docker
+ms-dotnettools.csdevkit
 ms-dotnettools.csharp
 ms-dotnettools.vscode-dotnet-runtime
+ms-dotnettools.vscodeintellicode-csharp
 ms-edgedevtools.vscode-edge-devtools
 ms-python.python
 ms-python.vscode-pylance
