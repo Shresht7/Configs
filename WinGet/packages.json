@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2023-11-29T23:04:09.986-00:00",
+	"CreationDate" : "2023-12-06T15:10:41.206-00:00",
 	"Sources" : 
 	[
 		{
@@ -37,6 +37,9 @@
 					"PackageIdentifier" : "Microsoft.EdgeWebView2Runtime"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.AppInstaller"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.DevHome"
 				},
 				{
@@ -58,6 +61,9 @@
 					"PackageIdentifier" : "Valve.Steam"
 				},
 				{
+					"PackageIdentifier" : "Ubisoft.Connect"
+				},
+				{
 					"PackageIdentifier" : "charmbracelet.gum"
 				},
 				{
@@ -65,6 +71,9 @@
 				},
 				{
 					"PackageIdentifier" : "yt-dlp.yt-dlp"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
@@ -89,9 +98,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
-				},
-				{
-					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
@@ -119,6 +125,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
+				},
+				{
+					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
 					"PackageIdentifier" : "GoLang.Go"
@@ -169,21 +178,6 @@
 				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
 				"Name" : "winget",
 				"Type" : "Microsoft.PreIndexed.Package"
-			}
-		},
-		{
-			"Packages" : 
-			[
-				{
-					"PackageIdentifier" : "XP89DCGQ3K6VLD"
-				}
-			],
-			"SourceDetails" : 
-			{
-				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-				"Identifier" : "StoreEdgeFD",
-				"Name" : "msstore",
-				"Type" : "Microsoft.Rest"
 			}
 		}
 	],
