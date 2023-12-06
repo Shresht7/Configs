@@ -53,3 +53,11 @@ oh-my-posh config export image --cursor-padding 50 --author 'Shresht7' --output 
 Write-Host "Exported Oh My Posh Prompt Screenshot! ✅"
 
 Write-Progress -Activity Snapshot -Completed
+
+# ----------------
+# GNOME Extensions
+# ----------------
+
+if (Find-Path gnome-extensions | Test-Path) {
+    gnome-extensions list > '.\GNOME\extensions.txt'
+}
