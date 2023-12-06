@@ -4,7 +4,7 @@ My System Configuration
 
 ---
 
-## 📜 [Scripts](./Scripts/)
+## 📜 [Scripts](Scripts/)
 
 - [`Install.ps1`](Scripts/Install.ps1) - Responsible for setting up the entire system by installing various packages and applications
 - [`Symlink.ps1`](Scripts/Symlink.ps1) - Symlinks dotfiles, settings and modules to the right places
@@ -24,7 +24,7 @@ https://git-scm.com/
 
 ### gh
 
-[GitHub CLI extensions](GitHub\gh\extensions.txt)
+[GitHub CLI extensions](GitHub/gh/extensions.txt)
 
 ## PowerShell
 
