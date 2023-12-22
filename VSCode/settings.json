@@ -273,10 +273,6 @@
   "Lua.hint.paramName": "All",
   "Lua.hint.setType": true,
   "Lua.telemetry.enable": false,
-  "Lua.workspace.library": [
-    "C:/Users/shres/Documents/Divinity Original Sin 2 Modding/Modding-Tools/IDE-Helpers/"
-  ],
-  "Lua.workspace.preloadFileSize": 10000000,
   "material-icon-theme.activeIconPack": "react",
   "material-icon-theme.files.associations": {
     "reference.md": "Lib",
@@ -329,6 +325,7 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.autoDetectColorScheme": true,
   "window.menuBarVisibility": "compact",
+  "window.zoomLevel": -1,
   "workbench.colorCustomizations": {
     "[Material Theme Darker]": {
       "activityBar.activeBorder": "#FF7042",
@@ -397,6 +394,5 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ],
-  "window.zoomLevel": -1
+  ]
 }
