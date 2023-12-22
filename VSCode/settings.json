@@ -282,11 +282,14 @@
     "reference.md": "Lib",
     "references.md": "Lib",
     "todo.md": "Todo",
-    "todos.md": "Todo"
+    "*.todo.md": "Todo",
+    "todo.txt": "Todo",
+    "*.todo.txt": "Todo"
   },
   "material-icon-theme.folders.associations": {
     "__notes__": "Syntax",
-    "__sample__": "Test"
+    "__sample__": "Test",
+    "Git": "Git"
   },
   "material-icon-theme.folders.color": "#ff7045",
   "material-icon-theme.hidesExplorerArrows": false,
