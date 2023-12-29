@@ -1,4 +1,7 @@
 {
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
@@ -20,7 +23,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "markdown.extension.toc.levels": "2..6", // Ignore the top-level heading for the table-of-contents
   "aws.profile": "profile:default",
   "better-comments.tags": [
     {
@@ -78,9 +80,6 @@
       "scope": "user"
     }
   },
-  "errorLens.exclude": [
-    "Unknown word"
-  ],
   "cSpell.enableFiletypes": [
     "lua",
     "mdx",
@@ -160,6 +159,9 @@
     ],
     "types": "#829191"
   },
+  "errorLens.exclude": [
+    "Unknown word"
+  ],
   "eslint.alwaysShowStatus": true,
   "eslint.codeAction.showDocumentation": {
     "enable": true
@@ -277,14 +279,15 @@
   "Lua.hint.paramName": "All",
   "Lua.hint.setType": true,
   "Lua.telemetry.enable": false,
+  "markdown.extension.toc.levels": "2..6", // Ignore the top-level heading for the table-of-contents
   "material-icon-theme.activeIconPack": "react",
   "material-icon-theme.files.associations": {
+    "*.todo.md": "Todo",
+    "*.todo.txt": "Todo",
     "reference.md": "Lib",
     "references.md": "Lib",
     "todo.md": "Todo",
-    "*.todo.md": "Todo",
-    "todo.txt": "Todo",
-    "*.todo.txt": "Todo"
+    "todo.txt": "Todo"
   },
   "material-icon-theme.folders.associations": {
     "__notes__": "Syntax",
