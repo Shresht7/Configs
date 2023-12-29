@@ -78,6 +78,9 @@
       "scope": "user"
     }
   },
+  "errorLens.exclude": [
+    "Unknown word"
+  ],
   "cSpell.enableFiletypes": [
     "lua",
     "mdx",
