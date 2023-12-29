@@ -20,6 +20,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "markdown.extension.toc.levels": "2..6", // Ignore the top-level heading for the table-of-contents
   "aws.profile": "profile:default",
   "better-comments.tags": [
     {
