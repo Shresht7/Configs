@@ -1,0 +1,15 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    // Toggles the visibility of both sidebars at the same time
+    {
+        "key": "ctrl+alt+numpad0",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.toggleAuxiliaryBar"
+            ]
+        },
+        "when": "editorTextFocus"
+    }
+]
