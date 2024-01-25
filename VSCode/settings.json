@@ -296,6 +296,8 @@
   "gitlens.views.commits.files.layout": "tree",
   "gitlens.views.contributors.showStatistics": true,
   "go.toolsManagement.autoUpdate": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
   "json.schemas": [
     {
       "fileMatch": [
