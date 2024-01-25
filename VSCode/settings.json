@@ -121,6 +121,14 @@
         }
       },
       {
+        "name": "storage.type.class.jsdoc",
+        "scope": "storage.type.class.jsdoc",
+        "settings": {
+          "fontStyle": "italic bold",
+          "foreground": "#999999"
+        }
+      },
+      {
         "name": "storage.modifier",
         "scope": "storage.modifier",
         "settings": {
