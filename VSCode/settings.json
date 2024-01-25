@@ -359,6 +359,8 @@
   },
   "totalTypeScript.hideAllTips": false,
   "totalTypeScript.hideBasicTips": false,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
   "vscode-edge-devtools.mirrorEdits": true,
   "vscodeMarkdownNotes.allowPipedWikiLinks": true,
   "vscodeMarkdownNotes.createNoteOnGoToDefinitionWhenMissing": false,
