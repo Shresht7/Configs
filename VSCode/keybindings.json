@@ -51,5 +51,8 @@
         "command": "-editor.action.showHover",
         "when": "editorTextFocus"
     },
+    {
+        "key": "ctrl+shift+alt+f12",
+        "command": "editor.action.referenceSearch.trigger"
     }
 ]
