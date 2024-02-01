@@ -31,5 +31,15 @@
         "key": "ctrl+alt+shift+down",
         "command": "workbench.action.moveEditorToBelowGroup"
     },
+    {
+        "key": "alt+oem_3",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "alt+oem_3",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
     }
 ]
