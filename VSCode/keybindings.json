@@ -14,5 +14,22 @@
     {
         "key": "ctrl+shift+J",
         "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+alt+shift+up",
+        "command": "workbench.action.moveEditorToAboveGroup"
+    },
+    {
+        "key": "ctrl+alt+shift+left",
+        "command": "workbench.action.moveEditorToLeftGroup"
+    },
+    {
+        "key": "ctrl+alt+shift+right",
+        "command": "workbench.action.moveEditorToRightGroup"
+    },
+    {
+        "key": "ctrl+alt+shift+down",
+        "command": "workbench.action.moveEditorToBelowGroup"
+    },
     }
 ]
