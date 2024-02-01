@@ -3,6 +3,7 @@
 # ===========
 
 $Env:SHELL = "pwsh"
+$Env:EDITOR = "code"
 
 # =======
 # MODULES
