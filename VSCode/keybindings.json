@@ -2,6 +2,14 @@
 [
     // Toggles the visibility of both sidebars at the same time
     {
+        "key": "ctrl+e ctrl+n",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+e ctrl+alt+n",
+        "command": "explorer.newFolder"
+    },
+    {
         "key": "ctrl+alt+numpad0",
         "command": "runCommands",
         "args": {
