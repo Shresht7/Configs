@@ -10,6 +10,10 @@
             "keys": "ctrl+c"
         },
         {
+            "command": "toggleAlwaysOnTop",
+            "keys": "ctrl+shift+f11"
+        },
+        {
             "command": "paste",
             "keys": "ctrl+v"
         },
@@ -19,9 +23,21 @@
         },
         {
             "command": {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": {
                 "action": "nextTab"
             },
             "keys": "ctrl+pgdn"
+        },
+        {
+            "command": "closePane",
+            "keys": "ctrl+w"
         },
         {
             "command": {
@@ -36,28 +52,12 @@
             "keys": "ctrl+t"
         },
         {
-            "command": "closePane",
-            "keys": "ctrl+w"
-        },
-        {
-            "command": {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        },
-        {
             "command": "toggleFocusMode",
             "keys": "shift+f11"
         },
         {
             "command": "togglePaneZoom",
             "keys": "alt+shift+f11"
-        },
-        {
-            "command": "toggleAlwaysOnTop",
-            "keys": "ctrl+shift+f11"
         },
         {
             "command": {
@@ -70,6 +70,7 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "initialRows": 35,
     "newTabMenu": [
         {
             "type": "remainingProfiles"
