@@ -27,7 +27,7 @@
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "keys": "alt+shift+d"
+            "keys": "ctrl+shift+t"
         },
         {
             "command": {
