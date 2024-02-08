@@ -50,6 +50,10 @@
         "when": "terminalFocus"
     },
     {
+        "key": "ctrl+oem_1",
+        "command": "editor.action.referenceSearch.trigger"
+    },
+    {
         "key": "ctrl+oem_7",
         "command": "editor.action.showHover",
         "when": "editorTextFocus"
