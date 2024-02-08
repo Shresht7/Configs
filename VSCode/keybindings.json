@@ -10,12 +10,12 @@
         "command": "explorer.newFolder"
     },
     {
-        "key": "ctrl+alt+numpad0",
+        "key": "ctrl+shift+insert",
         "command": "runCommands",
         "args": {
             "commands": [
                 "workbench.action.toggleSidebarVisibility",
-                "workbench.action.toggleAuxiliaryBar"
+                "workbench.action.toggleAuxiliaryBar",
             ]
         }
     },
