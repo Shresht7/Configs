@@ -15,7 +15,7 @@
         "args": {
             "commands": [
                 "workbench.action.toggleSidebarVisibility",
-                "workbench.action.toggleAuxiliaryBar",
+                "workbench.action.toggleAuxiliaryBar"
             ]
         }
     },
@@ -59,12 +59,25 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+k ctrl+i",
-        "command": "-editor.action.showHover",
-        "when": "editorTextFocus"
+        "key": "ctrl+2",
+        "command": "workbench.action.gotoSymbol",
+        "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
     },
     {
-        "key": "ctrl+shift+alt+f12",
-        "command": "editor.action.referenceSearch.trigger"
+        "key": "ctrl+3",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
     }
 ]
