@@ -14,6 +14,7 @@
 # Set VS Code as the default editor
 [core]
 	editor 			= code --wait
+	pager			= bat
 
 # Set main as the default branch
 [init]
