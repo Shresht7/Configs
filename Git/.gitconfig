@@ -14,7 +14,6 @@
 # Set VS Code as the default editor
 [core]
 	editor 			= code --wait
-	pager			= bat
 
 # Set main as the default branch
 [init]
@@ -42,6 +41,10 @@
 	list-branch		= branch --format="%(refname:short)"
 	# Burn it to the ground - Hard reset
 	burn			= reset --hard								
+
+# Set bat as the default diff tool
+[pager]
+	diff 			= bat
 
 # Set VS Code as the default merge tool
 [merge]
