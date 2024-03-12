@@ -47,7 +47,7 @@ if (Find-Path code | Test-Path) {
 # Oh My Posh Prompt
 # -----------------
 
-# Take a snapshot of the current oh-my-posh prompt
+# Take a snapshot of the current Oh-My-Posh prompt
 oh-my-posh config export image --cursor-padding 50 --author 'Shresht7' --output s7-prompt.png
 
 Write-Host "Exported Oh My Posh Prompt Screenshot! ✅"

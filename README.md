@@ -61,7 +61,7 @@ https://ohmyposh.dev/
 
 #### Theme
 
-[`s7.omp.yaml`](oh-my-posh/Themes/s7.omp.yaml)
+[`s7.omp.yaml`](Oh-My-Posh/Themes/s7.omp.yaml)
 
 
 ![oh-my-posh-prompt-theme](s7-prompt.png)
