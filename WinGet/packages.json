@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2024-01-25T10:42:38.959-00:00",
+	"CreationDate" : "2024-03-12T18:52:35.409-00:00",
 	"Sources" : 
 	[
 		{
@@ -85,10 +85,10 @@
 					"PackageIdentifier" : "yt-dlp.yt-dlp"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
+					"PackageIdentifier" : "Google.ChromeRemoteDesktop"
 				},
 				{
-					"PackageIdentifier" : "GoLang.Go"
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerShell"
@@ -97,16 +97,10 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+					"PackageIdentifier" : "Inkscape.Inkscape"
 				},
 				{
 					"PackageIdentifier" : "ElectronicArts.EADesktop"
@@ -115,10 +109,16 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
-					"PackageIdentifier" : "GitHub.cli"
+					"PackageIdentifier" : "Python.Launcher"
 				},
 				{
 					"PackageIdentifier" : "DebaucheeOpenSourceGroup.Barrier"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.CLRTypesSQLServer.2019"
@@ -127,7 +127,7 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
-					"PackageIdentifier" : "Google.ChromeRemoteDesktop"
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.7"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2005.x86"
@@ -140,6 +140,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
+				},
+				{
+					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
@@ -157,6 +160,9 @@
 					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
+					"PackageIdentifier" : "GoLang.Go"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.WebDeploy"
 				},
 				{
@@ -166,22 +172,25 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
-				},
-				{
-					"PackageIdentifier" : "SyncTrayzor.SyncTrayzor"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
+					"PackageIdentifier" : "Python.Python.3.12"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.Runtime.6"
 				},
 				{
+					"PackageIdentifier" : "SyncTrayzor.SyncTrayzor"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
+				},
+				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.7"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				}
 			],
 			"SourceDetails" : 
@@ -193,5 +202,5 @@
 			}
 		}
 	],
-	"WinGetVersion" : "1.6.3482"
+	"WinGetVersion" : "1.7.10582"
 }

@@ -3,108 +3,108 @@
         {
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main",
-            "Updated": "2024-01-25T06:02:33+05:30",
-            "Manifests": 1287
+            "Updated": "2024-03-12T13:55:59+05:30",
+            "Manifests": 1308
         }
     ],
     "apps": [
         {
             "Name": "7zip",
             "Source": "main",
+            "Version": "23.01",
             "Updated": "2023-06-29T02:10:08.3504341+05:30",
-            "Info": "",
-            "Version": "23.01"
+            "Info": ""
         },
         {
             "Name": "bat",
             "Source": "main",
+            "Version": "0.24.0",
             "Updated": "2023-11-01T18:37:15.0452216+05:30",
-            "Info": "",
-            "Version": "0.24.0"
+            "Info": ""
         },
         {
             "Name": "bottom",
             "Source": "main",
+            "Version": "0.9.6",
             "Updated": "2023-09-02T17:54:35.8190622+05:30",
-            "Info": "",
-            "Version": "0.9.6"
+            "Info": ""
         },
         {
             "Name": "curl",
             "Source": "main",
-            "Updated": "2024-01-25T09:45:00.709952+05:30",
-            "Info": "",
-            "Version": "8.5.0_6"
+            "Version": "8.6.0_6",
+            "Updated": "2024-03-12T11:45:14.5541241+05:30",
+            "Info": ""
         },
         {
             "Name": "fd",
             "Source": "main",
+            "Version": "9.0.0",
             "Updated": "2023-12-21T10:05:14.3309917+05:30",
-            "Info": "",
-            "Version": "9.0.0"
+            "Info": ""
         },
         {
             "Name": "ffmpeg",
             "Source": "main",
+            "Version": "6.1.1",
             "Updated": "2024-01-03T10:36:01.0424401+05:30",
-            "Info": "",
-            "Version": "6.1.1"
+            "Info": ""
         },
         {
             "Name": "fzf",
             "Source": "main",
-            "Updated": "2024-01-25T09:45:04.289809+05:30",
-            "Info": "",
-            "Version": "0.46.0"
+            "Version": "0.47.0",
+            "Updated": "2024-03-11T09:30:19.4473353+05:30",
+            "Info": ""
         },
         {
             "Name": "less",
             "Source": "main",
+            "Version": "643",
             "Updated": "2023-08-21T20:43:23.3752951+05:30",
-            "Info": "",
-            "Version": "643"
+            "Info": ""
         },
         {
             "Name": "micro",
             "Source": "main",
+            "Version": "2.0.13",
             "Updated": "2023-11-01T18:37:24.3950699+05:30",
-            "Info": "",
-            "Version": "2.0.13"
+            "Info": ""
         },
         {
             "Name": "ripgrep",
             "Source": "main",
+            "Version": "14.1.0",
             "Updated": "2024-01-07T16:56:36.3017631+05:30",
-            "Info": "",
-            "Version": "14.1.0"
+            "Info": ""
         },
         {
             "Name": "sd",
             "Source": "main",
+            "Version": "1.0.0",
             "Updated": "2023-12-01T19:49:05.8846804+05:30",
-            "Info": "",
-            "Version": "1.0.0"
+            "Info": ""
         },
         {
             "Name": "sqlite",
             "Source": "main",
-            "Updated": "2024-01-16T20:08:21.2296341+05:30",
-            "Info": "",
-            "Version": "3.45.0"
+            "Version": "3.45.1",
+            "Updated": "2024-01-31T18:46:27.5714821+05:30",
+            "Info": ""
         },
         {
             "Name": "tealdeer",
             "Source": "main",
+            "Version": "1.6.1",
             "Updated": "2022-11-05T00:43:55.9998825+05:30",
-            "Info": "",
-            "Version": "1.6.1"
+            "Info": ""
         },
         {
             "Name": "yt-dlp",
             "Source": "main",
-            "Updated": "2024-01-03T10:36:10.3241237+05:30",
-            "Info": "",
-            "Version": "2023.12.30"
+            "Version": "2024.03.10",
+            "Updated": "2024-03-11T09:30:25.6093875+05:30",
+            "Info": ""
         }
     ]
 }
