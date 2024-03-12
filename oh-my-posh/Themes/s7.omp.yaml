@@ -11,6 +11,13 @@ terminal_background: "#282c34"
 
 # Symbols: ❯            
 
+# ================
+# CONFIG VARIABLES
+# ================
+
+var:
+  Name: S7
+
 # =============
 # COLOR PALETTE
 # =============
@@ -46,7 +53,7 @@ blocks:
         foreground: p:black
         leading_diamond: 
         style: diamond
-        template: " S7 "
+        template: " {{ .Var.Name }} "
         trailing_diamond: 
         type: session
 
