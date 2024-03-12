@@ -336,6 +336,9 @@
   "npm-intellisense.showBuildInLibs": true,
   "polacode.transparentBackground": true,
   "redhat.telemetry.enabled": false,
+  "remote.SSH.remotePlatform": {
+    "fedora": "linux"
+  },
   "svelte.enable-ts-plugin": true,
   "svelte.plugin.svelte.note-new-transformation": false,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
