@@ -11,11 +11,14 @@
     Test-IsElevated
     Returns $True if the current user is in "Administrator" mode
 .NOTES
-    This cmdlet is specifically designed for Windows and relies on Windows-specific features to determine if a user is running with administrator privileges.
-    Linux doesn't have the concept of administrators in the same way that Windows does, so the cmdlet as-is won't work on Linux.
+    This cmdlet is specifically designed for Windows and relies on Windows-specific features to determine
+    if a user is running with administrator privileges.
+    Linux doesn't have the concept of administrators in the same way that Windows does, so
+    the cmdlet as-is won't work on Linux.
     The cmdlet will just return $True and let the script proceed as normal.
 #>
 function Test-IsElevated {
+    
     # Perform the check if only on windows
     if ($PSVersionTable.OS -like "*Windows*") {
         # Get the ID and security principal of the current user account
@@ -30,4 +33,5 @@ function Test-IsElevated {
         # This is a band-aid fix.
         return $True # TODO: See if this cmdlet can be made useful on Linux
     }
+
 }
