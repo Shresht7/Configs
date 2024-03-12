@@ -26,10 +26,14 @@ if (-Not (Test-IsElevated)) {
 # --------------------------
 
 $Modules = @(
+    "BurntToast",
+    "CompletionPredictor",
     "Terminal-Icons",
     "posh-git",
     "PSFzf",
-    "z"
+    "z",
+    "Microsoft.PowerShell.SecretManagement",
+    "Microsoft.PowerShell.SecretStore",
 )
 
 Write-Host "Installing PowerShell Modules ..."
