@@ -95,7 +95,7 @@ blocks:
   # === RIGHT ===
   - type: rprompt
     segments:
-      # Exit Code
+      # Status Code
       - background: p:blue
         background_templates:
           - "{{ if gt .Code 0 }}p:red{{ end }}"
@@ -106,7 +106,7 @@ blocks:
         properties:
           always_enabled: true
         template: "  "
-        type: exit
+        type: status
 
       # Execution Time
       - background: p:black
