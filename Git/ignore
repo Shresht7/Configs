@@ -1,0 +1,2 @@
+# Ignore everything inside a `.local` folder
+.local
