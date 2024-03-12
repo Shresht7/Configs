@@ -53,7 +53,7 @@ Set-Alias gittags Invoke-PsFzfGitTags
 # oh-my-posh is a prompt theme engine for PowerShell
 # https://ohmyposh.dev/
 
-oh-my-posh init pwsh --config "~/Configs/PowerShell/Themes/s7.omp.yaml" | Invoke-Expression
+oh-my-posh init pwsh --config "~/Configs/oh-my-posh/Themes/s7.omp.yaml" | Invoke-Expression
 
 Set-Alias omp oh-my-posh.exe
 
