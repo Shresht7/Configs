@@ -6,7 +6,7 @@
         "command": "explorer.newFile"
     },
     {
-        "key": "ctrl+e ctrl+alt+n",
+        "key": "ctrl+e ctrl+shift+n",
         "command": "explorer.newFolder"
     },
     {
