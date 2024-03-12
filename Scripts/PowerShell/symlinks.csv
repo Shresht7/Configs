@@ -1,5 +1,6 @@
 Path, Target
 ".gitconfig", "Configs\Git\.gitconfig"
+".config\git\ignore", "Configs\Git\ignore"
 "Documents\PowerShell\Microsoft.PowerShell_profile.ps1", "Configs\PowerShell\Microsoft.PowerShell_profile.ps1"
 "AppData\Roaming\Code\User\settings.json", "Configs\VSCode\settings.json"
 "AppData\Roaming\Code\User\keybindings.json", "Configs\VSCode\keybindings.json"
