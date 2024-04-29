@@ -1,14 +1,16 @@
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to override the defaults
 [
-    // Toggles the visibility of both sidebars at the same time
+    // Create a new file
     {
         "key": "ctrl+e ctrl+n",
         "command": "explorer.newFile"
     },
+    // Create a new folder
     {
         "key": "ctrl+e ctrl+shift+n",
         "command": "explorer.newFolder"
     },
+    // Toggles the visibility of both sidebars at the same time
     {
         "key": "ctrl+shift+insert",
         "command": "runCommands",
@@ -19,26 +21,32 @@
             ]
         }
     },
+    // Maximizes the bottom panel (output, terminal, debug console) to take up the full height
     {
         "key": "ctrl+shift+J",
         "command": "workbench.action.toggleMaximizedPanel"
     },
+    // Move the current editor to the above group
     {
         "key": "ctrl+alt+shift+up",
         "command": "workbench.action.moveEditorToAboveGroup"
     },
+    // Move the current editor to the left group
     {
         "key": "ctrl+alt+shift+left",
         "command": "workbench.action.moveEditorToLeftGroup"
     },
+    // Move the current editor to the right group
     {
         "key": "ctrl+alt+shift+right",
         "command": "workbench.action.moveEditorToRightGroup"
     },
+    // Move the current editor to the below group 
     {
         "key": "ctrl+alt+shift+down",
         "command": "workbench.action.moveEditorToBelowGroup"
     },
+    // Switch focus between the editor and the terminal
     {
         "key": "alt+oem_3",
         "command": "workbench.action.terminal.focus",
@@ -49,28 +57,34 @@
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
     },
+    // Perform a reference search
     {
         "key": "ctrl+oem_1",
         "command": "editor.action.referenceSearch.trigger"
     },
+    // Show hover information
     {
         "key": "ctrl+oem_7",
         "command": "editor.action.showHover",
         "when": "editorTextFocus"
     },
+    // Go to symbol
     {
         "key": "ctrl+2",
         "command": "workbench.action.gotoSymbol",
         "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
     },
+    // Show all symbols
     {
         "key": "ctrl+3",
         "command": "workbench.action.showAllSymbols"
     },
+    // Show all commands
     {
         "key": "ctrl+4",
         "command": "workbench.action.showCommands"
     },
+    // Quick open files
     {
         "key": "ctrl+5",
         "command": "workbench.action.quickOpen"
