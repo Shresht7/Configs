@@ -3,6 +3,7 @@ arcticicestudio.nord-visual-studio-code
 astro-build.astro-vscode
 bierner.markdown-mermaid
 bowlerhatllc.vscode-nextgenas
+bradlc.vscode-tailwindcss
 christian-kohler.npm-intellisense
 dbaeumer.vscode-eslint
 denoland.vscode-deno
@@ -52,6 +53,7 @@ ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
 ms-vscode.extension-test-runner
 ms-vscode.live-server
+ms-vscode.makefile-tools
 ms-vscode.powershell
 ms-vscode.remote-explorer
 ms-vscode.remote-repositories
