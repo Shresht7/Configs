@@ -69,6 +69,15 @@
       "strikethrough": false,
       "tag": "*",
       "underline": false
+    },
+    {
+      "backgroundColor": "transparent",
+      "bold": false,
+      "color": "#FF7",
+      "italic": false,
+      "strikethrough": false,
+      "tag": "note:",
+      "underline": false
     }
   ],
   "cSpell.customDictionaries": {
@@ -98,7 +107,6 @@
   "editor.inlayHints.padding": true,
   "editor.inlineSuggest.enabled": true,
   "editor.linkedEditing": true,
-  "editor.minimap.enabled": true,
   "editor.quickSuggestions": {
     "comments": "on",
     "other": "on",
@@ -371,7 +379,6 @@
   "vsintellicode.java.completionsEnabled": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.autoDetectColorScheme": true,
-  "window.menuBarVisibility": "compact",
   "window.zoomLevel": -1,
   "workbench.colorCustomizations": {
     "[Material Theme Darker]": {
@@ -441,5 +448,8 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "github.copilot.editor.enableAutoCompletions": true,
+  "window.menuBarVisibility": "compact",
+  "terminal.integrated.shellIntegration.enabled": false
 }

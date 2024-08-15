@@ -36,14 +36,14 @@
             "keys": "ctrl+pgdn"
         },
         {
-            "command": "closePane",
-            "keys": "ctrl+w"
-        },
-        {
             "command": {
                 "action": "prevTab"
             },
             "keys": "ctrl+pgup"
+        },
+        {
+            "command": "closePane",
+            "keys": "ctrl+w"
         },
         {
             "command": {
