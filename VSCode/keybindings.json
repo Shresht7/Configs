@@ -12,7 +12,7 @@
     },
     // Toggles the visibility of both sidebars at the same time
     {
-        "key": "ctrl+shift+insert",
+        "key": "ctrl+shift+alt+b",
         "command": "runCommands",
         "args": {
             "commands": [
