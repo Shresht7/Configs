@@ -93,5 +93,13 @@
         "key": "ctrl+5",
         "command": "workbench.action.quickOpenNavigateNextInFilePicker",
         "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+oem_plus",
+        "command": "editor.action.fontZoomIn"
+    },
+    {
+        "key": "ctrl+oem_minus",
+        "command": "editor.action.fontZoomOut"
     }
 ]
