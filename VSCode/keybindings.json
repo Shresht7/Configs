@@ -95,6 +95,10 @@
         "when": "inFilesPicker && inQuickOpen"
     },
     {
+        "key": "ctrl+1",
+        "command": "workbench.action.focusNextGroup"
+    },
+    {
         "key": "ctrl+oem_plus",
         "command": "editor.action.fontZoomIn"
     },
