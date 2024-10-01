@@ -26,7 +26,7 @@ Import-Module -Name PSReadlineUtils
 Import-Module -Name PSFavorite
 
 # Write a random quote to the console on startup
-Write-Quote -Path (Join-Path $HOME "Data" "quotes.csv")
+quotes.exe --filepath "~\Data\quotes.csv"
 
 # ALIASES
 # =======
