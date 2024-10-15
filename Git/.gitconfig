@@ -29,8 +29,8 @@
 	# Shows a decorated log
 	slog 			= log --all --oneline --decorate --graph
 	flog 			= log --all --oneline --decorate --graph --date=relative --boundary --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s - %C(cyan)[%cn] %ad %Creset'
-	# Removes files from the staging area
-	unstage 		= reset HEAD --
+	# Unstage files from the staging area
+	unstage 		= git restore --staged
 	# Amends the previous commit message
 	amend 			= commit --amend
 	# Shows details of the last commit
@@ -40,7 +40,7 @@
 	# Returns an unformatted list of branches
 	list-branch		= branch --format="%(refname:short)"
 	# Burn it to the ground - Hard reset
-	burn			= reset --hard								
+	burn			= reset --hard	
 
 # Set bat as the default diff tool
 [pager]
