@@ -353,6 +353,7 @@
   "svelte.plugin.svelte.note-new-transformation": false,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier Now', monospace",
+  "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.profiles.windows": {
     "Command Prompt": {
       "args": [],
@@ -370,6 +371,8 @@
       "source": "PowerShell"
     }
   },
+  "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.suggest.enabled": true,
   "totalTypeScript.hideAllTips": false,
   "totalTypeScript.hideBasicTips": false,
   "typescript.inlayHints.parameterNames.enabled": "all",
