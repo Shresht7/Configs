@@ -80,6 +80,10 @@
       "underline": false
     }
   ],
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
   "cSpell.customDictionaries": {
     "custom-dictionary-user": {
       "addWords": true,
@@ -89,12 +93,8 @@
       "scope": "user"
     }
   },
-  "cSpell.enableFiletypes": [
-    "lua",
-    "mdx",
-    "powershell"
-  ],
   "cSpell.language": "en,en-GB,en-US",
+  "diffEditor.ignoreTrimWhitespace": true,
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "smooth",
   "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier New', monospace",
@@ -211,6 +211,9 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
+    ".clang-tidy": ".clang-format",
+    ".env": "*.env, .env.*, env.d.ts",
+    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
     "*.asax": "$(capture).*.cs, $(capture).*.vb",
     "*.ascx": "$(capture).*.cs, $(capture).*.vb",
     "*.ashx": "$(capture).*.cs, $(capture).*.vb",
@@ -232,9 +235,6 @@
     "*.tsx": "$(capture).ts",
     "*.vbproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.vue": "$(capture).*.ts, $(capture).*.js",
-    ".clang-tidy": ".clang-format",
-    ".env": "*.env, .env.*, env.d.ts",
-    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
     "artisan": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .htmlnanorc*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, cssnano.config.*, cypress.json, env.d.ts, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, server.php, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, webpack.mix.js, windi.config.*",
     "astro.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .htmlnanorc*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, cssnano.config.*, cypress.json, env.d.ts, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
     "BUILD.bazel": "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
@@ -277,6 +277,7 @@
   "git.confirmSync": false,
   "github.copilot.enable": {
     "*": false,
+    "markdown": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false,
@@ -380,6 +381,7 @@
   "vsintellicode.java.completionsEnabled": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.autoDetectColorScheme": true,
+  "window.menuBarVisibility": "compact",
   "window.zoomLevel": -1,
   "workbench.colorCustomizations": {
     "[Material Theme Darker]": {
@@ -412,14 +414,13 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "compact",
   "workbench.editorAssociations": {
-    "*.lua": "default",
     "git-rebase-todo": "gitlens.rebase"
   },
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "One Dark Pro Flat",
   "workbench.preferredHighContrastColorTheme": "One Dark Pro Darker",
-  "workbench.preferredHighContrastLightColorTheme": "Community Material Theme Lighter High Contrast",
-  "workbench.preferredLightColorTheme": "Community Material Theme Lighter",
+  "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+  "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.sideBar.location": "right",
   "yaml.customTags": [
     "!And",
@@ -449,8 +450,5 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ],
-  "github.copilot.editor.enableAutoCompletions": true,
-  "window.menuBarVisibility": "compact",
-  "terminal.integrated.shellIntegration.enabled": false
+  ]
 }
