@@ -275,6 +275,8 @@
     "main"
   ],
   "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": false,
     "markdown": false,
@@ -283,6 +285,7 @@
     "scminput": false,
     "yaml": false
   },
+  "github.copilot.nextEditSuggestions.enabled": true,
   "githubIssues.issueBranchTitle": "issue${issueNumber}",
   "githubIssues.queries": [
     {
