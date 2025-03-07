@@ -7,18 +7,25 @@
                 "action": "copy",
                 "singleLine": false
             },
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
+            "id": "User.copy.644BA8F2"
         },
         {
             "command": "toggleAlwaysOnTop",
-            "id": "User.toggleAlwaysOnTop",
-            "keys": "ctrl+shift+f11"
+            "id": "User.toggleAlwaysOnTop"
+        },
+        {
+            "command": {
+                "action": "newTab"
+            },
+            "id": "User.newTab.5DEADB41"
         },
         {
             "command": "paste",
-            "id": "User.paste",
-            "keys": "ctrl+v"
+            "id": "User.paste"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         },
         {
             "command": {
@@ -26,56 +33,37 @@
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.A6751878",
-            "keys": "ctrl+shift+t"
-        },
-        {
-            "command": "find",
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.splitPane.A6751878"
         },
         {
             "command": {
                 "action": "nextTab"
             },
-            "id": "User.nextTab.0",
-            "keys": "ctrl+pgdn"
+            "id": "User.nextTab.0"
         },
         {
             "command": {
                 "action": "prevTab"
             },
-            "id": "User.prevTab.0",
-            "keys": "ctrl+pgup"
+            "id": "User.prevTab.0"
         },
         {
             "command": "closePane",
-            "id": "User.closePane",
-            "keys": "ctrl+w"
+            "id": "User.closePane"
         },
         {
             "command": {
                 "action": "quakeMode"
             },
-            "id": "User.quakeMode.F1E129A4",
-            "keys": "win+shift+f11"
-        },
-        {
-            "command": {
-                "action": "newTab"
-            },
-            "id": "User.newTab.5DEADB41",
-            "keys": "ctrl+t"
+            "id": "User.quakeMode.F1E129A4"
         },
         {
             "command": "toggleFocusMode",
-            "id": "User.toggleFocusMode",
-            "keys": "shift+f11"
+            "id": "User.toggleFocusMode"
         },
         {
             "command": "togglePaneZoom",
-            "id": "User.togglePaneZoom",
-            "keys": "alt+shift+f11"
+            "id": "User.togglePaneZoom"
         }
     ],
     "alwaysShowNotificationIcon": false,
@@ -83,6 +71,56 @@
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "initialRows": 35,
+    "keybindings": [
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.closePane",
+            "keys": "ctrl+w"
+        },
+        {
+            "id": "User.toggleAlwaysOnTop",
+            "keys": "ctrl+shift+f11"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "id": "User.nextTab.0",
+            "keys": "ctrl+pgdn"
+        },
+        {
+            "id": "User.prevTab.0",
+            "keys": "ctrl+pgup"
+        },
+        {
+            "id": "User.quakeMode.F1E129A4",
+            "keys": "win+shift+f11"
+        },
+        {
+            "id": "User.newTab.5DEADB41",
+            "keys": "ctrl+t"
+        },
+        {
+            "id": "User.toggleFocusMode",
+            "keys": "shift+f11"
+        },
+        {
+            "id": "User.togglePaneZoom",
+            "keys": "alt+shift+f11"
+        }
+    ],
     "newTabMenu": [
         {
             "type": "remainingProfiles"
