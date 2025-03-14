@@ -25,10 +25,10 @@ in the `defsrc` behaves when kanata runs.
 Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 |#
 (deflayer qwerty
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc 
-  @tab q    w    e    r    t    y    u    i    o    p    [    ]    \ 
-  @cap a    s    d    f    g    h    j    k    l    ;    '    @ret 
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft 
+  @grv 1    2    3    4    5    6    7    8    9    0    -    =    @bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @cap a    s    d    f    g    h    j    k    l    ;    '    @ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
 
@@ -56,21 +56,23 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 )
 
 (defvar
-  tap-time 100 
-  hold-time 150 
+  tap-time 100
+  hold-time 200 
 )
 
 (defalias
-  ;; The ` and ins keys switches to the nḍavigation layer when pressed
   nav (layer-switch nav)
   qwerty (layer-switch qwerty)
 
-  ;; `Caps-Lock` behaves as `Esc` on tap and as `LCtrl` when held down, and `Hyper` when held beyond the timeout
-  cap (tap-hold-press $tap-time $hold-time (tap-dance 200 (esc @nav)) lctrl)
-  navcap (tap-hold-press $tap-time $hold-time (tap-dance 200 (esc @qwerty)) lctrl)
-  ;; `Enter` behaves as is when tapped but as `RCtrl` when held down
-  ret (tap-hold-press $tap-time $hold-time ret rctl)
+  ;; The ` and bspc keys switches to the navigation layer when pressed
+  grv (tap-hold-press $tap-time $hold-time grv (layer-while-held nav))
+  bspc (tap-hold-press $tap-time $hold-time bspc (layer-while-held nav))
 
- ;; `Tab` behaves normally when tapped once, but acts like end when tapped twice in quick sucession
-  tab (tap-dance 150 (tab end)) 
+  ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode.
+  ;; When held down, it acts as lctl
+  cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl)
+  navcap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch qwerty))) lctl)
+
+  ;; `Enter` behaves as is when tapped but as `RCtl` when held down
+  ret (tap-hold-press $tap-time $hold-time ret rctl)
 )
