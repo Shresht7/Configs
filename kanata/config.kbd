@@ -1,3 +1,8 @@
+(defcfg
+  tray-icon qwerty.png  ;; Use a custom tray icon in the config folder
+  icon-match-layer-name yes ;; Use a different icon for the different layers
+)
+
 #|
 The configuration file must have exactly one `defsrc`. This defines the order of keys
 that the `deflayer` entries will operate on.
@@ -15,8 +20,6 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
-
-
 
 #|
 The configuration must have atleast one `deflayer`. This maps how each physical key mapped
