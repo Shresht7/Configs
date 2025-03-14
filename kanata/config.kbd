@@ -28,12 +28,10 @@ in the `defsrc` behaves when kanata runs.
 Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 |#
 (deflayer qwerty
-  @grv 1    2    3    4    5    6    7    8    9    0    -    =    @bspc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap a    s    d    f    g    h    j    k    l    ;    '    @ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
-)
+  lctl lmet lalt           @spc           ralt rmet rctl
 
 ;; The `nav` layer remaps the WASD and IJKL keys to the arrows keys
 (deflayermap nav
@@ -67,9 +65,8 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   nav (layer-switch nav)
   qwerty (layer-switch qwerty)
 
-  ;; The ` and bspc keys switches to the navigation layer when pressed
-  grv (tap-hold-press $tap-time $hold-time grv (layer-while-held nav))
-  bspc (tap-hold-press $tap-time $hold-time bspc (layer-while-held nav))
+  ;; Holding the space key switches to the navigation layer
+  spc (tap-hold-release 10 500 spc (layer-while-held nav))
 
   ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode.
   ;; When held down, it acts as lctl
