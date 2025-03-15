@@ -1,6 +1,7 @@
 (defcfg
   tray-icon qwerty.png  ;; Use a custom tray icon in the config folder
   icon-match-layer-name yes ;; Use a different icon for the different layers
+  windows-altgr cancel-lctl-press ;; Remove the lctl press that is generated alongside ralt 
 )
 
 #|
@@ -31,7 +32,9 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap a    s    d    f    g    h    j    k    l    ;    '    @ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           @spc           ralt rmet rctl
+)
 
 ;; (deflayer colemak
 ;;   @grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -49,7 +52,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   d right
   q pgup
   e pgdn
-  f home
+  t home
   g end
 
   i up
@@ -60,6 +63,10 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   o pgdn 
   h home
   ; end
+
+  f ret
+  v bspc
+  n del
 
   caps @navcap
 )
@@ -80,7 +87,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   ;; When held down, it acts as lctl
   cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl)
   navcap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch qwerty))) lctl)
-
+ 
   ;; `Enter` behaves as is when tapped but as `RCtl` when held down
   ret (tap-hold-press $tap-time $hold-time ret rctl)
 )
