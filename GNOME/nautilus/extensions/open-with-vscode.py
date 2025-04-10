@@ -1,5 +1,5 @@
 """
-Open the selected file or directory with Visual Studio Code
+Nautilus extension to open selected files or directories with Visual Studio Code.
 """
 
 # Imports
@@ -9,7 +9,10 @@ from typing import List
 
 # Open with VSCode Extension
 class VSCodeExtension(GObject.GObject, Nautilus.MenuProvider):
-    def get_file_items(self, files):
+    def get_file_items(self, files: List[Nautilus.FileInfo]) -> List[Nautilus.MenuItem]:
+        """
+        Creates a context menu item for opening selected files or directories with Visual Studio Code.
+        """
         item = Nautilus.MenuItem(
             name="VSCodeExtension::Open",
             label="Open with VS Code",
@@ -20,19 +23,20 @@ class VSCodeExtension(GObject.GObject, Nautilus.MenuProvider):
     
     def get_background_items(self, current_folder: Nautilus.FileInfo) -> List[Nautilus.MenuItem]:
         """
-        Handles the context-menu option when right-clicking an empty space in a directory
+        Creates a context menu item for opening the current directory with Visual Studio Code.
         """
         item = Nautilus.MenuItem(
-            name = "VSCodeExtension::OpenDirectory",
-            label = "Open with VS Code",
-            tip = "Opens the current directory with Visual Studio Code"
+            name="VSCodeExtension::OpenDirectory",
+            label="Open with VS Code",
+            tip="Opens the current directory with Visual Studio Code"
         )
         item.connect("activate", self.open_vscode, [current_folder])
         return [item]
 
-    def open_vscode(self, menu, files):
+    def open_vscode(self, menu: Nautilus.MenuItem, files: List[Nautilus.FileInfo]):
+        """
+        Opens the specified files or directories in Visual Studio Code using the `code` CLI.
+        """
         for file in files:
-            filepath = '"' + file.get_location().get_path() + '"'   # Quote paths to avoid path shenanigans
+            filepath = '"' + file.get_location().get_path() + '"'  # Quote paths to handle spaces and special characters
             call("code " + filepath, shell=True)
-
-            
