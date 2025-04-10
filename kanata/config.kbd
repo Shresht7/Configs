@@ -32,8 +32,22 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap a    s    d    f    g    h    j    k    l    ;    '    @ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           @spc           ralt rmet rctl
+  lsft @z   @x   @c   @v   b    n    @m   @,   @.   @/   rsft
+  lctl lmet lalt           @spc           @ralt rmet rctl
+)
+
+(deflayermap nomodsleft
+  z z
+  x x
+  c c
+  v v
+)
+
+(deflayermap nomodsright
+  n n
+  m m
+  , ,
+  . .
 )
 
 ;; (deflayer colemak
@@ -64,9 +78,11 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   h home
   ; end
 
+  tab C-tab
   f ret
   v bspc
   n del
+  b f12
 
   caps @navcap
 )
@@ -74,6 +90,21 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 (defvar
   tap-time 100
   hold-time 200 
+
+  left-hand-keys (
+    q w e r t
+    a s d f g
+    z x c v b
+  )
+  right-hand-keys (
+    y u i o p
+    h j k l ;
+    n m , . /
+  )
+)
+
+(deffakekeys
+  to-base (layer-switch qwerty)
 )
 
 (defalias
@@ -90,4 +121,25 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
  
   ;; `Enter` behaves as is when tapped but as `RCtl` when held down
   ret (tap-hold-press $tap-time $hold-time ret rctl)
+  ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (f12 menu)) lalt)
+
+  tapleft (multi
+    (layer-switch nomodsleft)
+    (on-idle-fakekey to-base tap 20)
+  )
+
+  tapright (multi
+    (layer-switch nomodsright)
+    (on-idle-fakekey to-base tap 20)
+  )
+
+  z (tap-hold-release-keys 100 200 (multi z @tapright) lmet $left-hand-keys)
+  x (tap-hold-release-keys 100 200 (multi x @tapright) lalt $left-hand-keys)
+  c (tap-hold-release-keys 100 200 (multi c @tapright) lsft $left-hand-keys)
+  v (tap-hold-release-keys 100 200 (multi v @tapright) lctl $left-hand-keys)
+  m (tap-hold-release-keys 100 200 (multi m @tapleft) rctl $right-hand-keys)
+  , (tap-hold-release-keys 100 200 (multi , @tapleft) rsft $right-hand-keys)
+  . (tap-hold-release-keys 100 200 (multi . @tapleft) lalt $right-hand-keys)
+  / (tap-hold-release-keys 100 200 (multi / @tapleft) rmet $right-hand-keys)
 )
+
