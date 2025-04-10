@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Open with Visual Studio Code
+
+# Check if code is installed
+if ! command -v code &> /dev/null; then
+    notify-send "Nautilus Script" "Error: Visual Studio Code (code) is not installed."
+    exit 1
+fi
+
+# Check if any files or directories are selected
+if [ -z "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" ]; then
+    notify-send "Nautilus Script" "Error: No files or directories selected."
+    exit 1
+fi
+
+# Open each selected file or directory in Visual Studio Code
+while IFS= read -r file; do
+    if [ -e "$file" ]; then
+        code "$file"
+    else
+        notify-send "Nautilus Script" "Warning: '$file' does not exist."
+    fi
+done <<< "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS"
