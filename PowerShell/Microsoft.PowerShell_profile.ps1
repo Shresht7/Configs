@@ -22,8 +22,13 @@ Import-Module -Name Utilities
 Import-Module -Name FSUtils
 # PSReadlineUtilities is a collection of useful PSReadline functions.
 Import-Module -Name PSReadlineUtils
+
 # PSFavorite provides a simple way to manage and use your favorite PowerShell commands.
 Import-Module -Name PSFavorite
+
+# NLPowerShell provides LLM assistance to interactive with PowerShell using natural language
+Import-Module -Name NLPowerShell
+Initialize-NLPowerShell -Ollama -Model "qwen2.5-coder" -Temperature 0.3
 
 # Write a random quote to the console on startup
 quotes --filepath "~\Data\quotes.csv"
