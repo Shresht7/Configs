@@ -14,9 +14,9 @@ class VSCodeExtension(GObject.GObject, Nautilus.MenuProvider):
         Creates a context menu item for opening selected files or directories with Visual Studio Code.
         """
         item = Nautilus.MenuItem(
-            name="VSCodeExtension::Open",
-            label="Open with VS Code",
-            tip="Opens the selected files with Visual Studio Code"
+            name = "VSCodeExtension::Open",
+            label = "Open with VS Code",
+            tip = "Opens the selected files with Visual Studio Code"
         )
         item.connect("activate", self.open_vscode, files)
         return [item]
@@ -26,9 +26,9 @@ class VSCodeExtension(GObject.GObject, Nautilus.MenuProvider):
         Creates a context menu item for opening the current directory with Visual Studio Code.
         """
         item = Nautilus.MenuItem(
-            name="VSCodeExtension::OpenDirectory",
-            label="Open with VS Code",
-            tip="Opens the current directory with Visual Studio Code"
+            name = "VSCodeExtension::OpenDirectory",
+            label = "Open with VS Code",
+            tip = "Opens the current directory with Visual Studio Code"
         )
         item.connect("activate", self.open_vscode, [current_folder])
         return [item]
