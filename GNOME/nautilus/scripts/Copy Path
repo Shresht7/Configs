@@ -7,6 +7,12 @@ set -e  # Causes the script to exit im immediately if there are any errors.
 set -u  # Causes the script to exit if we do not define a variable when it is expanded.
 set -o pipefail # Makes sure that if any part of a pipeline fails, the script knows about.
 
+# Check if xclip is installed
+if ! command -v xclip &> /dev/null; then
+    notify-send "Nautilus Script" "Error: xclip is not installed."
+    exit 1
+fi
+
 # Copy all paths to clipboard
 for file in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS; do
     echo "$file"
