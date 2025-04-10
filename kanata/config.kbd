@@ -1,0 +1,145 @@
+(defcfg
+  tray-icon qwerty.png  ;; Use a custom tray icon in the config folder
+  icon-match-layer-name yes ;; Use a different icon for the different layers
+  windows-altgr cancel-lctl-press ;; Remove the lctl press that is generated alongside ralt 
+)
+
+#|
+The configuration file must have exactly one `defsrc`. This defines the order of keys
+that the `deflayer` entries will operate on.
+
+It should be noted that the `defsrc` entry is treated as a long sequence;
+The amount of whitespace (spaces, tabs, newlines) are not relevant. You may use
+spaces, tabs, or newlines however you like to visually format `defsrc` to your liking.
+
+Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
+|#
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+#|
+The configuration must have atleast one `deflayer`. This maps how each physical key mapped
+in the `defsrc` behaves when kanata runs.
+
+Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
+|#
+(deflayer qwerty
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @cap a    s    d    f    g    h    j    k    l    ;    '    @ret
+  lsft @z   @x   @c   @v   b    n    @m   @,   @.   @/   rsft
+  lctl lmet lalt           @spc           @ralt rmet rctl
+)
+
+(deflayermap nomodsleft
+  z z
+  x x
+  c c
+  v v
+)
+
+(deflayermap nomodsright
+  n n
+  m m
+  , ,
+  . .
+)
+
+;; (deflayer colemak
+;;   @grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+;;   tab  _    _    f    p    g    j    l    u    y    ;    [    ]    @\
+;;   @cap _    r    s    t    d    _    n    e    i    o    '    @ret
+;;   lsft _    _    _    _    _    k    _    ,    .    /    rsft
+;;   lctl lmet lalt           spc            ralt rmet rctl
+;; )
+
+;; The `nav` layer remaps the WASD and IJKL keys to the arrows keys
+(deflayermap nav
+  w up
+  a left
+  s down
+  d right
+  q pgup
+  e pgdn
+  t home
+  g end
+
+  i up
+  j left
+  k down
+  l right
+  u pgup
+  o pgdn 
+  h home
+  ; end
+
+  tab C-tab
+  f ret
+  v bspc
+  n del
+  b f12
+
+  caps @navcap
+)
+
+(defvar
+  tap-time 100
+  hold-time 200 
+
+  left-hand-keys (
+    q w e r t
+    a s d f g
+    z x c v b
+  )
+  right-hand-keys (
+    y u i o p
+    h j k l ;
+    n m , . /
+  )
+)
+
+(deffakekeys
+  to-base (layer-switch qwerty)
+)
+
+(defalias
+  nav (layer-switch nav)
+  qwerty (layer-switch qwerty)
+
+  ;; Holding the space key switches to the navigation layer and double-tap spc for enter
+  spc (tap-hold-release 10 500 (tap-dance 20 (spc ret)) (layer-while-held nav))
+
+  ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode.
+  ;; When held down, it acts as lctl
+  cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl)
+  navcap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch qwerty))) lctl)
+ 
+  ;; `Enter` behaves as is when tapped but as `RCtl` when held down
+  ret (tap-hold-press $tap-time $hold-time ret rctl)
+  ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (f12 menu)) lalt)
+
+  tapleft (multi
+    (layer-switch nomodsleft)
+    (on-idle-fakekey to-base tap 20)
+  )
+
+  tapright (multi
+    (layer-switch nomodsright)
+    (on-idle-fakekey to-base tap 20)
+  )
+
+  z (tap-hold-release-keys 100 200 (multi z @tapright) lmet $left-hand-keys)
+  x (tap-hold-release-keys 100 200 (multi x @tapright) lalt $left-hand-keys)
+  c (tap-hold-release-keys 100 200 (multi c @tapright) lsft $left-hand-keys)
+  v (tap-hold-release-keys 100 200 (multi v @tapright) lctl $left-hand-keys)
+  m (tap-hold-release-keys 100 200 (multi m @tapleft) rctl $right-hand-keys)
+  , (tap-hold-release-keys 100 200 (multi , @tapleft) rsft $right-hand-keys)
+  . (tap-hold-release-keys 100 200 (multi . @tapleft) lalt $right-hand-keys)
+  / (tap-hold-release-keys 100 200 (multi / @tapleft) rmet $right-hand-keys)
+)
+
