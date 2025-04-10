@@ -1,5 +1,5 @@
 """
-Nautilus extension to open the current directory with Alacritty
+Nautilus extension to open the current directory in Alacritty
 """
 
 # Imports
@@ -7,7 +7,7 @@ from gi.repository import Nautilus, GObject
 from subprocess import call
 from typing import List
 
-# Open with Alacritty Extension
+# Open in Alacritty Extension
 class AlacrittyExtension(GObject.GObject, Nautilus.MenuProvider):
     def get_background_items(self, current_folder: Nautilus.FileInfo) -> List[Nautilus.MenuItem]:
         """
@@ -15,7 +15,7 @@ class AlacrittyExtension(GObject.GObject, Nautilus.MenuProvider):
         """
         item = Nautilus.MenuItem(
             name = "AlacrittyExtension::Open",
-            label = "Open with Alacritty",
+            label = "Open in Alacritty",
             tip = "Open the current directory in Alacritty"
         )
         item.connect("activate", self.open, [current_folder])
