@@ -21,3 +21,6 @@ for file in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS; do
         cp -r "$file" "$SYNC_FOLDER"
     fi
 done
+
+# Notify the user
+notify-send "Nautilus Script" "Files copied to the Sync folder"
