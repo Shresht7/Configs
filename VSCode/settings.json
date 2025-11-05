@@ -445,6 +445,7 @@
   "workbench.preferredHighContrastColorTheme": "One Dark Pro Darker",
   "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
   "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.secondarySideBar.showLabels": false,
   "workbench.sideBar.location": "right",
   "yaml.customTags": [
     "!And",
