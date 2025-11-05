@@ -79,8 +79,8 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   ; end
 
   1 M-1   ;; Terminal
-  2 M-9   ;; VS Code
-  3 M-3   ;; Browser
+  2 M-3   ;; Browser
+  3 M-9   ;; VS Code
   4 M-0   ;; First Non-Pinned Window
   5 M-5   ;; File Explorer
   6 M-6
