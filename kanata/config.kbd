@@ -93,14 +93,22 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   f ret
   v bspc
   n del
-  b f12
+
+  z lmet
+  x lalt
+  c lsft
+  v lctl
+  m rctl
+  , rsft
+  . lalt
+  / rmet
 
   caps @navcap
 )
 
 (defvar
   tap-time 100
-  hold-time 200 
+  hold-time 200
 
   left-hand-keys (
     q w e r t
