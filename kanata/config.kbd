@@ -91,7 +91,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 
   tab C-tab
   f ret
-  v bspc
+  b bspc
   n del
 
   z lmet
