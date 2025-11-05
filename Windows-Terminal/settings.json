@@ -14,18 +14,18 @@
             "id": "User.toggleAlwaysOnTop"
         },
         {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
             "command": {
                 "action": "newTab"
             },
             "id": "User.newTab.5DEADB41"
         },
         {
-            "command": "paste",
-            "id": "User.paste"
-        },
-        {
-            "command": "find",
-            "id": "User.find"
+            "command": "toggleFocusMode",
+            "id": "User.toggleFocusMode"
         },
         {
             "command": {
@@ -34,6 +34,10 @@
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         },
         {
             "command": {
@@ -58,15 +62,12 @@
             "id": "User.quakeMode.F1E129A4"
         },
         {
-            "command": "toggleFocusMode",
-            "id": "User.toggleFocusMode"
-        },
-        {
             "command": "togglePaneZoom",
             "id": "User.togglePaneZoom"
         }
     ],
     "alwaysShowNotificationIcon": false,
+    "compatibility.allowHeadless": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
@@ -77,20 +78,20 @@
             "keys": "ctrl+c"
         },
         {
-            "id": "User.closePane",
-            "keys": "ctrl+w"
-        },
-        {
             "id": "User.toggleAlwaysOnTop",
             "keys": "ctrl+shift+f11"
         },
         {
-            "id": "User.paste",
-            "keys": "ctrl+v"
+            "id": "User.closePane",
+            "keys": "ctrl+w"
         },
         {
             "id": "User.find",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
         },
         {
             "id": "User.splitPane.A6751878",
@@ -279,7 +280,6 @@
             "yellow": "#E6DB74"
         }
     ],
-    "startOnUserLogin": false,
     "theme": {
         "dark": "dark",
         "light": "light"
