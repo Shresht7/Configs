@@ -57,3 +57,7 @@
 	tool 			= vscode
 [difftool "vscode"]
 	cmd 			= code --wait --diff $LOCAL $REMOTE
+
+[grep]
+	lineNumber = true
+	patternType = perl

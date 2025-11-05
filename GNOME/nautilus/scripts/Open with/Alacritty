@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Open with Alacritty
+
+# Check if alacritty is installed
+if ! command -v alacritty &> /dev/null; then
+    notify-send "Nautilus Script" "Error: alacritty is not installed."
+    exit 1
+fi
+
+# Check if any files or directories are selected
+if [ -z "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" ]; then
+    notify-send "Nautilus Script" "Error: No files or directories selected."
+    exit 1
+fi
+
+# Open each selected file or directory in Alacritty
+while IFS= read -r file; do
+    if [ -f "$file" ]; then
+        alacritty --working-directory $(dirname "$file")
+    elif [ -d "$file" ]; then
+        alacritty --working-directory "$file"
+    else
+        notify-send "Nautilus Script" "Warning: '$file' does not exist."
+    fi
+done <<< "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS"
