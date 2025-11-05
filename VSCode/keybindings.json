@@ -1,14 +1,114 @@
 // Place your key bindings in this file to override the defaults
 [
+    // Quick Open Views
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.quickOpenWithModes",
+        "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.acceptSelectedQuickOpenItem",
+        "when": "inQuickOpen"
+    },
+    // Show all commands
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.showCommands"
+    },
+    // Quick Open with Modes
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.quickOpenWithModes"
+    },
+    // Go to symbol
+    {
+        "key": "ctrl+2",
+        "command": "workbench.action.gotoSymbol",
+        "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inFileSymbolsPicker && inQuickOpen"
+    },
+    // Show all symbols
+    {
+        "key": "ctrl+3",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inWorkspaceSymbolsPicker && inQuickOpen"
+    },
+    // Switch to or open a new terminal
+    {
+        "key": "ctrl+4",
+        "command": "workbench.action.quickOpenTerm"
+    },
+    // Perform quick text search
+    {
+        "key": "ctrl+5",
+        "command": "workbench.action.quickTextSearch"
+    },
+    // Quick Open Navigation
+    {
+        "key": "ctrl+down",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen && !accessibilityHelpIsShown && !accessibleViewIsShown"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen && !accessibilityHelpIsShown && !accessibleViewIsShown"
+    },
+    // Move the cursor to the next blank line (i.e. at the end of the code block)
+    {
+        "key": "ctrl+down",
+        "command": "cursorMove",
+        "args": {
+            "to": "nextBlankLine",
+            "select": false
+        },
+        "when": "editorTextFocus"
+    },
+    // Move the cursor to the previous blank line (i.e. at the start of the code block)
+    {
+        "key": "ctrl+up",
+        "command": "cursorMove",
+        "args": {
+            "to": "prevBlankLine",
+            "select": false
+        },
+        "when": "editorTextFocus"
+    },
+    //
+    {
+        "key": "ctrl+shift+alt+enter",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "editor.action.insertLineBefore",
+                "editor.action.insertLineAfter"
+            ]
+        }
+    },
     // Create a new file
     {
-        "key": "ctrl+e ctrl+n",
+        "key": "ctrl+shift+e ctrl+n",
         "command": "explorer.newFile"
     },
     // Create a new folder
     {
-        "key": "ctrl+e ctrl+shift+n",
+        "key": "ctrl+shift+e ctrl+shift+n",
         "command": "explorer.newFolder"
+    },
+    // New shortcut for the explorer view because ctrl+shift+e now expects a chord
+    {
+        "key": "ctrl+shift+e e",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
     },
     // Toggles the visibility of both sidebars at the same time
     {
@@ -59,49 +159,41 @@
     },
     // Perform a reference search
     {
-        "key": "ctrl+oem_1",
+        "key": "alt+k",
         "command": "editor.action.referenceSearch.trigger"
     },
     // Show hover information
     {
-        "key": "ctrl+oem_7",
+        "key": "alt+i",
         "command": "editor.action.showHover",
         "when": "editorTextFocus"
     },
-    // Go to symbol
     {
-        "key": "ctrl+2",
-        "command": "workbench.action.gotoSymbol",
-        "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
-    },
-    // Show all symbols
-    {
-        "key": "ctrl+3",
-        "command": "workbench.action.showAllSymbols"
-    },
-    // Show all commands
-    {
-        "key": "ctrl+4",
-        "command": "workbench.action.showCommands"
-    },
-    // Quick open files
-    {
-        "key": "ctrl+5",
-        "command": "workbench.action.quickOpen"
+        "key": "alt+oem_period",
+        "command": "editor.action.dirtydiff.next",
+        "when": "editorTextFocus && !textCompareEditorActive"
     },
     {
-        "key": "ctrl+5",
-        "command": "workbench.action.quickOpenNavigateNextInFilePicker",
-        "when": "inFilesPicker && inQuickOpen"
+        "key": "alt+f3",
+        "command": "-editor.action.dirtydiff.next",
+        "when": "editorTextFocus && !textCompareEditorActive"
     },
     {
-        "key": "ctrl+shift+oem_3",
-        "command": "workbench.action.quickOpenTerm"
+        "key": "alt+oem_comma",
+        "command": "editor.action.dirtydiff.previous",
+        "when": "editorTextFocus && !textCompareEditorActive"
     },
+    {
+        "key": "shift+alt+f3",
+        "command": "-editor.action.dirtydiff.previous",
+        "when": "editorTextFocus && !textCompareEditorActive"
+    },
+    // Switch between editor groups
     {
         "key": "ctrl+1",
         "command": "workbench.action.focusNextGroup"
     },
+    // Change the editor font zoom, without affecting the UI elements
     {
         "key": "ctrl+oem_plus",
         "command": "editor.action.fontZoomIn"
@@ -109,5 +201,145 @@
     {
         "key": "ctrl+oem_minus",
         "command": "editor.action.fontZoomOut"
+    },
+    // Git Action Shortcuts
+    {
+        "key": "ctrl+shift+g ctrl+s",
+        "command": "git.viewStagedChanges"
+    },
+    {
+        "key": "ctrl+shift+g ctrl+enter",
+        "command": "git.stageSelectedRanges",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-geminicodeassist.generateCode",
+        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && !inGeminiDiffView && !isInDiffEditor"
+    },
+    {
+        "key": "alt+d",
+        "command": "editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+a",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+left",
+        "command": "-editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+9",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+oem_5",
+        "command": "-editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+g",
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "shift+alt+f5",
+        "command": "-workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "shift+alt+g",
+        "command": "workbench.action.editor.previousChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+    },
+    {
+        "key": "shift+alt+f5",
+        "command": "-workbench.action.editor.previousChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+    },
+    {
+        "key": "shift+alt+m",
+        "command": "editor.action.marker.prevInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+f8",
+        "command": "-editor.action.marker.prevInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+m",
+        "command": "editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "f8",
+        "command": "-editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+m",
+        "command": "testing.goToNextMessage",
+        "when": "editorFocus && testing.isPeekVisible"
+    },
+    {
+        "key": "alt+f8",
+        "command": "-testing.goToNextMessage",
+        "when": "editorFocus && testing.isPeekVisible"
+    },
+    {
+        "key": "shift+alt+m",
+        "command": "testing.goToPreviousMessage",
+        "when": "editorFocus && testing.isPeekVisible"
+    },
+    {
+        "key": "shift+alt+f8",
+        "command": "-testing.goToPreviousMessage",
+        "when": "editorFocus && testing.isPeekVisible"
+    },
+    {
+        "key": "alt+g",
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "alt+f5",
+        "command": "-workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "alt+g",
+        "command": "workbench.action.editor.nextChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+    },
+    {
+        "key": "alt+f5",
+        "command": "-workbench.action.editor.nextChange",
+        "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "-geminicodeassist.saveKeysClicked",
+        "when": "inGeminiDiffView || isInDiffEditor"
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "command": "geminicodeassist.generateCode",
+        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && !inGeminiDiffView && !isInDiffEditor && !nextEditSessionAvailable"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-geminicodeassist.generateCode",
+        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && !inGeminiDiffView && !isInDiffEditor && !nextEditSessionAvailable"
     }
 ]
