@@ -104,6 +104,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   / rmet
 
   caps @navcap
+  ret rctl
 )
 
 (defvar
