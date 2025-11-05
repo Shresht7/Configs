@@ -27,8 +27,9 @@ Import-Module -Name PSReadlineUtils
 Import-Module -Name PSFavorite
 
 # NLPowerShell provides LLM assistance to interactive with PowerShell using natural language
+$Env:LLM_MODEL = "gemma3"
 Import-Module -Name NLPowerShell
-Initialize-NLPowerShell -Ollama -Model "qwen2.5-coder" -Temperature 0.3
+Initialize-NLPowerShell -Ollama -Model $Env:LLM_MODEL -Temperature 0.3
 
 # Show the time and calendar
 Write-Host
