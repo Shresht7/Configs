@@ -131,7 +131,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   qwerty (layer-switch qwerty)
 
   ;; Holding the space key switches to the navigation layer and double-tap spc for enter
-  spc (tap-hold-release 10 500 (tap-dance 20 (spc ret)) (layer-while-held nav))
+  spc (tap-hold-release 10 500 (tap-dance 100 (spc ret)) (layer-while-held nav))
 
   ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode.
   ;; When held down, it acts as lctl
