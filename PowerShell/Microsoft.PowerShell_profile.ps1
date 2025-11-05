@@ -30,8 +30,13 @@ Import-Module -Name PSFavorite
 Import-Module -Name NLPowerShell
 Initialize-NLPowerShell -Ollama -Model "qwen2.5-coder" -Temperature 0.3
 
+# Show the time and calendar
+Write-Host
+go-time
+go-time cal
+
 # Write a random quote to the console on startup
-quotes --filepath "~\Data\quotes.csv"
+quotes --filepath "~\Data\quotes.csv" --quotes --style "italic" --no-borders
 
 # ALIASES
 # =======
