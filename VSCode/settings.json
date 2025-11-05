@@ -91,6 +91,13 @@
       "underline": false
     }
   ],
+  "chat.mcp.serverSampling": {
+    "Global in Code: my-github-mcp-server-f27a864e": {
+      "allowedModels": [
+        "github.copilot-chat/gpt-4.1"
+      ]
+    }
+  },
   "cmake.pinnedCommands": [
     "workbench.action.tasks.configureTaskRunner",
     "workbench.action.tasks.runTask"
