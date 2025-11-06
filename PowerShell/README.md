@@ -6,6 +6,10 @@
 
 [`Microsoft.PowerShell_profile.ps1`](Microsoft.PowerShell_profile.ps1)
 
+[About PowerShell Config](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.5)
+
+[`powershell.config.json`](powershell.config.json)
+
 ## Oh-My-Posh
 
 https://ohmyposh.dev/
