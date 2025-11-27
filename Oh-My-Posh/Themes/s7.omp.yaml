@@ -21,310 +21,310 @@ var:
 console_title_template: "{{.Folder}}"
 terminal_background: "#282c34"
 blocks:
-- type: prompt
-  alignment: left
-  segments:
+  - type: prompt
+    alignment: left
+    segments:
+      - properties:
+          cache_duration: none
+        leading_diamond: 
+        trailing_diamond: 
+        template: " {{ .Var.Name }} "
+        foreground: p:black
+        background: p:white
+        type: session
+        style: diamond
+      - properties:
+          cache_duration: none
+        template: " {{ if .WSL }}WSL at {{ end }}{{.Icon}} "
+        foreground: p:white
+        powerline_symbol: 
+        background: p:blue
+        type: os
+        style: powerline
+      - properties:
+          cache_duration: none
+          folder_separator_icon: " \ue0b1 "
+          home_icon: "~"
+          style: folder
+        template: " \uf74a {{ .Path }} "
+        foreground: p:white
+        powerline_symbol: 
+        background: p:black
+        type: path
+        style: powerline
+      - properties:
+          cache_duration: none
+        foreground: transparent
+        powerline_symbol: 
+        background: transparent
+        type: text
+        style: accordion
+      - properties:
+          cache_duration: none
+          root_icon: 
+        template: " 🌟"
+        foreground: p:white
+        powerline_symbol: 
+        background: p:orange
+        type: root
+        style: powerline
+      - properties:
+          cache_duration: none
+        powerline_symbol: 
+        background: p:orange
+        type: text
+        style: accordion
+  - type: rprompt
+    segments:
+      - properties:
+          always_enabled: true
+          cache_duration: none
+        template: " \ue234 "
+        foreground: p:white
+        powerline_symbol: 
+        background: p:blue
+        type: status
+        style: powerline
+        background_templates:
+          - "{{ if gt .Code 0 }}p:red{{ end }}"
+        invert_powerline: true
+      - properties:
+          always_enabled: true
+          cache_duration: none
+        template: " 🕖{{ .FormattedMs }} "
+        foreground: p:white
+        powerline_symbol: 
+        background: p:black
+        type: executiontime
+        style: powerline
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+        foreground: transparent
+        powerline_symbol: 
+        background: transparent
+        type: text
+        style: accordion
+        invert_powerline: true
+      - properties:
+          branch_max_length: 25
+          cache_duration: none
+          fetch_stash_count: true
+          fetch_status: true
+          fetch_upstream_icon: true
+        template: " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
+        foreground: p:git-foreground
+        powerline_symbol: 
+        background: p:git-background
+        type: git
+        style: powerline
+        background_templates:
+          - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:git-modified{{ end }}"
+          - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:git-diverged{{ end }}"
+          - "{{ if gt .Ahead 0 }}p:git-ahead{{ end }}"
+          - "{{ if gt .Behind 0 }}p:git-behind{{ end }}"
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+          fetch_version: true
+        template: " \uf898 "
+        foreground: "#ffffff"
+        powerline_symbol: 
+        background: "#6CA35E"
+        type: node
+        style: powerline
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+          fetch_version: true
+        template: " \ue626 "
+        foreground: "#111111"
+        powerline_symbol: 
+        background: "#8ED1F7"
+        type: go
+        style: powerline
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+          fetch_version: true
+        template: " \ue7a8 "
+        foreground: "#193549"
+        powerline_symbol: 
+        background: "#99908a"
+        type: rust
+        style: powerline
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+          display_mode: files
+          fetch_virtual_env: false
+        template: " \ue235 "
+        foreground: "#111111"
+        powerline_symbol: 
+        background: "#FFDE57"
+        type: python
+        style: powerline
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+          fetch_version: true
+        foreground: "#000000"
+        powerline_symbol: 
+        background: "#00ffff"
+        type: dotnet
+        style: powerline
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+          fetch_version: true
+        foreground: white
+        powerline_symbol: 
+        background: blue
+        type: lua
+        style: powerline
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+          display_mode: files
+          fetch_version: false
+        template: " \uf0e7 "
+        foreground: "#ffffff"
+        powerline_symbol: 
+        background: "#FEAC19"
+        type: azfunc
+        style: powerline
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+          display_default: false
+        template: " \ue7ad {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
+        foreground: "#ffffff"
+        powerline_symbol: 
+        type: aws
+        style: powerline
+        background_templates:
+          - '{{if contains "default" .Profile}}#FFA400{{end}}'
+          - '{{if contains "jan" .Profile}}#f1184c{{end}}'
+        invert_powerline: true
+      - properties:
+          cache_duration: none
+          time_format: "15:04"
+        leading_diamond: 
+        trailing_diamond: 
+        template: " {{ .CurrentDate | date .Format }} "
+        foreground: p:black
+        background: p:white
+        type: time
+        style: diamond
+        invert_powerline: true
+tooltips:
   - properties:
-      cache_duration: none
+      time_format: Monday, 02-Jan-06 15:04:05 MST
     leading_diamond: 
-    trailing_diamond: 
-    template: " {{ .Var.Name }} "
-    foreground: p:black
-    background: p:white
-    type: session
-    style: diamond
-  - properties:
-      cache_duration: none
-    template: " {{ if .WSL }}WSL at {{ end }}{{.Icon}} "
-    foreground: p:white
-    powerline_symbol: 
-    background: p:blue
-    type: os
-    style: powerline
-  - properties:
-      cache_duration: none
-      folder_separator_icon: " \ue0b1 "
-      home_icon: "~"
-      style: folder
-    template: " \uf74a {{ .Path }} "
-    foreground: p:white
-    powerline_symbol: 
-    background: p:black
-    type: path
-    style: powerline
-  - properties:
-      cache_duration: none
-    foreground: transparent
-    powerline_symbol: 
-    background: transparent
-    type: text
-    style: accordion
-  - properties:
-      cache_duration: none
-      root_icon: 
-    template: " 🌟"
-    foreground: p:white
-    powerline_symbol: 
-    background: p:orange
-    type: root
-    style: powerline
-  - properties:
-      cache_duration: none
-    powerline_symbol: 
-    background: p:orange
-    type: text
-    style: accordion
-- type: rprompt
-  segments:
-  - properties:
-      always_enabled: true
-      cache_duration: none
-    template: " \ue234 "
-    foreground: p:white
-    powerline_symbol: 
-    background: p:blue
-    type: status
-    style: powerline
-    background_templates:
-    - "{{ if gt .Code 0 }}p:red{{ end }}"
-    invert_powerline: true
-  - properties:
-      always_enabled: true
-      cache_duration: none
-    template: " 🕖{{ .FormattedMs }} "
-    foreground: p:white
-    powerline_symbol: 
-    background: p:black
-    type: executiontime
-    style: powerline
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-    foreground: transparent
-    powerline_symbol: 
-    background: transparent
-    type: text
-    style: accordion
-    invert_powerline: true
-  - properties:
-      branch_max_length: 25
-      cache_duration: none
-      fetch_stash_count: true
-      fetch_status: true
-      fetch_upstream_icon: true
-    template: " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
-    foreground: p:git-foreground
-    powerline_symbol: 
-    background: p:git-background
-    type: git
-    style: powerline
-    background_templates:
-    - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:git-modified{{ end }}"
-    - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:git-diverged{{ end }}"
-    - "{{ if gt .Ahead 0 }}p:git-ahead{{ end }}"
-    - "{{ if gt .Behind 0 }}p:git-behind{{ end }}"
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-      fetch_version: true
-    template: " \uf898 "
-    foreground: "#ffffff"
-    powerline_symbol: 
-    background: "#6CA35E"
-    type: node
-    style: powerline
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-      fetch_version: true
-    template: " \ue626 "
-    foreground: "#111111"
-    powerline_symbol: 
-    background: "#8ED1F7"
-    type: go
-    style: powerline
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-      fetch_version: true
-    template: " \ue7a8 "
-    foreground: "#193549"
-    powerline_symbol: 
-    background: "#99908a"
-    type: rust
-    style: powerline
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-      display_mode: files
-      fetch_virtual_env: false
-    template: " \ue235 "
-    foreground: "#111111"
-    powerline_symbol: 
-    background: "#FFDE57"
-    type: python
-    style: powerline
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-      fetch_version: true
-    foreground: "#000000"
-    powerline_symbol: 
-    background: "#00ffff"
-    type: dotnet
-    style: powerline
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-      fetch_version: true
-    foreground: white
-    powerline_symbol: 
-    background: blue
-    type: lua
-    style: powerline
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-      display_mode: files
-      fetch_version: false
-    template: " \uf0e7 "
-    foreground: "#ffffff"
-    powerline_symbol: 
-    background: "#FEAC19"
-    type: azfunc
-    style: powerline
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-      display_default: false
-    template: " \ue7ad {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
-    foreground: "#ffffff"
-    powerline_symbol: 
-    type: aws
-    style: powerline
-    background_templates:
-    - "{{if contains \"default\" .Profile}}#FFA400{{end}}"
-    - "{{if contains \"jan\" .Profile}}#f1184c{{end}}"
-    invert_powerline: true
-  - properties:
-      cache_duration: none
-      time_format: "15:04"
-    leading_diamond: 
     trailing_diamond: 
-    template: " {{ .CurrentDate | date .Format }} "
-    foreground: p:black
-    background: p:white
+    foreground: "#ffffff"
+    background: "#007ACC"
     type: time
     style: diamond
-    invert_powerline: true
-tooltips:
-- properties:
-    time_format: Monday, 02-Jan-06 15:04:05 MST
-  leading_diamond: 
-  trailing_diamond: 
-  foreground: "#ffffff"
-  background: "#007ACC"
-  type: time
-  style: diamond
-  tips:
-  - time
-- leading_diamond: 
-  trailing_diamond: 
-  template: "\uf489 {{ .Name }} "
-  foreground: "#ffffff"
-  background: "#0077c2"
-  type: shell
-  style: diamond
-  tips:
-  - shell
-  newline: true
-- template: "{{ path .Path .Location }}"
-  type: path
-  style: powerline
-  tips:
-  - pwd
-  - dir
-  - ls
-  - explorer
-- template: " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}\uf487 {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }}"
-  type: project
-  style: plain
-  tips:
-  - project
-  - version
-- properties:
-    fetch_status: true
-    fetch_upstream_icon: false
-  leading_diamond: 
-  trailing_diamond: 
-  template: "{{ .HEAD }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}"
-  foreground: p:white
-  background: p:git
-  type: git
-  style: diamond
-  tips:
-  - git
-  - gh
-- properties:
-    paused_icon: 
-    playing_icon: 
-    stopped_icon: 
-    track_separator: -
-  template: " {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} - {{ .Track }}{{ end }} "
-  type: spotify
-  style: powerline
-  tips:
-  - spotify
-- properties:
-    precision: 2
-  template: "CPU: {{ (index .CPU 0).ModelName }} | Memory: {{ .PhysicalPercentUsed }}%"
-  type: sysinfo
-  style: powerline
-  tips:
-  - sys
-  - cpu
-  - mem
-  - memory
-  - sysinfo
-- properties:
-    charged_icon: "\uf0e7\uf0e7 "
-    charging_icon: "\uf0e7 "
-    discharging_icon: "\ue234 "
-  leading_diamond: 
-  trailing_diamond: 
-  template: " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 "
-  foreground: "#ffffff"
-  background: "#f36943"
-  type: battery
-  style: diamond
-  tips:
-  - battery
-  - power
-  background_templates:
-  - "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}"
-  - "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}"
-  - "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
-- leading_diamond: 
-  trailing_diamond: 
-  template: "{{ if eq .Type \"wifi\"}}\uf1eb{{ else if eq .Type \"ethernet\"}}\uf6ff{{ end }} {{ .SSID }}"
-  foreground: p:white
-  background: p:black
-  type: connection
-  style: diamond
-  tips:
-  - wifi
-  - network
-  background_templates:
-  - "{{ if (lt .Signal 60) }}p:red{{ else if (lt .Signal 80) }}p:yellow{{ else }}p:green{{ end }}"
-- leading_diamond: 
-  trailing_diamond: 
-  foreground: p:white
-  background: p:blue
-  type: session
-  style: diamond
-  tips:
-  - session
-  - computer
-  - hostname
+    tips:
+      - time
+  - leading_diamond: 
+    trailing_diamond: 
+    template: "\uf489 {{ .Name }} "
+    foreground: "#ffffff"
+    background: "#0077c2"
+    type: shell
+    style: diamond
+    tips:
+      - shell
+    newline: true
+  - template: "{{ path .Path .Location }}"
+    type: path
+    style: powerline
+    tips:
+      - pwd
+      - dir
+      - ls
+      - explorer
+  - template: " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}\uf487 {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }}"
+    type: project
+    style: plain
+    tips:
+      - project
+      - version
+  - properties:
+      fetch_status: true
+      fetch_upstream_icon: false
+    leading_diamond: 
+    trailing_diamond: 
+    template: "{{ .HEAD }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}"
+    foreground: p:white
+    background: p:git
+    type: git
+    style: diamond
+    tips:
+      - git
+      - gh
+  - properties:
+      paused_icon: 
+      playing_icon: 
+      stopped_icon: 
+      track_separator: "-"
+    template: ' {{ .Icon }}{{ if ne .Status "stopped" }}{{ .Artist }} - {{ .Track }}{{ end }} '
+    type: spotify
+    style: powerline
+    tips:
+      - spotify
+  - properties:
+      precision: 2
+    template: "CPU: {{ (index .CPU 0).ModelName }} | Memory: {{ .PhysicalPercentUsed }}%"
+    type: sysinfo
+    style: powerline
+    tips:
+      - sys
+      - cpu
+      - mem
+      - memory
+      - sysinfo
+  - properties:
+      charged_icon: "\uf0e7\uf0e7 "
+      charging_icon: "\uf0e7 "
+      discharging_icon: "\ue234 "
+    leading_diamond: 
+    trailing_diamond: 
+    template: " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 "
+    foreground: "#ffffff"
+    background: "#f36943"
+    type: battery
+    style: diamond
+    tips:
+      - battery
+      - power
+    background_templates:
+      - '{{if eq "Charging" .State.String}}#40c4ff{{end}}'
+      - '{{if eq "Discharging" .State.String}}#ff5722{{end}}'
+      - '{{if eq "Full" .State.String}}#4caf50{{end}}'
+  - leading_diamond: 
+    trailing_diamond: 
+    template: "{{ if eq .Type \"wifi\"}}\uf1eb{{ else if eq .Type \"ethernet\"}}\uf6ff{{ end }} {{ .SSID }}"
+    foreground: p:white
+    background: p:black
+    type: connection
+    style: diamond
+    tips:
+      - wifi
+      - network
+    background_templates:
+      - "{{ if (lt .Signal 60) }}p:red{{ else if (lt .Signal 80) }}p:yellow{{ else }}p:green{{ end }}"
+  - leading_diamond: 
+    trailing_diamond: 
+    foreground: p:white
+    background: p:blue
+    type: session
+    style: diamond
+    tips:
+      - session
+      - computer
+      - hostname
 version: 3
 final_space: true
