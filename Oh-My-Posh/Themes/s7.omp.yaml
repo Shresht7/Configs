@@ -24,25 +24,20 @@ blocks:
   - type: prompt
     alignment: left
     segments:
-      - properties:
-          cache_duration: none
-        leading_diamond: 
+      - leading_diamond: 
         trailing_diamond: 
         template: " {{ .Var.Name }} "
         foreground: p:black
         background: p:white
         type: session
         style: diamond
-      - properties:
-          cache_duration: none
-        template: " {{ if .WSL }}WSL at {{ end }}{{.Icon}} "
+      - template: " {{ if .WSL }}WSL at {{ end }}{{.Icon}} "
         foreground: p:white
         powerline_symbol: 
         background: p:blue
         type: os
         style: powerline
-      - properties:
-          cache_duration: none
+      - options:
           folder_separator_icon: " \ue0b1 "
           home_icon: "~"
           style: folder
@@ -52,14 +47,14 @@ blocks:
         background: p:black
         type: path
         style: powerline
-      - properties:
+      - options:
           cache_duration: none
         foreground: transparent
         powerline_symbol: 
         background: transparent
         type: text
         style: accordion
-      - properties:
+      - options:
           cache_duration: none
           root_icon: 
         template: " 🌟"
@@ -68,7 +63,7 @@ blocks:
         background: p:orange
         type: root
         style: powerline
-      - properties:
+      - options:
           cache_duration: none
         powerline_symbol: 
         background: p:orange
@@ -76,9 +71,8 @@ blocks:
         style: accordion
   - type: rprompt
     segments:
-      - properties:
+      - options:
           always_enabled: true
-          cache_duration: none
         template: " \ue234 "
         foreground: p:white
         powerline_symbol: 
@@ -88,9 +82,8 @@ blocks:
         background_templates:
           - "{{ if gt .Code 0 }}p:red{{ end }}"
         invert_powerline: true
-      - properties:
+      - options:
           always_enabled: true
-          cache_duration: none
         template: " 🕖{{ .FormattedMs }} "
         foreground: p:white
         powerline_symbol: 
@@ -98,7 +91,7 @@ blocks:
         type: executiontime
         style: powerline
         invert_powerline: true
-      - properties:
+      - options:
           cache_duration: none
         foreground: transparent
         powerline_symbol: 
@@ -106,10 +99,7 @@ blocks:
         type: text
         style: accordion
         invert_powerline: true
-      - properties:
-          branch_max_length: 25
-          cache_duration: none
-          fetch_stash_count: true
+      - options:
           fetch_status: true
           fetch_upstream_icon: true
         template: " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
@@ -124,7 +114,7 @@ blocks:
           - "{{ if gt .Ahead 0 }}p:git-ahead{{ end }}"
           - "{{ if gt .Behind 0 }}p:git-behind{{ end }}"
         invert_powerline: true
-      - properties:
+      - options:
           cache_duration: none
           fetch_version: true
         template: " \uf898 "
@@ -134,7 +124,7 @@ blocks:
         type: node
         style: powerline
         invert_powerline: true
-      - properties:
+      - options:
           cache_duration: none
           fetch_version: true
         template: " \ue626 "
@@ -144,7 +134,7 @@ blocks:
         type: go
         style: powerline
         invert_powerline: true
-      - properties:
+      - options:
           cache_duration: none
           fetch_version: true
         template: " \ue7a8 "
@@ -154,7 +144,7 @@ blocks:
         type: rust
         style: powerline
         invert_powerline: true
-      - properties:
+      - options:
           cache_duration: none
           display_mode: files
           fetch_virtual_env: false
@@ -165,7 +155,7 @@ blocks:
         type: python
         style: powerline
         invert_powerline: true
-      - properties:
+      - options:
           cache_duration: none
           fetch_version: true
         foreground: "#000000"
@@ -174,7 +164,7 @@ blocks:
         type: dotnet
         style: powerline
         invert_powerline: true
-      - properties:
+      - options:
           cache_duration: none
           fetch_version: true
         foreground: white
@@ -183,8 +173,7 @@ blocks:
         type: lua
         style: powerline
         invert_powerline: true
-      - properties:
-          cache_duration: none
+      - options:
           display_mode: files
           fetch_version: false
         template: " \uf0e7 "
@@ -194,8 +183,7 @@ blocks:
         type: azfunc
         style: powerline
         invert_powerline: true
-      - properties:
-          cache_duration: none
+      - options:
           display_default: false
         template: " \ue7ad {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
         foreground: "#ffffff"
@@ -206,8 +194,7 @@ blocks:
           - '{{if contains "default" .Profile}}#FFA400{{end}}'
           - '{{if contains "jan" .Profile}}#f1184c{{end}}'
         invert_powerline: true
-      - properties:
-          cache_duration: none
+      - options:
           time_format: "15:04"
         leading_diamond: 
         trailing_diamond: 
@@ -218,7 +205,7 @@ blocks:
         style: diamond
         invert_powerline: true
 tooltips:
-  - properties:
+  - options:
       time_format: Monday, 02-Jan-06 15:04:05 MST
     leading_diamond: 
     trailing_diamond: 
@@ -252,7 +239,7 @@ tooltips:
     tips:
       - project
       - version
-  - properties:
+  - options:
       fetch_status: true
       fetch_upstream_icon: false
     leading_diamond: 
@@ -265,17 +252,16 @@ tooltips:
     tips:
       - git
       - gh
-  - properties:
+  - options:
       paused_icon: 
       playing_icon: 
       stopped_icon: 
-      track_separator: "-"
     template: ' {{ .Icon }}{{ if ne .Status "stopped" }}{{ .Artist }} - {{ .Track }}{{ end }} '
     type: spotify
     style: powerline
     tips:
       - spotify
-  - properties:
+  - options:
       precision: 2
     template: "CPU: {{ (index .CPU 0).ModelName }} | Memory: {{ .PhysicalPercentUsed }}%"
     type: sysinfo
@@ -286,7 +272,7 @@ tooltips:
       - mem
       - memory
       - sysinfo
-  - properties:
+  - options:
       charged_icon: "\uf0e7\uf0e7 "
       charging_icon: "\uf0e7 "
       discharging_icon: "\ue234 "
