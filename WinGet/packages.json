@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-11-05T11:05:08.736-00:00",
+	"CreationDate" : "2025-12-11T11:11:26.152-00:00",
 	"Sources" : 
 	[
 		{
@@ -43,6 +43,9 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
+					"PackageIdentifier" : "Kitware.CMake"
+				},
+				{
 					"PackageIdentifier" : "Apple.Bonjour"
 				},
 				{
@@ -62,9 +65,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.OpenJDK.11"
-				},
-				{
-					"PackageIdentifier" : "Kitware.CMake"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerShell"
@@ -118,6 +118,9 @@
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.7"
 				},
 				{
+					"PackageIdentifier" : "Google.ChromeRemoteDesktopHost"
+				},
+				{
 					"PackageIdentifier" : "Python.Launcher"
 				},
 				{
@@ -128,6 +131,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22621"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.DotNet.Framework.DeveloperPack.4.6"
@@ -142,16 +148,13 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
 				},
 				{
-					"PackageIdentifier" : "Google.ChromeRemoteDesktopHost"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+					"PackageIdentifier" : "DenoLand.Deno"
 				},
 				{
 					"PackageIdentifier" : "Genymobile.scrcpy"
@@ -161,9 +164,6 @@
 				},
 				{
 					"PackageIdentifier" : "Gyan.FFmpeg"
-				},
-				{
-					"PackageIdentifier" : "JanDeDobbeleer.OhMyPosh"
 				},
 				{
 					"PackageIdentifier" : "Rustlang.Rustup"
@@ -196,10 +196,10 @@
 					"PackageIdentifier" : "yt-dlp.yt-dlp"
 				},
 				{
-					"PackageIdentifier" : "Python.Python.3.13"
+					"PackageIdentifier" : "Ollama.Ollama"
 				},
 				{
-					"PackageIdentifier" : "Ollama.Ollama"
+					"PackageIdentifier" : "Python.Python.3.13"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
@@ -233,6 +233,9 @@
 				},
 				{
 					"PackageIdentifier" : "zadjii.SegoeIcons"
+				},
+				{
+					"PackageIdentifier" : "JanDeDobbeleer.OhMyPosh"
 				}
 			],
 			"SourceDetails" : 

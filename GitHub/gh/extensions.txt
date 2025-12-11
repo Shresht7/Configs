@@ -1,4 +1,4 @@
 gh copilot	github/gh-copilot	v1.2.0
-gh dash	dlvhdr/gh-dash	v4.19.0
+gh dash	dlvhdr/gh-dash	v4.19.1
 gh gitignore		
 gh license		
