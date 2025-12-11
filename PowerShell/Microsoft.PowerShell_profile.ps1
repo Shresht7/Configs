@@ -37,7 +37,7 @@ go-time
 go-time cal
 
 # Write a random quote to the console on startup
-quotes --filepath "~\Data\quotes.csv" --quotes --style "italic" --no-borders
+quotes --filepath (Resolve-Path "~\Data\quotes.csv") --quotes --style "italic" --no-borders
 
 # ALIASES
 # =======
