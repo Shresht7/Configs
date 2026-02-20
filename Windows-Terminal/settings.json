@@ -134,7 +134,7 @@
                 "light": "Frost"
             },
             "font": {
-                "face": "CaskaydiaCove Nerd Font Mono",
+                "face": "JetBrainsMono NF",
                 "size": 10
             },
             "opacity": 50,
@@ -158,6 +158,10 @@
                 "backgroundImageOpacity": 0.5,
                 "colorScheme": "S7",
                 "experimental.retroTerminalEffect": true,
+                "font": {
+                    "face": "Terminess Nerd Font",
+                    "size": 10
+                },
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu (WSL)",
@@ -180,12 +184,12 @@
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Command Prompt"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
             },
