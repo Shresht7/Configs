@@ -117,7 +117,7 @@
   "docker.extension.enableComposeLanguageServer": false,
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "smooth",
-  "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono, CaskaydiaCove Nerd Font, Cascadia Code, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
   "editor.fontWeight": "normal",
@@ -405,7 +405,7 @@
   "svelte.enable-ts-plugin": true,
   "svelte.plugin.svelte.note-new-transformation": false,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier Now', monospace",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font, CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier Now', monospace",
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.profiles.windows": {
     "Command Prompt": {
