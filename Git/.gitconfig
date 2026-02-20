@@ -40,7 +40,7 @@
 	# Returns an unformatted list of branches
 	list-branch		= branch --format="%(refname:short)"
 	# Burn it to the ground - Hard reset
-	burn			= reset --hard	
+	burn			= reset --hard
 
 # Set bat as the default diff tool
 [pager]
