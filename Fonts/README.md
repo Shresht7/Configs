@@ -6,6 +6,13 @@ Nerd Fonts are popular fonts that are patched to include icons.
 
 https://www.nerdfonts.com/
 
+### JetBrainsMono
+
+**JetBrainsMono** is a monospace font from JetBrains.
+
+https://github.com/JetBrains/JetBrainsMono
+
+
 ### Cascadia Code
 
 **Cascadia Code** is a monospace font from Microsoft.
