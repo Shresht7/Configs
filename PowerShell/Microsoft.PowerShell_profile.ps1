@@ -26,6 +26,11 @@ Import-Module -Name PSReadlineUtils
 # PSFavorite provides a simple way to manage and use your favorite PowerShell commands.
 Import-Module -Name PSFavorite
 
+# PREDICTOR MODULES
+# -----------------
+
+Import-Module -Name CompletionPredictor
+
 # NLPowerShell provides LLM assistance to interactive with PowerShell using natural language
 $Env:LLM_MODEL = "gemma3"
 Import-Module -Name NLPowerShell
