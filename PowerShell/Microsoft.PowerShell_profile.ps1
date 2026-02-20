@@ -41,8 +41,19 @@ Write-Host
 go-time
 go-time cal
 
-# Write a random quote to the console on startup
-quotes --filepath (Resolve-Path "~\Data\quotes.csv") --quotes --style "italic" --no-borders
+$randomCommands = @(
+    {
+        # Write a random quote to the console on startup
+        quotes --filepath (Resolve-Path "~\Data\quotes.csv") --quotes --style "italic" --no-borders
+    },
+    {
+        tipsc
+        Write-Host
+    },
+)
+$randomCommand = Get-Random $randomCommands
+& $randomCommand
+
 
 # ALIASES
 # =======
