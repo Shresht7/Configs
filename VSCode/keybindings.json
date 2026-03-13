@@ -341,5 +341,14 @@
         "key": "ctrl+enter",
         "command": "-geminicodeassist.generateCode",
         "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && !inGeminiDiffView && !isInDiffEditor && !nextEditSessionAvailable"
+    {
+        "key": "ctrl+alt+g i",
+        "command": "geminicodeassist.showinEditor",
+        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-geminicodeassist.showinEditor",
+        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
     }
 ]
