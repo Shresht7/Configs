@@ -1,145 +1,166 @@
 {
     "apps": [
         {
-            "Version": "25.01",
+            "Updated": "2026-02-24T11:10:19.9272997+05:30",
+            "Version": "26.00",
             "Name": "7zip",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-08-08T09:43:57.3958263+05:30"
+            "Source": "main"
         },
         {
+            "Updated": "2025-12-08T13:15:17.8240649+05:30",
             "Version": "0.26.1",
             "Name": "bat",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-12-08T13:15:17.8240649+05:30"
+            "Source": "main"
         },
         {
-            "Version": "0.11.4",
+            "Updated": "2026-01-05T16:22:16.4851754+05:30",
+            "Version": "0.12.3",
             "Name": "bottom",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-11-17T13:26:43.5607677+05:30"
+            "Source": "main"
         },
         {
-            "Version": "8.17.0_5",
+            "Updated": "2026-03-13T08:27:38.0203829+05:30",
+            "Version": "8.19.0_1",
             "Name": "curl",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-12-09T11:09:22.5687796+05:30"
+            "Source": "main"
         },
         {
-            "Version": "10.3.0",
+            "Updated": "2026-03-13T08:27:40.2025332+05:30",
+            "Version": "10.4.2",
             "Name": "fd",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-09-09T15:45:37.971903+05:30"
+            "Source": "main"
         },
         {
+            "Updated": "2025-11-26T21:28:57.6681755+05:30",
             "Version": "8.0.1",
             "Name": "ffmpeg",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-11-26T21:28:57.6681755+05:30"
+            "Source": "main"
         },
         {
+            "Updated": "2025-11-17T13:26:52.8306583+05:30",
             "Version": "39.2.0",
             "Name": "fx",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-11-17T13:26:52.8306583+05:30"
+            "Source": "main"
         },
         {
-            "Version": "0.67.0",
+            "Updated": "2026-03-10T12:31:08.6654301+05:30",
+            "Version": "0.70.0",
             "Name": "fzf",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-11-17T13:26:54.9720231+05:30"
+            "Source": "main"
         },
         {
-            "Version": "13.2.0",
+            "Updated": "2026-01-05T16:23:21.631818+05:30",
+            "Version": "15.2.0",
             "Name": "gcc",
-            "Source": "main",
             "Info": "",
-            "Updated": "2024-09-01T16:45:21.9770735+05:30"
+            "Source": "main"
         },
         {
+            "Updated": "2025-10-13T19:49:49.2396916+05:30",
             "Version": "2.47.0",
             "Name": "git-filter-repo",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-10-13T19:49:49.2396916+05:30"
+            "Source": "main"
         },
         {
-            "Version": "685",
+            "Updated": "2026-02-11T21:47:23.4912497+05:30",
+            "Version": "692",
             "Name": "less",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-10-15T22:00:13.3814496+05:30"
+            "Source": "main"
         },
         {
-            "Version": "2.0.14",
+            "Updated": "2026-03-13T08:27:42.0398679+05:30",
+            "Version": "0.7.0",
+            "Name": "llmfit",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Updated": "2026-01-05T16:23:24.283662+05:30",
+            "Version": "2.0.15",
             "Name": "micro",
-            "Source": "main",
             "Info": "",
-            "Updated": "2024-08-29T21:13:11.9993774+05:30"
+            "Source": "main"
         },
         {
+            "Updated": "2026-03-13T08:27:56.8873219+05:30",
+            "Version": "1.2.25",
+            "Name": "opencode",
+            "Info": "",
+            "Source": "C:\\Users\\shres\\scoop\\buckets\\main\\bucket\\opencode.json"
+        },
+        {
+            "Updated": "2025-10-24T10:25:02.4888478+05:30",
             "Version": "15.1.0",
             "Name": "ripgrep",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-10-24T10:25:02.4888478+05:30"
+            "Source": "main"
         },
         {
-            "Version": "1.0.0",
+            "Updated": "2026-02-26T10:07:56.9811418+05:30",
+            "Version": "1.1.0",
             "Name": "sd",
-            "Source": "main",
             "Info": "",
-            "Updated": "2023-12-01T19:49:05.8846804+05:30"
+            "Source": "main"
         },
         {
-            "Version": "3.51.1",
+            "Updated": "2026-01-22T00:53:23.6295593+05:30",
+            "Version": "3.51.2",
             "Name": "sqlite",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-12-02T15:18:40.656839+05:30"
+            "Source": "main"
         },
         {
+            "Updated": "2025-11-17T13:26:58.0825072+05:30",
             "Version": "1.8.1",
             "Name": "tealdeer",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-11-17T13:26:58.0825072+05:30"
+            "Source": "main"
         },
         {
+            "Updated": "2026-01-29T18:00:19.8779292+05:30",
+            "Version": "1.12.0",
+            "Name": "tlrc",
+            "Info": "",
+            "Source": "main"
+        },
+        {
+            "Updated": "2024-10-21T10:47:38.8495583+05:30",
             "Version": "1.7.7",
             "Name": "ttyd",
-            "Source": "main",
             "Info": "",
-            "Updated": "2024-10-21T10:47:38.8495583+05:30"
+            "Source": "main"
         },
         {
-            "Version": "0.10.0",
+            "Updated": "2026-03-13T08:28:00.0999862+05:30",
+            "Version": "0.11.0",
             "Name": "vhs",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-06-22T11:35:29.9563292+05:30"
+            "Source": "main"
         },
         {
-            "Version": "2025.12.08",
+            "Updated": "2026-03-10T12:31:38.252827+05:30",
+            "Version": "2026.03.03",
             "Name": "yt-dlp",
-            "Source": "main",
             "Info": "",
-            "Updated": "2025-12-08T13:15:39.9343525+05:30"
+            "Source": "main"
         }
     ],
     "buckets": [
         {
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main",
-            "Updated": "2025-12-09T10:01:01+05:30",
-            "Manifests": 1413
+            "Updated": "2026-03-13T06:22:18+05:30",
+            "Manifests": 1459
         }
     ]
 }
