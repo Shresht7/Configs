@@ -208,9 +208,9 @@
         "command": "git.viewStagedChanges"
     },
     {
-        "key": "ctrl+shift+g ctrl+enter",
+        "key": "ctrl+s",
         "command": "git.stageSelectedRanges",
-        "when": "!operationInProgress"
+        "when": "diffEditorHasChanges && editorHasSelection && !operationInProgress"
     },
     {
         "key": "ctrl+enter",
