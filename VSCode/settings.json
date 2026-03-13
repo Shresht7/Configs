@@ -102,16 +102,6 @@
     "workbench.action.tasks.configureTaskRunner",
     "workbench.action.tasks.runTask"
   ],
-  "cSpell.customDictionaries": {
-    "custom-dictionary-user": {
-      "addWords": true,
-      "description": "Custom Dictionary",
-      "name": "custom-dictionary-user",
-      "path": "~/.config/.cspell/custom-dictionary-user.txt",
-      "scope": "user"
-    }
-  },
-  "cSpell.language": "en,en-GB,en-US",
   "diffEditor.codeLens": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "docker.extension.enableComposeLanguageServer": false,

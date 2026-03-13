@@ -87,7 +87,6 @@ satoren.lualint
 sebastian-lenz.divinity-vscode
 shresht7.vscsv
 simonsiefke.svg-preview
-streetsidesoftware.code-spell-checker
 sumneko.lua
 svelte.svelte-vscode
 tamasfe.even-better-toml
