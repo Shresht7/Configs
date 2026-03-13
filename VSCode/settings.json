@@ -327,7 +327,8 @@
     "suppressLineUncommittedWarning": true
   },
   "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.ai.ollama.url": "http://localhost:11434",
+  "gitlens.ai.vscode.model": "copilot:gpt-5.1-mini",
   "gitlens.gitCommands.skipConfirmations": [
     "fetch:command",
     "switch:command"
