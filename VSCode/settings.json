@@ -293,7 +293,7 @@
     "review": "Review the code",
     "test": "Create units tests for this code"
   },
-  "geminicodeassist.inlineSuggestions.enableAuto": true,
+  "geminicodeassist.inlineSuggestions.enableAuto": false,
   "git.autofetch": true,
   "git.branchProtection": [
     "main"
@@ -302,14 +302,12 @@
   "git.enableSmartCommit": true,
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
-    "*": false,
-    "cpp": false,
-    "go": true,
-    "markdown": false,
+    "*": true,
+    "markdown": true,
     "plaintext": false,
-    "rust": false,
     "scminput": false,
-    "yaml": false
+    "yaml": false,
+    "json": false
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "githubIssues.issueBranchTitle": "issue${issueNumber}",
