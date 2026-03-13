@@ -336,8 +336,21 @@
   "gitlens.views.commits.files.layout": "tree",
   "gitlens.views.contributors.showStatistics": true,
   "go.toolsManagement.autoUpdate": true,
+  "http.systemCertificatesNode": true,
   "javascript.inlayHints.parameterNames.enabled": "all",
   "javascript.inlayHints.parameterTypes.enabled": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://aka.ms": true,
+    "https://aka.ms/terminal-profiles-schema": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true
+  },
   "json.schemas": [
     {
       "fileMatch": [
