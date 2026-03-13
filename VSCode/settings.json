@@ -384,6 +384,7 @@
   "material-icon-theme.folders.associations": {
     "__notes__": "Syntax",
     "__sample__": "Test",
+    "Cmdlet": "Command",
     "Git": "Git"
   },
   "material-icon-theme.folders.color": "#ff7045",
@@ -481,7 +482,7 @@
   "workbench.preferredDarkColorTheme": "One Dark Pro Flat",
   "workbench.preferredHighContrastColorTheme": "One Dark Pro Darker",
   "workbench.preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
-  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
   "workbench.secondarySideBar.showLabels": false,
   "workbench.sideBar.location": "right",
   "yaml.customTags": [
