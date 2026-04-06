@@ -22,6 +22,9 @@
 [color]
 	ui 				= auto	# Seems to be the default anyway
 
+[color.decorate]
+	HEAD = "#00ffff" bold
+
 [fetch]
 	prune 			= true	# Automatically prune outdate branches
 
