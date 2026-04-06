@@ -23,6 +23,7 @@ Import-Module -Name PSReadlineUtils
 
 # PSFavorite provides a simple way to manage and use your favorite PowerShell commands.
 Import-Module -Name PSFavorite
+Initialize-PSFavorite
 
 # PREDICTOR MODULES
 # -----------------
