@@ -28,7 +28,7 @@
 [alias]
 	# Shows a decorated log
 	slog 			= log --all --oneline --decorate --graph
-	flog 			= log --all --oneline --decorate --graph --date=relative --boundary --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s - %C(cyan)[%cn] %ad %Creset'
+	flog 			= log --all --oneline --decorate --graph --stat --date=relative --pretty=format:'%C(yellow)%h%Creset %C(red)%d%Creset %s %C(brightBlack)-- %C(cyan)%cn %C(brightBlack)%ad %Creset'
 	# Unstage files from the staging area
 	unstage 		= git restore --staged
 	# Amends the previous commit message
