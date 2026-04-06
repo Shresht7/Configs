@@ -403,7 +403,8 @@
     "GitHub.vscode-pull-request-github"
   ],
   "remote.SSH.remotePlatform": {
-    "fedora": "linux"
+    "fedora": "linux",
+    "saturn": "linux"
   },
   "svelte.enable-ts-plugin": true,
   "svelte.plugin.svelte.note-new-transformation": false,
