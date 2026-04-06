@@ -37,8 +37,6 @@
 	last 			= log -1 HEAD --stat
 	# Resets the last commit
 	undo 			= reset HEAD~1
-	# Returns an unformatted list of branches
-	list-branch		= branch --format="%(refname:short)"
 	# Burn it to the ground - Hard reset
 	burn			= reset --hard
 
