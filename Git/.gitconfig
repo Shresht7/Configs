@@ -30,7 +30,7 @@
 	slog 			= log --all --oneline --decorate --graph
 	flog 			= log --all --oneline --decorate --graph --stat --date=relative --pretty=format:'%C(yellow)%h%Creset %C(red)%d%Creset %s %C(brightBlack)-- %C(cyan)%cn %C(brightBlack)%ad %Creset'
 	# Unstage files from the staging area
-	unstage 		= git restore --staged
+	unstage 		= restore --staged
 	# Amends the previous commit message
 	amend 			= commit --amend
 	# Shows details of the last commit
