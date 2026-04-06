@@ -35,23 +35,36 @@ $Env:LLM_MODEL = "gemma3"
 Import-Module -Name NLPowerShell
 Initialize-NLPowerShell -Ollama -Model $Env:LLM_MODEL -Temperature 0.3
 
+# =======
+# STARTUP
+# =======
+
 # Show the time and calendar
 Write-Host
 go-time
 go-time cal
 
-$randomCommands = @(
+# Show a random quote or tip on startup
+$startupActions = @(
     {
-        # Write a random quote to the console on startup
-        quotes --filepath (Resolve-Path "~\Data\quotes.csv") --quotes --style "italic" --no-borders
+        if (Get-Command quotes -ErrorAction SilentlyContinue) {
+            quotes --filepath (Resolve-Path "$HOME\Data\quotes.csv") --quotes --style 'italic' --no-borders
+        }
     },
     {
-        tipsc
+        if (Get-Command tipsc -ErrorAction SilentlyContinue) {
+            tipsc
+        }
         Write-Host
-    },
+    }
 )
-$randomCommand = Get-Random $randomCommands
-& $randomCommand
+
+try {
+    Get-Random $startupActions | ForEach-Object { & $_ }
+}
+catch {
+    Write-Verbose "Random startup action failed: $_"
+}
 
 
 # ALIASES
