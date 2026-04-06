@@ -5,6 +5,8 @@
 # Configuration for Git.
 # Link to ~/.gitconfig
 
+# Reference: https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+
 # User Configuration
 [user]
 	name 			= Shresht Srivastav
@@ -28,6 +30,7 @@
 [fetch]
 	prune 			= true	# Automatically prune outdate branches
 
+# Reference: https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
 [alias]
 	# Shows a decorated log
 	slog 			= log --all --oneline --decorate --graph
