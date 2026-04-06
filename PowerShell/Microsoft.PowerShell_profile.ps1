@@ -14,8 +14,6 @@ $Env:EDITOR = "code"
 
 # https://www.github.com/Shresht7/PowerShell
 
-# AutoComplete provides tab completion for PowerShell commands, cmdlets, and parameters.
-Import-Module -Name AutoComplete
 # Utilities is a collection of useful PowerShell functions.
 Import-Module -Name Utilities
 # FSUtils is a collection of useful filesystem utility functions.
@@ -269,15 +267,33 @@ Import-Module z
 # Auto-Complete
 # =============
 
+# Import Completions Module
+Import-Module -Name Completions
+
+# ripgrep
+if (Get-Command rg -ErrorAction SilentlyContinue) {
+    rg --generate complete-powershell | Out-String | Invoke-Expression
+}
+
+# bat
+if (Get-Command bat -ErrorAction SilentlyContinue) {
+    bat --completion ps1 | Out-String | Invoke-Expression
+}
+
 # GitHub CLI
 if (Find-Path -Command gh) {
     Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 }
 
 # Deno
-# if (Find-Path -Command deno) {
-#     Invoke-Expression -Command $(deno completions powershell | Out-String)
-# }
+if (Find-Path -Command deno) {
+    Invoke-Expression -Command $(deno completions powershell | Out-String)
+}
+
+# dotnet
+if (Find-Path -Command dotnet) {
+    dotnet completions script pwsh | Out-String | Invoke-Expression
+}
 
 # WinGet
 # https://github.com/microsoft/winget-cli/blob/master/doc/Completion.md
