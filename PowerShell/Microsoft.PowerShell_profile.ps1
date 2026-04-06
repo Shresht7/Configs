@@ -243,18 +243,18 @@ Set-PSReadLineKeyHandler -Key "Ctrl+Shift+e" `
     }
 }
 
-$Env:PSReadLineEnable = $True
+$Env:PSReadLineAddToHistory = $True
 
 # History handler
 Set-PSReadLineOption -AddToHistoryHandler {
     param([string]$line)
     $minimumLength = 3
     $sensitive = "password|asplaintext|token|key|secret|hook|webhook"
-    return ($Env:PSReadLineEnable -eq $True) -and
-        ($line.Length -gt $minimumLength) -and
-        ($line[0] -ne ' ') -and
-        ($line[0] -ne ';') -and
-        ($line -NotMatch $sensitive)
+    return ($Env:PSReadLineAddToHistory -eq $True) -and
+    ($line.Length -gt $minimumLength) -and
+    ($line[0] -ne ' ') -and
+    ($line[0] -ne ';') -and
+    ($line -NotMatch $sensitive)
 }
 
 # Prevent annoying beeping noises
