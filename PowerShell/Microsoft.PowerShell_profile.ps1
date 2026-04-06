@@ -327,13 +327,20 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 # PSStyle
 # =======
 
+# $PSStyle is a global variable that contains the current style settings for PowerShell.
+# Run `$PSStyle` to see the current style settings and available properties to customize.
+
 # ---------------------------------------------
 $PSAccentColor = $PSStyle.Foreground.BrightCyan
 # ---------------------------------------------
 
 # Use the accent color
-$PSStyle.Formatting.TableHeader = $PSAccentColor
 $PSStyle.Formatting.FormatAccent = $PSAccentColor
+$PSStyle.Formatting.TableHeader = $PSAccentColor
+
+# =============
+# MISCELLANEOUS
+# =============
 
 # OTHER MODULES
 # -------------
