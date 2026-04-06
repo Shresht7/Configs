@@ -136,7 +136,7 @@ Import-Module posh-git
 
 Import-Module PSFzf
 
-Set-PsFzfOption -GitKeyBindings 'Ctrl+g' -PSReadlineChordReverseHistory 'Ctrl+r'
+Set-PsFzfOption -EnableFd -GitKeyBindings 'Ctrl+g' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 # ----------
 # PSReadLine
@@ -151,6 +151,7 @@ Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
 
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineKeyHandler -Chord 'Ctrl+SpaceBar' -ScriptBlock { Invoke-FzfTabCompletion }
 
 # Searching for commands with up/down arrow is really handy.  The
 # option "moves to end" is useful if you want the cursor at the end
