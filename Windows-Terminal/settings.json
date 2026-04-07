@@ -50,10 +50,6 @@
             "command": "closePane",
             "id": "User.closePane"
         },
-        {
-            "command": "togglePaneZoom",
-            "id": "User.togglePaneZoom"
-        },
         // Scroll between prompts
         {
             "command": {
@@ -119,8 +115,8 @@
             "keys": "shift+f11"
         },
         {
-            "id": "User.togglePaneZoom",
-            "keys": "alt+shift+f11"
+            "id": "Terminal.TogglePaneZoom",
+            "keys": "alt+f11"
         },
         {
             "id": "User.scrollToMark.prev",
