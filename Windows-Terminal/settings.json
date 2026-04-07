@@ -64,6 +64,21 @@
         {
             "command": "togglePaneZoom",
             "id": "User.togglePaneZoom"
+        },
+        // Scroll between prompts
+        {
+            "command": {
+                "action": "scrollToMark",
+                "direction": "previous"
+            },
+            "id": "User.scrollToMark.prev"
+        },
+        {
+            "command": {
+                "action": "scrollToMark",
+                "direction": "next"
+            },
+            "id": "User.scrollToMark.next"
         }
     ],
     "alwaysShowNotificationIcon": false,
@@ -117,6 +132,14 @@
         {
             "id": "User.togglePaneZoom",
             "keys": "alt+shift+f11"
+        },
+        {
+            "id": "User.scrollToMark.prev",
+            "keys": "ctrl+up"
+        },
+        {
+            "id": "User.scrollToMark.next",
+            "keys": "ctrl+down"
         }
     ],
     "newTabMenu": [
@@ -126,6 +149,9 @@
     ],
     "profiles": {
         "defaults": {
+            "showMarksOnScrollbar": true,
+            "autoMarkPrompts": true,
+            "experimental.rightClickContextMenu": true,
             "colorScheme": {
                 "dark": "S7",
                 "light": "Frost"
