@@ -59,7 +59,7 @@
             "command": {
                 "action": "quakeMode"
             },
-            "id": "User.quakeMode.F1E129A4"
+            "id": "Terminal.QuakeMode"
         },
         {
             "command": "togglePaneZoom",
@@ -105,10 +105,6 @@
         {
             "id": "User.prevTab.0",
             "keys": "ctrl+pgup"
-        },
-        {
-            "id": "User.quakeMode.F1E129A4",
-            "keys": "win+shift+f11"
         },
         {
             "id": "User.newTab.5DEADB41",
