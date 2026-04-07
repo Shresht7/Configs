@@ -1,8 +1,18 @@
+;; ------
+;; CONFIG
+;; ------
+
+;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc
+
 (defcfg
   tray-icon qwerty.png  ;; Use a custom tray icon in the config folder
   icon-match-layer-name yes ;; Use a different icon for the different layers
   windows-altgr cancel-lctl-press ;; Remove the lctl press that is generated alongside ralt 
 )
+
+;; ------
+;; SOURCE
+;; ------
 
 #|
 The configuration file must have exactly one `defsrc`. This defines the order of keys
@@ -21,6 +31,10 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
+
+;; ------
+;; LAYERS
+;; ------
 
 #|
 The configuration must have atleast one `deflayer`. This maps how each physical key mapped
@@ -75,6 +89,12 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   _    _    _              _              _    _    _
 )
 
+;; ---------
+;; VARIABLES
+;; ---------
+
+;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#variables
+
 (defvar
   tap-time 100
   hold-time 200
@@ -94,6 +114,12 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 (deffakekeys
   to-base (layer-switch qwerty)
 )
+
+;; -------
+;; ALIASES
+;; -------
+
+;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#aliases
 
 (defalias
   nav (layer-switch nav)
