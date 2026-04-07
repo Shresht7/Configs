@@ -2,68 +2,29 @@
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [
-        {
-            "command": "toggleAlwaysOnTop",
-            "id": "User.toggleAlwaysOnTop"
-        },
-        {
-            "command": {
-                "action": "newTab"
-            },
-            "id": "User.newTab.5DEADB41"
-        },
-        {
-            "command": "toggleFocusMode",
-            "id": "User.toggleFocusMode"
-        },
+        // Split Pane
         {
             "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.A6751878"
+            "id": "User.SplitPane"
         },
-        {
-            "command": {
-                "action": "quakeMode"
-            },
-            "id": "Terminal.QuakeMode"
-        },
-        {
-            "command": "find",
-            "id": "User.find"
-        },
-        {
-            "command": {
-                "action": "nextTab"
-            },
-            "id": "User.nextTab.0"
-        },
-        {
-            "command": {
-                "action": "prevTab"
-            },
-            "id": "User.prevTab.0"
-        },
-        {
-            "command": "closePane",
-            "id": "User.closePane"
-        },
-        // Scroll between prompts
+        // Scroll between Marks
         {
             "command": {
                 "action": "scrollToMark",
                 "direction": "previous"
             },
-            "id": "User.scrollToMark.prev"
+            "id": "User.ScrollToMark.Prev"
         },
         {
             "command": {
                 "action": "scrollToMark",
                 "direction": "next"
             },
-            "id": "User.scrollToMark.next"
+            "id": "User.ScrollToMark.Next"
         }
     ],
     "alwaysShowNotificationIcon": false,
@@ -74,44 +35,42 @@
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "initialRows": 30,
     "keybindings": [
+        // Copy, Paste and Find
         {
             "id": "Terminal.CopyFromClipboard",
             "keys": "ctrl+c"
-        },
-        {
-            "id": "User.toggleAlwaysOnTop",
-            "keys": "ctrl+shift+f11"
-        },
-        {
-            "id": "User.closePane",
-            "keys": "ctrl+w"
-        },
-        {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
         },
         {
             "id": "Terminal.PasteFromClipboard",
             "keys": "ctrl+v"
         },
         {
-            "id": "User.splitPane.A6751878",
-            "keys": "ctrl+shift+t"
+            "id": "Terminal.FindText",
+            "keys": "ctrl+shift+f"
         },
+        // Tabs
         {
-            "id": "User.nextTab.0",
-            "keys": "ctrl+pgdn"
-        },
-        {
-            "id": "User.prevTab.0",
-            "keys": "ctrl+pgup"
-        },
-        {
-            "id": "User.newTab.5DEADB41",
+            "id": "Terminal.OpenNewTab",
             "keys": "ctrl+t"
         },
         {
-            "id": "User.toggleFocusMode",
+            "id": "User.SplitPane",
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "id": "Terminal.NextTab",
+            "keys": "ctrl+pgdn"
+        },
+        {
+            "id": "Terminal.PrevTab",
+            "keys": "ctrl+pgup"
+        },
+        {
+            "id": "Terminal.ClosePane",
+            "keys": "ctrl+w"
+        },
+        {
+            "id": "Terminal.ToggleFocusMode",
             "keys": "shift+f11"
         },
         {
@@ -119,11 +78,16 @@
             "keys": "alt+f11"
         },
         {
-            "id": "User.scrollToMark.prev",
+            "id": "Terminal.ToggleAlwaysOnTop",
+            "keys": "ctrl+shift+f11"
+        },
+        // Scroll to Marks
+        {
+            "id": "User.ScrollToMark.Prev",
             "keys": "ctrl+up"
         },
         {
-            "id": "User.scrollToMark.next",
+            "id": "User.ScrollToMark.Next",
             "keys": "ctrl+down"
         }
     ],
