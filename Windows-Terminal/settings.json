@@ -4,14 +4,6 @@
     "actions": [
         {
             "command": {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "id": "User.SplitPane"
-        },
-        {
-            "command": {
                 "action": "scrollToMark",
                 "direction": "previous"
             },
@@ -62,8 +54,24 @@
             "keys": "ctrl+pgup"
         },
         {
-            "id": "User.SplitPane",
+            "id": "Terminal.DuplicatePaneAuto",
             "keys": "ctrl+shift+t"
+        },
+        {
+            "id": "Terminal.SplitPaneUp",
+            "keys": "ctrl+alt+up"
+        },
+        {
+            "id": "Terminal.SplitPaneDown",
+            "keys": "ctrl+alt+down"
+        },
+        {
+            "id": "Terminal.SplitPaneRight",
+            "keys": "ctrl+alt+right"
+        },
+        {
+            "id": "Terminal.SplitPaneLeft",
+            "keys": "ctrl+alt+left"
         },
         {
             "id": "Terminal.NextTab",
