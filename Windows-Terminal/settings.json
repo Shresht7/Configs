@@ -14,18 +14,14 @@
             "id": "User.toggleAlwaysOnTop"
         },
         {
-            "command": {
-                "action": "newTab"
-            },
-            "id": "User.newTab.5DEADB41"
-        },
-        {
             "command": "paste",
             "id": "User.paste"
         },
         {
-            "command": "find",
-            "id": "User.find"
+            "command": {
+                "action": "newTab"
+            },
+            "id": "User.newTab.5DEADB41"
         },
         {
             "command": "toggleFocusMode",
@@ -38,6 +34,16 @@
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": {
+                "action": "quakeMode"
+            },
+            "id": "Terminal.QuakeMode"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         },
         {
             "command": {
@@ -54,12 +60,6 @@
         {
             "command": "closePane",
             "id": "User.closePane"
-        },
-        {
-            "command": {
-                "action": "quakeMode"
-            },
-            "id": "Terminal.QuakeMode"
         },
         {
             "command": "togglePaneZoom",
@@ -79,20 +79,20 @@
             "keys": "ctrl+c"
         },
         {
-            "id": "User.closePane",
-            "keys": "ctrl+w"
-        },
-        {
             "id": "User.toggleAlwaysOnTop",
             "keys": "ctrl+shift+f11"
         },
         {
-            "id": "User.paste",
-            "keys": "ctrl+v"
+            "id": "User.closePane",
+            "keys": "ctrl+w"
         },
         {
             "id": "User.find",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
         },
         {
             "id": "User.splitPane.A6751878",
@@ -213,26 +213,26 @@
     "schemes": [
         {
             "background": "#FFFFFF",
-            "black": "#000000",
+            "black": "#474747",
             "blue": "#17B2FF",
-            "brightBlack": "#474747",
+            "brightBlack": "#8F8F8F",
             "brightBlue": "#27B2F6",
             "brightCyan": "#13A8C0",
             "brightGreen": "#7CB03D",
             "brightPurple": "#B900F2",
             "brightRed": "#FF2D2D",
-            "brightWhite": "#9E9D9E",
-            "brightYellow": "#AD3A72",
+            "brightWhite": "#4F4E4F",
+            "brightYellow": "#FF6000",
             "cursorColor": "#000000",
             "cyan": "#3C96A6",
             "foreground": "#000000",
             "green": "#62A107",
             "name": "Frost",
             "purple": "#991070",
-            "red": "#E54E4E",
+            "red": "#CF4646",
             "selectionBackground": "#FFFFFF",
-            "white": "#939494",
-            "yellow": "#990067"
+            "white": "#1F1F1F",
+            "yellow": "#B23FFF"
         },
         {
             "background": "#1F1F1F",
