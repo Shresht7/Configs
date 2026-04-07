@@ -78,6 +78,22 @@
             "keys": "ctrl+pgdn"
         },
         {
+            "id": "Terminal.SwapPaneUp",
+            "keys": "ctrl+shift+alt+up"
+        },
+        {
+            "id": "Terminal.SwapPaneDown",
+            "keys": "ctrl+shift+alt+down"
+        },
+        {
+            "id": "Terminal.SwapPaneRight",
+            "keys": "ctrl+shift+alt+right"
+        },
+        {
+            "id": "Terminal.SwapPaneLeft",
+            "keys": "ctrl+shift+alt+left"
+        },
+        {
             "id": "Terminal.ClosePane",
             "keys": "ctrl+w"
         },
