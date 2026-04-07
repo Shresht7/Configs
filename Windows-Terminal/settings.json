@@ -14,14 +14,18 @@
             "id": "User.toggleAlwaysOnTop"
         },
         {
-            "command": "paste",
-            "id": "User.paste"
-        },
-        {
             "command": {
                 "action": "newTab"
             },
             "id": "User.newTab.5DEADB41"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         },
         {
             "command": "toggleFocusMode",
@@ -34,10 +38,6 @@
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
-        },
-        {
-            "command": "find",
-            "id": "User.find"
         },
         {
             "command": {
@@ -79,20 +79,20 @@
             "keys": "ctrl+c"
         },
         {
-            "id": "User.toggleAlwaysOnTop",
-            "keys": "ctrl+shift+f11"
-        },
-        {
             "id": "User.closePane",
             "keys": "ctrl+w"
         },
         {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.toggleAlwaysOnTop",
+            "keys": "ctrl+shift+f11"
         },
         {
             "id": "User.paste",
             "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         },
         {
             "id": "User.splitPane.A6751878",
