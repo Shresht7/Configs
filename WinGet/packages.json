@@ -1,6 +1,6 @@
 {
 	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate": "2026-03-13T09:00:18.220-00:00",
+	"CreationDate": "2026-04-07T22:16:04.873-00:00",
 	"Sources": [
 		{
 			"Packages": [
@@ -29,10 +29,13 @@
 					"PackageIdentifier": "VideoLAN.VLC"
 				},
 				{
-					"PackageIdentifier": "GitHub.cli"
+					"PackageIdentifier": "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier": "Microsoft.VCRedist.2010.x64"
+				},
+				{
+					"PackageIdentifier": "Kitware.CMake"
 				},
 				{
 					"PackageIdentifier": "GoLang.Go"
@@ -47,22 +50,16 @@
 					"PackageIdentifier": "Microsoft.VCRedist.2008.x64"
 				},
 				{
-					"PackageIdentifier": "Kitware.CMake"
-				},
-				{
-					"PackageIdentifier": "Google.QuickShare"
-				},
-				{
-					"PackageIdentifier": "Microsoft.GameInput"
+					"PackageIdentifier": "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier": "Microsoft.OpenJDK.11"
 				},
 				{
-					"PackageIdentifier": "Nvidia.PhysX"
+					"PackageIdentifier": "Microsoft.GameInput"
 				},
 				{
-					"PackageIdentifier": "Microsoft.PowerToys"
+					"PackageIdentifier": "Nvidia.PhysX"
 				},
 				{
 					"PackageIdentifier": "Inkscape.Inkscape"
@@ -71,7 +68,7 @@
 					"PackageIdentifier": "Microsoft.WebDeploy"
 				},
 				{
-					"PackageIdentifier": "Microsoft.PowerShell"
+					"PackageIdentifier": "Google.QuickShare"
 				},
 				{
 					"PackageIdentifier": "GermanCoding.SyncTrayzor"
@@ -116,7 +113,7 @@
 					"PackageIdentifier": "Microsoft.DotNet.SDK.7"
 				},
 				{
-					"PackageIdentifier": "Google.ChromeRemoteDesktopHost"
+					"PackageIdentifier": "Microsoft.DotNet.SDK.10"
 				},
 				{
 					"PackageIdentifier": "Python.Launcher"
@@ -131,16 +128,19 @@
 					"PackageIdentifier": "Microsoft.WindowsSDK.10.0.22621"
 				},
 				{
-					"PackageIdentifier": "Microsoft.VCRedist.2015+.x64"
+					"PackageIdentifier": "Google.ChromeRemoteDesktopHost"
 				},
 				{
-					"PackageIdentifier": "Microsoft.DotNet.SDK.10"
+					"PackageIdentifier": "Microsoft.VCRedist.2015+.x64"
 				},
 				{
 					"PackageIdentifier": "Microsoft.DotNet.Framework.DeveloperPack.4.6"
 				},
 				{
 					"PackageIdentifier": "Microsoft.VCRedist.2008.x86"
+				},
+				{
+					"PackageIdentifier": "GitHub.cli"
 				},
 				{
 					"PackageIdentifier": "Microsoft.VCRedist.2013.x86"
@@ -153,6 +153,9 @@
 				},
 				{
 					"PackageIdentifier": "Microsoft.VCRedist.2012.x64"
+				},
+				{
+					"PackageIdentifier": "ArduinoSA.IDE.stable"
 				},
 				{
 					"PackageIdentifier": "DenoLand.Deno"
@@ -268,9 +271,6 @@
 			"Packages": [
 				{
 					"PackageIdentifier": "9PFXXSHC64H3"
-				},
-				{
-					"PackageIdentifier": "9NBLGGH43VHV"
 				}
 			],
 			"SourceDetails": {
@@ -281,5 +281,5 @@
 			}
 		}
 	],
-	"WinGetVersion": "1.28.190"
+	"WinGetVersion": "1.28.220"
 }
