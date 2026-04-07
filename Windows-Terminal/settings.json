@@ -2,7 +2,6 @@
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [
-        // Split Pane
         {
             "command": {
                 "action": "splitPane",
@@ -11,7 +10,6 @@
             },
             "id": "User.SplitPane"
         },
-        // Scroll between Marks
         {
             "command": {
                 "action": "scrollToMark",
@@ -26,7 +24,6 @@
             },
             "id": "User.ScrollToMark.Next"
         },
-        // Tab Search
         {
             "command": "tabSearch",
             "id": "User.TabSearch"
@@ -40,10 +37,13 @@
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "initialRows": 30,
     "keybindings": [
-        // Copy, Paste and Find
         {
             "id": "Terminal.CopyFromClipboard",
             "keys": "ctrl+c"
+        },
+        {
+            "id": "Terminal.OpenNewTab",
+            "keys": "ctrl+t"
         },
         {
             "id": "Terminal.PasteFromClipboard",
@@ -53,14 +53,13 @@
             "id": "Terminal.FindText",
             "keys": "ctrl+shift+f"
         },
-        // Tabs
-        {
-            "id": "Terminal.OpenNewTab",
-            "keys": "ctrl+t"
-        },
         {
             "id": "User.TabSearch",
             "keys": "ctrl+4"
+        },
+        {
+            "id": "Terminal.PrevTab",
+            "keys": "ctrl+pgup"
         },
         {
             "id": "User.SplitPane",
@@ -69,10 +68,6 @@
         {
             "id": "Terminal.NextTab",
             "keys": "ctrl+pgdn"
-        },
-        {
-            "id": "Terminal.PrevTab",
-            "keys": "ctrl+pgup"
         },
         {
             "id": "Terminal.ClosePane",
@@ -90,7 +85,6 @@
             "id": "Terminal.ToggleAlwaysOnTop",
             "keys": "ctrl+shift+f11"
         },
-        // Scroll to Marks
         {
             "id": "User.ScrollToMark.Prev",
             "keys": "ctrl+up"
@@ -107,9 +101,7 @@
     ],
     "profiles": {
         "defaults": {
-            "showMarksOnScrollbar": true,
             "autoMarkPrompts": true,
-            "experimental.rightClickContextMenu": true,
             "colorScheme": {
                 "dark": "S7",
                 "light": "Frost"
@@ -119,6 +111,8 @@
                 "size": 10
             },
             "opacity": 50,
+            "experimental.rightClickContextMenu": true,
+            "showMarksOnScrollbar": true,
             "useAcrylic": true
         },
         "list": [
@@ -252,7 +246,7 @@
             "brightPurple": "#B873EB",
             "brightRed": "#FF6060",
             "brightWhite": "#F8F8F2",
-            "brightYellow": "#E6CD2B",
+            "brightYellow": "#FCD317",
             "cursorColor": "#FFFFFF",
             "cyan": "#20D7E6",
             "foreground": "#F8F8F8",
@@ -262,7 +256,7 @@
             "red": "#FF5832",
             "selectionBackground": "#FFFFFF",
             "white": "#F8F8F2",
-            "yellow": "#FFD721"
+            "yellow": "#FFE013"
         }
     ],
     "theme": {
