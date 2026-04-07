@@ -25,6 +25,11 @@
                 "direction": "next"
             },
             "id": "User.ScrollToMark.Next"
+        },
+        // Tab Search
+        {
+            "command": "tabSearch",
+            "id": "User.TabSearch"
         }
     ],
     "alwaysShowNotificationIcon": false,
@@ -52,6 +57,10 @@
         {
             "id": "Terminal.OpenNewTab",
             "keys": "ctrl+t"
+        },
+        {
+            "id": "User.TabSearch",
+            "keys": "ctrl+4"
         },
         {
             "id": "User.SplitPane",
