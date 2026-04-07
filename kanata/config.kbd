@@ -122,9 +122,6 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#aliases
 
 (defalias
-  nav (layer-switch nav)
-  qwerty (layer-switch qwerty)
-
   ;; Holding the space key switches to the navigation layer
   spc (tap-hold-release 10 500 spc (layer-while-held nav))
 
