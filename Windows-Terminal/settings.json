@@ -67,6 +67,7 @@
         }
     ],
     "alwaysShowNotificationIcon": false,
+    "centerOnLaunch": true,
     "compatibility.allowHeadless": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
