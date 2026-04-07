@@ -107,7 +107,7 @@
         },
         {
             "id": "Terminal.TogglePaneZoom",
-            "keys": "alt+f11"
+            "keys": "alt+shift+enter"
         },
         {
             "id": "Terminal.ToggleAlwaysOnTop",
