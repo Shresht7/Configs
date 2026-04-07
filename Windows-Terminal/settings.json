@@ -19,6 +19,10 @@
         {
             "command": "tabSearch",
             "id": "User.TabSearch"
+        },
+        {
+            "command": "toggleSplitOrientation",
+            "id": "User.ToggleSplitOrientation"
         }
     ],
     "alwaysShowNotificationIcon": false,
@@ -108,6 +112,10 @@
         {
             "id": "Terminal.ToggleAlwaysOnTop",
             "keys": "ctrl+shift+f11"
+        },
+        {
+            "id": "User.ToggleSplitOrientation",
+            "keys": "alt+shift+f"
         },
         {
             "id": "User.ScrollToMark.Prev",
