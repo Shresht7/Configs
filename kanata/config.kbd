@@ -58,53 +58,21 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;;   lctl lmet lalt           spc            ralt rmet rctl
 ;; )
 
-;; The `nav` layer remaps the WASD and IJKL keys to the arrows keys
-(deflayermap nav
-  w up
-  a left
-  s down
-  d right
-  q pgup
-  e pgdn
-  t home
-  g end
-
-  i up
-  j left
-  k down
-  l right
-  u pgup
-  o pgdn 
-  h home
-  ; end
-
-  1 M-1   ;; Terminal
-  2 M-3   ;; Browser
-  3 M-9   ;; VS Code
-  4 M-0   ;; First Non-Pinned Window
-  5 M-5   ;; File Explorer
-  6 M-6
-  7 M-7
-  8 M-8
-  9 M-2
-  0 M-4
-
-  tab C-tab
-  f ret
-  b bspc
-  n del
-
-  z lmet
-  x lalt
-  c lsft
-  v lctl
-  m rctl
-  , rsft
-  . lalt
-  / rmet
-
-  caps @navcap
-  ret rctl
+;; The `nav` layer remaps:
+;;  - the WASD and IJKL keys to the arrows keys
+;;  - the Q,U and E,O keys to page up and page down respectively
+;;  - The T,H and G,; keys to Home and End respectively
+;;  - b to Backspace and n to Delete
+;;  - The Tab key to Control-Tab
+;;  - ' to f12
+;;  - The Caps Lock key to Escape when tapped and Left Control when held down. Double tapping it quickly will switch to the qwerty layer.
+;;  - Bottom Row Mods
+(deflayer nav
+  _    M-1  M-3  M-9  M-0  M-5  M-6  M-7  M-8  M-2  M-4  _    _    _
+  C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    _
+  @navcap left down right ret  end  home left down right end  f12  rctl
+  _    lmet lalt lsft lctl bspc del  rctl rsft ralt rmet _
+  _    _    _              _              _    _    _
 )
 
 (defvar
