@@ -123,7 +123,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 
 (defalias
   ;; Holding the space key switches to the navigation layer
-  spc (tap-hold-release 10 500 spc (layer-while-held nav))
+  spc (tap-hold-press $tap-time $hold-time spc (layer-while-held nav))
 
   ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode. When held down, it acts as lctl
   cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl)
