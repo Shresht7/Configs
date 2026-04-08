@@ -86,21 +86,6 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 (defvar
   tap-time 100
   hold-time 200
-
-  left-hand-keys (
-    q w e r t
-    a s d f g
-    z x c v b
-  )
-  right-hand-keys (
-    y u i o p
-    h j k l ;
-    n m , . /
-  )
-)
-
-(deffakekeys
-  to-base (layer-switch qwerty)
 )
 
 ;; -------
@@ -111,7 +96,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 
 (defalias
   ;; Holding the space key switches to the navigation layer
-  spc (tap-hold-press $tap-time $hold-time spc (layer-while-held nav) (require-prior-idle 0))
+  spc (tap-hold-press $tap-time $hold-time spc (layer-while-held nav))
 
   ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode. When held down, it acts as lctl
   cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl (require-prior-idle 0))
@@ -121,12 +106,13 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   ret (tap-hold-press $tap-time $hold-time ret rctl (require-prior-idle 0))
   ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (f12 menu)) lalt (require-prior-idle 0))
 
-  z (tap-hold-release-keys $tap-time $hold-time z lmet $left-hand-keys)
-  x (tap-hold-release-keys $tap-time $hold-time x lalt $left-hand-keys)
-  c (tap-hold-release-keys $tap-time $hold-time c lsft $left-hand-keys)
-  v (tap-hold-release-keys $tap-time $hold-time v lctl $left-hand-keys)
-  m (tap-hold-release-keys $tap-time $hold-time m rctl $right-hand-keys)
-  , (tap-hold-release-keys $tap-time $hold-time , rsft $right-hand-keys)
-  . (tap-hold-release-keys $tap-time $hold-time . lalt $right-hand-keys)
-  / (tap-hold-release-keys $tap-time $hold-time / rmet $right-hand-keys)
+  ;; Bottom Row Mods
+  z (tap-hold-release $tap-time $hold-time z lmet)
+  x (tap-hold-release $tap-time $hold-time x lalt)
+  c (tap-hold-release $tap-time $hold-time c lsft)
+  v (tap-hold-release $tap-time $hold-time v lctl)
+  m (tap-hold-release $tap-time $hold-time m rctl)
+  , (tap-hold-release $tap-time $hold-time , rsft)
+  . (tap-hold-release $tap-time $hold-time . lalt)
+  / (tap-hold-release $tap-time $hold-time / rmet)
 )
