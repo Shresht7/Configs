@@ -5,11 +5,11 @@
 ;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 
 (defcfg
-  tray-icon qwerty.png  ;; Use a custom tray icon in the config folder
-  icon-match-layer-name yes ;; Use a different icon for the different layers
-  windows-altgr cancel-lctl-press ;; Remove the lctl press that is generated alongside ralt 
-  tap-hold-require-prior-idle 200 ;; Require the key to be idle for 200ms before it can be considered a tap-hold. This is to prevent accidental modifiers when typing quickly.
-  concurrent-tap-hold yes ;; Allows multiple hold timeouts to run in parallel rather than sequentially, making modifiers feel more responsive
+  tray-icon qwerty.png                ;; Use a custom tray icon in the config folder
+  icon-match-layer-name yes           ;; Use a different icon for the different layers
+  windows-altgr cancel-lctl-press     ;; Remove the lctl press that is generated alongside ralt 
+  tap-hold-require-prior-idle 150     ;; Require the user to have not pressed any keys for 150ms before the tap-hold action can be triggered. This is to prevent accidental layer switches and modifier keys when typing quickly.
+  concurrent-tap-hold yes             ;; Allows tap-hold to run in parallel rather than sequentially. This makes the modifiers feel more responsive.
 )
 
 ;; ------
@@ -114,8 +114,8 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   spc (tap-hold-press $tap-time $hold-time spc (layer-while-held nav) (require-prior-idle 0))
 
   ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode. When held down, it acts as lctl
-  cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl)
-  navcap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch qwerty))) lctl)
+  cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl (require-prior-idle 0))
+  navcap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch qwerty))) lctl (require-prior-idle 0))
  
   ;; `Enter` behaves as is when tapped but as `RCtl` when held down
   ret (tap-hold-press $tap-time $hold-time ret rctl (require-prior-idle 0))
