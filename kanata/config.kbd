@@ -73,7 +73,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   _    M-1  M-3  M-9  M-0  M-5  M-6  M-7  M-8  M-2  M-4  _    _    _
   C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    C-S-tab
   @navcap left down right ret  end  home left down right end  f12  @ret
-  _    lmet lalt lsft lctl bspc del  rctl rsft ralt rmet _
+  _    lmet lalt lsft lctl bspc del  rctl rsft lalt rmet _
   _    _    _              _              _    _    _
 )
 
@@ -102,8 +102,8 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl (require-prior-idle 0))
   navcap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch qwerty))) lctl (require-prior-idle 0))
  
-  ;; `Enter` behaves as is when tapped but as `RCtl` when held down
-  ret (tap-hold-press $tap-time $hold-time ret rctl (require-prior-idle 0))
+  ;; `Enter` behaves as is when tapped but as `LCtl` when held down
+  ret (tap-hold-press $tap-time $hold-time ret lctl (require-prior-idle 0))
   ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (f12 menu)) lalt (require-prior-idle 0))
 
   ;; Bottom Row Mods
