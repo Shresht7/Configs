@@ -9,6 +9,7 @@
   icon-match-layer-name yes ;; Use a different icon for the different layers
   windows-altgr cancel-lctl-press ;; Remove the lctl press that is generated alongside ralt 
   tap-hold-require-prior-idle 200 ;; Require the key to be idle for 200ms before it can be considered a tap-hold. This is to prevent accidental modifiers when typing quickly.
+  concurrent-tap-hold yes ;; Allows multiple hold timeouts to run in parallel rather than sequentially, making modifiers feel more responsive
 )
 
 ;; ------
