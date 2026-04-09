@@ -54,8 +54,8 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
 ;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#aliases
 
 (defalias
-  ;; Holding the space key switches to the navigation layer
-  spc (tap-hold-press $tap-time $hold-time spc (layer-while-held nav))
+  ;; Holding the space key switches to the navigation layer. Double-tapping space fires off the return key.
+  spc (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (spc ret)) (layer-while-held nav))
 
   ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode. When held down, it acts as lctl
   cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl (require-prior-idle 0))
@@ -120,4 +120,4 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   @navcap left down right ret  end  home left down right end  f12      _                             _   _   _
   _    lmet lalt lsft lctl bspc del  rctl rsft lalt rmet          _                _            _   _   _    _
   _      _      _                  _              _       _       _          _    _    _        _       _
-) 
+)
