@@ -10,7 +10,7 @@
   windows-altgr cancel-lctl-press     ;; Remove the lctl press that is generated alongside ralt 
   tap-hold-require-prior-idle 150     ;; Require the user to have not pressed any keys for 150ms before the tap-hold action can be triggered. This is to prevent accidental layer switches and modifier keys when typing quickly.
   concurrent-tap-hold yes             ;; Allows tap-hold to run in parallel rather than sequentially. This makes the modifiers feel more responsive.
-  log-layer-changes no                ;; Don't log layer changes to the console. Has slight overhead, so it's best to keep it off unless you're debugging layer changes.
+  ;; log-layer-changes no                ;; Don't log layer changes to the console. Has slight overhead, so it's best to keep it off unless you're debugging layer changes.
 )
 
 ;; ------
@@ -54,12 +54,17 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
 ;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#aliases
 
 (defalias
+  ;; Action to toggle between the base and navigation layers
+  toggle-layer (switch 
+    ((layer qwerty)) (layer-switch nav) break
+    ((layer nav)) (layer-switch qwerty) break
+  )
+
   ;; Holding the space key switches to the navigation layer. Double-tapping space fires off the return key.
   spc (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (spc ret)) (layer-while-held nav))
 
-  ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode. When held down, it acts as lctl
-  cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl (require-prior-idle 0))
-  navcap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch qwerty))) lctl (require-prior-idle 0))
+  ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it turn on caps-lock. When held down, it acts as lctl
+  cap (tap-hold-press $tap-time $hold-time (tap-dance 200 (esc @toggle-layer caps)) lctl (require-prior-idle 0))
  
   ;; `Enter` behaves as is when tapped but as `LCtl` when held down
   ret (tap-hold-press $tap-time $hold-time ret lctl (require-prior-idle 0))
@@ -120,9 +125,9 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
    _    _   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    M-1  M-3  M-9  M-0  M-5  M-6  M-7  M-8  M-2  M-4  _    _    _          _   _    _        _    _   _   _
   C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    C-S-tab    _   _    _        _   _   _    _
-  @navcap left down right ret  end  home left down right end  @f12     _                             _   _   _
+  @cap left down right ret  end  home left down right end  @f12     _                             _   _   _
   _    lmet lalt lsft lctl bspc del  rctl rsft lalt rmet          _                _            _   _   _    _
-  _      _      _                  _              _       _       _          _    _    _        _       _
+  _      _      _                  (layer-switch qwerty) _       _       _          _    _    _        _       _
 )
 
 ;; ------
@@ -130,6 +135,4 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;; ------
 
 (defchordsv2
-  ;; Turn on the caps lock when both shift keys and the caps-lock key are pressed in a short span of time
-  (rsft lsft caps) caps $tap-time all-released ()
 )
