@@ -29,11 +29,11 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
 |#
 (defsrc
   esc  f1  f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  calc menu
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc       ins home pgup     nlck kp/ kp* kp-
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \          del end  pgdn     kp7 kp8 kp9  kp+
-  caps a    s    d    f    g    h    j    k    l    ;    '        ret                           kp4 kp5 kp6
-  lsft z    x    c    v    b    n    m    ,    .    /             rsft             up           kp1 kp2 kp3  kprt
-  lctl   lmet   lalt               spc            ralt    rmet    rctl       left down right    kp0     kp.
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc      ;;  ins home pgup     nlck kp/ kp* kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \         ;;  del end  pgdn     kp7 kp8 kp9  kp+
+  caps a    s    d    f    g    h    j    k    l    ;    '        ret        ;;                    kp4 kp5 kp6
+  lsft z    x    c    v    b    n    m    ,    .    /             rsft       ;;       up           kp1 kp2 kp3  kprt
+  lctl   lmet   lalt               spc            ralt    rmet    rctl       ;; left down right    kp0     kp.
 )
 
 ;; ---------
@@ -107,11 +107,11 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 |#
 (deflayer qwerty
   esc  f1  f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  calc menu
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc       ins home pgup     nlck kp/ kp* kp-
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \          del end  pgdn     kp7 kp8 kp9  kp+
-  @cap a    s    d    f    g    h    j    k    l    ;    '        @ret                          kp4 kp5 kp6
-  @lsft @z   @x   @c   @v   b    n    @m   @,   @.   @/            @rsft            up           kp1 kp2 kp3  kprt
-  lctl   lmet   lalt               @spc           @ralt   rmet    rctl       left down right    kp0     kp.
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc ;;  ins home pgup     nlck kp/ kp* kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \ ;;  del end  pgdn     kp7 kp8 kp9  kp+
+  @cap a    s    d    f    g    h    j    k    l    ;    '        @ret ;;                    kp4 kp5 kp6
+  @lsft @z   @x   @c   @v   b    n    @m   @,   @.   @/            @rsft ;;        up           kp1 kp2 kp3  kprt
+  lctl   lmet   lalt               @spc           @ralt   rmet    rctl ;; left down right    kp0     kp.
 )
 
 ;; (deflayer colemak
@@ -134,21 +134,21 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;;  - Bottom Row Mods
 (deflayer nav
    @lyrs _   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    M-1  M-3  M-9  M-0  M-5  M-6  M-7  M-8  M-2  M-4  _    _    _          _   _    _        _    _   _   _
-  C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    C-S-tab    _   _    _        _   _   _    _
-  @cap left down right ret  end  home left down right end  @f12     @ret                          _   _   _
-  @lsft lmet lalt lsft lctl bspc del  rctl rsft lalt rmet          @rsft            _            _   _   _    _
-  _      _      _                  @toggle-layer  @ralt   _       _          _    _    _        _       _
+  _    M-1  M-3  M-9  M-0  M-5  M-6  M-7  M-8  M-2  M-4  _    _    _ ;;  _   _    _        _    _   _   _
+  C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    C-S-tab ;;   _   _    _        _   _   _    _
+  @cap left down right ret  end  home left down right end  @f12     @ret ;;                      _   _   _
+  @lsft lmet lalt lsft lctl bspc del  rctl rsft lalt rmet          @rsft ;;        _            _   _   _    _
+  _      _      _                  @toggle-layer  @ralt   _       _ ;; _    _    _        _       _
 )
 
 ;; A meta-layer that can be used to navigate to other layers or live-reload the configuration
 (deflayer layers
   @qwerty XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX         XX  XX   XX       XX   XX  XX  XX
-  XX   @qwerty XX   XX   @reload XX   XX   XX   XX   XX   XX   XX   XX   XX         XX  XX   XX       XX  XX  XX   XX
-  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX                            XX  XX  XX
-  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX            XX               XX           XX  XX  XX   XX
-  XX     XX     XX                 @nav           @ralt   XX      XX         XX   XX   XX       XX      XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX ;;  XX  XX   XX       XX   XX  XX  XX
+  XX   @qwerty XX   XX   @reload XX   XX   XX   XX   XX   XX   XX   XX   XX ;;        XX  XX   XX       XX  XX  XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX ;;                    XX  XX  XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX            XX ;;       XX           XX  XX  XX   XX
+  XX     XX     XX                 @nav           @ralt   XX      XX ;; XX   XX   XX       XX      XX
 )
 
 ;; ------
