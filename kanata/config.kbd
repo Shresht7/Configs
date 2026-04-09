@@ -65,6 +65,9 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   ret (tap-hold-press $tap-time $hold-time ret lctl (require-prior-idle 0))
   ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (f12 menu)) lalt (require-prior-idle 0))
 
+  ;; `F12` behaves as is when tapped but as `Menu` when held down
+  f12 (tap-hold-press $tap-time $hold-time f12 menu)
+
   ;; Bottom Row Mods
   z (tap-hold-release $tap-time $hold-time z lmet)
   x (tap-hold-release $tap-time $hold-time x lalt)
@@ -117,7 +120,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
    _    _   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    M-1  M-3  M-9  M-0  M-5  M-6  M-7  M-8  M-2  M-4  _    _    _          _   _    _        _    _   _   _
   C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    C-S-tab    _   _    _        _   _   _    _
-  @navcap left down right ret  end  home left down right end  f12      _                             _   _   _
+  @navcap left down right ret  end  home left down right end  @f12     _                             _   _   _
   _    lmet lalt lsft lctl bspc del  rctl rsft lalt rmet          _                _            _   _   _    _
   _      _      _                  _              _       _       _          _    _    _        _       _
 )
