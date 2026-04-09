@@ -55,6 +55,12 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
 ;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#aliases
 
 (defalias
+  ;; Layer Aliases
+  qwerty (layer-switch qwerty)
+  nav (layer-switch nav)
+  lyrs (layer-switch layers)
+  reload lrld
+
   ;; Action to toggle between the base and navigation layers
   toggle-layer (multi ins (switch 
     ((layer qwerty)) (layer-switch nav) break
@@ -73,7 +79,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
 
   ;; `Enter` behaves as is when tapped but as `LCtl` when held down
   ret (tap-hold-press $tap-time $hold-time ret lctl (require-prior-idle 0))
-  ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (f12 menu)) lalt (require-prior-idle 0))
+  ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (@toggle-layer @lyrs)) lalt (require-prior-idle 0))
 
   ;; `F12` behaves as is when tapped but as `Menu` when held down
   f12 (tap-hold-press $tap-time $hold-time f12 menu)
@@ -127,12 +133,22 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;;  - The Caps Lock key to Escape when tapped and Left Control when held down. Double tapping it quickly will switch to the qwerty layer.
 ;;  - Bottom Row Mods
 (deflayer nav
-   _    _   _    _    _    _    _    _    _    _    _    _    _    _    _
+   @lyrs _   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    M-1  M-3  M-9  M-0  M-5  M-6  M-7  M-8  M-2  M-4  _    _    _          _   _    _        _    _   _   _
   C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    C-S-tab    _   _    _        _   _   _    _
   @cap left down right ret  end  home left down right end  @f12     @ret                          _   _   _
   @lsft lmet lalt lsft lctl bspc del  rctl rsft lalt rmet          @rsft            _            _   _   _    _
-  _      _      _                  @toggle-layer  _       _       _          _    _    _        _       _
+  _      _      _                  @toggle-layer  @ralt   _       _          _    _    _        _       _
+)
+
+;; A meta-layer that can be used to navigate to other layers or live-reload the configuration
+(deflayer layers
+  @qwerty XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX         XX  XX   XX       XX   XX  XX  XX
+  XX   @qwerty XX   XX   @reload XX   XX   XX   XX   XX   XX   XX   XX   XX         XX  XX   XX       XX  XX  XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX                            XX  XX  XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX            XX               XX           XX  XX  XX   XX
+  XX     XX     XX                 @nav           @ralt   XX      XX         XX   XX   XX       XX      XX
 )
 
 ;; ------
@@ -141,3 +157,4 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 
 (defchordsv2
 )
+  
