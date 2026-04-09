@@ -18,8 +18,8 @@
 ;; ------
 
 #|
-The configuration file must have exactly one `defsrc`. This defines the order of keys
-that the `deflayer` entries will operate on.
+The configuration file must have exactly one `defsrc`.
+This defines the order of keys that the `deflayer` entries will operate on.
 
 It should be noted that the `defsrc` entry is treated as a long sequence;
 The amount of whitespace (spaces, tabs, newlines) are not relevant. You may use
@@ -33,6 +33,46 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; ---------
+;; VARIABLES
+;; ---------
+
+;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#variables
+
+(defvar
+  tap-time 100
+  hold-time 200
+)
+
+;; -------
+;; ALIASES
+;; -------
+
+;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#aliases
+
+(defalias
+  ;; Holding the space key switches to the navigation layer
+  spc (tap-hold-press $tap-time $hold-time spc (layer-while-held nav))
+
+  ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode. When held down, it acts as lctl
+  cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl (require-prior-idle 0))
+  navcap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch qwerty))) lctl (require-prior-idle 0))
+ 
+  ;; `Enter` behaves as is when tapped but as `LCtl` when held down
+  ret (tap-hold-press $tap-time $hold-time ret lctl (require-prior-idle 0))
+  ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (f12 menu)) lalt (require-prior-idle 0))
+
+  ;; Bottom Row Mods
+  z (tap-hold-release $tap-time $hold-time z lmet)
+  x (tap-hold-release $tap-time $hold-time x lalt)
+  c (tap-hold-release $tap-time $hold-time c lsft)
+  v (tap-hold-release $tap-time $hold-time v lctl)
+  m (tap-hold-release $tap-time $hold-time m rctl)
+  , (tap-hold-release $tap-time $hold-time , rsft)
+  . (tap-hold-release $tap-time $hold-time . lalt)
+  / (tap-hold-release $tap-time $hold-time / rmet)
 )
 
 ;; ------
@@ -76,44 +116,4 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   @navcap left down right ret  end  home left down right end  f12  _
   _    lmet lalt lsft lctl bspc del  rctl rsft lalt rmet _
   _    _    _              _              _    _    _
-)
-
-;; ---------
-;; VARIABLES
-;; ---------
-
-;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#variables
-
-(defvar
-  tap-time 100
-  hold-time 200
-)
-
-;; -------
-;; ALIASES
-;; -------
-
-;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#aliases
-
-(defalias
-  ;; Holding the space key switches to the navigation layer
-  spc (tap-hold-press $tap-time $hold-time spc (layer-while-held nav))
-
-  ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it switch to navigation mode. When held down, it acts as lctl
-  cap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch nav))) lctl (require-prior-idle 0))
-  navcap (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (esc (layer-switch qwerty))) lctl (require-prior-idle 0))
- 
-  ;; `Enter` behaves as is when tapped but as `LCtl` when held down
-  ret (tap-hold-press $tap-time $hold-time ret lctl (require-prior-idle 0))
-  ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (f12 menu)) lalt (require-prior-idle 0))
-
-  ;; Bottom Row Mods
-  z (tap-hold-release $tap-time $hold-time z lmet)
-  x (tap-hold-release $tap-time $hold-time x lalt)
-  c (tap-hold-release $tap-time $hold-time c lsft)
-  v (tap-hold-release $tap-time $hold-time v lctl)
-  m (tap-hold-release $tap-time $hold-time m rctl)
-  , (tap-hold-release $tap-time $hold-time , rsft)
-  . (tap-hold-release $tap-time $hold-time . lalt)
-  / (tap-hold-release $tap-time $hold-time / rmet)
 )
