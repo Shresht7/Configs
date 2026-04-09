@@ -28,11 +28,12 @@ spaces, tabs, or newlines however you like to visually format `defsrc` to your l
 Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
 |#
 (defsrc
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  esc  f1  f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  calc menu
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc       ins home pgup     nlck kp/ kp* kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \          del end  pgdn     kp7 kp8 kp9  kp+
+  caps a    s    d    f    g    h    j    k    l    ;    '        ret                           kp4 kp5 kp6
+  lsft z    x    c    v    b    n    m    ,    .    /             rsft             up           kp1 kp2 kp3  kprt
+  lctl   lmet   lalt               spc            ralt    rmet    rctl       left down right    kp0     kp.
 )
 
 ;; ---------
@@ -86,19 +87,21 @@ in the `defsrc` behaves when kanata runs.
 Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 |#
 (deflayer qwerty
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cap a    s    d    f    g    h    j    k    l    ;    '    @ret
-  lsft @z   @x   @c   @v   b    n    @m   @,   @.   @/   rsft
-  lctl lmet lalt           @spc           @ralt rmet rctl
+  esc  f1  f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  calc menu
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc       ins home pgup     nlck kp/ kp* kp-
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \          del end  pgdn     kp7 kp8 kp9  kp+
+  @cap a    s    d    f    g    h    j    k    l    ;    '        @ret                          kp4 kp5 kp6
+  lsft @z   @x   @c   @v   b    n    @m   @,   @.   @/            rsft             up           kp1 kp2 kp3  kprt
+  lctl   lmet   lalt               @spc           @ralt   rmet    rctl       left down right    kp0     kp.
 )
 
 ;; (deflayer colemak
-;;   @grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-;;   tab  _    _    f    p    g    j    l    u    y    ;    [    ]    @\
-;;   @cap _    r    s    t    d    _    n    e    i    o    '    @ret
-;;   lsft _    _    _    _    _    k    _    ,    .    /    rsft
-;;   lctl lmet lalt           spc            ralt rmet rctl
+;;   esc  f1  f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  calc menu
+;;   @grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc     ins home pgup    nlck kp/ kp* kp-
+;;   tab  _    _    f    p    g    j    l    u    y    ;    [    ]    @\       del end  pgdn    kp7 kp8 kp9  kp+
+;;   @cap _    r    s    t    d    _    n    e    i    o    '    @ret                           kp4 kp5 kp6
+;;   lsft _    _    _    _    _    k    _    ,    .    /    rsft                   up           kp1 kp2 kp3  kprt
+;;   lctl lmet lalt           spc            ralt rmet rctl               left down right       kp0     kp.
 ;; )
 
 ;; The `nav` layer remaps:
@@ -111,9 +114,10 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;;  - The Caps Lock key to Escape when tapped and Left Control when held down. Double tapping it quickly will switch to the qwerty layer.
 ;;  - Bottom Row Mods
 (deflayer nav
-  _    M-1  M-3  M-9  M-0  M-5  M-6  M-7  M-8  M-2  M-4  _    _    _
-  C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    C-S-tab
-  @navcap left down right ret  end  home left down right end  f12  _
-  _    lmet lalt lsft lctl bspc del  rctl rsft lalt rmet _
-  _    _    _              _              _    _    _
-)
+   _    _   _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    M-1  M-3  M-9  M-0  M-5  M-6  M-7  M-8  M-2  M-4  _    _    _          _   _    _        _    _   _   _
+  C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    C-S-tab    _   _    _        _   _   _    _
+  @navcap left down right ret  end  home left down right end  f12      _                             _   _   _
+  _    lmet lalt lsft lctl bspc del  rctl rsft lalt rmet          _                _            _   _   _    _
+  _      _      _                  _              _       _       _          _    _    _        _       _
+) 
