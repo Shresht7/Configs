@@ -55,10 +55,10 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
 
 (defalias
   ;; Action to toggle between the base and navigation layers
-  toggle-layer (switch 
+  toggle-layer (multi ins (switch 
     ((layer qwerty)) (layer-switch nav) break
     ((layer nav)) (layer-switch qwerty) break
-  )
+  ))
 
   ;; Holding the space key switches to the navigation layer. Double-tapping space fires off the return key.
   spc (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (spc ret)) (layer-while-held nav))
@@ -127,7 +127,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   C-tab pgup up   pgdn _    home _    pgup up   pgdn _    _    _    C-S-tab    _   _    _        _   _   _    _
   @cap left down right ret  end  home left down right end  @f12     @ret                          _   _   _
   _    lmet lalt lsft lctl bspc del  rctl rsft lalt rmet          _                _            _   _   _    _
-  _      _      _                  (layer-switch qwerty) _       _       _          _    _    _        _       _
+  _      _      _                  @toggle-layer  _       _       _          _    _    _        _       _
 )
 
 ;; ------
