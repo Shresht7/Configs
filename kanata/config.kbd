@@ -121,3 +121,12 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   _    lmet lalt lsft lctl bspc del  rctl rsft lalt rmet          _                _            _   _   _    _
   _      _      _                  _              _       _       _          _    _    _        _       _
 )
+
+;; ------
+;; CHORDS
+;; ------
+
+(defchordsv2
+  ;; Turn on the caps lock when both shift keys and the caps-lock key are pressed in a short span of time
+  (rsft lsft caps) caps $tap-time all-released ()
+)
