@@ -7,9 +7,13 @@
 (defcfg
   tray-icon qwerty.png                ;; Use a custom tray icon in the config folder
   icon-match-layer-name yes           ;; Use a different icon for the different layers
-  windows-altgr cancel-lctl-press     ;; Remove the lctl press that is generated alongside ralt 
-  tap-hold-require-prior-idle 150     ;; Require the user to have not pressed any keys for 150ms before the tap-hold action can be triggered. This is to prevent accidental layer switches and modifier keys when typing quickly.
+  
   concurrent-tap-hold yes             ;; Allows tap-hold to run in parallel rather than sequentially. This makes the modifiers feel more responsive.
+  tap-hold-require-prior-idle 200     ;; Require the user to have not pressed any keys for 150ms before the tap-hold action can be triggered. This is to prevent accidental layer switches and modifier keys when typing quickly.
+  chords-v2-min-idle 200              ;; The minimum amount of idle time (in ms) required before a chord can be triggered. This is to prevent accidental chords from being triggered when typing quickly. 
+  
+  windows-altgr cancel-lctl-press     ;; Remove the lctl press that is generated alongside ralt 
+  
   ;; log-layer-changes no                ;; Don't log layer changes to the console. Has slight overhead, so it's best to keep it off unless you're debugging layer changes.
 )
 
