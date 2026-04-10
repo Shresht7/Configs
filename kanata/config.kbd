@@ -77,8 +77,10 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it turn on caps-lock. When held down, it acts as lctl
   cap (tap-hold-press $tap-time $hold-time (tap-dance 200 (esc @toggle-layer caps)) lctl (require-prior-idle 0))
 
-  ;; `Enter` behaves as is when tapped but as `LCtl` when held down
-  ret (tap-hold-press $tap-time $hold-time ret lctl (require-prior-idle 0))
+  ;; `Enter` behaves as is when tapped but as `RCtl` when held down
+  ret (tap-hold-press $tap-time $hold-time ret rctl (require-prior-idle 0))
+
+  ;; Holding down Right Alt behaves as Normal Alt. Tapping Right Alt toggles between the base layer and the navigation layer. Double tapping RAlt switches to the meta-layer
   ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (@toggle-layer @lyrs)) lalt (require-prior-idle 0))
 
   ;; `F12` behaves as is when tapped but as `Menu` when held down
