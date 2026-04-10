@@ -342,11 +342,17 @@ $PSStyle.Formatting.TableHeader = $PSAccentColor
 # MISCELLANEOUS
 # =============
 
-# OTHER MODULES
-# -------------
 
 #f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
 if ($IsWindows) {
     Import-Module -Name Microsoft.WinGet.CommandNotFound
     Import-Module -Name Microsoft.PowerShell.PSAdapter    
 }
+
+# -------
+# ALIASES
+# -------
+
+Set-Alias -Name tldrf -Value $HOME\Scripts\Reference\Show-TLDR.ps1
+Set-Alias -Name lxym -Value $HOME\Scripts\Reference\Learn-X-in-Y-Minutes.ps1
+Set-Alias -Name cht.sh -Value $HOME\Scripts\Reference\Show-CheatSheet.ps1
