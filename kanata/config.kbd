@@ -152,5 +152,6 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;; ------
 
 (defchordsv2
+  ;; Hold both shift keys to turn on caps word mode, which automatically capitalizes words until you press a non-word key.
+  (lsft rsft) (caps-word $caps-word-time) 500 all-released ()
 )
-  
