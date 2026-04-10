@@ -13,9 +13,9 @@
 	username 		= Shresht7
 	email 			= 59516096+Shresht7@users.noreply.github.com
 
-# Set VS Code as the default editor
 [core]
-	editor 			= code --wait
+	editor 			= code --wait 		# Set VS Code as the default editor
+	autocrlf 		= input 			# Automatically handle LF (`\n`) and CRLF (`\r\n`) line endings between Unix and Windows systems
 
 # Set main as the default branch
 [init]
