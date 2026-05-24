@@ -9,8 +9,8 @@
   icon-match-layer-name yes           ;; Use a different icon for the different layers
   
   concurrent-tap-hold yes             ;; Allows tap-hold to run in parallel rather than sequentially. This makes the modifiers feel more responsive.
-  tap-hold-require-prior-idle 200     ;; Require the user to have not pressed any keys for 150ms before the tap-hold action can be triggered. This is to prevent accidental layer switches and modifier keys when typing quickly.
-  chords-v2-min-idle 200              ;; The minimum amount of idle time (in ms) required before a chord can be triggered. This is to prevent accidental chords from being triggered when typing quickly. 
+  tap-hold-require-prior-idle 300     ;; Require the user to have not pressed any keys for 300ms before the tap-hold action can be triggered. This is to prevent accidental layer switches and modifier keys when typing quickly.
+  chords-v2-min-idle 300              ;; The minimum amount of idle time (in ms) required before a chord can be triggered. This is to prevent accidental chords from being triggered when typing quickly. 
   
   windows-altgr cancel-lctl-press     ;; Remove the lctl press that is generated alongside ralt 
   
@@ -74,7 +74,8 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   ;; Holding the space key switches to the navigation layer. Double-tapping space fires off the return key.
   spc (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (spc ret)) (layer-while-held nav))
 
-  ;; Tapping caps-lock once makes it behave as esc, and tapping it twice in quick-succession makes it turn on caps-lock. When held down, it acts as lctl
+  ;; Tapping the caps lock key sends escape. Holding it down sends left control. Double tapping it quickly toggles between the base layer and the navigation layer.
+  ;; Tripple tapping it quickly will trigger caps word, and quadruple tapping will toggles the original caps lock behavior.
   cap (tap-hold-press $tap-time $hold-time (tap-dance 200 (esc @toggle-layer (caps-word $caps-word-time) caps)) lctl (require-prior-idle 0))
 
   ;; `Enter` behaves as is when tapped but as `RCtl` when held down
