@@ -46,9 +46,6 @@
 	# Burn it to the ground - Hard reset
 	burn			= reset --hard
 
-# Set bat as the default diff tool
-[pager]
-	diff 			= bat
 
 # Set VS Code as the default merge tool
 [merge]
@@ -59,6 +56,8 @@
 # Set VS Code as the default diff tool
 [diff]
 	tool 			= vscode
+    colorMoved 		= default
+
 [difftool "vscode"]
 	cmd 			= code --wait --diff $LOCAL $REMOTE
 
@@ -71,3 +70,8 @@
 	helper = gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = gh auth git-credential
+
+# Includes
+
+[include]
+    path = ~/Configs/Git/delta.gitconfig 	# delta

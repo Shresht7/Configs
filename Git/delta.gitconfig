@@ -1,0 +1,58 @@
+[core]
+    pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true 												# use n and N to move between diff sections
+	line-numbers = true 											# show line numbers
+	hyperlinks = true 												# show hyperlinks for file paths and commit hashes
+	# hyperlinks-file-link-format = "vscode://file/{path}:{line}" 	# Seems to work by default
+
+    syntax-theme = "1337"
+    plus-style = syntax "#3a5053"
+	plus-emph-style = syntax "#448358" bold italic
+	# plus-non-emph-style = syntax "#3a5053" dim
+    minus-style = syntax "#623d3e"
+	minus-emph-style = syntax "#a43134" bold italic
+	# minus-non-emph-style = syntax "#623d3e" dim
+	zero-style = syntax dim
+	# dark = true 													# or light = true, or omit for auto-detection
+
+	commit-style = raw
+    commit-decoration-style = bold yellow box ul
+
+    file-style = bold orange
+    file-decoration-style = orange box ul
+
+	grep-context-line-style = brightBlack
+	grep-file-style =  magenta 237 italic
+	# grep-header-file-style = 237
+	grep-header-decoration-style = magenta box ul
+	grep-line-number-style = cyan bold 237
+	# grep-match-line-style = normal
+	grep-match-word-style = yellow bold reverse
+
+    hunk-header-decoration-style = grey ul
+	# hunk-header-file-style = blue
+	# hunk-header-line-number-style = blue
+	hunk-header-style = syntax bold italic 237
+	hunk-label = "HUNK"
+
+[delta "line-numbers"]
+    line-numbers-left-style = brightBlack
+    line-numbers-right-style = brightBlack
+    line-numbers-minus-style = "#d84045"
+    line-numbers-plus-style = "#10a357"
+	line-numbers-zero-style = grey
+
+[merge]
+	conflictStyle = zdiff3
+
+[pager]
+	diff 			= delta
+
+[alias]
+	diffs			= !git diff | delta --side-by-side
+	diff-html		= !git show | delta --no-gitconfig --file-decoration-style blue --hunk-header-decoration-style blue | ansifilter --html > diff.html
