@@ -40,7 +40,7 @@
 	# Amends the previous commit message
 	amend 			= commit --amend
 	# Shows details of the last commit
-	last 			= log -1 HEAD --stat
+	last 			= log -1 HEAD --stat --summary -p
 	# Resets the last commit
 	undo 			= reset HEAD~1
 	# Burn it to the ground - Hard reset
