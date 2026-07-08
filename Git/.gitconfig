@@ -32,19 +32,26 @@
 
 # Reference: https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
 [alias]
-	# Shows a decorated log
+
+	# Shows a compact oneline decorated graph log
 	slog 			= log --all --oneline --decorate --graph
+	# Shows a much more detailed graph log with stats, relative dates, and author names
 	flog 			= log --all --oneline --decorate --graph --stat --date=relative --pretty=format:'%C(yellow)%h%Creset %C(red)%d%Creset %s %C(brightBlack)-- %C(cyan)%cn %C(brightBlack)%ad %Creset'
+	# Shows a much more machine-friendly log with full-hashes, short dates, and subject lines
 	mlog			= log --all --date=short --pretty=format:'%C(yellow)%H%Creset %C(brightBlack)%ad%Creset %s'
+	# Shows a much more detailed log with stats, relative dates, and author names, along with the patch
 	xlog			= log --all --stat --summary --patch
-	# Unstage files from the staging area
-	unstage 		= restore --staged
+
 	# Amends the previous commit message
 	amend 			= commit --amend
 	# Shows details of the last commit
 	last 			= log -1 HEAD --stat --summary --patch
+
+	# Unstage files from the staging area
+	unstage 		= restore --staged
 	# Resets the last commit
 	undo 			= reset HEAD~1
+
 	# Burn it to the ground - Hard reset
 	burn			= reset --hard
 
