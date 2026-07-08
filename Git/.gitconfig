@@ -35,7 +35,8 @@
 	# Shows a decorated log
 	slog 			= log --all --oneline --decorate --graph
 	flog 			= log --all --oneline --decorate --graph --stat --date=relative --pretty=format:'%C(yellow)%h%Creset %C(red)%d%Creset %s %C(brightBlack)-- %C(cyan)%cn %C(brightBlack)%ad %Creset'
-	xlog			= log --all  --stat --summary --patch
+	mlog			= log --all --date=short --pretty=format:'%C(yellow)%H%Creset %C(brightBlack)%ad%Creset %s'
+	xlog			= log --all --stat --summary --patch
 	# Unstage files from the staging area
 	unstage 		= restore --staged
 	# Amends the previous commit message
