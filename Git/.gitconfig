@@ -35,22 +35,27 @@
 
 	# Shows a compact oneline decorated graph log
 	slog 			= log --all --oneline --decorate --graph
+
 	# Shows a much more detailed graph log with stats, relative dates, and author names
 	flog 			= log --all --oneline --decorate --graph --stat --date=relative --pretty=format:'%C(yellow)%h%Creset %C(red)%d%Creset %s %C(brightBlack)-- %C(cyan)%cn %C(brightBlack)%ad %Creset'
-	# Shows a much more machine-friendly log with full-hashes, short dates, and subject lines
-	mlog			= log --all --date=short --pretty=format:'%C(yellow)%H%Creset %C(brightBlack)%ad%Creset %s'
-	# Shows a much more detailed log with stats, relative dates, and author names, along with the patch
-	xlog			= log --all --stat --summary --patch
 
-	# Amends the previous commit message
-	amend 			= commit --amend
+	# Shows a machine-friendly log with full-hashes, short dates, and subject lines
+	mlog			= log --all --date=short --pretty=format:'%C(yellow)%H%Creset %C(brightBlack)%ad%Creset %s'
+
+	# Shows a extremely detailed log with stats, relative dates, and author names, along with the patch
+	xlog			= log --all --stat --summary --patch
+	
 	# Shows details of the last commit
 	last 			= log -1 HEAD --stat --summary --patch
 
-	# Unstage files from the staging area
-	unstage 		= restore --staged
+	# Amends the previous commit message
+	amend 			= commit --amend
+
 	# Resets the last commit
 	undo 			= reset HEAD~1
+
+	# Unstage files from the staging area
+	unstage 		= restore --staged
 
 	# Burn it to the ground - Hard reset
 	burn			= reset --hard
