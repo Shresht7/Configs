@@ -514,5 +514,6 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "git.addAICoAuthor": "chatAndAgent"
 }
