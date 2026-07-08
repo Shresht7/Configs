@@ -35,13 +35,13 @@
 	# Shows a decorated log
 	slog 			= log --all --oneline --decorate --graph
 	flog 			= log --all --oneline --decorate --graph --stat --date=relative --pretty=format:'%C(yellow)%h%Creset %C(red)%d%Creset %s %C(brightBlack)-- %C(cyan)%cn %C(brightBlack)%ad %Creset'
-	xlog			= log --all  --stat --summary -p
+	xlog			= log --all  --stat --summary --patch
 	# Unstage files from the staging area
 	unstage 		= restore --staged
 	# Amends the previous commit message
 	amend 			= commit --amend
 	# Shows details of the last commit
-	last 			= log -1 HEAD --stat --summary -p
+	last 			= log -1 HEAD --stat --summary --patch
 	# Resets the last commit
 	undo 			= reset HEAD~1
 	# Burn it to the ground - Hard reset
