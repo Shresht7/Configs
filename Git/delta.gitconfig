@@ -1,3 +1,7 @@
+# -----
+# DELTA
+# -----
+
 [core]
     pager = delta
 
@@ -9,22 +13,54 @@
 	line-numbers = true 											# show line numbers
 	hyperlinks = true 												# show hyperlinks for file paths and commit hashes
 	# hyperlinks-file-link-format = "vscode://file/{path}:{line}" 	# Seems to work by default
+	features = "S7"
+
+[merge]
+	conflictStyle = zdiff3
+
+[pager]
+	diff 			= delta
+
+[alias]
+	diffs			= !git diff | delta --side-by-side --features="S7"
+	diff-html		= !git show | delta --no-gitconfig --file-decoration-style blue --hunk-header-decoration-style blue | ansifilter --html > diff.html
+
+# -----
+# THEME
+# -----
+
+[delta "S7"]
+	dark = true
 
     syntax-theme = "1337"
+
     plus-style = syntax "#3a5053"
 	plus-emph-style = syntax "#448358" bold italic
 	# plus-non-emph-style = syntax "#3a5053" dim
+
     minus-style = syntax "#623d3e"
 	minus-emph-style = syntax "#a43134" bold italic
 	# minus-non-emph-style = syntax "#623d3e" dim
+
 	zero-style = syntax dim
-	# dark = true 													# or light = true, or omit for auto-detection
 
 	commit-style = raw
     commit-decoration-style = bold yellow box ul
 
     file-style = bold orange
     file-decoration-style = orange box ul
+
+	file-added-label = ADDED ::
+    file-copied-label = COPIED ::
+    file-modified-label = MODIFIED ::
+    file-removed-label = REMOVED ::
+    file-renamed-label = RENAMED ::
+
+    line-numbers-left-style = brightBlack
+    line-numbers-right-style = brightBlack
+    line-numbers-minus-style = "#d84045"
+    line-numbers-plus-style = "#10a357"
+	line-numbers-zero-style = grey
 
 	grep-context-line-style = brightBlack
 	grep-file-style =  magenta 237 italic
@@ -37,22 +73,23 @@
     hunk-header-decoration-style = grey ul
 	# hunk-header-file-style = blue
 	# hunk-header-line-number-style = blue
-	hunk-header-style = syntax bold italic 237
+	hunk-header-style = line-number syntax bold italic 237
 	hunk-label = "HUNK"
 
-[delta "line-numbers"]
-    line-numbers-left-style = brightBlack
-    line-numbers-right-style = brightBlack
-    line-numbers-minus-style = "#d84045"
-    line-numbers-plus-style = "#10a357"
-	line-numbers-zero-style = grey
+[delta "S7-light"]
+	features = "S7"
+	dark = false
 
-[merge]
-	conflictStyle = zdiff3
+	syntax-theme = "GitHub"
 
-[pager]
-	diff 			= delta
+	plus-style = syntax "#d0efea"
+	plus-emph-style = syntax "#7ed59a" bold italic
 
-[alias]
-	diffs			= !git diff | delta --side-by-side
-	diff-html		= !git show | delta --no-gitconfig --file-decoration-style blue --hunk-header-decoration-style blue | ansifilter --html > diff.html
+	minus-style = syntax "#e39b9e"
+	minus-emph-style = syntax "#ff7276" bold italic
+
+	line-numbers-minus-style = "#d84045"
+	line-numbers-plus-style = "#10a357"
+	line-numbers-zero-style = "#cfcfcf"
+
+	hunk-header-style = line-number syntax bold italic "#E3E3E3"
