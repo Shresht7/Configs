@@ -1,2 +1,5 @@
 # Ignore everything inside a `.local` folder
 .local
+
+# Ignore .env files
+.env
