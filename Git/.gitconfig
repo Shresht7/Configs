@@ -85,7 +85,25 @@
 [credential "https://gist.github.com"]
 	helper = gh auth git-credential
 
+# Enable Signing and Verification with SSH
+[gpg]
+	format = ssh
+	
+[gpg "ssh"]
+ 	allowedSignersFile = ~/.config/git/allowed_signers
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgsign = true
+
+# --------
 # Includes
+# --------
+
+[include]
+	path = ~/.config/git/local.gitconfig	# local
 
 [include]
     path = ~/Configs/Git/delta.gitconfig 	# delta
