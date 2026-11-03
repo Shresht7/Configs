@@ -2,6 +2,8 @@
 ;; CONFIG
 ;; ------
 
+;; Documentation: https://jtroo.github.io/config.html
+
 ;; Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 
 (defcfg
