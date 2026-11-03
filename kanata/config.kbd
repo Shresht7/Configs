@@ -164,5 +164,5 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;; ------
 
 (defchordsv2
-  (spc w) @nav 100 first-release (nav)
+  ;; (spc w) @nav 100 first-release (nav)
 )
