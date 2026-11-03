@@ -159,7 +159,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   @qwerty _   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  _    _    _ ;;  _   _    _        _    _   _   _
   _    @quotes _    _    _    _    _    _    _    _    _    _    _    _ ;;   _   _    _        _   _   _    _
-  @qwerty S-,  [    S-[  S-9  =    ;    S-0  S-]  ]    S-]  _        _ ;;                      _   _   _
+  @qwerty S-,  [    S-[  S-9  =    ;    S-0  S-]  ]    S-.  _        _ ;;                      _   _   _
   _    lmet lalt lsft lctl C-bspc C-del rctl rsft lalt rmet          _ ;;        _            _   _   _    _
   _      _      _                  _              _       _       _ ;; _    _    _        _       _
 )
