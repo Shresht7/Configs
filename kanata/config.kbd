@@ -137,6 +137,9 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   ;; Holding ' switches to symbols layer
   quotes (tap-dance 150 (' S-'))
   ' (tap-hold-release $tap-time $hold-time @quotes (layer-while-held symbols))
+
+  ;; Escape hatch to return-to-base
+  rtb (multi @release-all-vkeys esc (layer-switch qwerty))
 )
 
 ;; ------
@@ -150,7 +153,7 @@ in the `defsrc` behaves when kanata runs.
 Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 |#
 (deflayer qwerty
-  esc  f1  f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  calc menu
+  @rtb f1  f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  calc menu
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc ;;  ins home pgup    nlck kp/ kp* kp-
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \ ;;  del end  pgdn    kp7 kp8 kp9  kp+
   @cap a    s    d    f    g    h    j    k    l    @;   @'       @ret ;;                    kp4 kp5 kp6
@@ -181,8 +184,8 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;;  - The Caps Lock key to Escape when tapped and Left Control when held down. Double tapping it quickly will switch to the qwerty layer.
 ;;  - Bottom Row Mods
 (deflayer nav
-  @lyrs _   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    1    3    9    0    5    6    7    8    2    4    _    _    _ ;;  _   _    _        _    _   _   _
+  @rtb _   _    _    _    _    _    _    _    _    _    _    _    _    _
+  @lyrs 1    3    9    0    5    6    7    8    2    4    _    _    _ ;;  _   _    _        _    _   _   _
   C-tab pgup up   pgdn _    home _    pgup up   pgdn @sym _    _    C-S-tab ;;   _   _    _        _   _   _    _
   @cap left down right ret  end  home left down right end  @f12     @ret ;;                      _   _   _
   _    @hmet @halt @hsft @hctl bspc del  @hctl @hsft @halt @hmet         _ ;;        _            _   _   _    _
@@ -190,7 +193,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 )
 
 (deflayer symbols
-  @qwerty _   _    _    _    _    _    _    _    _    _    _    _    _    _
+  @rtb _   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0  _    _    _ ;;  _   _    _        _    _   _   _
   _    @quotes _    _    _    _    _    _    _    _    _    _    _    _ ;;   _   _    _        _   _   _    _
   @qwerty S-,  [    S-[  S-9  =    ;    S-0  S-]  ]    S-.  _        _ ;;                      _   _   _
@@ -200,7 +203,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 
 ;; A meta-layer that can be used to navigate to other layers or live-reload the configuration
 (deflayer layers
-  @qwerty XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  @rtb XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX ;;  XX  XX   XX       XX   XX  XX  XX
   XX   @qwerty XX   XX   @reload XX   XX   XX   XX   XX   XX   XX   XX   XX ;;        XX  XX   XX       XX  XX  XX   XX
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX ;;                    XX  XX  XX
