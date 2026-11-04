@@ -109,8 +109,8 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   . (tap-hold-opposite-hand-release $hold-time . lalt (same-hand ignore) (timeout hold))
   / (tap-hold-opposite-hand-release $hold-time / rmet (same-hand ignore) (timeout hold))
 
-  ;; Double tapping ; ends the line with a ;
-  ; (tap-dance 150 (; (multi end ;)))
+  ;; Tapping ; works normally but holding it terminates the line with a semicolon
+  ; (tap-hold $tap-time $hold-time ; (multi end ;))
 
   ;; Holding ' switches to symbols layer
   quotes (tap-dance 150 (' S-'))
