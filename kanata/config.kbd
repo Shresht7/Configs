@@ -75,6 +75,9 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
     ((layer nav)) (layer-switch qwerty) break
   ))
 
+  ;; Hyper key combination
+  hyper (multi lctl lsft lalt lmet)
+
   ;; Holding the space key swtiches to nav layer
   spc (tap-hold-press $tap-time $hold-time spc (layer-while-held nav))
 
@@ -180,6 +183,6 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;; ------
 
 (defchordsv2
-  (lsft rsft) (caps-word $caps-word-time) 150 first-release ()
+  (a s d f) @hyper 100 first-release ()
+  (j k l ;) @hyper 100 first-release ()
 )
-
