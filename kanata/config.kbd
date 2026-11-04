@@ -51,6 +51,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
 (defvar
   tap-time 100
   hold-time 200
+  one-shot-time 2000
   caps-word-time 4000
 )
 
@@ -83,6 +84,10 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
 
   ;; `Enter` behaves as is when tapped but as `RCtl` when held down
   ret (tap-hold-press $tap-time $hold-time ret rctl (require-prior-idle 0))
+
+  ;; One-Shot Shift Keys
+  lsft (one-shot $one-shot-time lsft)
+  rsft (one-shot $one-shot-time rsft)
 
   ;; Holding down Right Alt behaves as Normal Alt. Tapping Right Alt toggles between the base layer and the navigation layer. Double tapping RAlt switches to the meta-layer
   ralt (tap-hold-press $tap-time $hold-time (tap-dance $tap-time (@toggle-layer @lyrs)) lalt (require-prior-idle 0))
@@ -124,7 +129,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc ;;  ins home pgup    nlck kp/ kp* kp-
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \ ;;  del end  pgdn    kp7 kp8 kp9  kp+
   @cap a    s    d    f    g    h    j    k    l    @;   @'       @ret ;;                    kp4 kp5 kp6
-  lsft @z   @x   @c   @v   b    n    @m   @,   @.   @/            rsft ;;        up           kp1 kp2 kp3  kprt
+  @lsft @z   @x   @c   @v   b    n    @m   @,   @.   @/            @rsft ;;        up           kp1 kp2 kp3  kprt
   lctl   lmet   lalt               @spc           @ralt   rmet    rctl ;; left down right    kp0     kp.
 )
 
