@@ -55,6 +55,11 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   caps-word-time 4000
 )
 
+(defhands
+  (left q w e r t y a s d f g z x c v b 1 2 3 4 5 6 `)
+  (right u i o p [ ] h j k l ; ' n m , . / 7 8 9 0 - = \)
+)
+
 ;; -------
 ;; ALIASES
 ;; -------
@@ -94,15 +99,15 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   ;; `F12` behaves as is when tapped but as `Menu` when held down
   f12 (tap-hold-press $tap-time $hold-time f12 menu)
 
-  ;; Bottom Row ModsThis Is Going 
-  z (tap-hold-release $tap-time $hold-time z lmet)
-  x (tap-hold-release $tap-time $hold-time x lalt)
-  c (tap-hold-release $tap-time $hold-time c lsft)
-  v (tap-hold-release $tap-time $hold-time v lctl)
-  m (tap-hold-release $tap-time $hold-time m rctl)
-  , (tap-hold-release $tap-time $hold-time , rsft)
-  . (tap-hold-release $tap-time $hold-time . lalt)
-  / (tap-hold-release $tap-time $hold-time / rmet)
+  ;; Bottom Row Mods
+  z (tap-hold-opposite-hand-release $hold-time z lmet (same-hand tap) (timeout tap))
+  x (tap-hold-opposite-hand-release $hold-time x lalt (same-hand tap) (timeout tap))
+  c (tap-hold-opposite-hand-release $hold-time c lsft (same-hand tap) (timeout tap))
+  v (tap-hold-opposite-hand-release $hold-time v lctl (same-hand tap) (timeout tap))
+  m (tap-hold-opposite-hand-release $hold-time m rctl (same-hand tap) (timeout tap))
+  , (tap-hold-opposite-hand-release $hold-time , rsft (same-hand tap) (timeout tap))
+  . (tap-hold-opposite-hand-release $hold-time . lalt (same-hand tap) (timeout tap))
+  / (tap-hold-opposite-hand-release $hold-time / rmet (same-hand tap) (timeout tap))
 
 
   ;; Double tapping ; ends the line with a ;
