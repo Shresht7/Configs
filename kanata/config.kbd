@@ -84,7 +84,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   hyper (multi lctl lsft lalt lmet)
 
   ;; Holding the space key swtiches to nav layer
-  spc (tap-hold-press $tap-time $hold-time spc (layer-while-held nav))
+  spc (tap-hold-release $tap-time $hold-time spc (layer-while-held nav))
 
   ;; Tapping the caps lock key sends escape. Holding it down sends left control. Double tapping it quickly toggles between the base layer and the navigation layer.
   ;; Tripple tapping it quickly will trigger caps word, and quadruple tapping will toggles the original caps lock behavior.
