@@ -174,6 +174,29 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;; NAV LAYER
 ;; ---------
 
+;; Navigation Layer Key Template
+(deftemplate navkey (number action)
+  (concat N $number) (switch
+    ((not (input virtual vmet))) @hmet fallthrough
+    ((input virtual vmet)) $action break
+    () (concat M- $action) break
+  )
+)
+
+(defalias
+  ;; Nav Keys
+  (template-expand navkey 1 1)
+  (template-expand navkey 2 3)
+  (template-expand navkey 3 9)
+  (template-expand navkey 4 0)
+  (template-expand navkey 5 5)
+  (template-expand navkey 6 6)
+  (template-expand navkey 7 7)
+  (template-expand navkey 8 8)
+  (template-expand navkey 9 9)
+  (template-expand navkey 0 0)
+)
+
 ;; The `nav` layer remaps:
 ;;  - the WASD and IJKL keys to the arrows keys
 ;;  - the Q,U and E,O keys to page up and page down respectively
@@ -185,7 +208,7 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;;  - Bottom Row Mods
 (deflayer nav
   @rtb _   _    _    _    _    _    _    _    _    _    _    _    _    _
-  @lyrs 1    3    9    0    5    6    7    8    2    4    _    _    _ ;;  _   _    _        _    _   _   _
+  @lyrs @N1  @N2  @N3  @N4  @N5  @N6  @N7  @N8  @N9  @N0  _    _    _ ;;  _   _    _        _    _   _   _
   C-tab pgup up   pgdn _    home _    pgup up   pgdn @sym _    _    C-S-tab ;;   _   _    _        _   _   _    _
   @cap left down right ret  end  home left down right end  @f12     @ret ;;                      _   _   _
   _    @hmet @halt @hsft @hctl bspc del  @hctl @hsft @halt @hmet         _ ;;        _            _   _   _    _
