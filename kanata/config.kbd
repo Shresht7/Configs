@@ -100,15 +100,14 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#defsrc
   f12 (tap-hold-press $tap-time $hold-time f12 menu)
 
   ;; Bottom Row Mods
-  z (tap-hold-opposite-hand-release $hold-time z lmet (same-hand tap) (timeout tap))
-  x (tap-hold-opposite-hand-release $hold-time x lalt (same-hand tap) (timeout tap))
-  c (tap-hold-opposite-hand-release $hold-time c lsft (same-hand tap) (timeout tap))
-  v (tap-hold-opposite-hand-release $hold-time v lctl (same-hand tap) (timeout tap))
-  m (tap-hold-opposite-hand-release $hold-time m rctl (same-hand tap) (timeout tap))
-  , (tap-hold-opposite-hand-release $hold-time , rsft (same-hand tap) (timeout tap))
-  . (tap-hold-opposite-hand-release $hold-time . lalt (same-hand tap) (timeout tap))
-  / (tap-hold-opposite-hand-release $hold-time / rmet (same-hand tap) (timeout tap))
-
+  z (tap-hold-opposite-hand-release $hold-time z lmet (same-hand ignore) (timeout hold))
+  x (tap-hold-opposite-hand-release $hold-time x lalt (same-hand ignore) (timeout hold))
+  c (tap-hold-opposite-hand-release $hold-time c lsft (same-hand ignore) (timeout hold))
+  v (tap-hold-opposite-hand-release $hold-time v lctl (same-hand ignore) (timeout hold))
+  m (tap-hold-opposite-hand-release $hold-time m rctl (same-hand ignore) (timeout hold))
+  , (tap-hold-opposite-hand-release $hold-time , rsft (same-hand ignore) (timeout hold))
+  . (tap-hold-opposite-hand-release $hold-time . lalt (same-hand ignore) (timeout hold))
+  / (tap-hold-opposite-hand-release $hold-time / rmet (same-hand ignore) (timeout hold))
 
   ;; Double tapping ; ends the line with a ;
   ; (tap-dance 150 (; (multi end ;)))
@@ -188,6 +187,33 @@ Reference: https://github.com/jtroo/kanata/blob/main/docs/config.adoc#deflayer
 ;; ------
 
 (defchordsv2
+  ;; Hyper Keys
   (a s d f) @hyper 100 first-release ()
   (j k l ;) @hyper 100 first-release ()
+
+  ;; Bottom Row Left Hand Chords
+  (v c) (multi lctl lsft) 100 first-release ()
+  (v x) (multi lctl lalt) 100 first-release ()
+  (v z) (multi lctl lmet) 100 first-release ()
+  (c x) (multi lsft lalt) 100 first-release ()
+  (c z) (multi lsft lmet) 100 first-release ()
+  (x z) (multi lalt lmet) 100 first-release ()
+  (v c x) (multi lctl lsft lalt) 100 first-release ()
+  (v c z) (multi lctl lsft lmet) 100 first-release ()
+  (v x z) (multi lctl lalt lmet) 100 first-release ()
+  (c x z) (multi lsft lalt lmet) 100 first-release ()
+  (v c x z) @hyper 100 first-release ()
+
+  ;; Bottom Row Right Hand Chords
+  (m ,) (multi rctl rsft) 100 first-release ()
+  (m .) (multi rctl ralt) 100 first-release ()
+  (m /) (multi rctl rmet) 100 first-release ()
+  (, .) (multi rsft ralt) 100 first-release ()
+  (, /) (multi rsft rmet) 100 first-release ()
+  (. /) (multi ralt rmet) 100 first-release ()
+  (m , .) (multi rctl rsft ralt) 100 first-release ()
+  (m , /) (multi rctl rsft rmet) 100 first-release ()
+  (m . /) (multi rctl ralt rmet) 100 first-release ()
+  (, . /) (multi rsft ralt rmet) 100 first-release ()
+  (m , . /) @hyper 100 first-release ()
 )
