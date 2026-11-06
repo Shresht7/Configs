@@ -356,3 +356,13 @@ if ($IsWindows) {
 Set-Alias -Name tldrf -Value $HOME\Scripts\Reference\Show-TLDR.ps1
 Set-Alias -Name lxym -Value $HOME\Scripts\Reference\Learn-X-in-Y-Minutes.ps1
 Set-Alias -Name cht.sh -Value $HOME\Scripts\Reference\Show-CheatSheet.ps1
+
+
+function batman() {
+	if ($MyInvocation.ExpectingInput) {
+		$Input | bat -plhelp	
+	} else {
+		$Cmd = "$Args --help"
+		Invoke-Expression $Cmd | bat -plhelp
+	}
+}
