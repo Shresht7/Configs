@@ -217,6 +217,8 @@
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
+  "esphome.dashboardUri": "saturn:6052/",
+  "esphome.validator": "dashboard",
   "excalidraw.theme": "auto",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -294,21 +296,27 @@
     "test": "Create units tests for this code"
   },
   "geminicodeassist.inlineSuggestions.enableAuto": false,
+  "git.addAICoAuthor": "chatAndAgent",
   "git.autofetch": true,
   "git.branchProtection": [
     "main"
   ],
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.switchAgent.enabled": true,
+  "github.copilot.chat.terminalChatLocation": "terminal",
+  "github.copilot.completions.chat.enabled": true,
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
+    "json": false,
     "markdown": true,
     "plaintext": false,
     "scminput": false,
-    "yaml": false,
-    "json": false
+    "yaml": false
   },
+  "github.copilot.nextEditSuggestions.eagerness": "low",
   "github.copilot.nextEditSuggestions.enabled": true,
   "githubIssues.issueBranchTitle": "issue${issueNumber}",
   "githubIssues.queries": [
@@ -395,7 +403,7 @@
   "polacode.transparentBackground": true,
   "python.analysis.typeCheckingMode": "standard",
   "python.createEnvironment.trigger": "off",
-  "python.defaultInterpreterPath": "${env:LOCALAPPDATA}\\Programs\\Python\\Python313\\python.exe",
+  "python.defaultInterpreterPath": "${env:LOCALAPPDATA}\\Programs\\Python\\Python314\\python.exe",
   "redhat.telemetry.enabled": false,
   "remote.defaultExtensionsIfInstalledLocally": [
     "GitHub.copilot",
@@ -428,6 +436,7 @@
       "source": "PowerShell"
     }
   },
+  "terminal.integrated.sendKeybindingsToShell": true,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.suggest.enabled": true,
@@ -476,6 +485,7 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "compact",
   "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
     "git-rebase-todo": "gitlens.rebase"
   },
   "workbench.experimental.share.enabled": true,
@@ -515,5 +525,12 @@
     "!Split",
     "!Split sequence"
   ],
-  "git.addAICoAuthor": "chatAndAgent"
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ]
 }
