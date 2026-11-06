@@ -364,5 +364,10 @@
         "key": "ctrl+i",
         "command": "-geminicodeassist.showinEditor",
         "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
+    },
+    {
+        "key": "ctrl+shift+3",
+        "command": "editor.action.insertSnippet",
+        "when": "!editorReadonly"
     }
 ]
