@@ -50,6 +50,10 @@
             "keys": "ctrl+shift+f"
         },
         {
+            "id": "Terminal.SwapPaneUp",
+            "keys": "ctrl+alt+shift+up"
+        },
+        {
             "id": "User.TabSearch",
             "keys": "ctrl+4"
         },
@@ -58,12 +62,12 @@
             "keys": "ctrl+pgup"
         },
         {
-            "id": "Terminal.DuplicatePaneAuto",
-            "keys": "ctrl+shift+t"
-        },
-        {
             "id": "Terminal.SplitPaneUp",
             "keys": "ctrl+alt+up"
+        },
+        {
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "ctrl+shift+t"
         },
         {
             "id": "Terminal.SplitPaneDown",
@@ -78,36 +82,36 @@
             "keys": "ctrl+alt+left"
         },
         {
-            "id": "Terminal.NextTab",
-            "keys": "ctrl+pgdn"
-        },
-        {
-            "id": "Terminal.SwapPaneUp",
-            "keys": "ctrl+shift+alt+up"
-        },
-        {
-            "id": "Terminal.SwapPaneDown",
-            "keys": "ctrl+shift+alt+down"
-        },
-        {
-            "id": "Terminal.SwapPaneRight",
-            "keys": "ctrl+shift+alt+right"
-        },
-        {
-            "id": "Terminal.SwapPaneLeft",
-            "keys": "ctrl+shift+alt+left"
-        },
-        {
             "id": "Terminal.ClosePane",
             "keys": "ctrl+w"
         },
         {
-            "id": "Terminal.ToggleFocusMode",
-            "keys": "shift+f11"
+            "id": "Terminal.NextTab",
+            "keys": "ctrl+pgdn"
+        },
+        {
+            "id": "Terminal.SwapPaneDown",
+            "keys": "ctrl+alt+shift+down"
         },
         {
             "id": "Terminal.TogglePaneZoom",
             "keys": "alt+shift+enter"
+        },
+        {
+            "id": "User.ScrollToMark.Prev",
+            "keys": "ctrl+up"
+        },
+        {
+            "id": "Terminal.SwapPaneRight",
+            "keys": "ctrl+alt+shift+right"
+        },
+        {
+            "id": "Terminal.SwapPaneLeft",
+            "keys": "ctrl+alt+shift+left"
+        },
+        {
+            "id": "Terminal.ToggleFocusMode",
+            "keys": "shift+f11"
         },
         {
             "id": "Terminal.ToggleAlwaysOnTop",
@@ -116,10 +120,6 @@
         {
             "id": "User.ToggleSplitOrientation",
             "keys": "alt+shift+f"
-        },
-        {
-            "id": "User.ScrollToMark.Prev",
-            "keys": "ctrl+up"
         },
         {
             "id": "User.ScrollToMark.Next",
@@ -143,7 +143,7 @@
                 "size": 10
             },
             "opacity": 50,
-            "experimental.rightClickContextMenu": true,
+            "rightClickContextMenu": true,
             "showMarksOnScrollbar": true,
             "useAcrylic": true
         },
@@ -168,17 +168,18 @@
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu (WSL)",
-                "source": "Windows.Terminal.Wsl"
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": null
             },
             {
-                "commandline": "ssh shresht@fedora",
+                "commandline": "ssh shresht@saturn",
                 "guid": "{ccaf41b6-91a9-4864-854a-b47fa4e1a2ee}",
                 "hidden": false,
                 "icon": "ms-appdata:///roaming/fedora.png",
                 "name": "Fedora"
             },
             {
-                "commandline": "scrcpy",
+                "commandline": "scrcpy --stay-awake",
                 "guid": "{ccaf41b6-91a9-4864-854a-b47fa4e1a2dd}",
                 "hidden": false,
                 "icon": "ms-appdata:///roaming/android.png",
@@ -274,7 +275,7 @@
             "brightPurple": "#B873EB",
             "brightRed": "#FF6060",
             "brightWhite": "#F8F8F2",
-            "brightYellow": "#FCD317",
+            "brightYellow": "#FCF918",
             "cursorColor": "#FFFFFF",
             "cyan": "#20D7E6",
             "foreground": "#F8F8F8",
@@ -284,7 +285,7 @@
             "red": "#FF5832",
             "selectionBackground": "#FFFFFF",
             "white": "#F8F8F2",
-            "yellow": "#FFE013"
+            "yellow": "#FFCD46"
         }
     ],
     "theme": {
