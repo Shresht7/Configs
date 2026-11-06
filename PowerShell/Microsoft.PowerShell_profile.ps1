@@ -366,3 +366,7 @@ function batman() {
 		Invoke-Expression $Cmd | bat -plhelp
 	}
 }
+
+function recent([int] $N = 10) {
+	Get-ChildItem | Sort-Object -Descending -Property LastWriteTime | Select-Object -First $N
+}
