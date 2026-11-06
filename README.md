@@ -137,6 +137,15 @@ winget export "WinGet/packages.json"
 winget import "WinGet/packages.json"
 ```
 
+## OpenCode
+
+https://opencode.ai/
+
+### Config
+
+[`opencode.jsonc`](opencode/opencode.jsonc)
+[`cli.json`](opencode/cli.json)
+
 ---
 
 ## 📕 References
