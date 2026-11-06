@@ -1,1 +1,7 @@
-{"ExperimentalFeatures":["PSFeedbackProvider","PSSubsystemPluginModel","PSNativeWindowsTildeExpansion"]}
+{
+    "ExperimentalFeatures": [
+        "PSFeedbackProvider",
+        "PSSubsystemPluginModel",
+        "PSNativeWindowsTildeExpansion"
+    ]
+}
