@@ -1,0 +1,26 @@
+{
+	// OpenCode Configuration
+	// https://opencode.ai/v2/docs/config
+	"$schema": "https://opencode.ai/config.json",
+	"update": "notify",
+	"permissions": [
+		{
+			// Ask when performing git commit action
+			"action": "shell",
+			"resource": "git commit *",
+			"effect": "ask"
+		},
+		{
+			// Deny git push action
+			"action": "shell",
+			"resource": "git push *",
+			"effect": "deny"
+		},
+		{
+			// Ask when performing GitHub CLI actions
+			"action": "shell",
+			"resource": "gh *",
+			"effect": "ask"
+		}
+	]
+}
