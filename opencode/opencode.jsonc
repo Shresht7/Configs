@@ -23,6 +23,12 @@
 			"effect": "ask"
 		},
 		{
+			// Ask before using rm
+			"action": "shell",
+			"resource": "rm *",
+			"effect": "ask"
+		},
+		{
 			// Allow git status
 			"action": "shell",
 			"resource": "git status *",
