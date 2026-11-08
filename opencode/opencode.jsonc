@@ -5,22 +5,34 @@
 	"update": "notify",
 	"permissions": [
 		{
-			// Ask when performing git commit action
+			// Ask permission for shell actions
 			"action": "shell",
-			"resource": "git commit *",
+			"resource": "*",
 			"effect": "ask"
 		},
 		{
-			// Deny git push action
+			// Allow git status
 			"action": "shell",
-			"resource": "git push *",
-			"effect": "deny"
+			"resource": "git status *",
+			"effect": "allow"
 		},
 		{
-			// Ask when performing GitHub CLI actions
+			// Allow git log
 			"action": "shell",
-			"resource": "gh *",
-			"effect": "ask"
+			"resource": "git log *",
+			"effect": "allow"
+		},
+		{
+			// Allow git show
+			"action": "shell",
+			"resource": "git show *",
+			"effect": "allow"
+		},
+		{
+			// Allow git diff
+			"action": "shell",
+			"resource": "git diff *",
+			"effect": "allow"
 		}
-	]
+	],
 }
