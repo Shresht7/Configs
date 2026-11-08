@@ -1,8 +1,14 @@
 {
-	// OpenCode Configuration
+	// ======================
+	// OPENCODE CONFIGURATION
+	// ======================
 	// https://opencode.ai/v2/docs/config
 	"$schema": "https://opencode.ai/config.json",
 	"update": "notify",
+	// -----------
+	// PERMISSIONS
+	// -----------
+	// https://opencode.ai/docs/permissions/
 	"permissions": [
 		{
 			// Deny reading .env file
@@ -59,4 +65,15 @@
 			"effect": "allow"
 		}
 	],
+	// --------
+	// POLICIES
+	// --------
+	// https://opencode.ai/docs/policies/
+	"policies": [
+		{
+			"action": "tool.use",
+			"resource": "shell:sudo *",
+			"effect": "deny"
+		}
+	]
 }
