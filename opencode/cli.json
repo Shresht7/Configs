@@ -4,16 +4,19 @@
     "name": "github",
     "mode": "system"
   },
+  "animations": true,
   "diffs": {
-    "wrap": "word"
+    "view": "auto",
+    "wrap": "word",
+    "tree": true
   },
   "session": {
     "sidebar": "auto",
     "scrollbar": false,
+    "submit_scroll": "keep",
     "thinking": "hide",
     "markdown": "rendered",
     "grouping": "auto",
     "permissions": "prompt"
-  },
-  "animations": true
+  }
 }
