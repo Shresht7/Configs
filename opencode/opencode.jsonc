@@ -71,9 +71,19 @@
 	// https://opencode.ai/docs/policies/
 	"policies": [
 		{
+			// Deny sudo usage
 			"action": "tool.use",
 			"resource": "shell:sudo *",
 			"effect": "deny"
 		}
-	]
+	],
+	// -------
+	// WARMING
+	// -------
+	// https://opencode.ai/docs/warming/
+	"warming": {
+		"prompt": "Do not perform any work or use any tools; This is a heartbeat prompt. Reply with exactly: OK",
+		"interval": "auto",
+		"duration": "30 minutes"
+	}
 }
