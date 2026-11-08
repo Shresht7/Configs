@@ -5,6 +5,12 @@
 	"update": "notify",
 	"permissions": [
 		{
+			// Deny reading .env file
+			"action": "read",
+			"resource": ".env",
+			"effect": "deny"
+		},
+		{
 			// Ask permission for shell actions
 			"action": "shell",
 			"resource": "*",
