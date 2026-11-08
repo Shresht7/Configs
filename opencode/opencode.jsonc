@@ -5,6 +5,7 @@
 	// https://opencode.ai/v2/docs/config
 	"$schema": "https://opencode.ai/config.json",
 	"update": "notify",
+	"formatter": true,
 	// -----------
 	// PERMISSIONS
 	// -----------
