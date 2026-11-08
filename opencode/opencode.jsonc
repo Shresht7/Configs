@@ -7,8 +7,14 @@
 		{
 			// Deny reading .env file
 			"action": "read",
-			"resource": ".env",
+			"resource": "*.env",
 			"effect": "deny"
+		},
+		{
+			// Can ask for .env.example file
+			"action": "read",
+			"resource": "*.env.example",
+			"effect": "ask"
 		},
 		{
 			// Ask before accessing external directories
