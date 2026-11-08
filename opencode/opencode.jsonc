@@ -11,6 +11,12 @@
 			"effect": "deny"
 		},
 		{
+			// Ask before accessing external directories
+			"action": "external_directory",
+			"resource": "*",
+			"effect": "ask"
+		},
+		{
 			// Ask permission for shell actions
 			"action": "shell",
 			"resource": "*",
