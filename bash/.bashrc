@@ -50,6 +50,20 @@ fi
 # Colored GCC warnings and errors (useful for C/C++ compilation)
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# EDITOR
+# ------
+
+# If micro is installed, use it as default editor
+if command -v micro >/dev/null 2>&1; then
+    export EDITOR=micro
+# Otherwise, fallback to nano
+elif command -v nano >/dev/null 2>&1; then
+    export EDITOR=nano
+else
+    export EDITOR=vi
+fi
+
+
 # MISCELLANEOUS
 # -------------
 
