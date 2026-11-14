@@ -146,3 +146,16 @@ fi
 
 # Oh-My-Posh
 eval "$(oh-my-posh init bash --config ~/Configs/Oh-My-Posh/Themes/s7.omp.yaml)"
+
+# FZF
+# ---
+
+if command -v fzf >/dev/null 2>&1; then
+    if command -v fd >/dev/null 2>&1; then
+        # Use fd for fzf default command if available
+        export FZF_DEFAULT_COMMAND='fd --type file'
+    else
+        # fallback to find if fd not available
+        export FZF_DEFAULT_COMMAND='find . -type f'
+    fi
+fi
