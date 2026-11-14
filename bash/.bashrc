@@ -200,3 +200,15 @@ if command -v fzf >/dev/null 2>&1; then
         export FZF_DEFAULT_COMMAND='find . -type f'
     fi
 fi
+
+# EXTRA CONFIGS: .bashrc.d/*
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
