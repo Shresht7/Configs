@@ -35,6 +35,9 @@ shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=20000
 
+# Set the history file location
+export HISTFILE="$HOME/.cache/bash/.bash_history"
+
 # SHELL OPTIONS
 # -------------
 
