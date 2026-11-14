@@ -80,23 +80,6 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# ALIASES
-# -------
-
-# Load alias definitions from a dedicated file
-# See /usr/share/doc/bash-doc/examples in the bash-doc package
-if [ -f ~/.bash_aliases ]; then
-    . ~/Configs/bash/.bash_aliases
-fi
-
-# LOCAL
-# -----
-
-# Load local, private or machine-specific bash configuration
-if [ -f ~/.bash_local ]; then
-    . ~/Configs/bash/.bash_local
-fi
-
 # ENVIRONMENT-SPECIFIC
 # --------------------
 
@@ -137,3 +120,29 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
     fi
 fi
+
+# ALIASES
+# -------
+
+# Load alias definitions from a dedicated file
+# See /usr/share/doc/bash-doc/examples in the bash-doc package
+if [ -f ~/.bash_aliases ]; then
+    . ~/Configs/bash/.bash_aliases
+fi
+
+# LOCAL
+# -----
+
+# Load local, private or machine-specific bash configuration
+if [ -f ~/.bash_local ]; then
+    . ~/Configs/bash/.bash_local
+fi
+
+# PROMPT
+# ------
+
+# Starship
+# eval "$(starship init bash)"
+
+# Oh-My-Posh
+eval "$(oh-my-posh init bash --config ~/Configs/Oh-My-Posh/Themes/s7.omp.yaml)"
