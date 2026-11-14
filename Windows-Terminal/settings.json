@@ -34,12 +34,12 @@
     "initialRows": 30,
     "keybindings": [
         {
-            "id": "Terminal.CopyFromClipboard",
-            "keys": "ctrl+c"
-        },
-        {
             "id": "Terminal.OpenNewTab",
             "keys": "ctrl+t"
+        },
+        {
+            "id": "Terminal.CopyFromClipboard",
+            "keys": "ctrl+c"
         },
         {
             "id": "Terminal.PasteFromClipboard",
@@ -50,16 +50,16 @@
             "keys": "ctrl+shift+f"
         },
         {
+            "id": "Terminal.PrevTab",
+            "keys": "ctrl+pgup"
+        },
+        {
             "id": "Terminal.SwapPaneUp",
             "keys": "ctrl+alt+shift+up"
         },
         {
             "id": "User.TabSearch",
             "keys": "ctrl+4"
-        },
-        {
-            "id": "Terminal.PrevTab",
-            "keys": "ctrl+pgup"
         },
         {
             "id": "Terminal.SplitPaneUp",
@@ -78,28 +78,28 @@
             "keys": "ctrl+alt+right"
         },
         {
-            "id": "Terminal.SplitPaneLeft",
-            "keys": "ctrl+alt+left"
-        },
-        {
             "id": "Terminal.ClosePane",
             "keys": "ctrl+w"
+        },
+        {
+            "id": "Terminal.SplitPaneLeft",
+            "keys": "ctrl+alt+left"
         },
         {
             "id": "Terminal.NextTab",
             "keys": "ctrl+pgdn"
         },
         {
-            "id": "Terminal.SwapPaneDown",
-            "keys": "ctrl+alt+shift+down"
+            "id": "User.ScrollToMark.Prev",
+            "keys": "ctrl+up"
         },
         {
             "id": "Terminal.TogglePaneZoom",
             "keys": "alt+shift+enter"
         },
         {
-            "id": "User.ScrollToMark.Prev",
-            "keys": "ctrl+up"
+            "id": "Terminal.SwapPaneDown",
+            "keys": "ctrl+alt+shift+down"
         },
         {
             "id": "Terminal.SwapPaneRight",
@@ -214,6 +214,12 @@
                 "hidden": false,
                 "name": "Git Bash",
                 "source": "Git"
+            },
+            {
+                "guid": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
+                "hidden": false,
+                "name": "PowerShell 7",
+                "source": "Windows.Terminal.PowershellCore"
             }
         ]
     },
