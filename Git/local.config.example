@@ -1,0 +1,10 @@
+[user]
+    name        = 
+    username    = 
+    email       =
+    signingkey  = 
+
+[gpg "ssh"]
+    # Force Git to use the Windows native SSH binary instead of the Git on Windows' bundled ssh
+    # This should allow git to pick up on keys registered on the Windows native ssh-agent
+    # program     = "C:/Windows/System32/OpenSSH/ssh-keygen.exe"
