@@ -158,6 +158,9 @@ fi
 # ALIASES
 # -------
 
+# Manage the Configs repository from anywhere
+alias configs='git -C ~/Configs'
+
 # Load alias definitions from a dedicated file
 # See /usr/share/doc/bash-doc/examples in the bash-doc package
 if [ -f ~/.bash_aliases ]; then
