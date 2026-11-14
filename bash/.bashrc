@@ -54,7 +54,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # ----
 
 # Global PATH expansions
-export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.opencode/bin:$PATH"
 
 # Rust (Cargo)
 if [ -f "$HOME/.cargo/env" ]; then
