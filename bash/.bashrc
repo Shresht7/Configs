@@ -84,11 +84,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# OpenCode CLI
-if [ -d "$HOME/.opencode/bin" ]; then
-    PATH="$PATH:$HOME/.opencode/bin"
-fi
-
 # Export PATH variable
 export PATH
 
@@ -155,11 +150,6 @@ if ! shopt -oq posix; then
     elif [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
     fi
-fi
-
-# OpenCode CLI completions
-if command -v opencode &> /dev/null; then
-    eval "$(opencode --completions bash)"
 fi
 
 # ALIASES
