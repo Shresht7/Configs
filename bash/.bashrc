@@ -10,6 +10,14 @@ case $- in
       *) return;;
 esac
 
+# BASE
+# ----
+
+# Source global definitions (Crucial for Fedora)
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
 # HISTORY CONFIGURATION
 # ---------------------
 
