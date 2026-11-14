@@ -30,6 +30,9 @@
 [fetch]
 	prune 			= true	# Automatically prune outdate branches
 
+[pull]
+	rebase 			= true	# Rebase by default, over merge
+
 # Reference: https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
 [alias]
 
