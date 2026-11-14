@@ -63,7 +63,6 @@ else
     export EDITOR=vi
 fi
 
-
 # MISCELLANEOUS
 # -------------
 
@@ -119,4 +118,16 @@ fi
 # Load platform-specific overrides (e.g., ~/.bashrc.wsl, ~/.bashrc.fedora)
 if [ -f ~/.bashrc."$OS_ENV" ]; then
     . ~/.bashrc."$OS_ENV"
+fi
+
+# TAB COMPLETION
+# --------------
+
+# Enable programmable tab completion (for WSL and Fedora)
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
