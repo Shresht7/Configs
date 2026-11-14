@@ -536,5 +536,8 @@
     "**/.gitea/workflows/*.yaml",
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml"
-  ]
+  ],
+  "chat.editing.explainChanges.enabled": true,
+  "chat.viewProgressBadge.enabled": true,
+  "inlineChat.notebookAgent": true
 }
