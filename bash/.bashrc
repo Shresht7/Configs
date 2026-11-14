@@ -69,3 +69,11 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/Configs/bash/.bash_aliases
 fi
+
+# LOCAL
+# -----
+
+# Load local, private or machine-specific bash configuration
+if [ -f ~/.bash_local ]; then
+    . ~/Configs/bash/.bash_local
+fi
