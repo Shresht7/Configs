@@ -131,6 +131,11 @@ if ! shopt -oq posix; then
     fi
 fi
 
+# OpenCode CLI completions
+if command -v opencode &> /dev/null; then
+    eval "$(opencode --completions bash)"
+fi
+
 # ALIASES
 # -------
 
