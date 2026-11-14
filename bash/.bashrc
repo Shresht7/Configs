@@ -61,8 +61,15 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # PATH
 # ----
 
-# Global PATH expansions
-export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.opencode/bin:$PATH"
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+
+# Golang
+if [ -d "$HOME/go/bin" ]; then
+    PATH="$PATH:$HOME/go/bin"
+fi
 
 # Rust (Cargo)
 if [ -f "$HOME/.cargo/env" ]; then
@@ -73,6 +80,14 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# OpenCode CLI
+if [ -d "$HOME/.opencode/bin" ]; then
+    PATH="$PATH:$HOME/.opencode/bin"
+fi
+
+# Export PATH variable
+export PATH
 
 # EDITOR
 # ------
