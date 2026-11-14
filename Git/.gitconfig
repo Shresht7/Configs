@@ -80,10 +80,13 @@
 	patternType = perl
 
 # GitHub Auth Credential Helpers
+# The empty helpers = act as a reset switch, clearing out any existing helpers
 [credential "https://github.com"]
-	helper = gh auth git-credential
+    helper = 
+    helper = !gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = gh auth git-credential
+    helper = 
+    helper = !gh auth git-credential
 
 # Enable Signing and Verification with SSH
 [gpg]
