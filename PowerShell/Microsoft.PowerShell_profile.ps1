@@ -5,6 +5,9 @@
 $Env:SHELL = "pwsh"
 $Env:EDITOR = "code"
 
+$Env:LLM_URL = "http://localhost:11434"
+$Env:LLM_MODEL = "ggml-org/gemma-4-E4B-it-GGUF:Q4_0"
+
 # =======
 # MODULES
 # =======
@@ -31,7 +34,6 @@ Initialize-PSFavorite
 Import-Module -Name CompletionPredictor
 
 # NLPowerShell provides LLM assistance to interactive with PowerShell using natural language
-$Env:LLM_MODEL = "gemma3"
 Import-Module -Name NLPowerShell
 Initialize-NLPowerShell -Ollama -Model $Env:LLM_MODEL -Temperature 0.3
 
