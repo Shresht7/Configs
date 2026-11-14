@@ -77,3 +77,32 @@ fi
 if [ -f ~/.bash_local ]; then
     . ~/Configs/bash/.bash_local
 fi
+
+# ENVIRONMENT-SPECIFIC
+# --------------------
+
+OS_ENV="unknown"
+
+# Fedora
+if [ -f /etc/fedora-release ] || grep -q 'ID=fedora' /etc/os-release 2>/dev/null; then
+    OS_ENV="fedora"
+
+# WSL (Ubuntu)
+elif grep -qi microsoft /proc/version 2>/dev/null; then
+    OS_ENV="wsl"
+    # Set Docker host for WSL
+    export DOCKER_HOST=unix:///var/run/docker.sock
+
+# Git Bash on Windows
+elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
+    OS_ENV="windows"
+
+# Else, just linux
+else
+    OS_ENV="linux"
+fi
+
+# Load platform-specific overrides (e.g., ~/.bashrc.wsl, ~/.bashrc.fedora)
+if [ -f ~/.bashrc."$OS_ENV" ]; then
+    . ~/.bashrc."$OS_ENV"
+fi
