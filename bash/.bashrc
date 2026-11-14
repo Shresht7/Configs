@@ -50,6 +50,12 @@ fi
 # Colored GCC warnings and errors (useful for C/C++ compilation)
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# PATH
+# ----
+
+# Global PATH expansions
+export PATH="$HOME/.local/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH"
+
 # EDITOR
 # ------
 
