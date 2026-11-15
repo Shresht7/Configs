@@ -567,5 +567,11 @@
     "arguments": "on",
     "unknown": "on"
   },
-  "terminal.integrated.suggest.suggestOnTriggerCharacters": true
+  "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
+  "errorLens.editorHoverPartsEnabled": {
+    "messageEnabled": true,
+    "sourceCodeEnabled": true
+  },
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.gutterIconSet": "squareRounded"
 }
