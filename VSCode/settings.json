@@ -291,6 +291,7 @@
   },
   "files.insertFinalNewline": true,
   "files.refactoring.autoSave": true,
+  "files.simpleDialog.enable": true,
   "geminicodeassist.customCommands": {
     "comment": "Add short, concise and useful comments",
     "doc": "Create documentation",
