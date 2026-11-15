@@ -544,5 +544,6 @@
   "zenMode.hideActivityBar": false,
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
-  "git.blame.editorDecoration.enabled": true
+  "git.blame.editorDecoration.enabled": true,
+  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true
 }
