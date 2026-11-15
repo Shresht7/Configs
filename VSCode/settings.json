@@ -442,6 +442,13 @@
     "PowerShell": {
       "icon": "terminal-powershell",
       "source": "PowerShell"
+    },
+    "PowerShell -NoProfile": {
+      "icon": "terminal-powershell",
+      "source": "PowerShell",
+      "args": [
+        "-NoProfile"
+      ]
     }
   },
   "terminal.integrated.shellIntegration.enabled": true,
