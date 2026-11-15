@@ -548,5 +548,6 @@
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
   "editor.inlineSuggest.minShowDelay": 200,
   "workbench.experimental.modernUIEditorTabStyle": "pill",
-  "agents.voice.enabled": true
+  "agents.voice.enabled": true,
+  "terminal.integrated.smoothScrolling": true
 }
