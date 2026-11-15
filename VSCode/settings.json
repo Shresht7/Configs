@@ -91,6 +91,7 @@
       "underline": false
     }
   ],
+  "chat.editing.explainChanges.enabled": true,
   "chat.mcp.serverSampling": {
     "Global in Code: my-github-mcp-server-f27a864e": {
       "allowedModels": [
@@ -98,6 +99,7 @@
       ]
     }
   },
+  "chat.viewProgressBadge.enabled": true,
   "cmake.pinnedCommands": [
     "workbench.action.tasks.configureTaskRunner",
     "workbench.action.tasks.runTask"
@@ -345,6 +347,7 @@
   "gitlens.views.contributors.showStatistics": true,
   "go.toolsManagement.autoUpdate": true,
   "http.systemCertificatesNode": true,
+  "inlineChat.notebookAgent": true,
   "javascript.inlayHints.parameterNames.enabled": "all",
   "javascript.inlayHints.parameterTypes.enabled": true,
   "json.schemaDownload.trustedDomains": {
@@ -536,8 +539,5 @@
     "**/.gitea/workflows/*.yaml",
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml"
-  ],
-  "chat.editing.explainChanges.enabled": true,
-  "chat.viewProgressBadge.enabled": true,
-  "inlineChat.notebookAgent": true
+  ]
 }
