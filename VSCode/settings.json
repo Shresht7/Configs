@@ -444,7 +444,6 @@
       "source": "PowerShell"
     }
   },
-  "terminal.integrated.sendKeybindingsToShell": true,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.suggest.enabled": true,
@@ -549,5 +548,11 @@
   "editor.inlineSuggest.minShowDelay": 200,
   "workbench.experimental.modernUIEditorTabStyle": "pill",
   "agents.voice.enabled": true,
-  "terminal.integrated.smoothScrolling": true
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.suggest.quickSuggestions": {
+    "commands": "on",
+    "arguments": "on",
+    "unknown": "on"
+  },
+  "terminal.integrated.suggest.suggestOnTriggerCharacters": true
 }
