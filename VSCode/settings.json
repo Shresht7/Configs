@@ -544,4 +544,5 @@
   "zenMode.hideActivityBar": false,
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
+  "git.blame.editorDecoration.enabled": true
 }
