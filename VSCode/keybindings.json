@@ -378,5 +378,9 @@
         "key": "ctrl+q",
         "command": "workbench.action.quickOpenNavigateNext",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+shift+9",
+        "command": "editor.action.selectToBracket"
     }
 ]
