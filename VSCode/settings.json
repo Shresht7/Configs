@@ -545,5 +545,6 @@
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
   "git.blame.editorDecoration.enabled": true,
-  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true
+  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
+  "editor.inlineSuggest.minShowDelay": 200
 }
