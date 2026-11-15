@@ -546,5 +546,6 @@
   "zenMode.hideStatusBar": false,
   "git.blame.editorDecoration.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
-  "editor.inlineSuggest.minShowDelay": 200
+  "editor.inlineSuggest.minShowDelay": 200,
+  "workbench.experimental.modernUIEditorTabStyle": "pill"
 }
