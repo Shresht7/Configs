@@ -21,8 +21,11 @@ $Env:LLM_MODEL = "ggml-org/gemma-4-E4B-it-GGUF:Q4_0"
 Import-Module -Name Utilities
 # FSUtils is a collection of useful filesystem utility functions.
 Import-Module -Name FSUtils
+
 # PSReadlineUtilities is a collection of useful PSReadline functions.
-Import-Module -Name PSReadlineUtils
+if (Get-Module -Name PSReadLine) {
+    Import-Module -Name PSReadlineUtils
+}
 
 # PSFavorite provides a simple way to manage and use your favorite PowerShell commands.
 Import-Module -Name PSFavorite
