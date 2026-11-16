@@ -372,10 +372,6 @@
         }
     },
     {
-        "key": "ctrl+shift+0",
-        "command": "editor.action.selectToBracket"
-    },
-    {
         "key": "ctrl+shift+3",
         "command": "editor.action.insertSnippet",
         "when": "!editorReadonly"
@@ -409,5 +405,13 @@
         "key": "ctrl+oem_6",
         "command": "editor.unfold",
         "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+shift+oem_4",
+        "command": "editor.action.selectToBracket"
+    },
+    {
+        "key": "ctrl+shift+oem_6",
+        "command": "editor.action.jumpToBracket"
     }
 ]
