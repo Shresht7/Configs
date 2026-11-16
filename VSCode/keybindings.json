@@ -373,6 +373,10 @@
         }
     },
     {
+        "key": "ctrl+shift+0",
+        "command": "editor.action.selectToBracket"
+    },
+    {
         "key": "ctrl+shift+3",
         "command": "editor.action.insertSnippet",
         "when": "!editorReadonly"
@@ -385,10 +389,6 @@
         "key": "ctrl+q",
         "command": "workbench.action.quickOpenNavigateNext",
         "when": "inQuickOpen"
-    },
-    {
-        "key": "ctrl+shift+9",
-        "command": "editor.action.selectToBracket"
     },
     {
         "key": "ctrl+tab",
