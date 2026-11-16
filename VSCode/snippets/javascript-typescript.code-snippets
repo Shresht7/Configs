@@ -1,0 +1,17 @@
+{
+    "Test": {
+        "prefix": "test",
+        "description": "Test Case",
+        "body": [
+            "${1|test,it,describe|}('${2:description}', () => {",
+            "\t$3",
+            "})",
+            "$0"
+        ],
+        "scope": "javascript,typescript",
+        "include": [
+            "**/*.test.js",
+            "**/*.test.ts"
+        ]
+    },
+}
