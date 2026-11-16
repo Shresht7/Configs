@@ -1,20 +1,25 @@
 // Place your key bindings in this file to override the defaults
 [
+    // Command Palette
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.showCommands"
+    },
     // Quick Open Views
     {
         "key": "ctrl+o",
         "command": "workbench.action.quickOpenWithModes",
         "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
     },
-    // Show all commands
-    {
-        "key": "ctrl+r",
-        "command": "workbench.action.showCommands"
-    },
     // Quick Open with Modes
     {
         "key": "ctrl+t",
         "command": "workbench.action.quickOpenWithModes"
+    },
+    // Switch between editor groups
+    {
+        "key": "ctrl+1",
+        "command": "workbench.action.focusNextGroup",
     },
     // Go to symbol
     {
@@ -45,23 +50,22 @@
     {
         "key": "ctrl+4",
         "command": "workbench.action.quickOpenNavigateNextInTerminalPicker",
-        "when": "inQuickOpen"
+        "when": "inTerminalPicker"
     },
     // Perform quick text search
     {
         "key": "ctrl+5",
         "command": "workbench.action.quickTextSearch"
     },
-    // Quick Open Navigation
+    // Focus View
     {
-        "key": "ctrl+down",
-        "command": "workbench.action.quickOpenNavigateNext",
-        "when": "inQuickOpen && !accessibilityHelpIsShown && !accessibleViewIsShown"
+        "key": "ctrl+q",
+        "command": "workbench.action.openView"
     },
     {
-        "key": "ctrl+up",
-        "command": "workbench.action.quickOpenNavigatePrevious",
-        "when": "inQuickOpen && !accessibilityHelpIsShown && !accessibleViewIsShown"
+        "key": "ctrl+q",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen"
     },
     // Move the cursor to the next blank line (i.e. at the end of the code block)
     {
@@ -83,7 +87,7 @@
         },
         "when": "editorTextFocus"
     },
-    //
+    // Insert a line above and below simultaneously
     {
         "key": "ctrl+shift+alt+enter",
         "command": "runCommands",
@@ -183,11 +187,6 @@
         "key": "shift+alt+f3",
         "command": "-editor.action.dirtydiff.previous",
         "when": "editorTextFocus && !textCompareEditorActive"
-    },
-    // Switch between editor groups
-    {
-        "key": "ctrl+1",
-        "command": "workbench.action.focusNextGroup"
     },
     // Change the editor font zoom, without affecting the UI elements
     {
@@ -380,15 +379,6 @@
         "key": "ctrl+shift+3",
         "command": "editor.action.insertSnippet",
         "when": "!editorReadonly"
-    },
-    {
-        "key": "ctrl+q",
-        "command": "workbench.action.openView"
-    },
-    {
-        "key": "ctrl+q",
-        "command": "workbench.action.quickOpenNavigateNext",
-        "when": "inQuickOpen"
     },
     {
         "key": "ctrl+tab",
