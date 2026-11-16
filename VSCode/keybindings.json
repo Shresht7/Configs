@@ -200,8 +200,19 @@
     },
     // Git Action Shortcuts
     {
-        "key": "ctrl+shift+g ctrl+s",
-        "command": "git.viewStagedChanges"
+        "key": "ctrl+shift+g g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+shift+g v",
+        "command": "git.viewChanges",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+shift+g ctrl+v",
+        "command": "git.viewStagedChanges",
+        "when": "!operationInProgress"
     },
     {
         "key": "ctrl+s",
@@ -347,11 +358,6 @@
         }
     },
     {
-        "key": "ctrl+shift+g ctrl+s",
-        "command": "git.diff.stageHunk",
-        "when": "diffEditorOriginalUri =~ /^git\\:.*%22ref%22%3A%22~%22%7D$/"
-    },
-    {
         "key": "ctrl+alt+g i",
         "command": "geminicodeassist.showinEditor",
         "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
@@ -393,20 +399,5 @@
         "key": "ctrl+k ctrl+0",
         "command": "workbench.files.action.collapseExplorerFolders",
         "when": "explorerViewletFocus"
-    },
-    {
-        "key": "ctrl+shift+g g",
-        "command": "workbench.view.scm",
-        "when": "workbench.scm.active"
-    },
-    {
-        "key": "ctrl+shift+g",
-        "command": "-workbench.view.scm",
-        "when": "workbench.scm.active"
-    },
-    {
-        "key": "ctrl+shift+g v",
-        "command": "git.viewChanges",
-        "when": "!operationInProgress"
     }
 ]
