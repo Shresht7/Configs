@@ -1,0 +1,50 @@
+{
+	// Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"dropdown": {
+		"prefix": "dropdown",
+		"description": "Collapsible Dropdown",
+		"body": [
+			"<details>",
+			"",
+			"<summary>$1</summary>",
+			"",
+			"$2",
+			"",
+			"</details>"
+		]
+	},
+	"blockquote-callout": {
+		// See https://github.com/orgs/community/discussions/16925
+		"prefix": "callout",
+		"description": "An option to highlight a blockquote callout on GitHub",
+		"body": [
+			"> [!${1|NOTE,TIP,IMPORTANT,WARNING,CAUTION|}]",
+			"> $0"
+		]
+	},
+	"back-to-top": {
+		"prefix": "back-to-top",
+		"description": "A link to the top of the page",
+		"body": [
+			"<div align=\"${1|left,center,right|}\">",
+			"",
+			"[${2:Back to Top}](#) ⬆️",
+			"",
+			"</div>",
+			"",
+			"$0"
+		]
+	}
+}
