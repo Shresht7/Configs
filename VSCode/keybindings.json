@@ -42,6 +42,11 @@
         "key": "ctrl+4",
         "command": "workbench.action.quickOpenTerm"
     },
+    {
+        "key": "ctrl+4",
+        "command": "workbench.action.quickOpenNavigateNextInTerminalPicker",
+        "when": "inQuickOpen"
+    },
     // Perform quick text search
     {
         "key": "ctrl+5",
