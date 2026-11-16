@@ -1,4 +1,10 @@
 {
+    "Console": {
+        "prefix": "console",
+        "description": "Console Statements",
+        "body": "console.${1|log,info,warn,error,debug,assert,clear,count,countReset,table,dir,dirxml,group,groupCollapsed,groupEnd,time,timeEnd,timeLog,timeStamp,trace|}($2)$0",
+        "scope": "javascript,typescript"
+    },
     "Test": {
         "prefix": "test",
         "description": "Test Case",
