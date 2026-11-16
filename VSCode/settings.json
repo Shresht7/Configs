@@ -577,5 +577,6 @@
   "editor.minimap.markSectionHeaderRegex": "[\\*\\=\\-\\+\\s]+\\s*(?<separator>-?)\\s*(?<label>[A-Z0-9 _-]*)\\s*[\\*\\=\\-\\+\\s]*$",
   "debug.toolBarLocation": "commandCenter",
   "debug.showBreakpointsInOverviewRuler": true,
-  "git.verboseCommit": true
+  "git.verboseCommit": true,
+  "git.detectWorktrees": true
 }
