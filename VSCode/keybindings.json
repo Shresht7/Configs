@@ -388,5 +388,10 @@
         "key": "ctrl+shift+tab",
         "command": "workbench.action.quickOpenLeastRecentlyUsedEditor",
         "when": "!inEditorsPicker"
+    },
+    {
+        "key": "ctrl+k ctrl+0",
+        "command": "workbench.files.action.collapseExplorerFolders",
+        "when": "explorerViewletFocus"
     }
 ]
