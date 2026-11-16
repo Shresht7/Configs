@@ -220,11 +220,6 @@
         "when": "diffEditorHasChanges && editorHasSelection && !operationInProgress"
     },
     {
-        "key": "ctrl+enter",
-        "command": "-geminicodeassist.generateCode",
-        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && !inGeminiDiffView && !isInDiffEditor"
-    },
-    {
         "key": "alt+d",
         "command": "editor.action.smartSelect.expand",
         "when": "editorTextFocus"
@@ -335,37 +330,12 @@
         "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
     },
     {
-        "key": "ctrl+s",
-        "command": "-geminicodeassist.saveKeysClicked",
-        "when": "inGeminiDiffView || isInDiffEditor"
-    },
-    {
-        "key": "ctrl+alt+enter",
-        "command": "geminicodeassist.generateCode",
-        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && !inGeminiDiffView && !isInDiffEditor && !nextEditSessionAvailable"
-    },
-    {
-        "key": "ctrl+enter",
-        "command": "-geminicodeassist.generateCode",
-        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && !inGeminiDiffView && !isInDiffEditor && !nextEditSessionAvailable"
-    },
-    {
         "key": "ctrl+shift+9",
         "command": "editor.action.insertSnippet",
         "when": "editor.hasSelection",
         "args": {
             "snippet": "$2(${1:${TM_SELECTED_TEXT}})$0"
         }
-    },
-    {
-        "key": "ctrl+alt+g i",
-        "command": "geminicodeassist.showinEditor",
-        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
-    },
-    {
-        "key": "ctrl+i",
-        "command": "-geminicodeassist.showinEditor",
-        "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
     },
     {
         "key": "ctrl+shift+3",
