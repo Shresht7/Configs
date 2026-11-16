@@ -34,6 +34,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "agents.voice.enabled": true,
   "aws.profile": "profile:default",
   "better-comments.tags": [
     {
@@ -104,6 +105,8 @@
     "workbench.action.tasks.configureTaskRunner",
     "workbench.action.tasks.runTask"
   ],
+  "debug.showBreakpointsInOverviewRuler": true,
+  "debug.toolBarLocation": "commandCenter",
   "diffEditor.codeLens": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "docker.extension.enableComposeLanguageServer": false,
@@ -118,7 +121,9 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlayHints.padding": true,
   "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.minShowDelay": 200,
   "editor.linkedEditing": true,
+  "editor.minimap.markSectionHeaderRegex": "[\\*\\=\\-\\+\\s]+\\s*(?<separator>-?)\\s*(?<label>[A-Z0-9 _-]*)\\s*[\\*\\=\\-\\+\\s]*$",
   "editor.quickSuggestions": {
     "comments": "on",
     "other": "on",
@@ -212,9 +217,15 @@
     ],
     "types": "#829191"
   },
+  "errorLens.editorHoverPartsEnabled": {
+    "messageEnabled": true,
+    "sourceCodeEnabled": true
+  },
   "errorLens.exclude": [
     "Unknown word"
   ],
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.gutterIconSet": "squareRounded",
   "eslint.alwaysShowStatus": true,
   "eslint.codeAction.showDocumentation": {
     "enable": true
@@ -301,12 +312,16 @@
   "geminicodeassist.inlineSuggestions.enableAuto": false,
   "git.addAICoAuthor": "chatAndAgent",
   "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
   "git.branchProtection": [
     "main"
   ],
   "git.confirmSync": false,
+  "git.detectWorktrees": true,
   "git.enableSmartCommit": true,
+  "git.verboseCommit": true,
   "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
   "github.copilot.chat.switchAgent.enabled": true,
   "github.copilot.chat.terminalChatLocation": "terminal",
   "github.copilot.completions.chat.enabled": true,
@@ -424,15 +439,15 @@
   },
   "svelte.enable-ts-plugin": true,
   "svelte.plugin.svelte.note-new-transformation": false,
+  "terminal.integrated.automationProfile.windows": {
+    "args": [
+      "-NoProfile"
+    ],
+    "path": "pwsh.exe"
+  },
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font, CaskaydiaCove Nerd Font Mono, Cascadia Code, Consolas, 'Courier Now', monospace",
   "terminal.integrated.fontLigatures.enabled": true,
-  "terminal.integrated.automationProfile.windows": {
-    "path": "pwsh.exe",
-    "args": [
-      "-NoProfile"
-    ]
-  },
   "terminal.integrated.profiles.windows": {
     "Command Prompt": {
       "args": [],
@@ -450,16 +465,23 @@
       "source": "PowerShell"
     },
     "PowerShell -NoProfile": {
-      "icon": "terminal-powershell",
-      "source": "PowerShell",
       "args": [
         "-NoProfile"
-      ]
+      ],
+      "icon": "terminal-powershell",
+      "source": "PowerShell"
     }
   },
   "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.suggest.quickSuggestions": {
+    "arguments": "on",
+    "commands": "on",
+    "unknown": "on"
+  },
+  "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
   "totalTypeScript.hideAllTips": false,
   "totalTypeScript.hideBasicTips": false,
   "typescript.inlayHints.parameterNames.enabled": "all",
@@ -508,6 +530,7 @@
     "*.copilotmd": "vscode.markdown.preview.editor",
     "git-rebase-todo": "gitlens.rebase"
   },
+  "workbench.experimental.modernUIEditorTabStyle": "pill",
   "workbench.experimental.share.enabled": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "One Dark Pro Flat",
@@ -555,28 +578,5 @@
   ],
   "zenMode.hideActivityBar": false,
   "zenMode.hideLineNumbers": false,
-  "zenMode.hideStatusBar": false,
-  "git.blame.editorDecoration.enabled": true,
-  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
-  "editor.inlineSuggest.minShowDelay": 200,
-  "workbench.experimental.modernUIEditorTabStyle": "pill",
-  "agents.voice.enabled": true,
-  "terminal.integrated.smoothScrolling": true,
-  "terminal.integrated.suggest.quickSuggestions": {
-    "commands": "on",
-    "arguments": "on",
-    "unknown": "on"
-  },
-  "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
-  "errorLens.editorHoverPartsEnabled": {
-    "messageEnabled": true,
-    "sourceCodeEnabled": true
-  },
-  "errorLens.gutterIconsEnabled": true,
-  "errorLens.gutterIconSet": "squareRounded",
-  "editor.minimap.markSectionHeaderRegex": "[\\*\\=\\-\\+\\s]+\\s*(?<separator>-?)\\s*(?<label>[A-Z0-9 _-]*)\\s*[\\*\\=\\-\\+\\s]*$",
-  "debug.toolBarLocation": "commandCenter",
-  "debug.showBreakpointsInOverviewRuler": true,
-  "git.verboseCommit": true,
-  "git.detectWorktrees": true
+  "zenMode.hideStatusBar": false
 }
