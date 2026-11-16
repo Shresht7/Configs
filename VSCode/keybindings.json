@@ -6,11 +6,6 @@
         "command": "workbench.action.quickOpenWithModes",
         "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
     },
-    {
-        "key": "ctrl+o",
-        "command": "workbench.action.acceptSelectedQuickOpenItem",
-        "when": "inQuickOpen"
-    },
     // Show all commands
     {
         "key": "ctrl+r",
