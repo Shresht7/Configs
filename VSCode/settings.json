@@ -574,5 +574,6 @@
   },
   "errorLens.gutterIconsEnabled": true,
   "errorLens.gutterIconSet": "squareRounded",
-  "editor.minimap.markSectionHeaderRegex": "[\\*\\=\\-\\+\\s]+\\s*(?<separator>-?)\\s*(?<label>[A-Z0-9 _-]*)\\s*[\\*\\=\\-\\+\\s]*$"
+  "editor.minimap.markSectionHeaderRegex": "[\\*\\=\\-\\+\\s]+\\s*(?<separator>-?)\\s*(?<label>[A-Z0-9 _-]*)\\s*[\\*\\=\\-\\+\\s]*$",
+  "debug.toolBarLocation": "commandCenter",
 }
