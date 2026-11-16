@@ -1,3 +1,3 @@
-gh dash	dlvhdr/gh-dash	v4.22.0
+gh dash	dlvhdr/gh-dash	v4.25.2
 gh gitignore		
 gh license		

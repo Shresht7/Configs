@@ -1,166 +1,186 @@
 {
-    "apps": [
-        {
-            "Source": "main",
-            "Version": "26.00",
-            "Name": "7zip",
-            "Updated": "2026-02-24T11:10:19.9272997+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "0.26.1",
-            "Name": "bat",
-            "Updated": "2025-12-08T13:15:17.8240649+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "0.12.3",
-            "Name": "bottom",
-            "Updated": "2026-01-05T16:22:16.4851754+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "8.19.0_5",
-            "Name": "curl",
-            "Updated": "2026-04-06T19:33:03.0545302+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "13.54",
-            "Name": "exiftool",
-            "Updated": "2026-04-06T19:41:10.9084132+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "10.4.2",
-            "Name": "fd",
-            "Updated": "2026-03-13T08:27:40.2025332+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "8.0.1",
-            "Name": "ffmpeg",
-            "Updated": "2025-11-26T21:28:57.6681755+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "39.2.0",
-            "Name": "fx",
-            "Updated": "2025-11-17T13:26:52.8306583+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "0.71.0",
-            "Name": "fzf",
-            "Updated": "2026-04-06T19:41:14.4257433+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "15.2.0",
-            "Name": "gcc",
-            "Updated": "2026-01-05T16:23:21.631818+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "2.47.0",
-            "Name": "git-filter-repo",
-            "Updated": "2025-10-13T19:49:49.2396916+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "692",
-            "Name": "less",
-            "Updated": "2026-02-11T21:47:23.4912497+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "2.0.15",
-            "Name": "micro",
-            "Updated": "2026-01-05T16:23:24.283662+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "C:\\Users\\shres\\scoop\\buckets\\main\\bucket\\opencode.json",
-            "Version": "1.3.17",
-            "Name": "opencode",
-            "Updated": "2026-04-06T19:42:07.9108741+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "15.1.0",
-            "Name": "ripgrep",
-            "Updated": "2025-10-24T10:25:02.4888478+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "1.1.0",
-            "Name": "sd",
-            "Updated": "2026-02-26T10:07:56.9811418+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "3.51.3",
-            "Name": "sqlite",
-            "Updated": "2026-03-21T15:53:58.9417282+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "1.8.1",
-            "Name": "tealdeer",
-            "Updated": "2025-11-17T13:26:58.0825072+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "1.13.0",
-            "Name": "tlrc",
-            "Updated": "2026-04-06T19:42:14.4199205+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "1.7.7",
-            "Name": "ttyd",
-            "Updated": "2024-10-21T10:47:38.8495583+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "0.11.0",
-            "Name": "vhs",
-            "Updated": "2026-03-13T08:28:00.0999862+05:30",
-            "Info": ""
-        },
-        {
-            "Source": "main",
-            "Version": "2026.03.17",
-            "Name": "yt-dlp",
-            "Updated": "2026-03-21T15:55:14.2047864+05:30",
-            "Info": ""
-        }
-    ],
     "buckets": [
         {
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main",
-            "Updated": "2026-04-07T22:09:24+05:30",
-            "Manifests": 1490
+            "Updated": "2026-11-15T06:14:54+05:30",
+            "Manifests": 1714
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2026-11-15T07:26:14+05:30",
+            "Manifests": 2468
+        }
+    ],
+    "apps": [
+        {
+            "Name": "7zip",
+            "Version": "26.06",
+            "Source": "main",
+            "Updated": "2026-11-14T02:18:00.7435483+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "bat",
+            "Version": "0.26.1",
+            "Source": "main",
+            "Updated": "2025-12-08T13:15:17.8240649+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "bottom",
+            "Version": "0.15.0",
+            "Source": "main",
+            "Updated": "2026-11-14T02:18:02.5746971+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "curl",
+            "Version": "8.23.0_9",
+            "Source": "main",
+            "Updated": "2026-11-14T02:18:07.5556217+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "dust",
+            "Version": "1.2.7",
+            "Source": "main",
+            "Updated": "2026-11-05T18:14:46.7233474+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "exiftool",
+            "Version": "13.63",
+            "Source": "main",
+            "Updated": "2026-11-14T02:18:14.1903216+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "fd",
+            "Version": "10.5.2",
+            "Source": "main",
+            "Updated": "2026-11-15T08:05:18.1027536+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "ffmpeg",
+            "Version": "9.0.2",
+            "Source": "main",
+            "Updated": "2026-09-20T15:41:01.6489769+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "fx",
+            "Version": "40.0.1",
+            "Source": "main",
+            "Updated": "2026-10-23T10:53:32.0357916+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "fzf",
+            "Version": "0.75.0",
+            "Source": "main",
+            "Updated": "2026-11-14T11:19:56.2458538+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "gcc",
+            "Version": "15.2.0",
+            "Source": "main",
+            "Updated": "2026-01-05T16:23:21.631818+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "gdb",
+            "Version": "17.1",
+            "Source": "main",
+            "Updated": "2026-09-20T17:06:23.5108261+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "git-filter-repo",
+            "Version": "2.47.0",
+            "Source": "main",
+            "Updated": "2025-10-13T19:49:49.2396916+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "lazygit",
+            "Version": "0.66.3",
+            "Source": "extras",
+            "Updated": "2026-11-14T02:18:19.610142+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "less",
+            "Version": "710",
+            "Source": "main",
+            "Updated": "2026-09-20T15:37:12.7693675+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "micro",
+            "Version": "2.0.15",
+            "Source": "main",
+            "Updated": "2026-01-05T16:23:24.283662+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "ripgrep",
+            "Version": "15.2.0",
+            "Source": "main",
+            "Updated": "2026-07-16T06:57:06.2528388+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "sd",
+            "Version": "1.1.0",
+            "Source": "main",
+            "Updated": "2026-02-26T10:07:56.9811418+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "sqlite",
+            "Version": "3.54.1",
+            "Source": "main",
+            "Updated": "2026-10-23T10:54:03.3905381+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "tealdeer",
+            "Version": "1.9.1",
+            "Source": "main",
+            "Updated": "2026-11-14T17:15:42.9409052+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "tlrc",
+            "Version": "1.13.1",
+            "Source": "main",
+            "Updated": "2026-05-26T15:49:44.7779283+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "ttyd",
+            "Version": "1.7.7",
+            "Source": "main",
+            "Updated": "2024-10-21T10:47:38.8495583+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "vhs",
+            "Version": "0.12.1",
+            "Source": "main",
+            "Updated": "2026-09-25T10:25:38.8164417+05:30",
+            "Info": ""
+        },
+        {
+            "Name": "yt-dlp",
+            "Version": "2026.10.26",
+            "Source": "main",
+            "Updated": "2026-10-31T22:34:16.8676587+05:30",
+            "Info": ""
         }
     ]
 }
