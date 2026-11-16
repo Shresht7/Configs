@@ -215,9 +215,39 @@
         "when": "!operationInProgress"
     },
     {
+        "key": "ctrl+down",
+        "command": "multiDiffEditor.goToNextChange",
+        "when": "activeEditor == 'multiDiffEditor'"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "multiDiffEditor.goToPreviousChange",
+        "when": "activeEditor == 'multiDiffEditor'"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "git.diff.stageHunk",
+        "when": "inDiffEditor && diffEditorOriginalUri =~ /^git\\:.*%22ref%22%3A%22~%22%7D$/ && !activeEditorIsDirty"
+    },
+    {
         "key": "ctrl+s",
         "command": "git.stageSelectedRanges",
-        "when": "diffEditorHasChanges && editorHasSelection && !operationInProgress"
+        "when": "inDiffEditor && editorHasSelection && !operationInProgress && !activeEditorIsDirty"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "diffEditor.revert",
+        "when": "inDiffEditor"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "git.revertSelectedRanges",
+        "when": "inDiffEditor && editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+g ctrl+u",
+        "command": "git.unstageAll",
+        "when": "!operationInProgress"
     },
     {
         "key": "alt+d",
