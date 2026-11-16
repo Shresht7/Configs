@@ -123,7 +123,7 @@
     },
     // Maximizes the bottom panel (output, terminal, debug console) to take up the full height
     {
-        "key": "ctrl+shift+J",
+        "key": "ctrl+shift+`",
         "command": "workbench.action.toggleMaximizedPanel"
     },
     // Move the current editor to the above group
