@@ -19,7 +19,7 @@
     // Switch between editor groups
     {
         "key": "ctrl+1",
-        "command": "workbench.action.focusNextGroup",
+        "command": "workbench.action.focusNextGroup"
     },
     // Go to symbol
     {
@@ -394,5 +394,15 @@
         "key": "ctrl+k ctrl+0",
         "command": "workbench.files.action.collapseExplorerFolders",
         "when": "explorerViewletFocus"
+    },
+    {
+        "key": "ctrl+oem_4",
+        "command": "editor.fold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+oem_6",
+        "command": "editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
     }
 ]
