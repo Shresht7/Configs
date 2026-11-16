@@ -250,6 +250,11 @@
         "when": "!operationInProgress"
     },
     {
+        "key": "ctrl+shift+g c",
+        "command": "git.commit",
+        "when": "!operationInProgress"
+    },
+    {
         "key": "alt+d",
         "command": "editor.action.smartSelect.expand",
         "when": "editorTextFocus"
