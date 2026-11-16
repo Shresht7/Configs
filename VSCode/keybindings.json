@@ -381,6 +381,11 @@
         "when": "!editorReadonly"
     },
     {
+        "key": "ctrl+shift+3",
+        "command": "editor.action.surroundWithSnippet",
+        "when": "editorTextFocus && editor.hasSelection"
+    },
+    {
         "key": "ctrl+tab",
         "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
         "when": "!inEditorsPicker"
