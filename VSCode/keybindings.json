@@ -112,7 +112,7 @@
     },
     // Toggles the visibility of both sidebars at the same time
     {
-        "key": "ctrl+shift+alt+b",
+        "key": "ctrl+shift+\\",
         "command": "runCommands",
         "args": {
             "commands": [
