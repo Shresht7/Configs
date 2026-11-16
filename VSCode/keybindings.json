@@ -96,19 +96,15 @@
     },
     // Create a new file
     {
-        "key": "ctrl+shift+e ctrl+n",
-        "command": "explorer.newFile"
+        "key": "ctrl+n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus"
     },
     // Create a new folder
     {
-        "key": "ctrl+shift+e ctrl+shift+n",
-        "command": "explorer.newFolder"
-    },
-    // New shortcut for the explorer view because ctrl+shift+e now expects a chord
-    {
-        "key": "ctrl+shift+e e",
-        "command": "workbench.view.explorer",
-        "when": "viewContainer.workbench.view.explorer.enabled"
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
     },
     // Toggles the visibility of both sidebars at the same time
     {
