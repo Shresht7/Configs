@@ -7,6 +7,6 @@
     "Ctrl-Shift-r": "ToggleRuler",
     "Ctrl-/": "lua:comment.comment",
     "CtrlBackslash": "AddTab",
-    "Alt-[": "PreviousTab|LastTab",
-    "Alt-]": "NextTab|FirstTab"
+    "Alt-[": "PreviousSplit|PreviousTab|LastTab,LastSplit",
+    "Alt-]": "NextSplit|NextTab|FirstTab,FirstSplit"
 }
