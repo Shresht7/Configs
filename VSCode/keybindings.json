@@ -413,5 +413,13 @@
     {
         "key": "ctrl+shift+oem_6",
         "command": "editor.action.jumpToBracket"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine"
     }
 ]
