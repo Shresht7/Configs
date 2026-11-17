@@ -2,6 +2,7 @@
     "F1": "command-edit:help ",
     "Ctrl-Backspace": "DeleteWordLeft",
     "Ctrl-Delete": "DeleteWordRight",
+    "Shift-Alt-K": "DeleteLine",
     "Ctrl-e": "OpenFile",
     "Ctrl-r": "CommandMode",
     "Ctrl-g": "ShellMode",
