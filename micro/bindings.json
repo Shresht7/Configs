@@ -5,5 +5,8 @@
     "Ctrl-e": "OpenFile",
     "Ctrl-r": "CommandMode",
     "Ctrl-Shift-r": "ToggleRuler",
-    "Ctrl-/": "lua:comment.comment"
+    "Ctrl-/": "lua:comment.comment",
+    "CtrlBackslash": "AddTab",
+    "Alt-[": "PreviousTab|LastTab",
+    "Alt-]": "NextTab|FirstTab"
 }
