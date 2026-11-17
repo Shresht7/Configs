@@ -9,5 +9,6 @@
     "Ctrl-/": "lua:comment.comment",
     "CtrlBackslash": "AddTab",
     "Alt-[": "PreviousSplit|PreviousTab|LastTab,LastSplit",
-    "Alt-]": "NextSplit|NextTab|FirstTab,FirstSplit"
+    "Alt-]": "NextSplit|NextTab|FirstTab,FirstSplit",
+    "Alt-MouseLeft": "MouseMultiCursor"
 }
