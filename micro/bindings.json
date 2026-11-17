@@ -4,6 +4,7 @@
     "Ctrl-Delete": "DeleteWordRight",
     "Ctrl-e": "OpenFile",
     "Ctrl-r": "CommandMode",
+    "Ctrl-g": "ShellMode",
     "Ctrl-Shift-r": "ToggleRuler",
     "Ctrl-/": "lua:comment.comment",
     "CtrlBackslash": "AddTab",
