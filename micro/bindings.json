@@ -11,6 +11,7 @@
     "Alt-[": "PreviousSplit|PreviousTab|LastTab,LastSplit",
     "Alt-]": "NextSplit|NextTab|FirstTab,FirstSplit",
     "Alt-MouseLeft": "MouseMultiCursor",
+    "Alt-9": "JumpToMatchingBrace",
     "command": {
         "Ctrl-e": "CommandComplete",
         "Ctrl-Shift-e": "CycleAutocompleteBack",
