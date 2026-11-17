@@ -1,3 +1,4 @@
 {
+    "F1": "command-edit:help ",
     "Ctrl-/": "lua:comment.comment"
 }
