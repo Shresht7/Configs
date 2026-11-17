@@ -10,5 +10,12 @@
     "CtrlBackslash": "AddTab",
     "Alt-[": "PreviousSplit|PreviousTab|LastTab,LastSplit",
     "Alt-]": "NextSplit|NextTab|FirstTab,FirstSplit",
-    "Alt-MouseLeft": "MouseMultiCursor"
+    "Alt-MouseLeft": "MouseMultiCursor",
+    "command": {
+        "Ctrl-e": "CommandComplete",
+        "Ctrl-Shift-e": "CycleAutocompleteBack",
+        "Ctrl-r": "CommandMode",
+        "Ctrl-f": "Find",
+        "Ctrl-g": "ShellMode"
+    }
 }
