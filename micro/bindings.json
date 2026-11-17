@@ -1,4 +1,9 @@
 {
     "F1": "command-edit:help ",
+    "Ctrl-Backspace": "DeleteWordLeft",
+    "Ctrl-Delete": "DeleteWordRight",
+    "Ctrl-e": "OpenFile",
+    "Ctrl-r": "CommandMode",
+    "Ctrl-Shift-r": "ToggleRuler",
     "Ctrl-/": "lua:comment.comment"
 }
