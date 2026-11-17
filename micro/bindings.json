@@ -12,6 +12,10 @@
     "Alt-]": "NextSplit|NextTab|FirstTab,FirstSplit",
     "Alt-MouseLeft": "MouseMultiCursor",
     "Alt-9": "JumpToMatchingBrace",
+    "Ctrl-d": "SpawnMultiCursor",
+    "Alt-Shift-Up": "SpawnMultiCursorUp",
+    "Alt-Shift-Down": "SpawnMultiCursorDown",
+    "Alt-Shift-D": "Duplicate",
     "command": {
         "Ctrl-e": "CommandComplete",
         "Ctrl-Shift-e": "CycleAutocompleteBack",
