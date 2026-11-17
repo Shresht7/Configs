@@ -1,0 +1,4 @@
+{
+    "colorscheme": "atom-dark",
+    "lsp.server": "go=gopls"
+}

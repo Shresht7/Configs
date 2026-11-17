@@ -1,0 +1,3 @@
+{
+    "Ctrl-/": "lua:comment.comment"
+}
